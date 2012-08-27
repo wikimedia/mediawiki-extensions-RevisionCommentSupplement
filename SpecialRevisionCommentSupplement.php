@@ -24,8 +24,6 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 	var $save = false, $preview = false, $show = false;
 	var $rId = '', $missrId = '', $comment = '', $summary = '';
 	var $formtype;
-	var $firsttime;
-	var $edittime = '', $starttime = '';
 	var $mTokenOk;
 	var $mTokenOkExceptSuffix;
 
@@ -39,6 +37,11 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 
 		if ( !$this->userCanExecute($wgUser) ) {
 			$this->displayRestrictionError();
+			return;
+		}
+
+		if( $wgUser->isBlocked() ){
+			$wgOut->blockedPage();
 			return;
 		}
 
@@ -57,11 +60,6 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 			return;
 		}
 
-		if( $wgUser->isBlocked() ){
-			$wgOut->blockedPage();
-			return;
-		}
-
 		# Get request data from, e.g.
 		# from EditPage.php
 		$this->importFormData( $wgRequest, $par );
@@ -69,48 +67,18 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		# from EditPage.php
 		if ( $this->error ) {
 			$this->formtype = 'error';
-		} elseif ( $this->save ) {
-			$this->formtype = 'save';
 		} elseif ( $this->preview ) {
 			$this->formtype = 'preview';
 		} elseif ( $this->show ) {
 			$this->formtype = 'show';
+		} elseif ( $this->save ) {
+			$this->formtype = 'save';
 		} else { # First time through
-			$this->firsttime = true;
 			$this->formtype = 'initial';
 		}
 
 		# Do stuff
-
-		# from EditPage.php
-		$form = "<fieldset>\n<legend>" . wfMessage( 'revcs-form-legend' ) . "</legend>\n";
-		$action = $this->getTitle()->getLocalURL( array( 'action' => 'submit' ) );
-		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $action, 'id' => 'supplementcomment' ) ) . "\n";
-
-		$form .= "<div>" . Xml::inputLabel( wfMessage( 'revcs-revision-id' ), 'rID', 'rID', 20, $this->rId,
-			array( 'maxlength' => '14', 'accesskey' => 'r', ) ) . "</div>\n";
-		$form .= "<div>";
-		$form .= Xml::inputLabel( wfMessage( 'revcs-comment' ), 'comment', 'comment', 60, $this->comment,
-			array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 'c', ) );
-		$form .= "</div>\n";
-		$form .= "<div>";
-		$form .= Xml::inputLabel( wfMessage( 'revcs-summary' ), 'wpSummary', 'wpSummary', 60, $this->summary,
-			array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 's', ) );
-		$form .= "</div>\n";
-
-		$form .= "<div>";
-		$form .= Xml::submitButton( wfMessage( 'revcs-submit' ), array( 'id' => 'save', 'name' => 'save', 'accesskey' => 'a', ) );
-		$form .= Xml::submitButton( wfMessage( 'revcs-preview' ), array( 'id' => 'preview', 'name' => 'preview', 'accesskey' => 'p', ) );
-		$form .= Xml::submitButton( wfMessage( 'revcs-show' ), array( 'id' => 'show', 'name' => 'show', 'accesskey' => 'h', ) );
-		$form .= "</div>\n";
-
-		$form .= "<div>";
-		$form .= Xml::input( 'wpEditToken', false, $wgUser->getEditToken(), array( 'type' => 'hidden' ) );
-		$form .= Xml::input( 'wpEdittime', false, $this->edittime, array( 'type' => 'hidden' ) );
-		$form .= Xml::input( 'wpStarttime', false, $this->starttime, array( 'type' => 'hidden' ) );
-		$form .= "</div>\n";
-
-		$form .= Xml::closeElement( 'form' ) . "\n</fieldset>\n";
+		$form = $this->createForm();
 
 		$output = '';
 		if ( $this->formtype == 'preview' ) {
@@ -123,7 +91,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 			$output = $this->showErrorMessage();
 		}
 
-		# 出力
+		# output
 		$wgOut->addModules( 'ext.RevisionCommentSupplement.special' );
 		$wgOut->addHTML( $form );
 		$wgOut->addHTML( $output );
@@ -142,9 +110,14 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		return true;
 	}
 
-	# from EditPage.php
+	# from EditPage::importFormData in EditPage.php
+	/**
+	 * This function collects the form data and uses it to populate various member variables.
+	 * @param $request WebRequest
+	 * @param $par string
+	 */
 	function importFormData( &$request, $par ) {
-		global $wgLang, $wgUser;
+		global $wgLang;
 
 		wfProfileIn( __METHOD__ );
 
@@ -154,23 +127,20 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 			# Truncate for whole multibyte characters.
 			$this->comment = $wgLang->truncate( $request->getText( 'comment' ), 255 );
 			$this->summary = $wgLang->truncate( $request->getText( 'wpSummary' ), 255 );
-			$tempId = $request->getText( 'rID' );
-			if ( is_int( $tempId ) || (int)$tempId > 0 ) {
+			$tempId = $request->getInt( 'rID' );
+			if ( $tempId > 0 ) {
 				$this->rId = $tempId;
 				$this->missrId = '';
 				$this->error = '';
 			} else {
 				$this->rId = '';
-				$this->missrId = $tempId;
+				$this->missrId = $request->getText( 'rID' );
 				$this->error = 'rId';
 			}
 
 			$this->save = $request->getCheck( 'save' );
 			$this->preview = $request->getCheck( 'preview' );
 			$this->show = $request->getCheck( 'show' );
-
-			$this->edittime = $request->getVal( 'wpEdittime' );
-			$this->starttime = $request->getVal( 'wpStarttime' );
 
 			if ( $this->tokenOk( $request ) ) {
 				# Some browsers will not report any submit button
@@ -183,16 +153,17 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 				# an external site. Preview instead of saving.
 				wfDebug( __METHOD__ . ": Failed token check; forcing preview\n" );
 				$this->preview = true;
+				$this->save = false;
 			}
 		} else {
 			# Not a posted form? Start with nothing.
 			wfDebug( __METHOD__ . ": Not a posted form.\n" );
-			$this->starttime    = wfTimestamp( TS_MW );
 			$this->comment      = '';
 			$this->edit         = false;
 			$this->preview      = false;
-			if ( is_int( $par ) || (int)$par > 0) {
-				$this->rId      = $par;
+			$tempId = intval( $par );
+			if ( $tempId > 0 ) {
+				$this->rId      = $tempId;
 			} else {
 				$this->rId      = '';
 			}
@@ -205,78 +176,143 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 	}
 
 	# from EditPage.php
-	protected function getPreview( $rev, $comment = "", $summary = "" ) {
+	function createForm() {
+		global $wgUser;
+		$action = $this->getTitle()->getLocalURL( array( 'action' => 'submit' ) );
+		$form = Xml::openElement( 'form', array( 'method' => 'post', 'action' => $action, 'id' => 'supplementcomment' ) ) . "\n";
+
+		$form .= "<div>" . Xml::inputLabel( $this->msg( 'revcs-form-revision-id' )->text(), 'rID', 'rID', 15, $this->rId,
+			array( 'maxlength' => '10', 'accesskey' => 'r', ) ) . "</div>\n";
+		$form .= "<div>";
+		$form .= Xml::inputLabel( $this->msg( 'revcs-form-comment' )->text(), 'comment', 'comment', 60, $this->comment,
+			array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 'c', ) );
+		$form .= "</div>\n";
+		$form .= "<div>";
+		$form .= Xml::inputLabel( $this->msg( 'revcs-form-summary' )->text(), 'wpSummary', 'wpSummary', 60, $this->summary,
+			array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 's', ) );
+		$form .= "</div>\n";
+
+		$form .= "<div>";
+		$form .= Xml::submitButton( $this->msg( 'revcs-form-submit' )->text(), array( 'id' => 'save', 'name' => 'save', 'accesskey' => 'a', ) );
+		$form .= Xml::submitButton( $this->msg( 'revcs-form-preview' )->text(), array( 'id' => 'preview', 'name' => 'preview', 'accesskey' => 'p', ) );
+		$form .= Xml::submitButton( $this->msg( 'revcs-form-show' )->text(), array( 'id' => 'show', 'name' => 'show', 'accesskey' => 'h', ) );
+		$form .= "</div>\n";
+
+		$form .= "<div>";
+		$form .= Xml::input( 'wpEditToken', false, $wgUser->getEditToken(), array( 'type' => 'hidden' ) );
+		$form .= "</div>\n";
+
+		$form .= Xml::closeElement( 'form' );
+
+		return Xml::fieldset( $this->msg( 'revcs-form-legend' )->text(), $form );
+	}
+
+
+	# from EditPage.php
+	function getPreview( $revID, $comment = "", $summary = "" ) {
 		if ( ( !$this->preview ) ) {
 			return '';
 		}
 
-		$s = "\n" . '<div class="ex-rcs-rev-preview">' . "\n";
+		$s = "\n" . '<div class="revcs-rev-preview">' . "\n";
 
 		if ( $comment == '*' ) {
-			$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-error-invalidcomment' ) ) . "</p>\n";
+			$s .= $this->getAlertMessage( 'error', 'invalidcomment' );
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $rev ), __METHOD__ );
+		$db_row = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $revID ), __METHOD__ );
 		if ( isset($db_row) && isset($db_row->rev_id) ) {
 			if ( $db_row->rev_comment == $comment ) {
-				$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-samecomment' ) ) . "</p>\n";
+				$s .= $this->getAlertMessage( 'warning', 'samecomment' );
 			}
 		} else {
-			$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-norevision' ) ) . "</p>\n";
+			$s .= $this->getAlertMessage( 'warning', 'norevision' );
 		}
 
-		$db_row = $dbr->selectRow('rev_comment_supp', 'rcs_rev_id,rcs_comment', array( 'rcs_rev_id' => $rev ), __METHOD__ );
+		$db_row = $dbr->selectRow('rev_comment_supp', 'rcs_rev_id,rcs_comment', array( 'rcs_rev_id' => $revID ), __METHOD__ );
 		if ( isset($db_row) && isset($db_row->rcs_rev_id) ) {
-			$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-existsupp' ) ) . "</p>\n";
+			$s .= $this->getAlertMessage( 'warning', 'existsupp' );
 			if ( $db_row->rcs_comment == $comment ) {
-				$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-samesuppcomment' ) ) . "</p>\n";
+				$s .= $this->getAlertMessage( 'warning', 'samesuppcomment' );
 			}
 		} elseif ( $comment == '' ) {
-			$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-invalidcomment' ) ) . "</p>\n";
+			$s .= $this->getAlertMessage( 'warning', 'invalidcomment' );
 		}
 
-		$s .= "<ul>\n";
+		$o = '';
 
 		if ( $comment && $comment != '*' ) { # from Linker::commentBlock
-			$s .= "<li>" . wfMessage( 'revcs-comment-preview' ) . Linker::formatComment( $comment ) . "</li>\n";
+			$o .= "<li>" . $this->msg( 'revcs-preview-comment' )->rawParams( Linker::formatComment( $comment ) )->escaped() . "</li>\n";
 		}
-
 		if ( $summary && $summary != '*' ) { # from Linker::commentBlock
-			$s .= "<li>" . wfMessage( 'revcs-summary-preview' ) . Linker::formatComment( $summary ) . "</li>\n";
+			$o .= "<li>" . $this->msg( 'revcs-preview-summary' )->rawParams( Linker::formatComment( $summary ) )->escaped() . "</li>\n";
+		}
+		if ( $revID ) {
+			$o .= "<li>".
+				$this->msg( 'revcs-show-revision' )->rawParams( $this->showRevisionHistoryLine( $revID ) )->escaped()
+				. "</li>\n";
 		}
 
-		if ( $this->rId ) {
-			$s .= "<li>" . wfMessage( 'revcs-revision' ) . $this->showRevisionHistoryLine( $rev ) . "</li>\n";
+		if ( $o != '' ) {
+			$s .= "<ul>\n{$o}</ul>\n";
 		}
 
-		$s .= "</ul>\n</div>";
+		$s .= "</div>";
 
 		return $s;
 	}
 
-	function getRevisionCommentSupplement($rev) {
+	function getRevisionCommentSupplement( $revID ) {
 		list( $success, $rcs_rev_id, $rcs_user, $rcs_user_name, $rcs_timestamp, $rcs_comment )
-			= RevisionCommentSupplement::getKey($rev);
+			= RevisionCommentSupplement::getKey( $revID );
 
-		$s = "\n" . '<div class="ex-rcs-rev-show">';
+		$s = "\n" . '<div class="revcs-rev-show">';
 
 		if ( $success == false ) {
-			$s = "\n<p>" . wfMessage( 'revcs-no-db-row', $rev ) . "</p>";
+			$s = "\n<p>" . $this->msg( 'revcs-show-no-db-row', $revID )->escaped() . "</p>";
 			$s .= "\n<ul>\n";
-			$s .= "<li>" . wfMessage( 'revcs-revision' ) . $this->showRevisionHistoryLine( $rev ) . "</li>\n";
+			$s .= "<li>"
+				. $this->msg( 'revcs-show-revision' )->rawParams( $this->showRevisionHistoryLine( $revID ) )->escaped()
+				. "</li>\n";
 			$s .= "</ul>";
 		} else {
 			$s .= "\n<ul>\n";
-			$s .= "<li>" . wfMessage( 'revcs-revision-id' ) . $rcs_rev_id . "</li>\n";
-			$s .= "<li>" . wfMessage( 'revcs-user' ) . Linker::userLink( $rcs_user, $rcs_user_name )
-				. ' ' . Linker::userToolLinks( $rcs_user, $rcs_user_name )
-				. "(" . wfMessage( 'revcs-user-id' ) . $rcs_user . ")</li>\n";
-			$s .= "<li>" . wfMessage( 'revcs-timestamp' ) . $this->getLanguage()->userTimeAndDate( $rcs_timestamp, $this->getUser() )
-				. " (" . $rcs_timestamp . ")</li>\n";
-			$s .= "<li>" . wfMessage( 'revcs-comment-raw' ) . htmlspecialchars( $rcs_comment ) . "</li>\n";
-			$s .= "<li>" . wfMessage( 'revcs-comment-parse' ) . Linker::formatComment( $rcs_comment ) . "</li>\n";
-			$s .= "<li>" . wfMessage( 'revcs-revision' ) . $this->showRevisionHistoryLine( $rev ) . "</li>\n";
+			$s .= "<li>"
+				. $this->msg( 'revcs-show-revision-id' )
+					->rawParams(
+						$rcs_rev_id,
+						Linker::link(
+							Title::makeTitleSafe( NS_SPECIAL, 'Log' ),
+							$this->msg( 'revcs-show-loglinktext' )->text(),
+							array(),
+							array(
+								'page' => 'Special:RevisionCommentSupplement/' . $rcs_rev_id
+							)
+						)
+					)
+					->escaped()
+				. "</li>\n";
+			$s .= "<li>" . $this->msg( 'revcs-show-timestamp' )
+				->rawParams( $this->getLanguage()->userTimeAndDate( $rcs_timestamp, $this->getUser() ), $rcs_timestamp )
+				. "</li>\n";
+			$s .= "<li>" . $this->msg( 'revcs-show-user' )
+				->rawParams(
+					Linker::userLink( $rcs_user, $rcs_user_name ),
+					Linker::userToolLinks( $rcs_user, $rcs_user_name ),
+					$rcs_user
+				)
+				->escaped()
+				. "</li>\n";
+			$s .= "<li>"
+				. $this->msg( 'revcs-show-comment-raw' )->rawParams( htmlspecialchars( $rcs_comment ) )->escaped()
+				. "</li>\n";
+			$s .= "<li>"
+				. $this->msg( 'revcs-show-comment-parsed' )->rawParams( Linker::formatComment( $rcs_comment ) )->escaped()
+				. "</li>\n";
+			$s .= "<li>"
+				. $this->msg( 'revcs-show-revision' )->rawParams( $this->showRevisionHistoryLine( $revID ) )->escaped()
+				. "</li>\n";
 			$s .= "</ul>";
 		}
 
@@ -285,96 +321,131 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		return $s;
 	}
 
-	function setRevisionCommentSupplement( $rev, $comment, $summary ) {
+	/**
+	 * Save a Supplementary Comment
+	 *
+	 * @param $revID string|int: revision id
+	 * @param $comment string: a new supplenentary comment
+	 * @param $summary string: reason changing the supplemenary comment of the revision, comment in Special:Log
+	 * @return string HTML
+	 */
+	private function setRevisionCommentSupplement( $revID, $comment = "", $summary = "" ) {
 		global $wgUser;
 		$isAllowedRestricted = $wgUser->isAllowed( 'supplementcomment-restricted' );
 		$dbr = wfGetDB( DB_SLAVE );
 		$e = false;
-		$s = '';
+		$exist = false;
+		$s = "\n" . '<div class="revcs-rev-save">' . "\n";
 
 		if ( $comment == '*' ) {
 			$e = true;
-			$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-invalidcomment' ) ) . "</p>\n";
+			$s .= $this->getAlertMessage( 'error', 'invalidcomment' );
 		}
 
-		$db_row = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $rev ), __METHOD__ );
-		if ( $isAllowedRestricted ) {
-			if ( isset($db_row) && isset($db_row->rev_id) ) {
-				if ( $db_row->rev_comment == $comment ) {
-					$e = true;
-					$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-samecomment' ) ) . "</p>\n";
-				}
-			} else {
-				$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-norevision' ) ) . "</p>\n";
-			}
-		} else {
-			if ( isset($db_row) && isset($db_row->rev_id) ) {
-				if ( $db_row->rev_comment == $comment ) {
-					$e = true;
-					$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-samecomment' ) ) . "</p>\n";
-				}
-			} else {
-				$e = true;
-				$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-norevision' ) ) . "</p>\n";
-			}
-		}
-
-		$db_row = $dbr->selectRow('rev_comment_supp', '*', array( 'rcs_rev_id' => $rev ), __METHOD__ );
+		$db_row = $dbr->selectRow('rev_comment_supp', '*', array( 'rcs_rev_id' => $revID ), __METHOD__ );
 		if ( $isAllowedRestricted ) {
 			if ( isset($db_row) && isset($db_row->rcs_rev_id) ) {
-				$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-existsupp' ) ) . "</p>\n";
+				$exist = true;
+				$s .= $this->getAlertMessage( 'warning', 'existsupp' );
 				if ( $db_row->rcs_comment == $comment ) {
 					$e = true;
-					$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-samesuppcomment' ) ) . "</p>\n";
+					$s .= $this->getAlertMessage( 'error', 'samesuppcomment' );
 				}
 			}
 		} else {
 			if ( isset($db_row) && isset($db_row->rcs_rev_id) ) {
-				if ( ( $db_row->rcs_user == $wgUser->getId() ) &&
-					( $db_row->rcs_user_name == $wgUser->getName() ) &&
-					( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $db_row->rcs_timestamp ) <= 3600 )
+				$exist = true;
+				if ( $db_row->rcs_user == $wgUser->getId() &&
+					 $db_row->rcs_user_name == $wgUser->getName() &&
+					 ( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $db_row->rcs_timestamp ) ) <= 3600
 				) {
-					$s .= '<p class="warning">' . wfMessage( 'revcs-warning', wfMessage( 'revcs-alert-existsupp' ) ) . "</p>\n";
+					$s .= $this->getAlertMessage( 'warning', 'existsupp' );
+
 					if ( $db_row->rcs_comment == $comment ) {
 						$e = true;
-						$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-samesuppcomment' ) ) . "</p>\n";
+						$s .= $this->getAlertMessage( 'error', 'samesuppcomment' );
 					}
 				} else {
 					$e = true;
-					$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-existsupp' ) ) . "</p>\n";
+					$s .= $this->getAlertMessage( 'error', 'existsupp' );
 					if ( $db_row->rcs_comment == $comment ) {
-						$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-samesuppcomment' ) ) . "</p>\n";
+						$s .= $this->getAlertMessage( 'error', 'samesuppcomment' );
 					}
 				}
 			} elseif ( $comment == '' ) {
 				$e = true;
-				$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-alert-invalidcomment' ) ) . "</p>\n";
+				$s .= $this->getAlertMessage( 'error', 'invalidcomment' );
+			}
+		}
+
+		$db_row = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $revID ), __METHOD__ );
+		if ( $isAllowedRestricted ) {
+			if ( isset($db_row) && isset($db_row->rev_id) ) {
+				if ( $db_row->rev_comment == $comment ) {
+					if ( $exist ) {
+						$s .= $this->getAlertMessage( 'warning', 'samecomment' );
+					} else {
+						$e = true;
+						$s .= $this->getAlertMessage( 'error', 'samecomment' );
+					}
+				}
+			} else {
+				$s .= $this->getAlertMessage( 'warning', 'norevision' );
+			}
+		} else {
+			if ( isset($db_row) && isset($db_row->rev_id) ) {
+				if ( $db_row->rev_comment == $comment ) {
+					if ( $exist ) {
+						$s .= $this->getAlertMessage( 'warning', 'samecomment' );
+					} else {
+						$e = true;
+						$s .= $this->getAlertMessage( 'error', 'samecomment' );
+					}
+				}
+			} else {
+				$e = true;
+				$s .= $this->getAlertMessage( 'error', 'norevision' );
 			}
 		}
 
 		if ( $e ) {
-			$s .= '<p class="error">' . wfMessage( 'revcs-error', wfMessage( 'revcs-error-denied' ) ) . "</p>\n";
+			$s .= $this->getErrorMessage( 'denied' );
 		} else {
-			RevisionCommentSupplement::insert( $rev, $comment, $summary );
-			$s .= "<p>" . wfMessage( 'revcs-set' ) . "</p>";
+			RevisionCommentSupplement::insert( $revID, $comment, $summary );
+			$s .= "<p>" . $this->msg( 'revcs-set' )->escaped() . "</p>";
 		}
 
-		$s .= $this->getRevisionCommentSupplement( $rev );
+		$s .= "</div>\n";
+		$s .= $this->getRevisionCommentSupplement( $revID );
 		return $s;
+	}
+
+	function getAlertMessage( $alert, $message ) {
+		return Xml::element( 'p', array( 'class' => $alert ),
+				$this->msg( "revcs-{$alert}", $this->msg( "revcs-alert-{$message}" )->text() )->text()
+			)
+			. "\n";
+	}
+
+	function getErrorMessage( $message ) {
+		return Xml::element( 'p', array( 'class' => 'error' ),
+				$this->msg( 'revcs-error', $this->msg( "revcs-error-{$message}" )->text() )->text()
+			)
+			. "\n";
 	}
 
 	function showErrorMessage() {
 		$s = '';
 		if ( $this->error == 'rId' ) {
 			$s = '<p class="error">';
-			$s .= wfMessage( 'revcs-error', wfMessage( 'revcs-alert-revid', htmlspecialchars( $this->missrId ) ) );
+			$s .= $this->msg( 'revcs-error', $this->msg( 'revcs-alert-revid',  $this->missrId )->text() )->escaped();
 			$s .= "</p>\n";
 		}
 
 		return $s;
 	}
 
-	# from EditPage.php
+	# from EditPage::tokenOk in EditPage.php
 	/**
 	 * Make sure the form isn't faking a user's credentials.
 	 *
@@ -390,67 +461,43 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		return $this->mTokenOk;
 	}
 
-# from HistryAction.php class HistoryPager
+	/**
+	 * @param $revID string|int: revision id
+	 * @return string HTML
+	 */
 	function showRevisionHistoryLine( $revID ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$db_row = $dbr->selectRow('revision', '*', array( 'rev_id' => $revID ), __METHOD__ );
 		if ( !isset($db_row) || !isset($db_row->rev_id) ) {
-			return wfMessage( 'revcs-alert-norevision' );
+			return $this->msg( 'revcs-alert-norevision' )->escaped();
 		}
 
 		if ( $db_row->rev_id != $revID ) {
-			return wfMessage( 'revcs-error-unexpected' );
+			return $this->msg( 'revcs-error-unexpected' )->escaped();
 		}
 
+		# from HistoryPager::historyLine in HistryAction.php
 		$rev = new Revision( $db_row );
 
-		return $this->create( $rev );
-	}
-
-	function create( Revision $rev ) {
 		$s = '';
-
 		$link = $this->revLink( $rev );
-
-		$del = '';
-		$user = $this->getUser();
-		// Show checkboxes for each revision
-		if ( $user->isAllowed( 'deleterevision' ) ) {
-
-		// User can only view deleted revisions...
-		} elseif ( $rev->getVisibility() && $user->isAllowed( 'deletedhistory' ) ) {
-			// If revision was hidden from sysops, disable the link
-			if ( !$rev->userCan( Revision::DELETED_RESTRICTED, $user ) ) {
-				$cdel = Linker::revDeleteLinkDisabled( false );
-			// Otherwise, show the link...
-			} else {
-				$query = array( 'type' => 'revision',
-					'target' => $this->getTitle()->getPrefixedDbkey(), 'ids' => $rev->getId() );
-				$del .= Linker::revDeleteLink( $query,
-					$rev->isDeleted( Revision::DELETED_RESTRICTED ), false );
-			}
-		}
-		if ( $del ) {
-			$s .= " $del ";
-		}
-
 		$lang = $this->getLanguage();
 		$dirmark = $lang->getDirMark();
 
-		$s .= " $link";
+		$s .= "$link";
 		$s .= $dirmark;
-		$s .= ' <span class="history-user">' .
-			Linker::revUserTools( $rev, true ) . "</span>";
+		$s .= ' <span class="history-user">' . Linker::revUserTools( $rev, true ) . "</span>";
 		$s .= $dirmark;
 
 		if ( $rev->isMinor() ) {
 			$s .= ' ' . ChangesList::flag( 'minor' );
 		}
 
-		# from SpecialUndelete.php
+		# from SpecialUndelete::formatRevisionRow in SpecialUndelete.php
+		// Revision text size
 		$size = $rev->getSize();
 		if( !is_null( $size ) ) {
-			$s .= Linker::formatRevisionSize( $size );
+			$s .= ' ' . Linker::formatRevisionSize( $size );
 		}
 
 		$s .= Linker::revComment( $rev, false, true );
@@ -458,6 +505,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		return $s;
 	}
 
+	# from HistoryPager::revLink in HistryAction.php
 	/**
 	 * Create a link to view this revision of the page
 	 *

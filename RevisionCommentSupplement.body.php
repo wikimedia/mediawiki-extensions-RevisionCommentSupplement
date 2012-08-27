@@ -32,41 +32,21 @@ class RevisionCommentSupplement {
 
 		if ( isset($db_row) && isset($db_row->rcs_comment) ) {
 			if ( $db_row->rcs_comment != '' ) {
-				$comment = Linker::formatComment( $db_row->rcs_comment );
-				$s .= '<span class="ex-rcs-comment">[' . wfMessage( 'revcs-comment' ) . $comment . ']</span>';
+				$comment = Linker::formatComment( $db_row->rcs_comment/*, $history->getTitle(), false*/ ); # section link
+				$s .= '<span class="revcs-comment">';
+				$s .= $history->msg( 'revcs-history-comment' )->rawParams( $comment )->escaped();
+				$s .= '</span>';
 			}
-
-			if ( $wgUser->isAllowed( 'supplementcomment-restricted' ) ) {
-				$s .= '<span class="ex-rcs-editlink">[' . wfMessage( 'revcs-editlink' , 'Special:RevisionCommentSupplement/' . $revID )->parse() . ']</span>';
-			}
-		} elseif ( $wgUser->isAllowed( 'supplementcomment' ) ) {
-			$s .= '<span class="ex-rcs-editlink">[' . wfMessage( 'revcs-editlink' , 'Special:RevisionCommentSupplement/' . $revID )->parse() . ']</span>';
 		}
 
 		return true;
 	}
 
-	public static function onContributionsLineEnding( $page, &$ret, $rev_row ) {
-		# global $wgUser;
-		$revID = (int)$rev_row->rev_id;
-		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow('rev_comment_supp', 'rcs_comment', array( 'rcs_rev_id' => $revID ), __METHOD__ );
-
-		if ( isset($db_row) && isset($db_row->rcs_comment) ) {
-			if ( $db_row->rcs_comment != '' ) {
-				$comment = Linker::formatComment( $db_row->rcs_comment );
-				$ret .= '<span class="ex-rcs-comment">[' . wfMessage( 'revcs-comment' ) . $comment . ']</span>';
-			}
-
-			/*if ( $wgUser->isAllowed( 'supplementcomment-restricted' ) ) {
-				$ret .= '<span class="ex-rcs-editlink">[' . wfMessage( 'revcs-editlink' , 'Special:RevisionCommentSupplement/' . $revID )->parse() . ']</span>';
-			}*/
-		}/* elseif ( $wgUser->isAllowed( 'supplementcomment' ) ) {
-			$ret .= '<span class="ex-rcs-editlink">[' . wfMessage( 'revcs-editlink' , 'Special:RevisionCommentSupplement/' . $revID )->parse() . ']</span>';
-		}*/
-		return true;
-	}
-
+	/**
+	 * @param $revID string: revision id
+	 * @param $comment2 string
+	 * @param $summary string
+	 */
 	public static function insert( $revID, $comment2, $summary ) {
 		$comment1 = '';
 		$action = 'create';
@@ -84,6 +64,11 @@ class RevisionCommentSupplement {
 		self::insertLog( $revID, $action, $comment1, $comment2, $summary, $timestamp );
 	}
 
+	/**
+	 * @param $revID string: revision id
+	 * @param $comment string
+	 * @param $timestamp string: timestamp
+	 */
 	static function insertKey( $revID, $comment, $timestamp ) {
 		global $wgUser;
 		$row = array(
@@ -97,6 +82,14 @@ class RevisionCommentSupplement {
 		$dbw->replace( 'rev_comment_supp', array( 'rcs_rev_id' ), $row, __METHOD__ );
 	}
 
+	/**
+	 * @param $revID string: revision id
+	 * @param $action string
+	 * @param $comment1 string
+	 * @param $comment2 string
+	 * @param $summary string
+	 * @param $timestamp string: timestamp
+	 */
 	static function insertLog( $revID, $action, $comment1, $comment2, $summary, $timestamp ) {
 		global $wgUser;
 		$logEntry = new ManualLogEntry( 'revisioncommentsupplement', $action );
@@ -114,6 +107,10 @@ class RevisionCommentSupplement {
 		/* $logEntry->publish( $logid ); */
 	}
 
+	/**
+	 * @param $revID : revision id
+	 * @return array
+	 */
 	public static function getKey( $revID ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$db_row = $dbr->selectRow('rev_comment_supp', '*', array( 'rcs_rev_id' => $revID ), __METHOD__ );
@@ -129,10 +126,10 @@ class RevisionCommentSupplement {
 			);
 		}
 
-		return array( false, false, false, false, false, false, );
+		return array( false, false, false, false, false, false );
 	}
 
-	# from Extension:TitleKey, author Biron Vibber
+	# from Extension:TitleKey, author Brion Vibber
 	public static function runUpdates( $updater = null ) {
 		$dir = dirname( __FILE__ );
 
@@ -167,8 +164,8 @@ class RevisionCommentSupplementLogFormatter extends LogFormatter {
 
 		$entry = $this->entry;
 		$params = $this->extractParameters();
-		$params[4] = $this->getSupplementComment( $params[4] );
-		$params[5] = $this->getSupplementComment( $params[5] );
+		$params[4] = Message::rawParam( $this->getSupplementComment( $params[4] ) );
+		$params[5] = Message::rawParam( $this->getSupplementComment( $params[5] ) );
 		$params[0] = Message::rawParam( $this->getPerformerElement() );
 		$params[1] = $entry->getPerformer()->getName();
 		$params[2] = Message::rawParam( $this->makePageLink( $entry->getTarget() ) );
@@ -178,13 +175,23 @@ class RevisionCommentSupplementLogFormatter extends LogFormatter {
 		return $this->parsedParameters = $params;
 	}
 
+	/**
+	 * @params $comment string
+	 * @return string HTML
+	 *
+	 * @private
+	 */
 	function getSupplementComment( $comment ){
 		$s = '';
 		if ( $comment ) {
-			$s = wfMessage( 'revcs-log-commentbrackets-parse', Linker::formatComment( $comment ) );
-			$s .= wfMessage( 'revcs-log-commentbrackets-raw', htmlspecialchars( $comment ) );
+			$parsedcomment = Linker::formatComment( $comment );
+			$rawcomment = htmlspecialchars( $comment );
+			$s = wfMessage( 'revcs-log-comment' )->rawParams( $parsedcomment, $rawcomment )->escaped();
+
+			# Can't use following code, because transculude is parsed.
+			# $s = wfMessage( 'revcs-log-comment' )->rawParams( $parsedcomment )->params( $comment )->escaped();
 		} else {
-			$s = wfMessage( 'revcs-log-nocomment' );
+			$s = wfMessage( 'revcs-log-nocomment' )->escaped();
 		}
 		return $s;
 	}
