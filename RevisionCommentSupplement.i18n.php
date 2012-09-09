@@ -51,6 +51,7 @@ $messages['en'] = array(
 	'right-supplementcomment-restricted' => 'Operate supplementary comments with restricted actions',
 );
 
+/** Message documentation (Message documentation) */
 $messages['qqq'] = array(
 	'action-supplementcomment' => '{{doc-action|supplementcomment}}',
 	'action-supplementcomment-restricted' => '{{doc-action|supplementcomment-restricted}}',
@@ -66,7 +67,7 @@ $messages['qqq'] = array(
 	'revcs-desc' => 'The description of this extension in Special:Version.',
 	'revcs-alert-existsupp' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
 	'revcs-alert-invalidcomment' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
-	'revcs-alert-norevision' => "This message is a error or warning message used in Special:RevisionCommentSupplement.",
+	'revcs-alert-norevision' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.',
 	'revcs-alert-revid' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.',
 	'revcs-alert-samecomment' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
 	'revcs-alert-samesuppcomment' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
@@ -100,6 +101,80 @@ $messages['qqq'] = array(
 	'right-supplementcomment-restricted' => '{{doc-right|supplementcomment-restricted}}',
 );
 
+/** German (Deutsch)
+ * @author Metalhead64
+ */
+$messages['de'] = array(
+	'action-supplementcomment' => 'ergänzende Kommentare durchzuführen.',
+	'action-supplementcomment-restricted' => 'ergänzende Kommentare mit Beschränkungen durchzuführen.',
+	'group-supplement' => 'Kommentarergänzer',
+	'group-supplement-member' => '{{GENDER:$1|Kommentarergänzer|Kommentarergänzerin}}',
+	'grouppage-supplement' => '{{ns:project}}:Kommentarergänzer',
+	'log-name-revisioncommentsupplement' => 'Kommentarergänzungs-Logbuch',
+	'log-description-revisioncommentsupplement' => 'Logbuch von Vorgängen in {{ns:special}}:RevisionCommentSupplement.',
+	'logentry-revisioncommentsupplement-create' => '$1 erstelle den ergänzenden Kommentar „$6“ zu Version $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 löschte den ergänzenden Kommentar „$5“ zu Version $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 änderte den ergänzenden Kommentar „$5“ nach „$6“ zu Version $4',
+	'revisioncommentsupplement' => 'Versionskommentarergänzung',
+	'revcs-desc' => 'Ermöglicht das Anzeigen ergänzender Kommentare in Versionsgeschichten',
+	'revcs-alert-existsupp' => 'Der ergänzende Kommentar der Version ist vorhanden.',
+	'revcs-alert-invalidcomment' => 'Der ergänzende Kommentar ist ungültig.',
+	'revcs-alert-norevision' => 'Die Version existiert nicht in der Versionstabelle.',
+	'revcs-alert-revid' => '„$1“ ist eine falsche Versionskennung.',
+	'revcs-alert-samecomment' => 'Der ergänzende Kommentar ist die gleiche Zeichenfolge wie die Versionszusammenfassung.',
+	'revcs-alert-samesuppcomment' => 'Der ergänzende Kommentar ist die gleiche Zeichenfolge wie der ergänzende Kommentar in der Datenbanktabelle.',
+	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|Ergänzung bearbeiten]]<nowiki>]</nowiki>',
+	'revcs-error' => 'Fehler: $1',
+	'revcs-error-denied' => 'Speichern des ergänzenden Kommentars verweigert.',
+	'revcs-error-unexpected' => 'Ein unerwarteter Fehler ist aufgetreten.',
+	'revcs-form-comment' => 'Ergänzender Kommentar:',
+	'revcs-form-legend' => 'Versionskommentarergänzung',
+	'revcs-form-preview' => 'Vorschau',
+	'revcs-form-revision-id' => 'Versionskennung:',
+	'revcs-form-show' => 'anzeigen',
+	'revcs-form-submit' => 'Speichern',
+	'revcs-form-summary' => 'Zusammenfassung:',
+	'revcs-history-comment' => '[Ergänzender Kommentar: $1]',
+	'revcs-log-nocomment' => '(keine)',
+	'revcs-preview-comment' => 'Vorschau des ergänzenden Kommentars: $1',
+	'revcs-preview-summary' => 'Vorschau der Zusammenfassung: $1',
+	'revcs-set' => 'Der ergänzende Kommentar wurde gespeichert.',
+	'revcs-show-comment-parsed' => 'Geparster Kommentar: $1',
+	'revcs-show-comment-raw' => 'Roher Kommentar: $1',
+	'revcs-show-loglinktext' => 'das Änderungslogbuch an ergänzenden Kommentaren',
+	'revcs-show-no-db-row' => 'Ergänzender Kommentar von Version $1 nicht gefunden.',
+	'revcs-show-revision' => 'Version: $1',
+	'revcs-show-revision-id' => 'Versionskennung: $1 ($2)',
+	'revcs-show-timestamp' => 'Bearbeitungsdatum und -zeit: $1 ($2)',
+	'revcs-show-user' => 'Benutzer: $1 $2 (Benutzerkennung: $3)',
+	'revcs-warning' => 'Warnung: $1',
+	'right-supplementcomment' => 'Ergänzende Kommentare durchführen',
+	'right-supplementcomment-restricted' => 'Ergänzende Kommentare mit Beschränkungen durchführen',
+);
+
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'revcs-alert-invalidcomment' => 'wudospołnjowacy komentar je njepłaćiwy.',
+	'revcs-alert-revid' => '"$1" je wopačny wersijowy ID.',
+	'revcs-error' => 'Zmylk: $1',
+	'revcs-error-unexpected' => 'njewočakowany zmylk wustupił.',
+	'revcs-form-comment' => 'Wudospołnjowacy komentar:',
+	'revcs-form-preview' => 'přehlad',
+	'revcs-form-revision-id' => 'ID wersije:',
+	'revcs-form-show' => 'pokazać',
+	'revcs-form-submit' => 'wotpósłać',
+	'revcs-form-summary' => 'Zjeće:',
+	'revcs-log-nocomment' => '(žadyn)',
+	'revcs-show-revision' => 'Wersija: $1',
+	'revcs-show-revision-id' => 'ID wersije: $1 ($2)',
+	'revcs-show-timestamp' => 'Wobdźěłowanski datum a čas: $1 ($2)',
+	'revcs-show-user' => 'Wužiwar: $1 $2 (ID wužiwarja: $3)',
+	'revcs-warning' => 'Warnowanje: $1',
+);
+
+/** Japanese (日本語) */
 $messages['ja'] = array(
 	'action-supplementcomment' => '補足コメントの操作',
 	'action-supplementcomment-restricted' => '補足コメントの制限された操作の実行',
@@ -147,5 +222,36 @@ $messages['ja'] = array(
 	'revcs-warning' => '警告：$1',
 	'right-supplementcomment' => '補足コメントの操作',
 	'right-supplementcomment-restricted' => '補足コメントの制限された操作の実行',
+);
+
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'revcs-error' => 'Feeler: $1',
+	'revcs-error-unexpected' => 'En onerwaarte Feeler ass geschitt.',
+	'revcs-form-show' => 'weisen',
+	'revcs-form-summary' => 'Resumé:',
+	'revcs-log-nocomment' => '(keen)',
+	'revcs-show-revision' => 'Versioun: $1',
+	'revcs-show-user' => 'Benotzer: $1 $2 (Benotzer ID: $3)',
+	'revcs-warning' => 'Opgepasst: $1',
+);
+
+/** Dutch (Nederlands)
+ * @author SPQRobin
+ */
+$messages['nl'] = array(
+	'revcs-alert-revid' => '"$1" is een verkeerd versienummer.',
+	'revcs-error' => 'Fout: $1',
+	'revcs-form-revision-id' => 'Versienummer',
+	'revcs-form-summary' => 'Samenvatting:',
+	'revcs-log-nocomment' => '(geen)',
+	'revcs-preview-summary' => 'Samenvatting nakijken: $1',
+	'revcs-show-revision' => 'Versie: $1',
+	'revcs-show-revision-id' => 'Versienummer: $1 ($2)',
+	'revcs-show-timestamp' => 'Bezig met bewerken van datum en tijd: $1 ($2)',
+	'revcs-show-user' => 'Gebruiker: $1 $2 (Gebruikersnummer: $3)',
+	'revcs-warning' => 'Waarschuwing: $1',
 );
 
