@@ -51,7 +51,9 @@ $messages['en'] = array(
 	'right-supplementcomment-restricted' => 'Operate supplementary comments with restricted actions',
 );
 
-/** Message documentation (Message documentation) */
+/** Message documentation (Message documentation)
+ * @author Shirayuki
+ */
 $messages['qqq'] = array(
 	'action-supplementcomment' => '{{doc-action|supplementcomment}}',
 	'action-supplementcomment-restricted' => '{{doc-action|supplementcomment-restricted}}',
@@ -60,9 +62,27 @@ $messages['qqq'] = array(
 	'grouppage-supplement' => '{{doc-group|supplement}}',
 	'log-name-revisioncommentsupplement' => 'All logs of Extension:RevisonCommentSupplement in Special:Log.',
 	'log-description-revisioncommentsupplement' => 'The description of all logs of Extension:RevisonCommentSupplement in Special:Log.',
-	'logentry-revisioncommentsupplement-create' => 'A line of log entry in Special:Log. $1 are links of user page and user tool page(s). $2 is user name. $3 is a link of Special:RevisionCommentSupplement/$4. $4 is the revision id. $5 is empty. $6 is the new supplementary comment, revcs-log-comment or revcs-log-nocomment.',
-	'logentry-revisioncommentsupplement-delete' => "A line of log entry in Special:Log. This message hasn't been used. $1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s). $2 is the user name. $3 is a link of Special:RevisionCommentSupplement/$4. $4 is the revision id. $5 is the old supplementary comment, revcs-log-comment or revcs-log-nocomment. $6 is empty.",
-	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in Special:Log. $1 are links of the user page and the user tool(s) page. $2 is the user name. $3 is a link of Special:RevisionCommentSupplement/$4. $4 is the revision id. $5 is the old supplementary comment, revcs-log-comment or revcs-log-nocomment. $6 is the new supplementary comment, revcs-log-comment or revcs-log-nocomment.',
+	'logentry-revisioncommentsupplement-create' => 'A line of log entry in [[Special:Log]].
+*$1 are links of user page and user tool page(s).
+*$2 is user name.
+*$3 is a link of Special:RevisionCommentSupplement/$4.
+*$4 is the revision id.
+*$5 is empty.
+*$6 is the new supplementary comment, {{msg-mw|revcs-log-comment}} or {{msg-mw|revcs-log-nocomment}}.',
+	'logentry-revisioncommentsupplement-delete' => "A line of log entry in Special:Log. This message hasn't been used.
+*$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
+*$2 is the user name.
+*$3 is a link of Special:RevisionCommentSupplement/$4.
+*$4 is the revision id.
+*$5 is the old supplementary comment, {{msg-mw|revcs-log-comment}} or {{msg-mw|revcs-log-nocomment}}.
+*$6 is empty.",
+	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in Special:Log.
+*$1 are links of the user page and the user tool(s) page.
+*$2 is the user name.
+*$3 is a link of Special:RevisionCommentSupplement/$4.
+*$4 is the revision id.
+*$5 is the old supplementary comment, {{msg-mw|revcs-log-comment}} or {{msg-mw|revcs-log-nocomment}}.
+*$6 is the new supplementary comment, {{msg-mw|revcs-log-comment}} or {{msg-mw|revcs-log-nocomment}}.',
 	'revisioncommentsupplement' => 'The name of this extension.',
 	'revcs-desc' => 'The description of this extension in Special:Version.',
 	'revcs-alert-existsupp' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
@@ -90,43 +110,53 @@ $messages['qqq'] = array(
 	'revcs-set' => 'This message is shown when writing a supplementary comment and a log entry is finished at save in Special:RevisionCommentSupplement.',
 	'revcs-show-comment-parsed' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is a parsed supplementary comment.',
 	'revcs-show-comment-raw' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is a raw supplementary comment.',
-	'revcs-show-loglinktext' => 'This message is a link text of $2 of revcs-show-revision-id, and is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.',
+	'revcs-show-loglinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.',
 	'revcs-show-no-db-row' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is revision id.',
 	'revcs-show-revision' => 'This message is used at show the supplementary comment of the revision and preview a supplementary comment and a summary in Special:RevisionCommentSupplement. $1 is a revision line like one in History pages.',
-	'revcs-show-revision-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is revision id. $2 is a link of Special:Log/Special:RevisionCommentSupplement/$1. The link text of $2 is revcs-show-loglinktext.',
-	'revcs-show-timestamp' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 and $2 are date and time when the supplementary comment was last modified. $1 is a date in format setting in Special:Preferences of each user. $2 is a date in database.',
-	'revcs-show-user' => "This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is link of user page (or user contributions page, Special:Contributions when the user doesn't log in). $2 is user tool link(s). $3 is user id. If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[User_talk:Example|Talk]] | [[Special:Contributions/Example|Contributions]]).",
+	'revcs-show-revision-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
+*$1 is revision id.
+*$2 is a link of Special:Log/Special:RevisionCommentSupplement/$1. The link text of $2 is {{msg-mw|revcs-show-loglinktext}}.',
+	'revcs-show-timestamp' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
+$1 and $2 are date and time when the supplementary comment was last modified.
+*$1 is a date in format setting in Special:Preferences of each user.
+*$2 is a date in database.',
+	'revcs-show-user' => "This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
+*$1 is link of user page (or user contributions page, Special:Contributions when the user doesn't log in).
+*$2 is user tool link(s).
+*$3 is user id.
+If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[User_talk:Example|Talk]] | [[Special:Contributions/Example|Contributions]]).",
 	'revcs-warning' => 'This message is used in Special:RevisionCommentSupplement. $1 is a warning message, revcs-alert-*.',
 	'right-supplementcomment' => '{{doc-right|supplementcomment}}',
 	'right-supplementcomment-restricted' => '{{doc-right|supplementcomment-restricted}}',
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Metalhead64
  */
 $messages['de'] = array(
-	'action-supplementcomment' => 'ergänzende Kommentare durchzuführen.',
-	'action-supplementcomment-restricted' => 'ergänzende Kommentare mit Beschränkungen durchzuführen.',
+	'action-supplementcomment' => 'mit ergänzenden Kommentaren zu arbeiten',
+	'action-supplementcomment-restricted' => 'eingeschränkt mit ergänzenden Kommentaren zu arbeiten',
 	'group-supplement' => 'Kommentarergänzer',
 	'group-supplement-member' => '{{GENDER:$1|Kommentarergänzer|Kommentarergänzerin}}',
 	'grouppage-supplement' => '{{ns:project}}:Kommentarergänzer',
 	'log-name-revisioncommentsupplement' => 'Kommentarergänzungs-Logbuch',
-	'log-description-revisioncommentsupplement' => 'Logbuch von Vorgängen in {{ns:special}}:RevisionCommentSupplement.',
+	'log-description-revisioncommentsupplement' => 'Logbuch der Aktionen in {{ns:special}}:Versionskommentarergänzung.',
 	'logentry-revisioncommentsupplement-create' => '$1 erstelle den ergänzenden Kommentar „$6“ zu Version $4',
 	'logentry-revisioncommentsupplement-delete' => '$1 löschte den ergänzenden Kommentar „$5“ zu Version $4',
-	'logentry-revisioncommentsupplement-modify' => '$1 änderte den ergänzenden Kommentar „$5“ nach „$6“ zu Version $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 änderte den ergänzenden Kommentar „$5“ in „$6“ zu Version $4',
 	'revisioncommentsupplement' => 'Versionskommentarergänzung',
 	'revcs-desc' => 'Ermöglicht das Anzeigen ergänzender Kommentare in Versionsgeschichten',
 	'revcs-alert-existsupp' => 'Der ergänzende Kommentar der Version ist vorhanden.',
 	'revcs-alert-invalidcomment' => 'Der ergänzende Kommentar ist ungültig.',
-	'revcs-alert-norevision' => 'Die Version existiert nicht in der Versionstabelle.',
+	'revcs-alert-norevision' => 'Die Version ist nicht in der Versionstabelle vorhanden.',
 	'revcs-alert-revid' => '„$1“ ist eine falsche Versionskennung.',
-	'revcs-alert-samecomment' => 'Der ergänzende Kommentar ist die gleiche Zeichenfolge wie die Versionszusammenfassung.',
-	'revcs-alert-samesuppcomment' => 'Der ergänzende Kommentar ist die gleiche Zeichenfolge wie der ergänzende Kommentar in der Datenbanktabelle.',
-	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|Ergänzung bearbeiten]]<nowiki>]</nowiki>',
+	'revcs-alert-samecomment' => 'Der ergänzende Kommentar entspricht der gleichen Zeichenfolge wie die der Versionszusammenfassung.',
+	'revcs-alert-samesuppcomment' => 'Der ergänzende Kommentar entspricht der gleichen Zeichenfolge wie die des ergänzenden Kommentars in der Datenbanktabelle.',
+	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|Bearbeitung ergänzen]]<nowiki>]</nowiki>',
 	'revcs-error' => 'Fehler: $1',
-	'revcs-error-denied' => 'Speichern des ergänzenden Kommentars verweigert.',
-	'revcs-error-unexpected' => 'Ein unerwarteter Fehler ist aufgetreten.',
+	'revcs-error-denied' => 'Das Speichern des ergänzenden Kommentars wurde verweigert.',
+	'revcs-error-unexpected' => 'Es ist ein unerwarteter Fehler aufgetreten.',
 	'revcs-form-comment' => 'Ergänzender Kommentar:',
 	'revcs-form-legend' => 'Versionskommentarergänzung',
 	'revcs-form-preview' => 'Vorschau',
@@ -141,24 +171,29 @@ $messages['de'] = array(
 	'revcs-set' => 'Der ergänzende Kommentar wurde gespeichert.',
 	'revcs-show-comment-parsed' => 'Geparster Kommentar: $1',
 	'revcs-show-comment-raw' => 'Roher Kommentar: $1',
-	'revcs-show-loglinktext' => 'das Änderungslogbuch an ergänzenden Kommentaren',
-	'revcs-show-no-db-row' => 'Ergänzender Kommentar von Version $1 nicht gefunden.',
+	'revcs-show-loglinktext' => 'das Änderungslogbuch der ergänzenden Kommentare',
+	'revcs-show-no-db-row' => 'Der ergänzende Kommentar zu Version $1 wurde nicht gefunden.',
 	'revcs-show-revision' => 'Version: $1',
 	'revcs-show-revision-id' => 'Versionskennung: $1 ($2)',
 	'revcs-show-timestamp' => 'Bearbeitungsdatum und -zeit: $1 ($2)',
 	'revcs-show-user' => 'Benutzer: $1 $2 (Benutzerkennung: $3)',
 	'revcs-warning' => 'Warnung: $1',
-	'right-supplementcomment' => 'Ergänzende Kommentare durchführen',
-	'right-supplementcomment-restricted' => 'Ergänzende Kommentare mit Beschränkungen durchführen',
+	'right-supplementcomment' => 'Mit ergänzenden Kommentaren arbeiten',
+	'right-supplementcomment-restricted' => 'Eingeschränkt mit ergänzenden Kommentaren arbeiten',
 );
 
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
+	'log-name-revisioncommentsupplement' => 'Protokol wudospołnjowacych komentarow',
+	'logentry-revisioncommentsupplement-create' => '$1 wutwori wudospołnjowacy komentar, $6 wersije $4',
+	'revcs-alert-existsupp' => 'wudospołnjowacy komentar wersije eksistuje.',
 	'revcs-alert-invalidcomment' => 'wudospołnjowacy komentar je njepłaćiwy.',
+	'revcs-alert-norevision' => 'wersija we wersijowej tabeli njeeksistuje.',
 	'revcs-alert-revid' => '"$1" je wopačny wersijowy ID.',
 	'revcs-error' => 'Zmylk: $1',
+	'revcs-error-denied' => 'składowanje wudospołnjowaceho komentara je so wotpokazało.',
 	'revcs-error-unexpected' => 'njewočakowany zmylk wustupił.',
 	'revcs-form-comment' => 'Wudospołnjowacy komentar:',
 	'revcs-form-preview' => 'přehlad',
@@ -167,6 +202,9 @@ $messages['hsb'] = array(
 	'revcs-form-submit' => 'wotpósłać',
 	'revcs-form-summary' => 'Zjeće:',
 	'revcs-log-nocomment' => '(žadyn)',
+	'revcs-preview-summary' => 'Přehlad zjeća: $1',
+	'revcs-show-comment-parsed' => 'Parsowany komentar: $1',
+	'revcs-show-comment-raw' => 'Hruby komentar: $1',
 	'revcs-show-revision' => 'Wersija: $1',
 	'revcs-show-revision-id' => 'ID wersije: $1 ($2)',
 	'revcs-show-timestamp' => 'Wobdźěłowanski datum a čas: $1 ($2)',
@@ -174,54 +212,67 @@ $messages['hsb'] = array(
 	'revcs-warning' => 'Warnowanje: $1',
 );
 
-/** Japanese (日本語) */
+/** Italian (italiano)
+ * @author Darth Kule
+ */
+$messages['it'] = array(
+	'revcs-error' => 'Errore: $1',
+	'revcs-form-preview' => 'anteprima',
+	'revcs-form-show' => 'mostra',
+	'revcs-form-submit' => 'invia',
+	'revcs-warning' => 'Attenzione: $1',
+);
+
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
 $messages['ja'] = array(
 	'action-supplementcomment' => '補足コメントの操作',
-	'action-supplementcomment-restricted' => '補足コメントの制限された操作の実行',
-	'group-supplement' => 'SupplementComment',
-	'group-supplement-member' => '{{GENDER:$1|SupplementComment}}',
-	'grouppage-supplement' => '{{ns:project}}:SupplementComment',
+	'action-supplementcomment-restricted' => '補足コメントへの制限された操作の実行',
+	'group-supplement' => '補足コメント係',
+	'group-supplement-member' => '{{GENDER:$1|補足コメント係}}',
+	'grouppage-supplement' => '{{ns:project}}:補足コメント係',
 	'log-name-revisioncommentsupplement' => '版補足コメント記録',
-	'log-description-revisioncommentsupplement' => '{{ns:special}}:RevisionCommentSupplementでの操作の記録です。',
-	'logentry-revisioncommentsupplement-create' => '$1 が第$4版の補足コメント$6を作成しました',
-	'logentry-revisioncommentsupplement-delete' => '$1 が第$4版の補足コメント$5を削除しました',
-	'logentry-revisioncommentsupplement-modify' => '$1 が第$4版の補足コメント$5を$6に変更しました',
-	'revisioncommentsupplement' => 'Revision Comment Supplement',
-	'revcs-desc' => '履歴ページのそれぞれのリビジョンごとに補足のコメントを表示できるようにする',
-	'revcs-alert-existsupp' => '指定した版に対する補足コメントが存在しています。',
-	'revcs-alert-invalidcomment' => '追加しようとしている補足コメントが不正です。',
-	'revcs-alert-norevision' => '指定した版がrevision tableにありません。',
-	'revcs-alert-revid' => '「$1」は間違った版IDです。',
-	'revcs-alert-samecomment' => '追加しようとしている補足コメントと指定した版の要約が同じです。',
-	'revcs-alert-samesuppcomment' => '追加しようとしている補足コメントとデータベースにある補足コメントが同じです。',
+	'log-description-revisioncommentsupplement' => '{{ns:special}}:RevisionCommentSupplement での操作の記録です。',
+	'logentry-revisioncommentsupplement-create' => '$1 が版 $4 の補足コメント $6 を作成しました',
+	'logentry-revisioncommentsupplement-delete' => '$1 が版 $4 の補足コメント $5 を削除しました',
+	'logentry-revisioncommentsupplement-modify' => '$1 が版 $4 の補足コメント $5 を $6 に変更しました',
+	'revisioncommentsupplement' => '版への補足コメント',
+	'revcs-desc' => '履歴ページで、それぞれの版に補足コメントを表示できるようにする',
+	'revcs-alert-existsupp' => '指定した版への補足コメントが存在します。',
+	'revcs-alert-invalidcomment' => '補足コメントが無効です。',
+	'revcs-alert-norevision' => '指定した版は、版テーブル内にありません。',
+	'revcs-alert-revid' => '「$1」は間違った版 ID です。',
+	'revcs-alert-samecomment' => '保存しようとした補足コメントは、指定した版の要約と同じ内容です。',
+	'revcs-alert-samesuppcomment' => '保存しようとした補足コメントは、データベース内の補足コメントと同じ内容です。',
 	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|補足の編集]]<nowiki>]</nowiki>',
-	'revcs-error' => 'エラー：$1',
+	'revcs-error' => 'エラー: $1',
 	'revcs-error-denied' => '補足コメントの保存を拒否しました。',
 	'revcs-error-unexpected' => '予期しないエラーが発生しました。',
-	'revcs-form-comment' => '補足：',
-	'revcs-form-legend' => 'Revision Comment Supplement',
+	'revcs-form-comment' => '補足コメント:',
+	'revcs-form-legend' => '版への補足コメント',
 	'revcs-form-preview' => 'プレビュー',
-	'revcs-form-revision-id' => '版ID：',
+	'revcs-form-revision-id' => '版 ID:',
 	'revcs-form-show' => '表示',
 	'revcs-form-submit' => '保存',
-	'revcs-form-summary' => '要約：',
-	'revcs-history-comment' => '[補足：$1]',
-	'revcs-log-comment' => '「$1」($2)',
-	'revcs-log-nocomment' => '（なし）',
-	'revcs-preview-comment' => '補足のプレビュー：$1',
-	'revcs-preview-summary' => '要約のプレビュー：$1',
-	'revcs-set' => '補足を書き込みました。',
-	'revcs-show-comment-parsed' => '整形済み補足コメント：$1',
-	'revcs-show-comment-raw' => '生の補足コメント：$1',
+	'revcs-form-summary' => '要約:',
+	'revcs-history-comment' => '[補足コメント: $1]',
+	'revcs-log-comment' => '$1 ($2)',
+	'revcs-log-nocomment' => '(なし)',
+	'revcs-preview-comment' => '補足コメントのプレビュー: $1',
+	'revcs-preview-summary' => '要約のプレビュー: $1',
+	'revcs-set' => '補足コメントを設定しました。',
+	'revcs-show-comment-parsed' => '整形済み補足コメント: $1',
+	'revcs-show-comment-raw' => '生の補足コメント: $1',
 	'revcs-show-loglinktext' => '補足コメント変更記録',
-	'revcs-show-no-db-row' => '第$1版に対する補足がありません。',
-	'revcs-show-revision' => '版：$1',
-	'revcs-show-revision-id' => '版ID：$1（$2）',
-	'revcs-show-timestamp' => '編集日時：$1 ($2)',
-	'revcs-show-user' => '利用者：$1 $2 (利用者ID：$3)',
-	'revcs-warning' => '警告：$1',
-	'right-supplementcomment' => '補足コメントの操作',
-	'right-supplementcomment-restricted' => '補足コメントの制限された操作の実行',
+	'revcs-show-no-db-row' => '版 $1 への補足コメントはありません。',
+	'revcs-show-revision' => '版: $1',
+	'revcs-show-revision-id' => '版 ID: $1 ($2)',
+	'revcs-show-timestamp' => '編集日時: $1 ($2)',
+	'revcs-show-user' => '利用者: $1 $2 (利用者 ID: $3)',
+	'revcs-warning' => '警告: $1',
+	'right-supplementcomment' => '補足コメントを操作',
+	'right-supplementcomment-restricted' => '補足コメントへの制限された操作を実行',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -236,6 +287,57 @@ $messages['lb'] = array(
 	'revcs-show-revision' => 'Versioun: $1',
 	'revcs-show-user' => 'Benotzer: $1 $2 (Benotzer ID: $3)',
 	'revcs-warning' => 'Opgepasst: $1',
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'action-supplementcomment' => 'работење со додатни коментари',
+	'action-supplementcomment-restricted' => 'работење со додатни коментари со ограничени дејства',
+	'group-supplement' => 'ДодадниКоментари',
+	'group-supplement-member' => '{{GENDER:$1|ДодатниКоментари}}',
+	'grouppage-supplement' => '{{ns:project}}:ДодатниКоментари',
+	'log-name-revisioncommentsupplement' => 'Дневник на додатни коментари',
+	'log-description-revisioncommentsupplement' => 'Дневник на работи со {{ns:special}}:ДодатниКоментариНаРевизии.',
+	'logentry-revisioncommentsupplement-create' => '$1 стави додатен коментар, $6 на ревизијата $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 избриша додатен коментар, $5 на ревизијата $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 измени додатен коментар од $5 на $6 од ревизијата $4',
+	'revisioncommentsupplement' => 'Додатни коментари за ревизии',
+	'revcs-desc' => 'Овозможува приказ на додатни коментари во секој ред од ревизиите во историте на страниците.',
+	'revcs-alert-existsupp' => 'додатниот коментар на ревизијата постои.',
+	'revcs-alert-invalidcomment' => 'додатниот коментар е неважечки.',
+	'revcs-alert-norevision' => 'ревизијата не фигурира во табелата на ревизии.',
+	'revcs-alert-revid' => 'Назнаката „$1“ е погрешна.',
+	'revcs-alert-samecomment' => 'додатниот коментар е истата низа како описот на ревизијата.',
+	'revcs-alert-samesuppcomment' => 'додатниот коментар е истата низа како додатниот коментар во табелата од базата на податоци.',
+	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|Додатно уредување]]<nowiki>]</nowiki>',
+	'revcs-error' => 'Грешка: $1',
+	'revcs-error-denied' => 'одбиено зачувувањето на додатниот коментар.',
+	'revcs-error-unexpected' => 'се појави неочекувана грешка.',
+	'revcs-form-comment' => 'Додатен коментар:',
+	'revcs-form-legend' => 'Додатен коментар за ревизијата',
+	'revcs-form-preview' => 'преглед',
+	'revcs-form-revision-id' => 'Назнака на ревизијата:',
+	'revcs-form-show' => 'прикажи',
+	'revcs-form-submit' => 'поднеси',
+	'revcs-form-summary' => 'Опис:',
+	'revcs-history-comment' => '[Додатен коментар: $1]',
+	'revcs-log-nocomment' => '(нема)',
+	'revcs-preview-comment' => 'Преглед на додатниот коментар: $1',
+	'revcs-preview-summary' => 'Преглед на описот: $1',
+	'revcs-set' => 'Додатниот коментар е зададен.',
+	'revcs-show-comment-parsed' => 'Парсиран коментар: $1',
+	'revcs-show-comment-raw' => 'Сиров коментар: $1',
+	'revcs-show-loglinktext' => 'дневникот на измени во додатните коментари',
+	'revcs-show-no-db-row' => 'Не го пронајдов додатниот коментар на ревизијата $1.',
+	'revcs-show-revision' => 'Ревизија: $1',
+	'revcs-show-revision-id' => 'Назнака на ревизијата: $1 ($2)',
+	'revcs-show-timestamp' => 'Датум и време на уредување: $1 ($2)',
+	'revcs-show-user' => 'Корисник: $1 $2 (корисничка назнака: $3)',
+	'revcs-warning' => 'Предупредување: $1',
+	'right-supplementcomment' => 'Работење со додатни коментари',
+	'right-supplementcomment-restricted' => 'Работење со додатни коментари со ограничени дејства',
 );
 
 /** Dutch (Nederlands)
@@ -253,5 +355,12 @@ $messages['nl'] = array(
 	'revcs-show-timestamp' => 'Bezig met bewerken van datum en tijd: $1 ($2)',
 	'revcs-show-user' => 'Gebruiker: $1 $2 (Gebruikersnummer: $3)',
 	'revcs-warning' => 'Waarschuwing: $1',
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas Blade
+ */
+$messages['pt-br'] = array(
+	'revcs-form-submit' => 'enviar',
 );
 
