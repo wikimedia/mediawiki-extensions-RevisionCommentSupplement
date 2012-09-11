@@ -364,3 +364,14 @@ $messages['pt-br'] = array(
 	'revcs-form-submit' => 'enviar',
 );
 
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'revcs-form-show' => 'చూపించు',
+	'revcs-form-summary' => 'సారాంశం:',
+	'revcs-log-nocomment' => '(ఏమీలేదు)',
+	'revcs-show-comment-raw' => 'ముడి వ్యాఖ్య: $1',
+	'revcs-warning' => 'హెచ్చరిక: $1',
+);
+
