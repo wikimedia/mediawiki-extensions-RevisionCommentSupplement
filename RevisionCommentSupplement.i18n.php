@@ -182,12 +182,65 @@ $messages['de'] = array(
 	'right-supplementcomment-restricted' => 'Eingeschränkt mit ergänzenden Kommentaren arbeiten',
 );
 
+/** Spanish (español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'action-supplementcomment' => 'Utilizar comentarios adicionales',
+	'action-supplementcomment-restricted' => 'Utilizar comentarios adicionales con acciones restringidas',
+	'group-supplement' => 'SupplementComment',
+	'group-supplement-member' => '{{GENDER:$1|SupplementComment}}',
+	'grouppage-supplement' => '{{ns:project}}:SupplementComment',
+	'log-name-revisioncommentsupplement' => 'Registro de comentarios adicionales',
+	'log-description-revisioncommentsupplement' => 'Registro de operaciones en {{ns:special}}:RevisionCommentSupplement.',
+	'logentry-revisioncommentsupplement-create' => '$1 ha creado un comentario adicional, $6 de la revisión $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 ha eliminado un comentario adicional, $5 de la revisión $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 ha modificado un comentario adicional del $5 al $6  de la revisión $4',
+	'revisioncommentsupplement' => 'Revisión de comentario adicional',
+	'revcs-desc' => 'Permite mostrar un comentario adicional en cada línea de revisión en las páginas de Historia.',
+	'revcs-alert-existsupp' => 'existe el comentario adicional de la revisión.',
+	'revcs-alert-invalidcomment' => 'el comentario adicional no es válido.',
+	'revcs-alert-norevision' => 'no existe la revisión en la tabla de revisión.',
+	'revcs-alert-revid' => '"$1" es la revisión errónea ID.',
+	'revcs-alert-samecomment' => 'el comentario adicional es el mismo texto que el resumen de la revisión.',
+	'revcs-alert-samesuppcomment' => 'el comentario adicional es el mismo texto que el comentario adicional de la tabla de la base de datos.',
+	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|Edición adicional]]<nowiki>]</nowiki>',
+	'revcs-error' => 'Error: $1',
+	'revcs-error-denied' => 'no se permite guardar el comentario adicional.',
+	'revcs-error-unexpected' => 'ha ocurrido un error inesperado.',
+	'revcs-form-comment' => 'Comentario adicional:',
+	'revcs-form-legend' => 'Revisión de comentario adicional',
+	'revcs-form-preview' => 'vista previa',
+	'revcs-form-revision-id' => 'Identificador ID de la revisión:',
+	'revcs-form-show' => 'mostrar',
+	'revcs-form-submit' => 'enviar',
+	'revcs-form-summary' => 'Resumen:',
+	'revcs-history-comment' => '[Comentario adicional: $1]',
+	'revcs-log-nocomment' => '(ninguno)',
+	'revcs-preview-comment' => 'Vista previa de comentario adicional: $1',
+	'revcs-preview-summary' => 'Vista previa de resumen: $1',
+	'revcs-set' => 'Se ha puesto el comentario adicional.',
+	'revcs-show-comment-parsed' => 'Comentario analizado: $1',
+	'revcs-show-comment-raw' => 'Comentario en bruto: $1',
+	'revcs-show-loglinktext' => 'el registro de cambios de comentarios adicionales',
+	'revcs-show-no-db-row' => 'No se ha encontrado el comentario adicional de la revisión $1.',
+	'revcs-show-revision' => 'Revisión: $1',
+	'revcs-show-revision-id' => 'ID de la revisión:  $1  ($2)',
+	'revcs-show-timestamp' => 'Editar fecha y hora: $1 ($2)',
+	'revcs-show-user' => 'Usuario: $1 $2 (Identificador ID del usuario: $3)',
+	'revcs-warning' => 'Advertencia: $1',
+	'right-supplementcomment' => 'Utilizar comentarios adicionales',
+	'right-supplementcomment-restricted' => 'Utilizar comentarios adicionales con acciones restringidas',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
 	'log-name-revisioncommentsupplement' => 'Protokol wudospołnjowacych komentarow',
 	'logentry-revisioncommentsupplement-create' => '$1 wutwori wudospołnjowacy komentar, $6 wersije $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 zhaša wudospołnjowacy komentar, $5 wersije $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 změni wudospołnjowacy komentar wot $5 do $6 wersije $4',
 	'revcs-alert-existsupp' => 'wudospołnjowacy komentar wersije eksistuje.',
 	'revcs-alert-invalidcomment' => 'wudospołnjowacy komentar je njepłaćiwy.',
 	'revcs-alert-norevision' => 'wersija we wersijowej tabeli njeeksistuje.',
@@ -201,10 +254,15 @@ $messages['hsb'] = array(
 	'revcs-form-show' => 'pokazać',
 	'revcs-form-submit' => 'wotpósłać',
 	'revcs-form-summary' => 'Zjeće:',
+	'revcs-history-comment' => '[Wudospołnjowacy komentar: $1]',
 	'revcs-log-nocomment' => '(žadyn)',
+	'revcs-preview-comment' => 'Přehlad wudospołnjowaceho komentara: $1',
 	'revcs-preview-summary' => 'Přehlad zjeća: $1',
+	'revcs-set' => 'Wudospołnjowacy komentar je so składował.',
 	'revcs-show-comment-parsed' => 'Parsowany komentar: $1',
 	'revcs-show-comment-raw' => 'Hruby komentar: $1',
+	'revcs-show-loglinktext' => 'Protokol změnow wudospołnjowaceho komentara',
+	'revcs-show-no-db-row' => 'Wudospołnjowacy komentar wersije $1 njeje so namakał.',
 	'revcs-show-revision' => 'Wersija: $1',
 	'revcs-show-revision-id' => 'ID wersije: $1 ($2)',
 	'revcs-show-timestamp' => 'Wobdźěłowanski datum a čas: $1 ($2)',
@@ -355,6 +413,16 @@ $messages['nl'] = array(
 	'revcs-show-timestamp' => 'Bezig met bewerken van datum en tijd: $1 ($2)',
 	'revcs-show-user' => 'Gebruiker: $1 $2 (Gebruikersnummer: $3)',
 	'revcs-warning' => 'Waarschuwing: $1',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'revcs-form-show' => 'ښکاره کول',
+	'revcs-form-submit' => 'سپارل',
+	'revcs-form-summary' => 'لنډيز:',
+	'revcs-log-nocomment' => '(هېڅ)',
 );
 
 /** Brazilian Portuguese (português do Brasil)
