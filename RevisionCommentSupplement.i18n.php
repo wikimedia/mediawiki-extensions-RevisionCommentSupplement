@@ -233,6 +233,57 @@ $messages['es'] = array(
 	'right-supplementcomment-restricted' => 'Utilizar comentarios adicionales con acciones restringidas',
 );
 
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'action-supplementcomment' => 'administrar os comentarios suplementarios',
+	'action-supplementcomment-restricted' => 'administrar os comentarios suplementarios con accións restrinxidas',
+	'group-supplement' => 'Comentarios suplementarios',
+	'group-supplement-member' => '{{GENDER:$1|comentarios suplementarios}}',
+	'grouppage-supplement' => '{{ns:project}}:Comentarios suplementarios',
+	'log-name-revisioncommentsupplement' => 'Rexistro de comentarios suplementarios',
+	'log-description-revisioncommentsupplement' => 'Rexistro de operacións en {{ns:special}}:RevisionCommentSupplement.',
+	'logentry-revisioncommentsupplement-create' => '$1 creou un comentario suplementario, $6 da revisión $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 borrou un comentario suplementario, $5 da revisión $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 modificou un comentario suplementario de $5 a $6 da revisión $4',
+	'revisioncommentsupplement' => 'Revisión dos comentarios suplementarios',
+	'revcs-desc' => 'Permite mostrar comentarios suplementarios en cada liña de revisión nas páxinas de historial.',
+	'revcs-alert-existsupp' => 'existe o comentario suplementario da revisión.',
+	'revcs-alert-invalidcomment' => 'o comentario suplementario é inválido.',
+	'revcs-alert-norevision' => 'non existe a revisión na táboa de revisións.',
+	'revcs-alert-revid' => '"$1" é un identificador de revisión erróneo.',
+	'revcs-alert-samecomment' => 'o comentario suplementario é o mesmo texto có resumo de edición.',
+	'revcs-alert-samesuppcomment' => 'o comentario suplementario é o mesmo texto có comentario suplementario da táboa da base de datos.',
+	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|Edición suplementaria]]<nowiki>]</nowiki>',
+	'revcs-error' => 'Erro: $1',
+	'revcs-error-denied' => 'rexeitouse o gardado do comentario suplementario.',
+	'revcs-error-unexpected' => 'ocorreu un erro inesperado.',
+	'revcs-form-comment' => 'Comentario suplementario:',
+	'revcs-form-legend' => 'Revisión dos comentarios suplementarios',
+	'revcs-form-preview' => 'vista previa',
+	'revcs-form-revision-id' => 'ID da revisión:',
+	'revcs-form-show' => 'mostrar',
+	'revcs-form-submit' => 'enviar',
+	'revcs-form-summary' => 'Resumo:',
+	'revcs-history-comment' => '[Comentario suplementario: $1]',
+	'revcs-log-nocomment' => '(ningún)',
+	'revcs-preview-comment' => 'Vista previa do comentario suplementario: $1',
+	'revcs-preview-summary' => 'Vista previa do resumo: $1',
+	'revcs-set' => 'Definiuse o comentario suplementario.',
+	'revcs-show-comment-parsed' => 'Comentario analizado: $1',
+	'revcs-show-comment-raw' => 'Comentario en bruto: $1',
+	'revcs-show-loglinktext' => 'o rexistro de cambios nos comentarios suplementarios',
+	'revcs-show-no-db-row' => 'Non se atopou o comentario suplementario da revisión $1.',
+	'revcs-show-revision' => 'Revisión: $1',
+	'revcs-show-revision-id' => 'ID da revisión: $1 ($2)',
+	'revcs-show-timestamp' => 'Data e hora de edición: $1 ($2)',
+	'revcs-show-user' => 'Usuario: $1 $2 (ID do usuario: $3)',
+	'revcs-warning' => 'Atención: $1',
+	'right-supplementcomment' => 'Administrar os comentarios suplementarios',
+	'right-supplementcomment-restricted' => 'Administrar os comentarios suplementarios con accións restrinxidas',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
