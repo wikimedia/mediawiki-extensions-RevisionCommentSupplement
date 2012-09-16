@@ -125,7 +125,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 
 		if ( $request->wasPosted() ) {
 			# Truncate for whole multibyte characters.
-			$this->comment = $wgLang->truncate( $request->getText( 'comment' ), 255 );
+			$this->comment = $wgLang->truncate( $request->getText( 'supplement' ), 255 );
 			$this->summary = $wgLang->truncate( $request->getText( 'wpSummary' ), 255 );
 			$tempId = $request->getInt( 'rID' );
 			if ( $tempId > 0 ) {
@@ -184,7 +184,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		$form .= "<div>" . Xml::inputLabel( $this->msg( 'revcs-form-revision-id' )->text(), 'rID', 'rID', 15, $this->rId,
 			array( 'maxlength' => '10', 'accesskey' => 'r', ) ) . "</div>\n";
 		$form .= "<div>";
-		$form .= Xml::inputLabel( $this->msg( 'revcs-form-comment' )->text(), 'comment', 'comment', 60, $this->comment,
+		$form .= Xml::inputLabel( $this->msg( 'revcs-form-supplement' )->text(), 'supplement', 'supplement', 60, $this->comment,
 			array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 'c', ) );
 		$form .= "</div>\n";
 		$form .= "<div>";
@@ -214,36 +214,50 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 			return '';
 		}
 
+		$empty = false;
 		$s = "\n" . '<div class="revcs-rev-preview">' . "\n";
 
 		if ( $comment == '*' ) {
-			$s .= $this->getAlertMessage( 'error', 'invalidcomment' );
+			$s .= $this->getAlertMessage( 'warning', 'supplement-asterisk' );
+		} elseif ( $comment == '' ) {
+			$empty = true;
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $revID ), __METHOD__ );
-		if ( isset($db_row) && isset($db_row->rev_id) ) {
-			if ( $db_row->rev_comment == $comment ) {
-				$s .= $this->getAlertMessage( 'warning', 'samecomment' );
+		$revRow = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $revID ), __METHOD__ );
+		if ( isset($revRow) && isset($revRow->rev_id) ) {
+			if ( $revRow->rev_comment == $comment ) {
+				if ( !$empty ) {
+					$s .= $this->getAlertMessage( 'warning', 'supplement-same-as-summary' );
+				}
 			}
 		} else {
 			$s .= $this->getAlertMessage( 'warning', 'norevision' );
 		}
 
-		$db_row = $dbr->selectRow('rev_comment_supp', 'rcs_rev_id,rcs_comment', array( 'rcs_rev_id' => $revID ), __METHOD__ );
-		if ( isset($db_row) && isset($db_row->rcs_rev_id) ) {
-			$s .= $this->getAlertMessage( 'warning', 'existsupp' );
-			if ( $db_row->rcs_comment == $comment ) {
-				$s .= $this->getAlertMessage( 'warning', 'samesuppcomment' );
+		$suppRow = $dbr->selectRow('rev_comment_supp', '*', array( 'rcs_rev_id' => $revID ), __METHOD__ );
+		if ( isset($suppRow) && isset($suppRow->rcs_rev_id) ) {
+			$s .= $this->getAlertMessage( 'warning', 'exist-supplement' );
+
+			if ( $suppRow->rcs_comment == $comment ) {
+				$s .= $this->getAlertMessage( 'warning', 'supplement-same-as-supplement' );
 			}
-		} elseif ( $comment == '' ) {
-			$s .= $this->getAlertMessage( 'warning', 'invalidcomment' );
+
+			if ( $empty ) {
+				$s .= $this->getAlertMessage( 'warning', 'supplement-empty' );
+			}
+		} else {
+			if ( $empty ) {
+				$s .= $this->getAlertMessage( 'warning', 'supplement-empty' );
+			}
 		}
 
 		$o = '';
 
 		if ( $comment && $comment != '*' ) { # from Linker::commentBlock
-			$o .= "<li>" . $this->msg( 'revcs-preview-comment' )->rawParams( Linker::formatComment( $comment ) )->escaped() . "</li>\n";
+			$o .= "<li>"
+				. $this->msg( 'revcs-preview-supplement' )->rawParams( Linker::formatComment( $comment ) )->escaped()
+				. "</li>\n";
 		}
 		if ( $summary && $summary != '*' ) { # from Linker::commentBlock
 			$o .= "<li>" . $this->msg( 'revcs-preview-summary' )->rawParams( Linker::formatComment( $summary ) )->escaped() . "</li>\n";
@@ -305,10 +319,10 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 				->escaped()
 				. "</li>\n";
 			$s .= "<li>"
-				. $this->msg( 'revcs-show-comment-raw' )->rawParams( htmlspecialchars( $rcs_comment ) )->escaped()
+				. $this->msg( 'revcs-show-supplement-raw' )->rawParams( htmlspecialchars( $rcs_comment ) )->escaped()
 				. "</li>\n";
 			$s .= "<li>"
-				. $this->msg( 'revcs-show-comment-parsed' )->rawParams( Linker::formatComment( $rcs_comment ) )->escaped()
+				. $this->msg( 'revcs-show-supplement-parsed' )->rawParams( Linker::formatComment( $rcs_comment ) )->escaped()
 				. "</li>\n";
 			$s .= "<li>"
 				. $this->msg( 'revcs-show-revision' )->rawParams( $this->showRevisionHistoryLine( $revID ) )->escaped()
@@ -334,77 +348,68 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		$isAllowedRestricted = $wgUser->isAllowed( 'supplementcomment-restricted' );
 		$dbr = wfGetDB( DB_SLAVE );
 		$e = false;
-		$exist = false;
+		$empty = false;
 		$s = "\n" . '<div class="revcs-rev-save">' . "\n";
 
 		if ( $comment == '*' ) {
 			$e = true;
-			$s .= $this->getAlertMessage( 'error', 'invalidcomment' );
+			$s .= $this->getAlertMessage( 'error', 'supplement-asterisk' );
+		} elseif ( $comment == '' ) {
+			$empty = true;
 		}
 
-		$db_row = $dbr->selectRow('rev_comment_supp', '*', array( 'rcs_rev_id' => $revID ), __METHOD__ );
-		if ( $isAllowedRestricted ) {
-			if ( isset($db_row) && isset($db_row->rcs_rev_id) ) {
-				$exist = true;
-				$s .= $this->getAlertMessage( 'warning', 'existsupp' );
-				if ( $db_row->rcs_comment == $comment ) {
+		$revRow = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $revID ), __METHOD__ );
+		if ( isset($revRow) && isset($revRow->rev_id) ) {
+			if ( $revRow->rev_comment == $comment ) {
+				if ( !$empty ) {
 					$e = true;
-					$s .= $this->getAlertMessage( 'error', 'samesuppcomment' );
+					$s .= $this->getAlertMessage( 'error', 'supplement-same-as-summary' );
 				}
 			}
 		} else {
-			if ( isset($db_row) && isset($db_row->rcs_rev_id) ) {
-				$exist = true;
-				if ( $db_row->rcs_user == $wgUser->getId() &&
-					 $db_row->rcs_user_name == $wgUser->getName() &&
-					 ( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $db_row->rcs_timestamp ) ) <= 3600
-				) {
-					$s .= $this->getAlertMessage( 'warning', 'existsupp' );
-
-					if ( $db_row->rcs_comment == $comment ) {
-						$e = true;
-						$s .= $this->getAlertMessage( 'error', 'samesuppcomment' );
-					}
-				} else {
-					$e = true;
-					$s .= $this->getAlertMessage( 'error', 'existsupp' );
-					if ( $db_row->rcs_comment == $comment ) {
-						$s .= $this->getAlertMessage( 'error', 'samesuppcomment' );
-					}
-				}
-			} elseif ( $comment == '' ) {
-				$e = true;
-				$s .= $this->getAlertMessage( 'error', 'invalidcomment' );
-			}
-		}
-
-		$db_row = $dbr->selectRow( 'revision', 'rev_id,rev_comment', array( 'rev_id' => $revID ), __METHOD__ );
-		if ( $isAllowedRestricted ) {
-			if ( isset($db_row) && isset($db_row->rev_id) ) {
-				if ( $db_row->rev_comment == $comment ) {
-					if ( $exist ) {
-						$s .= $this->getAlertMessage( 'warning', 'samecomment' );
-					} else {
-						$e = true;
-						$s .= $this->getAlertMessage( 'error', 'samecomment' );
-					}
-				}
-			} else {
+			if ( $isAllowedRestricted ) {
 				$s .= $this->getAlertMessage( 'warning', 'norevision' );
-			}
-		} else {
-			if ( isset($db_row) && isset($db_row->rev_id) ) {
-				if ( $db_row->rev_comment == $comment ) {
-					if ( $exist ) {
-						$s .= $this->getAlertMessage( 'warning', 'samecomment' );
-					} else {
-						$e = true;
-						$s .= $this->getAlertMessage( 'error', 'samecomment' );
-					}
-				}
 			} else {
 				$e = true;
 				$s .= $this->getAlertMessage( 'error', 'norevision' );
+			}
+		}
+
+		$suppRow = $dbr->selectRow('rev_comment_supp', '*', array( 'rcs_rev_id' => $revID ), __METHOD__ );
+		if ( isset($suppRow) && isset($suppRow->rcs_rev_id) ) {
+			$modifiedRecently
+				= $suppRow->rcs_user == $wgUser->getId()
+				&& $suppRow->rcs_user_name == $wgUser->getName()
+				&& wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $suppRow->rcs_timestamp ) <= 3600;
+
+			if ( $isAllowedRestricted || $modifiedRecently ) {
+				$s .= $this->getAlertMessage( 'warning', 'exist-supplement' );
+			} else {
+				$e = true;
+				$s .= $this->getAlertMessage( 'error', 'exist-supplement' );
+			}
+
+			if ( $suppRow->rcs_comment == $comment ) {
+				$e = true;
+				$s .= $this->getAlertMessage( 'error', 'supplement-same-as-supplement' );
+			}
+
+			if ( $empty ) {
+				if ( $isAllowedRestricted || $modifiedRecently ) {
+					$s .= $this->getAlertMessage( 'warning', 'supplement-empty' );
+				} else {
+					$e = true;
+					$s .= $this->getAlertMessage( 'error', 'supplement-empty' );
+				}
+			}
+		} else {
+			if ( $empty ) {
+				if ( $isAllowedRestricted ) {
+					$s .= $this->getAlertMessage( 'warning', 'supplement-empty' );
+				} else {
+					$e = true;
+					$s .= $this->getAlertMessage( 'error', 'supplement-empty' );
+				}
 			}
 		}
 
@@ -412,7 +417,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 			$s .= $this->getErrorMessage( 'denied' );
 		} else {
 			RevisionCommentSupplement::insert( $revID, $comment, $summary );
-			$s .= "<p>" . $this->msg( 'revcs-set' )->escaped() . "</p>";
+			$s .= "<p>" . $this->msg( 'revcs-written' )->escaped() . "</p>\n";
 		}
 
 		$s .= "</div>\n";
@@ -438,7 +443,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		$s = '';
 		if ( $this->error == 'rId' ) {
 			$s = '<p class="error">';
-			$s .= $this->msg( 'revcs-error', $this->msg( 'revcs-alert-revid',  $this->missrId )->text() )->escaped();
+			$s .= $this->msg( 'revcs-error', $this->msg( 'revcs-alert-revision-id',  $this->missrId )->text() )->escaped();
 			$s .= "</p>\n";
 		}
 

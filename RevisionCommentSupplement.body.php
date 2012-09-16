@@ -34,7 +34,7 @@ class RevisionCommentSupplement {
 			if ( $db_row->rcs_comment != '' ) {
 				$comment = Linker::formatComment( $db_row->rcs_comment/*, $history->getTitle(), false*/ ); # section link
 				$s .= '<span class="revcs-comment">';
-				$s .= $history->msg( 'revcs-history-comment' )->rawParams( $comment )->escaped();
+				$s .= $history->msg( 'revcs-history-supplement' )->rawParams( $comment )->escaped();
 				$s .= '</span>';
 			}
 		}
@@ -156,42 +156,32 @@ class RevisionCommentSupplement {
 
 class RevisionCommentSupplementLogFormatter extends LogFormatter {
 
-	# from LogFormatter::getMessageParameters in LogFormatter.php
 	function getMessageParameters() {
-		if ( isset( $this->parsedParameters ) ) {
-			return $this->parsedParameters;
-		}
-
-		$entry = $this->entry;
-		$params = $this->extractParameters();
+		$params = parent::getMessageParameters();
 		$params[4] = Message::rawParam( $this->getSupplementComment( $params[4] ) );
 		$params[5] = Message::rawParam( $this->getSupplementComment( $params[5] ) );
-		$params[0] = Message::rawParam( $this->getPerformerElement() );
-		$params[1] = $entry->getPerformer()->getName();
-		$params[2] = Message::rawParam( $this->makePageLink( $entry->getTarget() ) );
-
-		// Bad things happens if the numbers are not in correct order
-		ksort( $params );
-		return $this->parsedParameters = $params;
+		return $params;
 	}
 
 	/**
 	 * @params $comment string
 	 * @return string HTML
-	 *
-	 * @private
 	 */
 	function getSupplementComment( $comment ){
 		$s = '';
 		if ( $comment ) {
 			$parsedcomment = Linker::formatComment( $comment );
 			$rawcomment = htmlspecialchars( $comment );
-			$s = wfMessage( 'revcs-log-comment' )->rawParams( $parsedcomment, $rawcomment )->escaped();
+			if ( $parsedcomment == $rawcomment ) {
+				$s = $this->msg( 'revcs-log-supplement1' )->rawParams( $rawcomment )->escaped();
+			} else {
+				$s = $this->msg( 'revcs-log-supplement2' )->rawParams( $parsedcomment, $rawcomment )->escaped();
+			}
 
-			# Can't use following code, because transculude is parsed.
-			# $s = wfMessage( 'revcs-log-comment' )->rawParams( $parsedcomment )->params( $comment )->escaped();
+			# Can't use following code, because transclude is parsed.
+			# $s = $this->msg( 'revcs-log-supplement' )->rawParams( $parsedcomment )->params( $comment )->escaped();
 		} else {
-			$s = wfMessage( 'revcs-log-nocomment' )->escaped();
+			$s = $this->msg( 'revcs-log-nosupplement' )->escaped();
 		}
 		return $s;
 	}

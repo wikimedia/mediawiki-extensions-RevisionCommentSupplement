@@ -25,6 +25,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $dir = dirname(__FILE__) . '/';
 
 $wgExtensionMessagesFiles['RevisionCommentSupplement'] = $dir . 'RevisionCommentSupplement.i18n.php';
+$wgExtensionMessagesFiles['RevisionCommentSupplementAlias'] = $dir . 'RevisionCommentSupplement.alias.php';
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
@@ -32,7 +33,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array( 'Burthsceh' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement',
 	'descriptionmsg' => 'revcs-desc',
-	'version' => '0.2.1',
+	'version' => '0.2.2',
 );
 
 $wgAvailableRights[] = 'supplementcomment';
