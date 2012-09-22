@@ -391,21 +391,6 @@ $messages['ja'] = array(
 $messages['lb'] = array(
 	'revcs-error' => 'Feeler: $1',
 	'revcs-error-unexpected' => 'En onerwaarte Feeler ass geschitt.',
-<<<<<<< HEAD
-	'revcs-form-comment' => 'Zousätzlech Bemierkung:',
-	'revcs-form-preview' => 'Kucken ouni ze späicheren',
-	'revcs-form-show' => 'weisen',
-	'revcs-form-summary' => 'Resumé:',
-	'revcs-history-comment' => '[Zousätzlech Bemierkung: $1]',
-	'revcs-log-nocomment' => '(keen)',
-=======
-	'revcs-form-supplement' => 'Zousätzlech Bemierkung:',
-	'revcs-form-preview' => 'Kucken ouni ze späicheren',
-	'revcs-form-show' => 'weisen',
-	'revcs-form-summary' => 'Resumé:',
-	'revcs-history-supplement' => '[Zousätzlech Bemierkung: $1]',
-	'revcs-log-nosupplement' => '(keen)',
->>>>>>> fix RevisionCommentSupplementLogFormatter etc.
 	'revcs-show-revision' => 'Versioun: $1',
 	'revcs-show-revision-id' => 'Versioun ID: $1 ($2)',
 	'revcs-show-user' => 'Benotzer: $1 $2 (Benotzer ID: $3)',
