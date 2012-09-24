@@ -295,17 +295,28 @@ $messages['gl'] = array(
 $messages['hsb'] = array(
 	'action-supplementcomment' => 'z wudospołnjowacymi komentarami dźěłać',
 	'action-supplementcomment-restricted' => 'z wudospołnjowacymi komentarami z wobmjezowanymi akcijemi dźěłać',
+	'group-supplement' => 'Wudospołnjowace komentary',
+	'group-supplement-member' => '{{GENDER:$1|Wudospołnjowace komentary}}',
 	'grouppage-supplement' => '{{ns:project}}:Wudospołnjowace komentary',
 	'log-name-revisioncommentsupplement' => 'Protokol wudospołnjowacych komentarow',
+	'log-description-revisioncommentsupplement' => 'Protokol akcijow w {{ns:special}}:Wudospołnjenje wersijowych komentarow.',
 	'logentry-revisioncommentsupplement-create' => '$1 wutwori wudospołnjowacy komentar, $6 wersije $4',
 	'logentry-revisioncommentsupplement-delete' => '$1 zhaša wudospołnjowacy komentar, $5 wersije $4',
 	'logentry-revisioncommentsupplement-modify' => '$1 změni wudospołnjowacy komentar wot $5 do $6 wersije $4',
+	'revisioncommentsupplement' => 'Wudospołnjenje wersijoweho komentara',
+	'revcs-desc' => 'Zmóžnja zwobraznjenje wudospołnjowacych komentarow za kóždu wersiju na stronach historije.',
 	'revcs-alert-exist-supplement' => 'wudospołnjowacy komentar wersije eksistuje.',
 	'revcs-alert-norevision' => 'wersija we wersijowej tabeli njeeksistuje.',
 	'revcs-alert-revision-id' => '"$1" je wopačny wersijowy ID.',
+	'revcs-alert-supplement-asterisk' => 'zapodaty wudospołnjowacy komentar ma hwěžku.',
+	'revcs-alert-supplement-empty' => 'zapodaty wudospołnjowacy komentar je pródzny.',
+	'revcs-alert-supplement-same-as-summary' => 'zapodaty wudospołnjowacy komentar je samsny znamješkowy rjećazk kaž zjeće wersije.',
+	'revcs-alert-supplement-same-as-supplement' => 'zapodaty wudospołnjowacy komentar je samsny znamješkowy rjećazk kaž wudospołnjowacy komentar w tabeli datoweje banki.',
+	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|Změnu wudospołnić]]<nowiki>]</nowiki>',
 	'revcs-error' => 'Zmylk: $1',
 	'revcs-error-denied' => 'składowanje wudospołnjowaceho komentara je so wotpokazało.',
 	'revcs-error-unexpected' => 'njewočakowany zmylk wustupił.',
+	'revcs-form-legend' => 'Wudospołnjenje wersijoweho komentara',
 	'revcs-form-preview' => 'přehlad',
 	'revcs-form-revision-id' => 'ID wersije:',
 	'revcs-form-show' => 'pokazać',
@@ -401,12 +412,17 @@ $messages['lb'] = array(
 	'revcs-error' => 'Feeler: $1',
 	'revcs-error-unexpected' => 'En onerwaarte Feeler ass geschitt.',
 	'revcs-form-preview' => 'Kucken ouni ze späicheren',
+	'revcs-form-revision-id' => 'Versioun ID:',
 	'revcs-form-show' => 'weisen',
 	'revcs-form-summary' => 'Resumé:',
+	'revcs-form-supplement' => 'Zousätzlech Bemierkung:',
+	'revcs-log-nosupplement' => '(keen)',
 	'revcs-show-revision' => 'Versioun: $1',
 	'revcs-show-revision-id' => 'Versioun ID: $1 ($2)',
+	'revcs-show-timestamp' => 'Datum an Auerzäit vun der Ännerung: $1 ($2)',
 	'revcs-show-user' => 'Benotzer: $1 $2 (Benotzer ID: $3)',
 	'revcs-warning' => 'Opgepasst: $1',
+	'revcs-written' => 'Déi zousätzlech Bemierkung ass geschriwwen.',
 );
 
 /** Macedonian (македонски)
@@ -463,10 +479,11 @@ $messages['mk'] = array(
 
 /** Dutch (Nederlands)
  * @author SPQRobin
+ * @author Siebrand
  */
 $messages['nl'] = array(
 	'revcs-error' => 'Fout: $1',
-	'revcs-form-revision-id' => 'Versienummer',
+	'revcs-form-revision-id' => 'Versienummer:',
 	'revcs-form-summary' => 'Samenvatting:',
 	'revcs-log-nosupplement' => '(geen)',
 	'revcs-preview-summary' => 'Samenvatting nakijken: $1',
