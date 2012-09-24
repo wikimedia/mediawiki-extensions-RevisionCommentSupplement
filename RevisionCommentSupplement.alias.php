@@ -1,8 +1,10 @@
-<?
-
-$specialPageAliases = array();
-
-/** English (English) */
+<?php
+/**
+ * Aliases for special pages
+ *
+ * @file
+ * @ingroup Extensions
+ */
 
 $specialPageAliases = array();
 
