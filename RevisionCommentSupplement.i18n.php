@@ -409,6 +409,7 @@ $messages['ja'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'revcs-alert-revision-id' => '"$1" ass eng falsch Versiouns ID.',
 	'revcs-error' => 'Feeler: $1',
 	'revcs-error-unexpected' => 'En onerwaarte Feeler ass geschitt.',
 	'revcs-form-preview' => 'Kucken ouni ze späicheren',
@@ -417,6 +418,7 @@ $messages['lb'] = array(
 	'revcs-form-summary' => 'Resumé:',
 	'revcs-form-supplement' => 'Zousätzlech Bemierkung:',
 	'revcs-log-nosupplement' => '(keen)',
+	'revcs-preview-summary' => 'Resumé kucken ouni ofzespäicheren: $1',
 	'revcs-show-revision' => 'Versioun: $1',
 	'revcs-show-revision-id' => 'Versioun ID: $1 ($2)',
 	'revcs-show-timestamp' => 'Datum an Auerzäit vun der Ännerung: $1 ($2)',
