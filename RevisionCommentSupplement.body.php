@@ -25,17 +25,27 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 class RevisionCommentSupplement {
 
 	public static function onPageHistoryLineEnding( HistoryPager $history, $rev_row, &$s, &$classes ) {
-		global $wgUser;
-		$revID = (int)$rev_row->rev_id;
+		$revId = (int)$rev_row->rev_id;
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow('rev_comment_supp', 'rcs_comment', array( 'rcs_rev_id' => $revID ), __METHOD__ );
+		$db_row = $dbr->selectRow(
+			'rev_comment_supp',
+			'rcs_comment',
+			array( 'rcs_rev_id' => $revId ),
+			__METHOD__
+		);
 
 		if ( isset($db_row) && isset($db_row->rcs_comment) ) {
 			if ( $db_row->rcs_comment != '' ) {
-				$comment = Linker::formatComment( $db_row->rcs_comment/*, $history->getTitle(), false*/ ); # section link
-				$s .= '<span class="revcs-comment">';
-				$s .= $history->msg( 'revcs-history-supplement' )->rawParams( $comment )->escaped();
-				$s .= '</span>';
+				# section link
+				$comment = Linker::formatComment(
+					$db_row->rcs_comment/*,
+					$history->getTitle(),
+					false*/
+				);
+				$s .= '<span class="revcs-comment">' .
+					$history->msg( 'revcs-history-supplement' )
+						->rawParams( $comment )->escaped() .
+					'</span>';
 			}
 		}
 
@@ -43,15 +53,20 @@ class RevisionCommentSupplement {
 	}
 
 	/**
-	 * @param $revID string: revision id
-	 * @param $comment2 string
-	 * @param $summary string
+	 * @param $revId string: revision id
+	 * @param $comment2 string: a new supplementary comment
+	 * @param $summary string: reason
 	 */
-	public static function insert( $revID, $comment2, $summary ) {
+	public static function insert( $revId, $comment2, $summary ) {
 		$comment1 = '';
 		$action = 'create';
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow('rev_comment_supp', 'rcs_comment', array( 'rcs_rev_id' => $revID ), __METHOD__ );
+		$db_row = $dbr->selectRow(
+			'rev_comment_supp',
+			'rcs_comment',
+			array( 'rcs_rev_id' => $revId ),
+			__METHOD__
+		);
 
 		if ( isset($db_row) && isset($db_row->rcs_comment) ) {
 			$comment1 = $db_row->rcs_comment;
@@ -60,19 +75,19 @@ class RevisionCommentSupplement {
 
 		$timestamp = wfTimestamp( TS_MW );
 
-		self::insertKey( $revID, $comment2, $timestamp );
-		self::insertLog( $revID, $action, $comment1, $comment2, $summary, $timestamp );
+		self::insertKey( $revId, $comment2, $timestamp );
+		self::insertLog( $revId, $action, $comment1, $comment2, $summary, $timestamp );
 	}
 
 	/**
-	 * @param $revID string: revision id
-	 * @param $comment string
+	 * @param $revId string: revision id
+	 * @param $comment string: a new supplementary comment
 	 * @param $timestamp string: timestamp
 	 */
-	static function insertKey( $revID, $comment, $timestamp ) {
+	static function insertKey( $revId, $comment, $timestamp ) {
 		global $wgUser;
 		$row = array(
-			'rcs_rev_id' => intval($revID),
+			'rcs_rev_id' => intval( $revId ),
 			'rcs_user' => $wgUser->getId(),
 			'rcs_user_name' => $wgUser->getName(),
 			'rcs_timestamp' => $timestamp,
@@ -83,22 +98,24 @@ class RevisionCommentSupplement {
 	}
 
 	/**
-	 * @param $revID string: revision id
-	 * @param $action string
-	 * @param $comment1 string
-	 * @param $comment2 string
-	 * @param $summary string
-	 * @param $timestamp string: timestamp
+	 * @param string $revId: revision id
+	 * @param string $action
+	 * @param string $comment1: a old supplementary comment
+	 * @param string $comment2: a new supplementary comment
+	 * @param string $summary: reason
+	 * @param string $timestamp: timestamp
 	 */
-	static function insertLog( $revID, $action, $comment1, $comment2, $summary, $timestamp ) {
+	static function insertLog( $revId, $action, $comment1, $comment2, $summary, $timestamp ) {
 		global $wgUser;
 		$logEntry = new ManualLogEntry( 'revisioncommentsupplement', $action );
 		$logEntry->setPerformer( $wgUser );
-		$logEntry->setTarget( Title::makeTitleSafe( NS_SPECIAL, 'RevisionCommentSupplement/' . $revID ) );
+		$logEntry->setTarget(
+			Title::makeTitleSafe( NS_SPECIAL, "RevisionCommentSupplement/{$revId}" )
+		);
 		$logEntry->setComment( $summary );
 		$logEntry->setTimestamp( $timestamp );
 		$logEntry->setParameters( array(
-				'4::revid' => $revID,
+				'4::revid' => $revId,
 				'5::comment1' => $comment1,
 				'6::comment2' => $comment2,
 			)
@@ -108,14 +125,19 @@ class RevisionCommentSupplement {
 	}
 
 	/**
-	 * @param $revID : revision id
+	 * @param $revId : revision id
 	 * @return array
 	 */
-	public static function getKey( $revID ) {
+	public static function getKey( $revId ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow('rev_comment_supp', '*', array( 'rcs_rev_id' => $revID ), __METHOD__ );
+		$db_row = $dbr->selectRow(
+			'rev_comment_supp',
+			'*',
+			array( 'rcs_rev_id' => $revId ),
+			__METHOD__
+		);
 
-		if ( isset($db_row) && isset($db_row->rcs_rev_id) && ($db_row->rcs_rev_id == $revID) ) {
+		if ( isset($db_row) && isset($db_row->rcs_rev_id) && ($db_row->rcs_rev_id == $revId) ) {
 			return array(
 				true,
 				$db_row->rcs_rev_id,
@@ -137,17 +159,37 @@ class RevisionCommentSupplement {
 			global $wgExtNewTables, $wgDBtype;
 
 			if ( $wgDBtype == 'mysql' ) {
-				$wgExtNewTables[] = array( 'rev_comment_supp', "$dir/RevisionCommentSupplement.sql" );
-			} else if ( $wgDBtype == 'postgres' ) {
-				$wgExtNewTables[] = array( 'rev_comment_supp', "$dir/RevisionCommentSupplement.pg.sql" );
+				$wgExtNewTables[] = array(
+					'rev_comment_supp',
+					"$dir/RevisionCommentSupplement.sql"
+				);
+			} elseif ( $wgDBtype == 'postgres' ) {
+				$wgExtNewTables[] = array(
+					'rev_comment_supp',
+					"$dir/RevisionCommentSupplement.pg.sql"
+				);
 			}
 		} else {
 			if( $updater->getDB()->tableExists( 'rev_comment_supp' ) ) {
 				$updater->output( "...rev_comment_supp table already exists.\n" );
-			} else if ( $updater->getDB()->getType() == 'mysql' ) {
-				$updater->addExtensionUpdate( array( 'addTable', 'rev_comment_supp', "$dir/RevisionCommentSupplement.sql", true ) );
-			} else if ( $updater->getDB()->getType() == 'postgres' ) {
-				$updater->addExtensionUpdate( array( 'addTable', 'rev_comment_supp', "$dir/RevisionCommentSupplement.pg.sql", true ) );
+			} elseif ( $updater->getDB()->getType() == 'mysql' ) {
+				$updater->addExtensionUpdate(
+					array(
+						'addTable',
+						'rev_comment_supp',
+						"$dir/RevisionCommentSupplement.sql",
+						true
+					)
+				);
+			} elseif ( $updater->getDB()->getType() == 'postgres' ) {
+				$updater->addExtensionUpdate(
+					array(
+						'addTable',
+						'rev_comment_supp',
+						"$dir/RevisionCommentSupplement.pg.sql",
+						true
+					)
+				);
 			}
 		}
 		return true;
@@ -164,22 +206,14 @@ class RevisionCommentSupplementLogFormatter extends LogFormatter {
 	}
 
 	/**
-	 * @params $comment string
+	 * @params string $comment
 	 * @return string HTML
 	 */
 	function getSupplementComment( $comment ){
 		$s = '';
 		if ( $comment ) {
-			$parsedcomment = Linker::formatComment( $comment );
-			$rawcomment = htmlspecialchars( $comment );
-			if ( $parsedcomment == $rawcomment ) {
-				$s = $this->msg( 'revcs-log-supplement1' )->rawParams( $rawcomment )->escaped();
-			} else {
-				$s = $this->msg( 'revcs-log-supplement2' )->rawParams( $parsedcomment, $rawcomment )->escaped();
-			}
-
-			# Can't use following code, because transclude is parsed.
-			# $s = $this->msg( 'revcs-log-supplement' )->rawParams( $parsedcomment )->params( $comment )->escaped();
+			$s = $this->msg( 'revcs-log-supplement' )
+				->rawParams( htmlspecialchars( $comment ) )->escaped();
 		} else {
 			$s = $this->msg( 'revcs-log-nosupplement' )->escaped();
 		}

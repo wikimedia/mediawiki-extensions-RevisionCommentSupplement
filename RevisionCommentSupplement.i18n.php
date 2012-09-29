@@ -27,16 +27,15 @@ $messages['en'] = array(
 	'revcs-error-denied' => 'denied saving the supplementary comment.',
 	'revcs-error-unexpected' => 'unexpected error happened.',
 	'revcs-form-legend' => 'Revision Comment Supplement',
-	'revcs-form-preview' => 'preview',
+	'revcs-form-preview' => 'Show preview',
 	'revcs-form-revision-id' => 'Revision ID:',
-	'revcs-form-show' => 'show',
-	'revcs-form-submit' => 'submit',
+	'revcs-form-save' => 'Save the supplementary comment',
+	'revcs-form-show' => 'Show the supplementary comment',
 	'revcs-form-summary' => 'Summary:',
 	'revcs-form-supplement' => 'Supplementary Comment:',
 	'revcs-history-supplement' => '[Supplement: $1]',
 	'revcs-log-nosupplement' => '(none)',
-	'revcs-log-supplement1' => '$1',
-	'revcs-log-supplement2' => '$1($2)',
+	'revcs-log-supplement' => '"$1"',
 	'revcs-preview-summary' => 'Summary Preview: $1',
 	'revcs-preview-supplement' => 'Supplementary Comment Preview: $1',
 	'revcs-show-loglinktext' => 'the Supplementary Comment change log',
@@ -45,7 +44,7 @@ $messages['en'] = array(
 	'revcs-show-revision-id' => 'Revision ID: $1 ($2)',
 	'revcs-show-supplement-parsed' => 'Parsed Supplementary Comment: $1',
 	'revcs-show-supplement-raw' => 'Raw Supplementary Comment: $1',
-	'revcs-show-timestamp' => 'Editing date and time: $1 ($2)',
+	'revcs-show-timestamp' => 'Edited date and time: $1 ($2)',
 	'revcs-show-user' => 'User: $1 $2 (User ID: $3)',
 	'revcs-warning' => 'Warning: $1',
 	'revcs-written' => 'The supplementary comment is written.',
@@ -70,22 +69,22 @@ $messages['qqq'] = array(
 *$3 is a link of Special:RevisionCommentSupplement/$4.
 *$4 is the revision id.
 *$5 is {{msg-mw|revcs-log-nosupplement}}.
-*$6 is the new supplementary comment, {{msg-mw|revcs-log-supplement1}}, {{msg-mw|revcs-log-supplement2}} or {{msg-mw|revcs-log-nosupplement}}.',
+*$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.',
 	'logentry-revisioncommentsupplement-delete' => "A line of log entry in Special:Log. This message hasn't been used.
 *$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
 *$2 is the user name.
 *$3 is a link of Special:RevisionCommentSupplement/$4.
 *$4 is the revision id.
-*$5 is the old supplementary comment, {{msg-mw|revcs-log-supplement1}}, {{msg-mw|revcs-log-supplement2}} or {{msg-mw|revcs-log-nosupplement}}.
+*$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
 *$6 is {{msg-mw|revcs-log-nosupplement}}.",
 	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in Special:Log.
 *$1 are links of the user page and the user tool(s) page.
 *$2 is the user name.
 *$3 is a link of Special:RevisionCommentSupplement/$4.
 *$4 is the revision id.
-*$5 is the old supplementary comment, {{msg-mw|revcs-log-supplement1}}, {{msg-mw|revcs-log-supplement2}} or {{msg-mw|revcs-log-nosupplement}}.
-*$6 is the new supplementary comment, {{msg-mw|revcs-log-supplement1}}, {{msg-mw|revcs-log-supplement2}} or {{msg-mw|revcs-log-nosupplement}}.',
-	'revisioncommentsupplement' => 'This message is a link text of Special:RevisionCommentSupplement on Special:SpecialPages and first heading of Special:RevisionCommentSupplement. The meaning of "RevisionCommentSupplement" is "Supplement the comment on each revision", "the comment on each revision is Supplemented" or "a supplement to the comment on each revision."',
+*$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
+*$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.',
+	'revisioncommentsupplement' => 'This message is a link text of Special:RevisionCommentSupplement on Special:SpecialPages and first heading of Special:RevisionCommentSupplement. The meaning of "RevisionCommentSupplement" is "Supplement the comment on each revision", "the comment on each revision is supplemented" or "a supplement to the comment on each revision."',
 	'revcs-desc' => 'The description of this extension in Special:Version.',
 	'revcs-alert-exist-supplement' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
 	'revcs-alert-norevision' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.',
@@ -93,6 +92,7 @@ $messages['qqq'] = array(
 	'revcs-alert-supplement-asterisk' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
 	'revcs-alert-supplement-empty' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
 	'revcs-alert-supplement-same-as-summary' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
+	'revcs-alert-supplement-same-as-supplement' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
 	'revcs-editlink' => "This message isn't used.",
 	'revcs-error' => '$1 is error messages, revcs-alert-* or revcs-error-*.',
 	'revcs-error-denied' => 'This message is a error message used at save in Special:RevisionCommentSupplement.',
@@ -100,13 +100,13 @@ $messages['qqq'] = array(
 	'revcs-form-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement.',
 	'revcs-form-preview' => 'This message is a label of a input botton in Special:RevisionCommentSupplement.',
 	'revcs-form-revision-id' => 'This message is a content of a label element of a text input box of a supplementary comment in Special:RevisionCommentSupplement.',
+	'revcs-form-save' => 'This message is a label of a input botton in Special:RevisionCommentSupplement.',
 	'revcs-form-show' => 'This message is a label of a input botton in Special:RevisionCommentSupplement.',
-	'revcs-form-submit' => 'This message is a label of a input botton in Special:RevisionCommentSupplement.',
 	'revcs-form-summary' => 'This message is a content of a label element of a text input box of a summary and/or a reason in Special:RevisionCommentSupplement.',
 	'revcs-form-supplement' => 'This messsage is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement.',
 	'revcs-history-supplement' => 'This message is used at each revision line in History pages. $1 is a parsed supplementary comment.',
 	'revcs-log-nosupplement' => 'If a supplementary comment is empty, this is used at logentry-revisioncommentsupplement-* in Special:Log.',
-	'revcs-log-supplement2' => 'If a supplementary comment exists, this is used at logentry-revisioncommentsupplement-* in Special:Log. $1 is a parsed supplementary comment. $2 is a raw supplementary comment.',
+	'revcs-log-supplement' => "If a supplementary comment isn't empty, this is used at logentry-revisioncommentsupplement-* in Special:Log. $1 is a raw supplementary comment.",
 	'revcs-preview-summary' => 'This message is used at preview a supplementary comment and a summary in Special:RevisionCommentSupplement. $1 is a parsed summary.',
 	'revcs-preview-supplement' => 'This message is used at preview a supplementary comment and a summary in Special:RevisionCommentSupplement. $1 is a parsed supplementary comment.',
 	'revcs-show-loglinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.',
@@ -163,8 +163,8 @@ $messages['de'] = array(
 	'revcs-form-legend' => 'Versionskommentarergänzung',
 	'revcs-form-preview' => 'Vorschau',
 	'revcs-form-revision-id' => 'Versionskennung:',
+	'revcs-form-save' => 'Speichern',
 	'revcs-form-show' => 'anzeigen',
-	'revcs-form-submit' => 'Speichern',
 	'revcs-form-summary' => 'Zusammenfassung:',
 	'revcs-form-supplement' => 'Ergänzender Kommentar:',
 	'revcs-history-supplement' => '[Ergänzender Kommentar: $1]',
@@ -215,8 +215,8 @@ $messages['es'] = array(
 	'revcs-form-legend' => 'Revisión de comentario adicional',
 	'revcs-form-preview' => 'vista previa',
 	'revcs-form-revision-id' => 'Identificador ID de la revisión:',
+	'revcs-form-save' => 'enviar',
 	'revcs-form-show' => 'mostrar',
-	'revcs-form-submit' => 'enviar',
 	'revcs-form-summary' => 'Resumen:',
 	'revcs-form-supplement' => 'Comentario adicional:',
 	'revcs-history-supplement' => '[Comentario adicional: $1]',
@@ -267,8 +267,8 @@ $messages['gl'] = array(
 	'revcs-form-legend' => 'Revisión dos comentarios suplementarios',
 	'revcs-form-preview' => 'vista previa',
 	'revcs-form-revision-id' => 'ID da revisión:',
+	'revcs-form-save' => 'enviar',
 	'revcs-form-show' => 'mostrar',
-	'revcs-form-submit' => 'enviar',
 	'revcs-form-summary' => 'Resumo:',
 	'revcs-form-supplement' => 'Comentario suplementario:',
 	'revcs-history-supplement' => '[Comentario suplementario: $1]',
@@ -319,8 +319,8 @@ $messages['hsb'] = array(
 	'revcs-form-legend' => 'Wudospołnjenje wersijoweho komentara',
 	'revcs-form-preview' => 'přehlad',
 	'revcs-form-revision-id' => 'ID wersije:',
+	'revcs-form-save' => 'wotpósłać',
 	'revcs-form-show' => 'pokazać',
-	'revcs-form-submit' => 'wotpósłać',
 	'revcs-form-summary' => 'Zjeće:',
 	'revcs-form-supplement' => 'Wudospołnjowacy komentar:',
 	'revcs-history-supplement' => '[Wudospołnjowacy komentar: $1]',
@@ -347,8 +347,8 @@ $messages['hsb'] = array(
 $messages['it'] = array(
 	'revcs-error' => 'Errore: $1',
 	'revcs-form-preview' => 'anteprima',
+	'revcs-form-save' => 'invia',
 	'revcs-form-show' => 'mostra',
-	'revcs-form-submit' => 'invia',
 	'revcs-warning' => 'Attenzione: $1',
 );
 
@@ -382,13 +382,12 @@ $messages['ja'] = array(
 	'revcs-form-legend' => '版のコメントの補足',
 	'revcs-form-preview' => 'プレビュー',
 	'revcs-form-revision-id' => '版 ID:',
+	'revcs-form-save' => '保存',
 	'revcs-form-show' => '表示',
-	'revcs-form-submit' => '保存',
 	'revcs-form-summary' => '要約:',
 	'revcs-form-supplement' => '補足コメント:',
 	'revcs-history-supplement' => '[補足: $1]',
 	'revcs-log-nosupplement' => '(なし)',
-	'revcs-log-supplement2' => '$1 ($2)',
 	'revcs-preview-summary' => '要約のプレビュー: $1',
 	'revcs-preview-supplement' => '補足コメントのプレビュー: $1',
 	'revcs-show-loglinktext' => '補足コメント変更記録',
@@ -441,7 +440,6 @@ $messages['ko'] = array(
 	'revcs-form-supplement' => '보충 덧글:',
 	'revcs-history-supplement' => '[보충: $1]',
 	'revcs-log-nosupplement' => '(없음)',
-	'revcs-log-supplement2' => '$1($2)',
 	'revcs-preview-summary' => '요약 미리 보기: $1',
 	'revcs-preview-supplement' => '보충 덧글 미리 보기: $1',
 	'revcs-show-loglinktext' => '보충 덧글 바뀜 기록',
@@ -510,8 +508,8 @@ $messages['mk'] = array(
 	'revcs-form-legend' => 'Додатен коментар за ревизијата',
 	'revcs-form-preview' => 'преглед',
 	'revcs-form-revision-id' => 'Назнака на ревизијата:',
+	'revcs-form-save' => 'поднеси',
 	'revcs-form-show' => 'прикажи',
-	'revcs-form-submit' => 'поднеси',
 	'revcs-form-summary' => 'Опис:',
 	'revcs-form-supplement' => 'Додатен коментар:',
 	'revcs-history-supplement' => '[Додатен коментар: $1]',
@@ -537,11 +535,12 @@ $messages['mk'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
+	'revcs-alert-revision-id' => '"$1" is een verkeerd versienummer.',
 	'revcs-error' => 'Fout: $1',
 	'revcs-form-preview' => 'voorvertoning',
 	'revcs-form-revision-id' => 'Versienummer:',
+	'revcs-form-save' => 'opslaan',
 	'revcs-form-show' => 'weergeven',
-	'revcs-form-submit' => 'opslaan',
 	'revcs-form-summary' => 'Samenvatting:',
 	'revcs-log-nosupplement' => '(geen)',
 	'revcs-preview-summary' => 'Samenvatting nakijken: $1',
@@ -556,8 +555,8 @@ $messages['nl'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'revcs-form-save' => 'سپارل',
 	'revcs-form-show' => 'ښکاره کول',
-	'revcs-form-submit' => 'سپارل',
 	'revcs-form-summary' => 'لنډيز:',
 	'revcs-log-nosupplement' => '(هېڅ)',
 );
@@ -566,7 +565,7 @@ $messages['ps'] = array(
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
-	'revcs-form-submit' => 'enviar',
+	'revcs-form-save' => 'enviar',
 );
 
 /** Telugu (తెలుగు)
