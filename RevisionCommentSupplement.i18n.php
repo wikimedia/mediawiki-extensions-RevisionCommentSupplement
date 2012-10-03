@@ -485,7 +485,10 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'revcs-error' => 'Fout: $1',
+	'revcs-form-preview' => 'voorvertoning',
 	'revcs-form-revision-id' => 'Versienummer:',
+	'revcs-form-show' => 'weergeven',
+	'revcs-form-submit' => 'opslaan',
 	'revcs-form-summary' => 'Samenvatting:',
 	'revcs-log-nosupplement' => '(geen)',
 	'revcs-preview-summary' => 'Samenvatting nakijken: $1',
