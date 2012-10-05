@@ -22,3 +22,8 @@ $specialPageAliases['de'] = array(
 $specialPageAliases['ja'] = array(
 	'RevisionCommentSupplement' => array( '版のコメントの補足' ),
 );
+
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'RevisionCommentSupplement' => array( '판덧글보충' ),
+);

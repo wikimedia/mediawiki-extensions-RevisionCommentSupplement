@@ -405,6 +405,59 @@ $messages['ja'] = array(
 	'right-supplementcomment-restricted' => '補足コメントへの制限された操作を実行',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'action-supplementcomment' => '보충 덧글 동작',
+	'action-supplementcomment-restricted' => '제한된 행동으로 보충 덧글 동작',
+	'group-supplement' => '덧글보충',
+	'group-supplement-member' => '{{GENDER:$1|덧글보충}}',
+	'grouppage-supplement' => '{{ns:project}}:덧글보충',
+	'log-name-revisioncommentsupplement' => '보충 덧글 기록',
+	'log-description-revisioncommentsupplement' => '{{ns:special}}:RevisionCommentSupplement의 동작 기록입니다.',
+	'logentry-revisioncommentsupplement-create' => '$1 사용자가 $4 판에 대해 $6으로 보충 덧글을 만들었습니다',
+	'logentry-revisioncommentsupplement-delete' => '$1 사용자가 $4 판에 대해 $5으로 보충 덧글을 삭제했습니다',
+	'logentry-revisioncommentsupplement-modify' => '$1 사용자가 $4 판에 대해 $5에서 $6으로 보충 덧글을 수정했습니다',
+	'revisioncommentsupplement' => '판 덧글 보충',
+	'revcs-desc' => '역사 문서의 각 판 줄에 보충 덧글을 보여주는 것을 허용합니다.',
+	'revcs-alert-exist-supplement' => '데이터베이스 테이블에 존재하는 판에 대한 보충 덧글입니다.',
+	'revcs-alert-norevision' => '판이 판 테이블에 존재하지 않습니다.',
+	'revcs-alert-revision-id' => '"$1"(은)는 잘못된 판 ID입니다.',
+	'revcs-alert-supplement-asterisk' => '입력한 보충 덧글은 별표입니다.',
+	'revcs-alert-supplement-empty' => '입력한 보충 덧글은 비어 있습니다.',
+	'revcs-alert-supplement-same-as-summary' => '입력한 보충 덧글은 판 요약과 같은 문자열입니다.',
+	'revcs-alert-supplement-same-as-supplement' => '입력한 보충 덧글은 데이터베이트 테이불에 있는 보충 덧글과 같은 문자열입니다.',
+	'revcs-editlink' => '<nowiki>[</nowiki>[[$1|보충 편집]]<nowiki>]</nowiki>',
+	'revcs-error' => '오류: $1',
+	'revcs-error-denied' => '보충 덧글 저장을 거부했습니다.',
+	'revcs-error-unexpected' => '예기치 않은 오류가 발생했습니다.',
+	'revcs-form-legend' => '판 덧글 보충',
+	'revcs-form-preview' => '미리 보기',
+	'revcs-form-revision-id' => '판 ID:',
+	'revcs-form-show' => '보기',
+	'revcs-form-submit' => '제출',
+	'revcs-form-summary' => '요약:',
+	'revcs-form-supplement' => '보충 덧글:',
+	'revcs-history-supplement' => '[보충: $1]',
+	'revcs-log-nosupplement' => '(없음)',
+	'revcs-log-supplement2' => '$1($2)',
+	'revcs-preview-summary' => '요약 미리 보기: $1',
+	'revcs-preview-supplement' => '보충 덧글 미리 보기: $1',
+	'revcs-show-loglinktext' => '보충 덧글 바뀜 기록',
+	'revcs-show-no-db-row' => '$1 판에 대한 보충 덧글을 찾을 수 없습니다.',
+	'revcs-show-revision' => '판: $1',
+	'revcs-show-revision-id' => '판 ID: $1 ($2)',
+	'revcs-show-supplement-parsed' => '구문 분석한 보충 덧글: $1',
+	'revcs-show-supplement-raw' => '원래 보충 덧글: $1',
+	'revcs-show-timestamp' => '날짜와 시간 편집: $1 ($2)',
+	'revcs-show-user' => '사용자: $1 $2 (사용자 ID: $3)',
+	'revcs-warning' => '경고: $1',
+	'revcs-written' => '보충 의견이 적혀 있습니다.',
+	'right-supplementcomment' => '보충 덧글 동작',
+	'right-supplementcomment-restricted' => '제한된 행동으로 보충 덧글 동작',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
