@@ -53,6 +53,7 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Raymond
  * @author Shirayuki
  */
 $messages['qqq'] = array(
@@ -434,8 +435,8 @@ $messages['ko'] = array(
 	'revcs-form-legend' => '판 덧글 보충',
 	'revcs-form-preview' => '미리 보기',
 	'revcs-form-revision-id' => '판 ID:',
+	'revcs-form-save' => '제출',
 	'revcs-form-show' => '보기',
-	'revcs-form-submit' => '제출',
 	'revcs-form-summary' => '요약:',
 	'revcs-form-supplement' => '보충 덧글:',
 	'revcs-history-supplement' => '[보충: $1]',
@@ -506,10 +507,10 @@ $messages['mk'] = array(
 	'revcs-error-denied' => 'одбиено зачувувањето на додатниот коментар.',
 	'revcs-error-unexpected' => 'се појави неочекувана грешка.',
 	'revcs-form-legend' => 'Додатен коментар за ревизијата',
-	'revcs-form-preview' => 'преглед',
+	'revcs-form-preview' => 'Прик. преглед',
 	'revcs-form-revision-id' => 'Назнака на ревизијата:',
-	'revcs-form-save' => 'поднеси',
-	'revcs-form-show' => 'прикажи',
+	'revcs-form-save' => 'Зачувај додат. ком.',
+	'revcs-form-show' => 'Прик. додат. ком.',
 	'revcs-form-summary' => 'Опис:',
 	'revcs-form-supplement' => 'Додатен коментар:',
 	'revcs-history-supplement' => '[Додатен коментар: $1]',
