@@ -323,7 +323,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 	}
 
 	function getRevisionCommentSupplement( $revId ) {
-		list( $success, $rcs_rev_id, $rcs_user, $rcs_user_name, $rcs_timestamp, $rcs_comment )
+		list( $success, $rcs_rev_id, $rcs_user, $rcs_user_text, $rcs_timestamp, $rcs_comment )
 			= RevisionCommentSupplement::getKey( $revId );
 
 		$s = "\n" . '<div class="revcs-rev-show">';
@@ -360,8 +360,8 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 			$s .= "<li>" .
 				$this->msg( 'revcs-show-user' )
 					->rawParams(
-						Linker::userLink( $rcs_user, $rcs_user_name ),
-						Linker::userToolLinks( $rcs_user, $rcs_user_name ),
+						Linker::userLink( $rcs_user, $rcs_user_text ),
+						Linker::userToolLinks( $rcs_user, $rcs_user_text ),
 						$rcs_user
 					)
 					->escaped() .
@@ -440,7 +440,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		if ( isset($suppRow) && isset($suppRow->rcs_rev_id) ) {
 			$modifiedRecently
 				= $suppRow->rcs_user == $user->getId()
-				&& $suppRow->rcs_user_name == $user->getName()
+				&& $suppRow->rcs_user_text == $user->getName()
 				&& wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $suppRow->rcs_timestamp ) <= 3600;
 
 			if ( $isAllowedRestricted || $modifiedRecently ) {
