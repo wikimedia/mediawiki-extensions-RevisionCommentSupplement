@@ -89,7 +89,7 @@ class RevisionCommentSupplement {
 		$row = array(
 			'rcs_rev_id' => intval( $revId ),
 			'rcs_user' => $wgUser->getId(),
-			'rcs_user_name' => $wgUser->getName(),
+			'rcs_user_text' => $wgUser->getName(),
 			'rcs_timestamp' => $timestamp,
 			'rcs_comment' => $comment,
 		);
@@ -142,7 +142,7 @@ class RevisionCommentSupplement {
 				true,
 				$db_row->rcs_rev_id,
 				$db_row->rcs_user,
-				$db_row->rcs_user_name,
+				$db_row->rcs_user_text,
 				$db_row->rcs_timestamp,
 				$db_row->rcs_comment,
 			);
@@ -152,27 +152,41 @@ class RevisionCommentSupplement {
 	}
 
 	# from Extension:TitleKey, author Brion Vibber
-	public static function runUpdates( $updater = null ) {
+	public static function runUpdates( DatabaseUpdater $updater ) {
 		$dir = dirname( __FILE__ );
 
-		if ( $updater === null ) {
-			global $wgExtNewTables, $wgDBtype;
+		if( $updater->getDB()->tableExists( 'rev_comment_supp' ) ) {
+			$updater->output( "...rev_comment_supp table already exists.\n" );
 
-			if ( $wgDBtype == 'mysql' ) {
-				$wgExtNewTables[] = array(
-					'rev_comment_supp',
-					"$dir/RevisionCommentSupplement.sql"
-				);
-			} elseif ( $wgDBtype == 'postgres' ) {
-				$wgExtNewTables[] = array(
-					'rev_comment_supp',
-					"$dir/RevisionCommentSupplement.pg.sql"
-				);
+			if ( $updater->getDB()->fieldExists( 'rev_comment_supp', 'rcs_user_name', __METHOD__ ) ) {
+				$updater->output( "...update rev_comment_supp on version 0.3.0...\n" );
+
+				if ( $updater->getDB()->getType() == 'mysql' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'modifyField',
+							'rev_comment_supp',
+							'rcs_user_name',
+							"$dir/patch/patch-rev_comment_supp.sql",
+							true
+						)
+					);
+				} elseif ( $updater->getDB()->getType() == 'postgres' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'modifyField',
+							'rev_comment_supp',
+							'rcs_user_name',
+							"$dir/patch/patch-rev_comment_supp.pg.sql",
+							true
+						)
+					);
+				}
+
 			}
 		} else {
-			if( $updater->getDB()->tableExists( 'rev_comment_supp' ) ) {
-				$updater->output( "...rev_comment_supp table already exists.\n" );
-			} elseif ( $updater->getDB()->getType() == 'mysql' ) {
+			$updater->output( "...create rev_comment_supp table...\n" );
+			if ( $updater->getDB()->getType() == 'mysql' ) {
 				$updater->addExtensionUpdate(
 					array(
 						'addTable',
@@ -192,6 +206,7 @@ class RevisionCommentSupplement {
 				);
 			}
 		}
+
 		return true;
 	}
 }

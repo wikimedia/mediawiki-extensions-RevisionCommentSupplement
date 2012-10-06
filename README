@@ -1,3 +1,8 @@
+RevisionCommentSupplement
+https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement
+
+
+== Credit and License ==
 
 This extension uses codes of MediaWiki.
 
@@ -6,3 +11,13 @@ Please view CREDITS for the contributors of MediaWiki.
 This extension lisensed under the GNU General Public License,
 version 2 or any later version (http://www.gnu.org/copyleft/gpl.html).
 
+
+== Install and Update ==
+
+This extension needs to run update.php on installation.
+This needs to do on update from 0.1.x or 0.2.x to 0.3.0.
+
+You should remove supplement group before you update this extension from 0.2.x.
+Or you should run
+php extension/RevisionCommentSupplement/maintenance/FixUserGroupSupplement.php --log
+then.
