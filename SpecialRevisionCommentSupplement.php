@@ -340,8 +340,8 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 				$this->msg( 'revcs-show-revision-id' )
 					->rawParams(
 						$rcs_rev_id,
-						Linker::linkKnown(
-							SpecialPage::getTitleFor( 'Log' ),
+						Linker::link(
+							Title::makeTitleSafe( NS_SPECIAL, 'Log' ),
 							$this->msg( 'revcs-show-loglinktext' )->plain(),
 							array(),
 							array( 'page' => "Special:RevisionCommentSupplement/{$rcs_rev_id}" )

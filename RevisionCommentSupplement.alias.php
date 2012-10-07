@@ -11,7 +11,6 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'RevisionCommentSupplement' => array( 'RevisionCommentSupplement', 'Revision Comment Supplement' ),
-	'RevisionCommentSupplementList' => array( 'RevisionCommentSupplementList', 'Revision Comment Supplement List' ),
 );
 
 /** German (Deutsch) */
@@ -21,8 +20,7 @@ $specialPageAliases['de'] = array(
 
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
-	'RevisionCommentSupplement' => array( '版の補足コメントの操作' ),
-	'RevisionCommentSupplement' => array( '版の補足コメントの一覧' ),
+	'RevisionCommentSupplement' => array( '版のコメントの補足' ),
 );
 
 /** Korean (한국어) */
