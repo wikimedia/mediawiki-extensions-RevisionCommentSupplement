@@ -266,10 +266,10 @@ $messages['gl'] = array(
 	'revcs-error-denied' => 'rexeitouse o gardado do comentario suplementario.',
 	'revcs-error-unexpected' => 'ocorreu un erro inesperado.',
 	'revcs-form-legend' => 'Revisión dos comentarios suplementarios',
-	'revcs-form-preview' => 'vista previa',
+	'revcs-form-preview' => 'Mostrar a vista previa',
 	'revcs-form-revision-id' => 'ID da revisión:',
-	'revcs-form-save' => 'enviar',
-	'revcs-form-show' => 'mostrar',
+	'revcs-form-save' => 'Gardar o comentario suplementario',
+	'revcs-form-show' => 'Mostrar o comentario suplementario',
 	'revcs-form-summary' => 'Resumo:',
 	'revcs-form-supplement' => 'Comentario suplementario:',
 	'revcs-history-supplement' => '[Comentario suplementario: $1]',
@@ -343,13 +343,21 @@ $messages['hsb'] = array(
 );
 
 /** Italian (italiano)
+ * @author Beta16
  * @author Darth Kule
  */
 $messages['it'] = array(
 	'revcs-error' => 'Errore: $1',
-	'revcs-form-preview' => 'anteprima',
-	'revcs-form-save' => 'invia',
-	'revcs-form-show' => 'mostra',
+	'revcs-form-preview' => 'Visualizza anteprima',
+	'revcs-form-revision-id' => 'ID versione:',
+	'revcs-form-save' => 'Salva il commento supplementare',
+	'revcs-form-show' => 'Mostra il commento supplementare',
+	'revcs-form-summary' => 'Oggetto:',
+	'revcs-form-supplement' => 'Commento supplementare:',
+	'revcs-show-revision' => 'Versione: $1',
+	'revcs-show-revision-id' => 'ID versione: $1 ($2)',
+	'revcs-show-timestamp' => 'Data e ora modifica: $1 ($2)',
+	'revcs-show-user' => 'Utente: $1 $2 (ID utente: $3)',
 	'revcs-warning' => 'Attenzione: $1',
 );
 
@@ -359,9 +367,9 @@ $messages['it'] = array(
 $messages['ja'] = array(
 	'action-supplementcomment' => '補足コメントの操作',
 	'action-supplementcomment-restricted' => '補足コメントへの制限された操作の実行',
-	'group-supplementcomment' => 'コメント補足係',
-	'group-supplementcomment-member' => '{{GENDER:$1|コメント補足係}}',
-	'grouppage-supplementcomment' => '{{ns:project}}:コメント補足係',
+	'group-supplementcomment' => '補足コメント係',
+	'group-supplementcomment-member' => '{{GENDER:$1|補足コメント係}}',
+	'grouppage-supplementcomment' => '{{ns:project}}:補足コメント係',
 	'log-name-revisioncommentsupplement' => '版補足コメント記録',
 	'log-description-revisioncommentsupplement' => '{{ns:special}}:RevisionCommentSupplement での操作の記録です。',
 	'logentry-revisioncommentsupplement-create' => '$1 が版 $4 の補足コメント $6 を作成しました',
@@ -436,8 +444,8 @@ $messages['ko'] = array(
 	'revcs-form-legend' => '판 덧글 보충',
 	'revcs-form-preview' => '미리 보기',
 	'revcs-form-revision-id' => '판 ID:',
-	'revcs-form-save' => '제출',
-	'revcs-form-show' => '보기',
+	'revcs-form-save' => '보충 덧글 저장',
+	'revcs-form-show' => '보충 덧글 보기',
 	'revcs-form-summary' => '요약:',
 	'revcs-form-supplement' => '보충 덧글:',
 	'revcs-history-supplement' => '[보충: $1]',
@@ -450,7 +458,7 @@ $messages['ko'] = array(
 	'revcs-show-revision-id' => '판 ID: $1 ($2)',
 	'revcs-show-supplement-parsed' => '구문 분석한 보충 덧글: $1',
 	'revcs-show-supplement-raw' => '원래 보충 덧글: $1',
-	'revcs-show-timestamp' => '날짜와 시간 편집: $1 ($2)',
+	'revcs-show-timestamp' => '편집한 날짜와 시간: $1 ($2)',
 	'revcs-show-user' => '사용자: $1 $2 (사용자 ID: $3)',
 	'revcs-warning' => '경고: $1',
 	'revcs-written' => '보충 의견이 적혀 있습니다.',
