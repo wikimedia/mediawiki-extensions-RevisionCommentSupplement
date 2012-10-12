@@ -543,20 +543,21 @@ $messages['mk'] = array(
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
+ * @author Wiki13
  */
 $messages['nl'] = array(
 	'revcs-alert-revision-id' => '"$1" is een verkeerd versienummer.',
 	'revcs-error' => 'Fout: $1',
-	'revcs-form-preview' => 'voorvertoning',
+	'revcs-form-preview' => 'Voorbeeld weergeven',
 	'revcs-form-revision-id' => 'Versienummer:',
-	'revcs-form-save' => 'opslaan',
-	'revcs-form-show' => 'weergeven',
+	'revcs-form-save' => 'De aanvullende opmerking opslaan',
+	'revcs-form-show' => 'Weergeef de aanvullende opmerking',
 	'revcs-form-summary' => 'Samenvatting:',
 	'revcs-log-nosupplement' => '(geen)',
 	'revcs-preview-summary' => 'Samenvatting nakijken: $1',
 	'revcs-show-revision' => 'Versie: $1',
 	'revcs-show-revision-id' => 'Versienummer: $1 ($2)',
-	'revcs-show-timestamp' => 'Bezig met bewerken van datum en tijd: $1 ($2)',
+	'revcs-show-timestamp' => 'Datum en tijd bewerkt: $1 ($2)',
 	'revcs-show-user' => 'Gebruiker: $1 $2 (Gebruikersnummer: $3)',
 	'revcs-warning' => 'Waarschuwing: $1',
 );
