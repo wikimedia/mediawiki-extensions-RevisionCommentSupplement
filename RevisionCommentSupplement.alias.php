@@ -27,3 +27,8 @@ $specialPageAliases['ja'] = array(
 $specialPageAliases['ko'] = array(
 	'RevisionCommentSupplement' => array( '판덧글보충' ),
 );
+
+/** Macedonian (македонски) */
+$specialPageAliases['mk'] = array(
+	'RevisionCommentSupplement' => array( 'РевизискиДодатенКоментар' ),
+);
