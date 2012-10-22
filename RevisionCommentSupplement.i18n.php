@@ -566,8 +566,8 @@ $messages['nl'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
-	'revcs-form-save' => 'سپارل',
-	'revcs-form-show' => 'ښکاره کول',
+	'revcs-form-save' => 'سپارل', # Fuzzy
+	'revcs-form-show' => 'ښکاره کول', # Fuzzy
 	'revcs-form-summary' => 'لنډيز:',
 	'revcs-log-nosupplement' => '(هېڅ)',
 );
@@ -576,7 +576,7 @@ $messages['ps'] = array(
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
-	'revcs-form-save' => 'enviar',
+	'revcs-form-save' => 'enviar', # Fuzzy
 );
 
 /** Telugu (తెలుగు)
@@ -589,4 +589,3 @@ $messages['te'] = array(
 	'revcs-show-supplement-raw' => 'ముడి వ్యాఖ్య: $1',
 	'revcs-warning' => 'హెచ్చరిక: $1',
 );
-
