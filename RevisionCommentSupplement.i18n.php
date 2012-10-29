@@ -238,6 +238,16 @@ $messages['es'] = array(
 	'right-supplementcomment-restricted' => 'Utilizar comentarios adicionales con acciones restringidas',
 );
 
+/** French (français)
+ * @author Nicolas NALLET
+ * @author Tititou36
+ */
+$messages['fr'] = array(
+	'revcs-form-preview' => 'Prévisualiser',
+	'revcs-form-summary' => 'Résumé :',
+	'revcs-log-nosupplement' => '(aucun)',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
