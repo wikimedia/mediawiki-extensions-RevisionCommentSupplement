@@ -239,10 +239,13 @@ $messages['es'] = array(
 );
 
 /** French (français)
+ * @author Gomoko
  * @author Nicolas NALLET
  * @author Tititou36
  */
 $messages['fr'] = array(
+	'action-supplementcomment' => 'exploiter les commentaires supplémentaires',
+	'action-supplementcomment-restricted' => 'exploiter les commentaires supplémentaires avec des actions restreintes',
 	'revcs-form-preview' => 'Prévisualiser',
 	'revcs-form-summary' => 'Résumé :',
 	'revcs-log-nosupplement' => '(aucun)',
