@@ -22,18 +22,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die();
 }
 
-$dir = dirname(__FILE__) . '/';
-
-$wgExtensionMessagesFiles['RevisionCommentSupplement'] = $dir . 'RevisionCommentSupplement.i18n.php';
-$wgExtensionMessagesFiles['RevisionCommentSupplementAlias'] = $dir . 'RevisionCommentSupplement.alias.php';
-
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'RevisionCommentSupplement',
 	'author' => array( 'Burthsceh' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement',
 	'descriptionmsg' => 'revcs-desc',
-	'version' => '0.3.0',
+	'version' => '0.3.2',
 );
 
 $wgAvailableRights[] = 'supplementcomment';
@@ -43,12 +38,18 @@ $wgGroupPermissions['supplementcomment']['supplementcomment'] = true;
 $wgGroupPermissions['supplementcomment']['supplementcomment-restricted'] = true;
 $wgGroupPermissions['sysop']['supplementcomment'] = true;
 
-$wgAutoloadClasses['RevisionCommentSupplement'] = $dir . 'RevisionCommentSupplement.body.php';
-$wgAutoloadClasses['RevisionCommentSupplementLogFormatter'] = $dir . 'RevisionCommentSupplement.body.php';
-$wgAutoloadClasses['SpecialRevisionCommentSupplement'] = $dir . 'SpecialRevisionCommentSupplement.php';
+$wgExtensionMessagesFiles['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.i18n.php';
+$wgExtensionMessagesFiles['RevisionCommentSupplementAlias'] = __DIR__ . '/RevisionCommentSupplement.alias.php';
+
+$wgAutoloadClasses['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.body.php';
+$wgAutoloadClasses['RevisionCommentSupplementLogFormatter'] = __DIR__ . '/RevisionCommentSupplement.body.php';
+$wgAutoloadClasses['SpecialRevisionCommentSupplement'] = __DIR__ . '/SpecialRevisionCommentSupplement.php';
+$wgAutoloadClasses['SpecialRevisionCommentSupplementList'] = __DIR__ . '/SpecialRevisionCommentSupplementList.php';
 
 $wgSpecialPages['RevisionCommentSupplement'] = 'SpecialRevisionCommentSupplement';
 $wgSpecialPageGroups['RevisionCommentSupplement'] = 'other';
+$wgSpecialPages['RevisionCommentSupplementList'] = 'SpecialRevisionCommentSupplementList';
+$wgSpecialPageGroups['RevisionCommentSupplementList'] = 'other';
 
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'RevisionCommentSupplement::runUpdates';
 $wgHooks['PageHistoryLineEnding'][] = 'RevisionCommentSupplement::onPageHistoryLineEnding';
@@ -58,6 +59,6 @@ $wgLogActionsHandlers['revisioncommentsupplement/*'] = 'RevisionCommentSupplemen
 
 $wgResourceModules['ext.RevisionCommentSupplement.special'] = array(
 	'styles' => 'ext.RevisionCommentSupplement.special.css',
-	'localBasePath' => dirname( __FILE__ ),
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'RevisionCommentSupplement',
 );

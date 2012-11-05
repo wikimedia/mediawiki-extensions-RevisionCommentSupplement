@@ -35,7 +35,7 @@ class FixUserGroupSupplement extends Maintenance {
 			$user->addGroup( 'supplementcomment' );
 			$newGroups = $user->getGroups();
 			$i++;
-			if ( $this->hasOption( 'fix' ) ) {
+			if ( $this->hasOption( 'log' ) ) {
 				$log = new LogPage( 'rights' );
 
 				$log->addEntry(
