@@ -21,7 +21,7 @@ $specialPageAliases['de'] = array(
 
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
-	'RevisionCommentSupplement' => array( '版の補足コメントの操作' ),
+	'RevisionCommentSupplement' => array( '版のコメントの補足' ),
 	'RevisionCommentSupplementList' => array( '版の補足コメントの一覧' ),
 );
 
