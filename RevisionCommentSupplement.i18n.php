@@ -670,7 +670,7 @@ $messages['ko'] = array(
 	'revcs-error' => '오류: $1',
 	'revcs-error-denied' => '보충 덧글 저장을 거부했습니다.',
 	'revcs-error-unexpected' => '예기치 않은 오류가 발생했습니다.',
-	'revcs-form-legend' => '판 덧글 보충',
+	'revcs-form-legend' => '보충 덧글 편집',
 	'revcs-form-preview' => '미리 보기',
 	'revcs-form-revision-id' => '판 ID:',
 	'revcs-form-save' => '보충 덧글 저장',
@@ -854,6 +854,14 @@ $messages['ps'] = array(
  */
 $messages['pt-br'] = array(
 	'revcs-form-save' => 'enviar', # Fuzzy
+);
+
+/** Russian (русский)
+ * @author ShinePhantom
+ */
+$messages['ru'] = array(
+	'revcs-alert-special-parameter' => 'Есть ошибка в параметре.',
+	'revcs-list-rcs-rev-id-edit' => 'Править',
 );
 
 /** Telugu (తెలుగు)
