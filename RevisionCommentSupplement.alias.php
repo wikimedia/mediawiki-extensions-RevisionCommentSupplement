@@ -33,4 +33,5 @@ $specialPageAliases['ko'] = array(
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'RevisionCommentSupplement' => array( 'РевизискиДодатенКоментар' ),
+	'RevisionCommentSupplementList' => array( 'РевизискиДодатенКоментарСписок' ),
 );
