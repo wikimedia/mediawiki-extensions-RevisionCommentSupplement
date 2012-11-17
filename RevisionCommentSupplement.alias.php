@@ -19,6 +19,12 @@ $specialPageAliases['de'] = array(
 	'RevisionCommentSupplement' => array( 'Versionskommentarergänzung' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'RevisionCommentSupplement' => array( 'SupplementoCommentoRevisione' ),
+	'RevisionCommentSupplementList' => array( 'ElencoSupplementoCommentoRevisione' ),
+);
+
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
 	'RevisionCommentSupplement' => array( '版のコメントの補足' ),
