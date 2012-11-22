@@ -34,10 +34,17 @@ $specialPageAliases['ja'] = array(
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'RevisionCommentSupplement' => array( '판덧글보충' ),
+	'RevisionCommentSupplementList' => array( '판덧글보충목록' ),
 );
 
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'RevisionCommentSupplement' => array( 'РевизискиДодатенКоментар' ),
 	'RevisionCommentSupplementList' => array( 'РевизискиДодатенКоментарСписок' ),
+);
+
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'RevisionCommentSupplement' => array( 'SupplementoCommentoRevisione' ),
+	'RevisionCommentSupplementList' => array( 'ElencoSupplementoCommentoRevisione' ),
 );
