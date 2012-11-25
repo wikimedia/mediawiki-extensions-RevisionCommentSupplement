@@ -391,6 +391,15 @@ $messages['es'] = array(
 	'right-supplementcomment-restricted' => 'Utilizar comentarios adicionales con acciones restringidas',
 );
 
+/** Persian (فارسی)
+ * @author ZxxZxxZ
+ */
+$messages['fa'] = array(
+	'revcs-list-extended-supplement-all' => 'همه',
+	'revcs-list-rcs-rev-id-edit' => 'ویرایش',
+	'revcs-list-rcs-user-text' => 'کاربر',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Nicolas NALLET
