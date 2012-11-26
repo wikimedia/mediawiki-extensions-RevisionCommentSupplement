@@ -829,10 +829,14 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'revisioncommentsupplementlist' => 'Lëscht vun den zousätzleche Bemierkungen',
 	'revcs-alert-revision-id' => '"$1" ass eng falsch Versiouns ID.',
+	'revcs-delete-failure' => 'Déi zousätzlech Bemierkung konnt net geläscht ginn.',
 	'revcs-delete-heading' => 'Déi zousätzlech Bemierkung läschen',
 	'revcs-delete-legend' => 'Déi zousätzlech Bemierkung läschen',
 	'revcs-delete-submit' => 'Déi zousätzlech Bemierkung läschen',
+	'revcs-delete-success' => 'Déi zousätzlech Bemierkung gouf geläscht.',
+	'revcs-edit-heading' => 'Zousätzlech Bemierkungen änneren',
 	'revcs-error' => 'Feeler: $1',
 	'revcs-error-unexpected' => 'En onerwaarte Feeler ass geschitt.',
 	'revcs-form-legend' => 'Zousätzlech Bemierkungen änneren',
@@ -850,6 +854,7 @@ $messages['lb'] = array(
 	'revcs-list-rcs-rev-id-edit' => 'Änneren',
 	'revcs-list-rcs-user-text' => 'Benotzer',
 	'revcs-list-reset' => 'Zrécksetzen',
+	'revcs-list-sort' => 'Zortéierung:',
 	'revcs-list-submit' => 'Weisen',
 	'revcs-log-nosupplement' => '(keen)',
 	'revcs-preview-summary' => 'Resumé kucken ouni ofzespäicheren: $1',
