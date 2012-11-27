@@ -958,6 +958,16 @@ $messages['mk'] = array(
 	'right-supplementcomment-restricted' => 'Работење со додатни коментари со ограничени дејства',
 );
 
+/** Marathi (मराठी)
+ * @author Ydyashad
+ */
+$messages['mr'] = array(
+	'revcs-list-extended-supplement-all' => 'सर्व',
+	'revcs-list-extended-supplement-empty' => 'रिकामा',
+	'revcs-list-extended-supplement-notempty' => 'रीकामा नाही',
+	'revcs-list-limit' => 'अंक प्रति पान',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
