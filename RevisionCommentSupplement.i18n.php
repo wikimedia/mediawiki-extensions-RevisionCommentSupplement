@@ -400,6 +400,19 @@ $messages['fa'] = array(
 	'revcs-list-rcs-user-text' => 'کاربر',
 );
 
+/** Finnish (suomi)
+ * @author Nedergard
+ */
+$messages['fi'] = array(
+	'revcs-error' => 'Virhe: $1',
+	'revcs-form-preview' => 'Näytä esikatselu',
+	'revcs-form-summary' => 'Yhteenveto:',
+	'revcs-list-rcs-rev-id-edit' => 'Muokkaa',
+	'revcs-list-rcs-user-text' => 'Käyttäjä',
+	'revcs-list-submit' => 'Näytä',
+	'revcs-warning' => 'Varoitus: $1',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Nicolas NALLET
