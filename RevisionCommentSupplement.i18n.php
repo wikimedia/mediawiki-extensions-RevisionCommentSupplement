@@ -100,8 +100,8 @@ $messages['qqq'] = array(
 	'group-supplementcomment' => '{{doc-group|supplementcomment}}',
 	'group-supplementcomment-member' => '{{doc-group|supplementcomment}}',
 	'grouppage-supplementcomment' => '{{doc-group|supplementcomment}}',
-	'log-name-revisioncommentsupplement' => 'All logs of Extension:RevisonCommentSupplement in Special:Log.',
-	'log-description-revisioncommentsupplement' => 'The description of all logs of Extension:RevisonCommentSupplement in Special:Log.',
+	'log-name-revisioncommentsupplement' => 'All logs of Extension:RevisonCommentSupplement in [[Special:Log]].',
+	'log-description-revisioncommentsupplement' => 'The description of all logs of Extension:RevisonCommentSupplement in [[Special:Log]].',
 	'logentry-revisioncommentsupplement-create' => 'A line of log entry in [[Special:Log]].
 *$1 are links of user page and user tool page(s).
 *$2 is user name.
@@ -109,14 +109,14 @@ $messages['qqq'] = array(
 *$4 is the revision id.
 *$5 is {{msg-mw|revcs-log-nosupplement}}.
 *$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.',
-	'logentry-revisioncommentsupplement-delete' => "A line of log entry in Special:Log. This message hasn't been used.
+	'logentry-revisioncommentsupplement-delete' => "A line of log entry in [[Special:Log]]. This message hasn't been used.
 *$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
 *$2 is the user name.
 *$3 is a link of Special:RevisionCommentSupplement/$4.
 *$4 is the revision id.
 *$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
 *$6 is {{msg-mw|revcs-log-nosupplement}}.",
-	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in Special:Log.
+	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in [[Special:Log]].
 *$1 are links of the user page and the user tool(s) page.
 *$2 is the user name.
 *$3 is a link of Special:RevisionCommentSupplement/$4.
@@ -146,7 +146,7 @@ $messages['qqq'] = array(
 	'revcs-error' => '$1 is error messages, revcs-alert-* or revcs-error-*.',
 	'revcs-error-denied' => 'This message is a error message used at save in Special:RevisionCommentSupplement.',
 	'revcs-error-unexpected' => 'This message is a error message used in Special:RevisionCommentSupplement.',
-	'revcs-form-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/edit.', # Fuzzy
+	'revcs-form-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/edit.',
 	'revcs-form-preview' => 'This message is a label of a input botton in Special:RevisionCommentSupplement/edit.',
 	'revcs-form-revision-id' => 'This message is a content of a label element of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.',
 	'revcs-form-save' => 'This message is a label of a input botton in Special:RevisionCommentSupplement/edit.',
@@ -174,7 +174,7 @@ $messages['qqq'] = array(
 	'revcs-list-rcs-comment' => 'This message is a heading of a table in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-rev-id' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-rev-id-edit' => 'This message is a link text to Special:RevisionCommentSupplement at revision id into table in Special:RevisionCommentSupplementList.',
-	'revcs-list-rcs-rev-id-log' => 'This message is a link text to Special:Log at revision id into table in Special:RevisionCommentSupplementList.',
+	'revcs-list-rcs-rev-id-log' => 'This message is a link text to [[Special:Log]] at revision id into table in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-timestamp' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-user-text' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-reset' => 'This message is a label of a input botton in Special:RevisionCommentSupplementList.',
@@ -761,7 +761,7 @@ $messages['ja'] = array(
 	'revcs-list-rcs-comment' => '補足コメント',
 	'revcs-list-rcs-rev-id' => '版 ID',
 	'revcs-list-rcs-rev-id-edit' => '編集',
-	'revcs-list-rcs-rev-id-log' => 'ログ',
+	'revcs-list-rcs-rev-id-log' => '記録',
 	'revcs-list-rcs-timestamp' => '編集日時',
 	'revcs-list-rcs-user-text' => '利用者',
 	'revcs-list-reset' => 'リセット',
