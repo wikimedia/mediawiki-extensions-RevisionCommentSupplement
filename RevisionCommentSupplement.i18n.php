@@ -91,6 +91,7 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Krenair
  * @author Raymond
  * @author Shirayuki
  */
@@ -152,7 +153,7 @@ $messages['qqq'] = array(
 	'revcs-form-save' => 'This message is a label of a input botton in Special:RevisionCommentSupplement/edit.',
 	'revcs-form-show' => 'This message is a label of a input botton in Special:RevisionCommentSupplement/edit.',
 	'revcs-form-summary' => 'This message is a content of a label element of a text input box of a summary and/or a reason in Special:RevisionCommentSupplement/edit.',
-	'revcs-form-supplement' => 'This messsage is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.',
+	'revcs-form-supplement' => 'This message is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.',
 	'revcs-history-supplement' => 'This message is used at each revision line in History pages. $1 is a parsed supplementary comment.',
 	'revcs-list-desc' => 'This message is a description at the top in Special:RevisionCommentSupplementList.',
 	'revcs-list-descending' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplementList.',
