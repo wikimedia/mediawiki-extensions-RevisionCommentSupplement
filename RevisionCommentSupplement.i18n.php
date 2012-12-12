@@ -1037,6 +1037,7 @@ $messages['nl'] = array(
 	'revcs-list-extended-supplement-all' => 'alle',
 	'revcs-list-extended-supplement-empty' => 'leeg',
 	'revcs-list-extended-supplement-notempty' => 'niet leeg',
+	'revcs-list-limit' => 'Aantal per pagina:',
 	'revcs-list-rcs-rev-id' => 'Versienummer',
 	'revcs-list-rcs-rev-id-edit' => 'Bewerken',
 	'revcs-list-rcs-rev-id-log' => 'Logboek',
