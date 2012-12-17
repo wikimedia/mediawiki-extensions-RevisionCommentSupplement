@@ -403,11 +403,12 @@ $messages['fa'] = array(
 
 /** Finnish (suomi)
  * @author Nedergard
+ * @author Nike
  */
 $messages['fi'] = array(
 	'revcs-error' => 'Virhe: $1',
 	'revcs-form-preview' => 'Näytä esikatselu',
-	'revcs-form-summary' => 'Yhteenveto:',
+	'revcs-form-summary' => 'Yhteenveto',
 	'revcs-list-rcs-rev-id-edit' => 'Muokkaa',
 	'revcs-list-rcs-user-text' => 'Käyttäjä',
 	'revcs-list-submit' => 'Näytä',
@@ -1093,4 +1094,11 @@ $messages['te'] = array(
 	'revcs-log-nosupplement' => '(ఏమీలేదు)',
 	'revcs-show-supplement-raw' => 'ముడి వ్యాఖ్య: $1',
 	'revcs-warning' => 'హెచ్చరిక: $1',
+);
+
+/** Ukrainian (українська)
+ * @author Steve.rusyn
+ */
+$messages['uk'] = array(
+	'revcs-list-rcs-user-text' => 'Користувач',
 );
