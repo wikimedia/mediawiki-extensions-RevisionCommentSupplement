@@ -393,12 +393,20 @@ $messages['es'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Mjbmr
  * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'revcs-list-extended-supplement-all' => 'همه',
 	'revcs-list-rcs-rev-id-edit' => 'ویرایش',
+	'revcs-list-rcs-rev-id-log' => 'سیاهه',
 	'revcs-list-rcs-user-text' => 'کاربر',
+	'revcs-list-reset' => 'بازنشانی',
+	'revcs-list-submit' => 'نمایش',
+	'revcs-log-nosupplement' => '(هیچ کدام)',
+	'revcs-show-revision' => 'نسخه: $1',
+	'revcs-show-revision-id' => 'شناسه نسخه: $1 ($2)',
+	'revcs-warning' => 'هشدار: $1',
 );
 
 /** Finnish (suomi)
@@ -789,6 +797,21 @@ $messages['ja'] = array(
 	'right-supplementcomment-restricted' => '補足コメントへの制限された操作を実行',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'revcs-list-extended-supplement-all' => 'ყველა',
+	'revcs-list-extended-supplement-empty' => 'ცარიელი',
+	'revcs-list-extended-supplement-notempty' => 'არ არის ცარიელი',
+	'revcs-list-rcs-rev-id-edit' => 'რედაქტირება',
+	'revcs-list-rcs-user-text' => 'მომხმარებელი',
+	'revcs-list-submit' => 'ჩვენება',
+	'revcs-log-nosupplement' => '(არა)',
+	'revcs-show-revision' => 'ვერსია: $1',
+	'revcs-warning' => 'გაფრთხილება: $1',
+);
+
 /** Korean (한국어)
  * @author 아라
  */
@@ -1055,7 +1078,7 @@ $messages['nl'] = array(
 	'revcs-show-revision' => 'Versie: $1',
 	'revcs-show-revision-id' => 'Versienummer: $1 ($2)',
 	'revcs-show-timestamp' => 'Datum en tijd bewerkt: $1 ($2)',
-	'revcs-show-user' => 'Gebruiker: $1 $2 (Gebruikersnummer: $3)',
+	'revcs-show-user' => 'Gebruiker: $1 $2 (gebruikersnummer: $3)',
 	'revcs-warning' => 'Waarschuwing: $1',
 );
 
@@ -1084,6 +1107,29 @@ $messages['ru'] = array(
 	'revcs-list-rcs-rev-id-edit' => 'Править',
 );
 
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'revcs-error' => 'දෝෂය: $1',
+	'revcs-form-preview' => 'පෙරදසුන පෙන්වන්න',
+	'revcs-form-summary' => 'සාරාංශය:',
+	'revcs-list-extended-supplement-all' => 'සියල්ල',
+	'revcs-list-extended-supplement-empty' => 'හිස්',
+	'revcs-list-extended-supplement-notempty' => 'හිස් නැත',
+	'revcs-list-limit' => 'පිටුවකට අංක:',
+	'revcs-list-rcs-rev-id-edit' => 'සංස්කරණය',
+	'revcs-list-rcs-rev-id-log' => 'ලඝු සටහන',
+	'revcs-list-rcs-user-text' => 'පරිශීලක',
+	'revcs-list-reset' => 'නැවත සකසන්න',
+	'revcs-list-sort' => 'වර්ගය:',
+	'revcs-list-submit' => 'පෙන්වන්න',
+	'revcs-log-nosupplement' => '(කිසිවක් නොමැත)',
+	'revcs-preview-summary' => 'සාරාංශ පෙරදසුන: $1',
+	'revcs-show-revision' => 'සංශෝධනය: $1',
+	'revcs-warning' => 'අවවාදය: $1',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
@@ -1100,5 +1146,25 @@ $messages['te'] = array(
  * @author Steve.rusyn
  */
 $messages['uk'] = array(
+	'revcs-error' => 'Помилка: $1',
+	'revcs-list-rcs-rev-id-edit' => 'Редагувати',
 	'revcs-list-rcs-user-text' => 'Користувач',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hans'] = array(
+	'revcs-error' => '错误：$1',
+	'revcs-form-summary' => '摘要：',
+	'revcs-list-rcs-rev-id-edit' => '编辑',
+	'revcs-list-rcs-user-text' => '用户',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hant'] = array(
+	'revcs-list-rcs-rev-id-edit' => '編輯',
+	'revcs-list-rcs-user-text' => '用戶',
 );
