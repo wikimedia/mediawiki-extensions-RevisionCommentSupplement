@@ -210,6 +210,19 @@ If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[
 	'right-supplementcomment-restricted' => '{{doc-right|supplementcomment-restricted}}',
 );
 
+/** Bulgarian (български)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['bg'] = array(
+	'revcs-error' => 'Грешка: $1',
+	'revcs-form-summary' => 'Резюме:',
+	'revcs-list-extended-supplement-all' => 'всички',
+	'revcs-list-extended-supplement-empty' => 'празно',
+	'revcs-list-rcs-rev-id-edit' => 'Редактиране',
+	'revcs-list-rcs-user-text' => 'Потребител',
+	'revcs-list-submit' => 'Показване',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
@@ -687,6 +700,17 @@ $messages['hsb'] = array(
 	'right-supplementcomment-restricted' => 'Z wudospołnjowacymi komentarami z wobmjezowanymi akcijemi dźěłać',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['id'] = array(
+	'revcs-form-summary' => 'Ringkasan:',
+	'revcs-list-extended-supplement-all' => 'semua',
+	'revcs-list-extended-supplement-empty' => 'kosong',
+	'revcs-list-rcs-rev-id-edit' => 'Sunting',
+	'revcs-list-submit' => 'Tampilkan',
+);
+
 /** Italian (italiano)
  * @author Beta16
  * @author Darth Kule
@@ -1147,8 +1171,11 @@ $messages['te'] = array(
  */
 $messages['uk'] = array(
 	'revcs-error' => 'Помилка: $1',
+	'revcs-list-extended-supplement-all' => 'всі',
 	'revcs-list-rcs-rev-id-edit' => 'Редагувати',
 	'revcs-list-rcs-user-text' => 'Користувач',
+	'revcs-list-submit' => 'Показати',
+	'revcs-warning' => 'Увага: $1',
 );
 
 /** Simplified Chinese (中文（简体）‎)
