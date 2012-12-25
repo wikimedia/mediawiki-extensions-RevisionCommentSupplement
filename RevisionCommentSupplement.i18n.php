@@ -314,6 +314,13 @@ $messages['de'] = array(
 	'right-supplementcomment-restricted' => 'Eingeschränkt mit ergänzenden Kommentaren arbeiten',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'revcs-error' => 'Eraro: $1',
+);
+
 /** Spanish (español)
  * @author Armando-Martin
  * @author Ralgis
@@ -1123,6 +1130,13 @@ $messages['pt-br'] = array(
 	'revcs-form-save' => 'enviar', # Fuzzy
 );
 
+/** Romanian (română)
+ * @author Stelistcristi
+ */
+$messages['ro'] = array(
+	'revcs-warning' => 'Avertisment: $1',
+);
+
 /** Russian (русский)
  * @author ShinePhantom
  */
@@ -1174,7 +1188,9 @@ $messages['uk'] = array(
 	'revcs-list-extended-supplement-all' => 'всі',
 	'revcs-list-rcs-rev-id-edit' => 'Редагувати',
 	'revcs-list-rcs-user-text' => 'Користувач',
+	'revcs-list-reset' => 'Скинути',
 	'revcs-list-submit' => 'Показати',
+	'revcs-show-revision' => 'Версія: $1',
 	'revcs-warning' => 'Увага: $1',
 );
 
