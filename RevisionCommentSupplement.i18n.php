@@ -412,6 +412,15 @@ $messages['es'] = array(
 	'right-supplementcomment-restricted' => 'Utilizar comentarios adicionales con acciones restringidas',
 );
 
+/** Estonian (eesti)
+ * @author Avjoska
+ */
+$messages['et'] = array(
+	'revcs-list-extended-supplement-all' => 'kõik',
+	'revcs-list-extended-supplement-empty' => 'tühi',
+	'revcs-list-extended-supplement-notempty' => 'pole tühi',
+);
+
 /** Persian (فارسی)
  * @author Mjbmr
  * @author ZxxZxxZ
@@ -1166,6 +1175,28 @@ $messages['si'] = array(
 	'revcs-preview-summary' => 'සාරාංශ පෙරදසුන: $1',
 	'revcs-show-revision' => 'සංශෝධනය: $1',
 	'revcs-warning' => 'අවවාදය: $1',
+);
+
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'revcs-error' => 'பிழை: $1',
+	'revcs-form-preview' => 'முன்தோற்றம் காட்டு',
+	'revcs-form-revision-id' => 'திருத்த அடையாள எண் :',
+	'revcs-form-summary' => 'சுருக்கம்:',
+	'revcs-list-extended-supplement-all' => 'அனைத்தும்',
+	'revcs-list-extended-supplement-empty' => 'காலி',
+	'revcs-list-extended-supplement-notempty' => 'காலியில்லை',
+	'revcs-list-rcs-rev-id-edit' => 'தொகு',
+	'revcs-list-rcs-rev-id-log' => 'பதிகை',
+	'revcs-list-rcs-timestamp' => 'தொகுக்கப்பட்ட தேதி மற்றும் நேரம்',
+	'revcs-list-rcs-user-text' => 'பயனர்',
+	'revcs-list-reset' => 'மீட்டமை',
+	'revcs-list-sort' => 'வரிசைப்படுத்து:',
+	'revcs-list-submit' => 'காண்பி',
+	'revcs-log-nosupplement' => '(ஏதுமில்லை)',
+	'revcs-preview-summary' => 'சுருக்க முன்தோற்றம்: $1',
 );
 
 /** Telugu (తెలుగు)
