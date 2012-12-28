@@ -1307,6 +1307,7 @@ $messages['te'] = array(
  */
 $messages['uk'] = array(
 	'revcs-error' => 'Помилка: $1',
+	'revcs-form-summary' => 'Резюме:',
 	'revcs-list-extended-supplement-all' => 'всі',
 	'revcs-list-rcs-rev-id-edit' => 'Редагувати',
 	'revcs-list-rcs-user-text' => 'Користувач',
