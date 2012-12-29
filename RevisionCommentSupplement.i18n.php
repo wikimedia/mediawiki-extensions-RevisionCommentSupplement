@@ -730,6 +730,7 @@ $messages['id'] = array(
 /** Italian (italiano)
  * @author Beta16
  * @author Darth Kule
+ * @author පසිඳු කාවින්ද
  */
 $messages['it'] = array(
 	'revcs-error' => 'Errore: $1',
@@ -739,6 +740,13 @@ $messages['it'] = array(
 	'revcs-form-show' => 'Mostra il commento supplementare',
 	'revcs-form-summary' => 'Oggetto:',
 	'revcs-form-supplement' => 'Commento supplementare:',
+	'revcs-list-extended-supplement-all' => 'tutti',
+	'revcs-list-extended-supplement-empty' => 'vuota',
+	'revcs-list-rcs-rev-id-edit' => 'Modifica',
+	'revcs-list-rcs-user-text' => 'Utente',
+	'revcs-list-reset' => 'Reimposta',
+	'revcs-list-submit' => 'Mostra',
+	'revcs-log-nosupplement' => '(nessuno)',
 	'revcs-show-revision' => 'Versione: $1',
 	'revcs-show-revision-id' => 'ID versione: $1 ($2)',
 	'revcs-show-timestamp' => 'Data e ora modifica: $1 ($2)',
