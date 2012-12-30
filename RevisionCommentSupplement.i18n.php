@@ -1245,6 +1245,32 @@ $messages['ro'] = array(
 	'revcs-warning' => 'Avertisment: $1',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'revcs-error' => 'Errore: $1',
+	'revcs-form-revision-id' => "ID d'a revisione:",
+	'revcs-list-extended-supplement-all' => 'tutte',
+	'revcs-list-extended-supplement-empty' => 'vacande',
+	'revcs-list-extended-supplement-notempty' => 'chine',
+	'revcs-list-limit' => 'Numere pe pàgene:',
+	'revcs-list-rcs-rev-id' => "ID d'a revisione",
+	'revcs-list-rcs-rev-id-edit' => 'Cange',
+	'revcs-list-rcs-rev-id-log' => 'Archivije',
+	'revcs-list-rcs-user-text' => 'Utende',
+	'revcs-list-reset' => 'Azzere',
+	'revcs-list-sort' => 'Ordine:',
+	'revcs-list-submit' => 'Fà vedè',
+	'revcs-log-nosupplement' => '(ninde)',
+	'revcs-show-revision' => 'Revisione: $1',
+	'revcs-show-revision-id' => "ID d'a revisione: $1 ($2)",
+	'revcs-show-user' => "Utende: $1 $2 (ID de l'utende: $3)",
+	'revcs-warning' => 'Avvertimende: $1',
+	'revcs-written' => "'U commende aggiundive ha state scritte.",
+	'right-supplementcomment' => 'Fatte commende aggiundive',
+);
+
 /** Russian (русский)
  * @author ShinePhantom
  */
@@ -1257,23 +1283,49 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'group-supplementcomment' => 'අතිරේකපරිකථනය',
+	'group-supplementcomment-member' => '{{GENDER:$1|අතිරේකපරිකථනය}}',
+	'grouppage-supplementcomment' => '{{ns:project}}:අතිරේකපරිකථනය',
+	'log-name-revisioncommentsupplement' => 'පරිපූරක පරිකථන ලොගය',
+	'revisioncommentsupplementlist' => 'අතිරේක පරිකථන ලැයිස්තුව',
+	'revcs-alert-revision-id' => '"$1" යනු වැරදි සංශෝධන හැඳුනුමකි.',
+	'revcs-delete-heading' => 'අතිරේක පරිකථනය මකා දමන්න',
+	'revcs-delete-legend' => 'අතිරේක පරිකථනය මකා දමන්න',
+	'revcs-delete-submit' => 'අතිරේක පරිකථනය මකා දමන්න',
 	'revcs-error' => 'දෝෂය: $1',
 	'revcs-form-preview' => 'පෙරදසුන පෙන්වන්න',
+	'revcs-form-revision-id' => 'සංශෝධන හැඳුනුම:',
 	'revcs-form-summary' => 'සාරාංශය:',
+	'revcs-history-supplement' => '[අතිරේකය: $1]',
+	'revcs-list-extended-offset' => 'උපමනයේ තන්තුව:',
+	'revcs-list-extended-supplement' => 'අතිරේක පරිකථනවල කොන්දේසිය:',
 	'revcs-list-extended-supplement-all' => 'සියල්ල',
 	'revcs-list-extended-supplement-empty' => 'හිස්',
 	'revcs-list-extended-supplement-notempty' => 'හිස් නැත',
+	'revcs-list-legend' => 'අතිරේක පරිකථන ලැයිස්තුව',
 	'revcs-list-limit' => 'පිටුවකට අංක:',
+	'revcs-list-rcs-comment' => 'අතිරේක පරිකථනය',
+	'revcs-list-rcs-rev-id' => 'සංශෝධන හැඳුනුම',
 	'revcs-list-rcs-rev-id-edit' => 'සංස්කරණය',
 	'revcs-list-rcs-rev-id-log' => 'ලඝු සටහන',
+	'revcs-list-rcs-timestamp' => 'සංස්කරණය කල දිනය සහ වෙලාව',
 	'revcs-list-rcs-user-text' => 'පරිශීලක',
 	'revcs-list-reset' => 'නැවත සකසන්න',
 	'revcs-list-sort' => 'වර්ගය:',
 	'revcs-list-submit' => 'පෙන්වන්න',
 	'revcs-log-nosupplement' => '(කිසිවක් නොමැත)',
 	'revcs-preview-summary' => 'සාරාංශ පෙරදසුන: $1',
+	'revcs-preview-supplement' => 'අතිරේක පරිකථනයේ පෙරදසුන: $1',
+	'revcs-show-deletelinktext' => 'අතිරේක පරිකථනය මකා දමන්න',
+	'revcs-show-editlinktext' => 'අතිරේක පරිකථනය සංස්කරණය කරන්න',
 	'revcs-show-revision' => 'සංශෝධනය: $1',
+	'revcs-show-revision-id' => 'සංශෝධන හැඳුනුම: $1 ($2)',
+	'revcs-show-supplement-parsed' => 'ව්‍යාකරණ විග්‍ර කල අතිරේක පරිකථනය: $1',
+	'revcs-show-supplement-raw' => 'නොනිමි අතිරේක පරිකථනය: $1',
+	'revcs-show-timestamp' => 'සංස්කරණය කල දිනය සහ වෙලාව: $1 ($2)',
+	'revcs-show-user' => 'පරිශීලක: $1 $2 (පරිශීලක හැඳුනුම: $3)',
 	'revcs-warning' => 'අවවාදය: $1',
+	'revcs-written' => 'අතිරේක පරිකථනය ලියා ඇත.',
 );
 
 /** Tamil (தமிழ்)
