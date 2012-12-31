@@ -223,6 +223,23 @@ $messages['bg'] = array(
 	'revcs-list-submit' => 'Показване',
 );
 
+/** Czech (česky)
+ * @author Vks
+ */
+$messages['cs'] = array(
+	'log-name-revisioncommentsupplement' => 'Doplňující protokol komentářů',
+	'revcs-form-preview' => 'Ukázat náhled',
+	'revcs-list-extended-supplement-all' => 'všechno',
+	'revcs-list-rcs-rev-id-edit' => 'Upravit',
+	'revcs-list-rcs-rev-id-log' => 'Protokol',
+	'revcs-list-rcs-timestamp' => 'Upravené datum a čas',
+	'revcs-list-rcs-user-text' => 'Uživatel',
+	'revcs-list-reset' => 'Vynulovat',
+	'revcs-list-sort' => 'Řazení:',
+	'revcs-list-submit' => 'Ukázat',
+	'revcs-log-nosupplement' => '(žádné)',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
@@ -950,6 +967,14 @@ $messages['ko'] = array(
 	'right-supplementcomment-restricted' => '제한된 행동으로 보충 덧글 동작',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'revcs-alert-norevision' => 'di Väsjohn is nit en dä Tabäll met de Väsjohne',
+	'revcs-alert-special-parameter' => 'doh es ene Fähler met dämm Parrameeter',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -1130,6 +1155,94 @@ $messages['nl'] = array(
 	'revcs-warning' => 'Waarschuwing: $1',
 );
 
+/** Polish (polski)
+ * @author Matma Rex
+ */
+$messages['pl'] = array(
+	'action-supplementcomment' => 'modyfikacji komentarzy uzupełniających',
+	'action-supplementcomment-restricted' => 'modyfikacji komentarzy uzupełniających z ograniczonymi akcjami',
+	'group-supplementcomment' => 'Uzupełniający komentarze',
+	'group-supplementcomment-member' => '{{GENDER:$1|Uzupełniający|Uzupełniająca}} komentarze',
+	'grouppage-supplementcomment' => '{{ns:project}}:Uzupełniający komentarze',
+	'log-name-revisioncommentsupplement' => 'Rejestr komentarzy uzupełniających',
+	'log-description-revisioncommentsupplement' => 'Rejestr operacji na {{ns:special}}:RevisionCommentSupplement.',
+	'logentry-revisioncommentsupplement-create' => '$1 utworzył nowy komentarz uzupełniający do wersji $4 o treści „$6”',
+	'logentry-revisioncommentsupplement-delete' => '$1 usunął komentarz uzupełniający do wersji $4 o treści „$5”',
+	'logentry-revisioncommentsupplement-modify' => '$1 zmodyfikował komentarz uzupełniający do wersji $4: „$5” → „$6”',
+	'revisioncommentsupplement' => 'Komentarze uzupełniające do wersji',
+	'revisioncommentsupplementlist' => 'Lista komentarzy uzupełniających',
+	'revcs-desc' => 'Umożliwia wyświetlenie komentarza uzupełniającego przy każdej wersji na stronach historii.',
+	'revcs-alert-exist-supplement' => 'komentarz uzupełniający do tej zmiany już istnieje.',
+	'revcs-alert-norevision' => 'ta wersja nie istnieje.',
+	'revcs-alert-revision-id' => '„$1” nie jest prawidłowym ID wersji.',
+	'revcs-alert-special-parameter' => 'w parametrze jest błąd.',
+	'revcs-alert-supplement-asterisk' => 'komentarz uzupełniający jest znakiem gwiazdki.',
+	'revcs-alert-supplement-empty' => 'komentarz uzupełniający jest pusty.',
+	'revcs-alert-supplement-zero' => 'komentarz uzupełniający jest liczbą zero.',
+	'revcs-alert-supplement-same-as-summary' => 'komentarz uzupełniający jest taki sam jak opis tej edycji.',
+	'revcs-alert-supplement-same-as-supplement' => 'komentarz uzupełniający jest taki sam jak uprzednio zapisany.',
+	'revcs-delete-failure' => 'Usuwanie komentarza uzupełniającego nie powiodło się.',
+	'revcs-delete-heading' => 'Usuń komentarz uzupełniający',
+	'revcs-delete-legend' => 'Usuń komentarz uzupełniający',
+	'revcs-delete-submit' => 'Usuń komentarz uzupełniający',
+	'revcs-delete-success' => 'Usunięto komentarz uzupełniający.',
+	'revcs-edit-heading' => 'Edytuj komentarz uzupełniający',
+	'revcs-error' => 'Błąd: $1',
+	'revcs-error-denied' => 'odmowa zapisania komentarza uzupełniającego.',
+	'revcs-error-unexpected' => 'wystąpił nieoczekiwany błąd.',
+	'revcs-form-legend' => 'Edytuj komentarz uzupełniający',
+	'revcs-form-preview' => 'Pokaż podgląd',
+	'revcs-form-revision-id' => 'ID wersji:',
+	'revcs-form-save' => 'Zapisz komentarz uzupełniający',
+	'revcs-form-show' => 'Pokaż komentarz uzupełniający',
+	'revcs-form-summary' => 'Krótki opis:',
+	'revcs-form-supplement' => 'Komentarz uzupełniający:',
+	'revcs-history-supplement' => '[Uzupełnienie: $1]',
+	'revcs-list-desc' => 'Wyświetla istniejące komentarze uzupełniające.',
+	'revcs-list-descending' => 'sortuj malejąco',
+	'revcs-list-extended-comparison' => 'Operacja porównania:',
+	'revcs-list-extended-comparison-and-over' => 'Wartość pola większa lub równa',
+	'revcs-list-extended-comparison-and-under' => 'Wartość pola mniejsza lub równa',
+	'revcs-list-extended-comparison-equals' => 'Wartość pola równa',
+	'revcs-list-extended-comparison-not-equals' => 'Wartość pola nie równa',
+	'revcs-list-extended-comparison-over' => 'Wartość pola większa',
+	'revcs-list-extended-comparison-under' => 'Wartość pola mniejsza',
+	'revcs-list-extended-index' => 'Pole do porównania:',
+	'revcs-list-extended-offset' => 'Ciąg do porównania:',
+	'revcs-list-extended-supplement' => 'Stan komentarzy uzupełniających:',
+	'revcs-list-extended-supplement-all' => 'wszystkie',
+	'revcs-list-extended-supplement-empty' => 'puste',
+	'revcs-list-extended-supplement-notempty' => 'niepuste',
+	'revcs-list-legend' => 'Lista komentarzy uzupełniających',
+	'revcs-list-limit' => 'Liczba na stronie:',
+	'revcs-list-rcs-comment' => 'Komentarz uzupełniający',
+	'revcs-list-rcs-rev-id' => 'ID wersji',
+	'revcs-list-rcs-rev-id-edit' => 'Edytuj',
+	'revcs-list-rcs-rev-id-log' => 'Log',
+	'revcs-list-rcs-timestamp' => 'Data i czas edycji',
+	'revcs-list-rcs-user-text' => 'Użytkownik',
+	'revcs-list-reset' => 'Resetuj',
+	'revcs-list-sort' => 'Sortowanie:',
+	'revcs-list-submit' => 'Pokaż',
+	'revcs-log-nosupplement' => '(brak)',
+	'revcs-preview-summary' => 'Podgląd opisu: $1',
+	'revcs-preview-supplement' => 'Podgląd komentarza uzupełniającego: $1',
+	'revcs-show-deletelinktext' => 'Usuń komentarz uzupełniający',
+	'revcs-show-editlinktext' => 'Edytuj komentarz uzupełniający',
+	'revcs-show-loglinktext' => 'rejestr zmian komentarza uzupełniającego',
+	'revcs-show-no-db-row' => 'Nie znaleziono komentarza uzupełniającego dla wersji $1.',
+	'revcs-show-revision' => 'Wersja: $1',
+	'revcs-show-revision-id' => 'ID wersji: $1 ($2)',
+	'revcs-show-supplement-parsed' => 'Komentarz uzupełniający (przetworzony): $1',
+	'revcs-show-supplement-raw' => 'Komentarz uzupełniający (nieprzetworzony): $1',
+	'revcs-show-timestamp' => 'Data i czas edycji: $1 ($2)',
+	'revcs-show-user' => 'Użytkownik: $1 $2 (ID: $3)',
+	'revcs-warning' => 'Uwaga: $1',
+	'revcs-written' => 'Komentarz uzupełniający zapisany.',
+	'right-supplementcomment' => 'Modyfikacja komentarzy uzupełniających',
+	'right-supplementcomment-restricted' => 'Modyfikacja komentarzy uzupełniających z ograniczonymi akcjami',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Dragonòt
  */
@@ -1239,9 +1352,12 @@ $messages['pt-br'] = array(
 );
 
 /** Romanian (română)
+ * @author Minisarm
  * @author Stelistcristi
  */
 $messages['ro'] = array(
+	'revcs-form-summary' => 'Rezumat:',
+	'revcs-list-submit' => 'Arată',
 	'revcs-warning' => 'Avertisment: $1',
 );
 
