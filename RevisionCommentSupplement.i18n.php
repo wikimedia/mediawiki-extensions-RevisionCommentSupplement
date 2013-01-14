@@ -144,7 +144,8 @@ $messages['qqq'] = array(
 	'revcs-delete-success' => 'This message is shown when deleting a supplementary comment and writing log entry(s) are finished in Special:RevisionCommentSupplement/delete.',
 	'revcs-edit-desc' => 'This message is a description at the top in Special:RevisionCommentSupplement/edit.',
 	'revcs-edit-heading' => 'This message is the heading of Special:RevisionCommentSupplement/edit.',
-	'revcs-error' => '$1 is error messages, revcs-alert-* or revcs-error-*.',
+	'revcs-error' => '* $1 is error messages, revcs-alert-* or revcs-error-*.
+{{Identical|Error}}',
 	'revcs-error-denied' => 'This message is a error message used at save in Special:RevisionCommentSupplement.',
 	'revcs-error-unexpected' => 'This message is a error message used in Special:RevisionCommentSupplement.',
 	'revcs-form-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/edit.',
@@ -182,7 +183,9 @@ $messages['qqq'] = array(
 	'revcs-list-sort' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-submit' => 'This message is a label of a input botton in Special:RevisionCommentSupplementList.',
 	'revcs-log-nosupplement' => 'If a supplementary comment is empty, this is used at logentry-revisioncommentsupplement-* in Special:Log.',
-	'revcs-log-supplement' => "If a supplementary comment isn't empty, this is used at logentry-revisioncommentsupplement-* in Special:Log. $1 is a raw supplementary comment.",
+	'revcs-log-supplement' => "{{Optional}}
+If a supplementary comment isn't empty, this is used at logentry-revisioncommentsupplement-* in Special:Log.
+* $1 - a raw supplementary comment",
 	'revcs-preview-summary' => 'This message is used at preview a supplementary comment and a summary in Special:RevisionCommentSupplement/edit. $1 is a parsed summary.',
 	'revcs-preview-supplement' => 'This message is used at preview a supplementary comment and a summary in Special:RevisionCommentSupplement/edit. $1 is a parsed supplementary comment.',
 	'revcs-show-deletelinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.',
@@ -204,7 +207,8 @@ $1 and $2 are date and time when the supplementary comment was last modified.
 *$2 is user tool link(s).
 *$3 is user id.
 If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[User_talk:Example|Talk]] | [[Special:Contributions/Example|Contributions]]).",
-	'revcs-warning' => 'This message is used in Special:RevisionCommentSupplement. $1 is a warning message, revcs-alert-*.',
+	'revcs-warning' => 'This message is used in Special:RevisionCommentSupplement. $1 is a warning message, revcs-alert-*.
+{{Identical|Warning}}',
 	'revcs-written' => 'This message is shown when writing a supplementary comment and a log entry are finished at save in Special:RevisionCommentSupplement/edit.',
 	'right-supplementcomment' => '{{doc-right|supplementcomment}}',
 	'right-supplementcomment-restricted' => '{{doc-right|supplementcomment-restricted}}',
