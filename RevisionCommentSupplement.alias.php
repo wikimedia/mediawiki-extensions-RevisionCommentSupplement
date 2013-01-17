@@ -17,6 +17,7 @@ $specialPageAliases['en'] = array(
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'RevisionCommentSupplement' => array( 'Versionskommentarergänzung' ),
+	'RevisionCommentSupplementList' => array( 'Versionskommentarergänzungsliste' ),
 );
 
 /** Italian (italiano) */
