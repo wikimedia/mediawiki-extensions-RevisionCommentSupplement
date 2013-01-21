@@ -1248,18 +1248,19 @@ $messages['pl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'action-supplementcomment' => 'dovré coment suplementar',
-	'action-supplementcomment-restricted' => 'dovré coment suplementar con assion limità',
+	'action-supplementcomment' => 'sfruté ij coment suplementar',
+	'action-supplementcomment-restricted' => "sfruté ij coment suplementar con dj'assion limità",
 	'group-supplementcomment' => 'SupplementComment',
 	'group-supplementcomment-member' => '{{GENDER:$1|SupplementComment}}',
 	'grouppage-supplementcomment' => '{{ns:project}}:SupplementComment',
 	'log-name-revisioncommentsupplement' => 'Registr dij Coment Suplementar',
 	'log-description-revisioncommentsupplement' => "Registr dj'operassion an {{ns:special}}:RevisionCommentSupplement.",
-	'logentry-revisioncommentsupplement-create' => '$1 creà un coment suplementar, $6 dzor revision $4',
-	'logentry-revisioncommentsupplement-delete' => '$1 scanselà un coment suplementar, $5 dzor revision $4',
+	'logentry-revisioncommentsupplement-create' => "$1 a l'ha creà un coment suplementar, $6 an sla revision $4",
+	'logentry-revisioncommentsupplement-delete' => "$1 a l'ha scancelà un coment suplementar, $5 an sla revision $4",
 	'logentry-revisioncommentsupplement-modify' => '$1 modificà un coment suplementar da $5 a $6 dzor revision $4',
 	'revisioncommentsupplement' => 'Suplement ëd Coment ëd Revision',
 	'revisioncommentsupplementlist' => 'Lista ëd Coment Suplementar',
