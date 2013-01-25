@@ -460,6 +460,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Crt
  * @author Nedergard
  * @author Nike
  */
@@ -467,6 +468,7 @@ $messages['fi'] = array(
 	'revcs-error' => 'Virhe: $1',
 	'revcs-form-preview' => 'Näytä esikatselu',
 	'revcs-form-summary' => 'Yhteenveto',
+	'revcs-list-extended-supplement-all' => 'kaikki',
 	'revcs-list-rcs-rev-id-edit' => 'Muokkaa',
 	'revcs-list-rcs-user-text' => 'Käyttäjä',
 	'revcs-list-submit' => 'Näytä',
