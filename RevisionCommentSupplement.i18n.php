@@ -1502,8 +1502,10 @@ $messages['uk'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Shirayuki
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
+	'revcs-desc' => '允许在历史记录页面每个修订行上线时附加的注释。',
 	'revcs-error' => '错误：$1',
 	'revcs-form-summary' => '摘要：',
 	'revcs-list-rcs-rev-id-edit' => '编辑',
