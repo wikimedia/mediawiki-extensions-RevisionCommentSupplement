@@ -1486,9 +1486,14 @@ $messages['te'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Base
  * @author Steve.rusyn
  */
 $messages['uk'] = array(
+	'action-supplementcomment' => 'керування допоміжними коментарями',
+	'action-supplementcomment-restricted' => 'керування допоміжними коментарями з обмеженими діями',
+	'logentry-revisioncommentsupplement-create' => '$1 {{GENDER:$2|створив|створила}} допоміжний коментар, $6 до версії $4', # Fuzzy
+	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|вилучив|вилучила}} допоміжний коментар, $5 до версії $4', # Fuzzy
 	'revcs-error' => 'Помилка: $1',
 	'revcs-form-summary' => 'Резюме:',
 	'revcs-list-extended-supplement-all' => 'всі',
