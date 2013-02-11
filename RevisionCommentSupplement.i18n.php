@@ -1133,6 +1133,12 @@ $messages['mr'] = array(
  * @author Wiki13
  */
 $messages['nl'] = array(
+	'action-supplementcomment' => 'met aanvullende reacties te werken',
+	'action-supplementcomment-restricted' => 'met aanvullende reacties met beperkte handelingen te werken',
+	'group-supplementcomment' => 'Aanvullende reacties',
+	'group-supplementcomment-member' => '{{GENDER:$1|Aanvullende reacties}}',
+	'grouppage-supplementcomment' => '{{ns:project}}:Aanvullende reacties',
+	'log-name-revisioncommentsupplement' => 'Logboek aanvullende reacties',
 	'revcs-alert-revision-id' => '"$1" is een verkeerd versienummer.',
 	'revcs-error' => 'Fout: $1',
 	'revcs-form-preview' => 'Voorbeeld weergeven',
