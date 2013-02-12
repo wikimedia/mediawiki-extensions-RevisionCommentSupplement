@@ -872,14 +872,21 @@ $messages['ja'] = array(
  * @author David1010
  */
 $messages['ka'] = array(
+	'revcs-error' => 'შეცდომა: $1',
+	'revcs-form-preview' => 'წინასწარი გადახედვა',
+	'revcs-form-summary' => 'რეზიუმე:',
 	'revcs-list-extended-supplement-all' => 'ყველა',
 	'revcs-list-extended-supplement-empty' => 'ცარიელი',
 	'revcs-list-extended-supplement-notempty' => 'არ არის ცარიელი',
+	'revcs-list-limit' => 'რაოდენობა გვერდზე:',
 	'revcs-list-rcs-rev-id-edit' => 'რედაქტირება',
+	'revcs-list-rcs-rev-id-log' => 'ჟურნალი',
 	'revcs-list-rcs-user-text' => 'მომხმარებელი',
 	'revcs-list-submit' => 'ჩვენება',
 	'revcs-log-nosupplement' => '(არა)',
+	'revcs-preview-summary' => 'რეზიუმეს წინასწარი გადახედვა: $1',
 	'revcs-show-revision' => 'ვერსია: $1',
+	'revcs-show-user' => 'მომხმარებელი: $1 $2 (მომხმარებლის ID: $3)',
 	'revcs-warning' => 'გაფრთხილება: $1',
 );
 
@@ -1497,20 +1504,37 @@ $messages['te'] = array(
 /** Ukrainian (українська)
  * @author Base
  * @author Steve.rusyn
+ * @author Ата
  */
 $messages['uk'] = array(
 	'action-supplementcomment' => 'керування допоміжними коментарями',
 	'action-supplementcomment-restricted' => 'керування допоміжними коментарями з обмеженими діями',
-	'logentry-revisioncommentsupplement-create' => '$1 {{GENDER:$2|створив|створила}} допоміжний коментар, $6 до версії $4', # Fuzzy
-	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|вилучив|вилучила}} допоміжний коментар, $5 до версії $4', # Fuzzy
+	'logentry-revisioncommentsupplement-create' => '$1 {{GENDER:$2|створив|створила}} допоміжний коментар, $6 до версії $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|вилучив|вилучила}} допоміжний коментар, $5 до версії $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 {{GENDER:$2|змінив|змінила}} допоміжний коментар до версії $4 з $5 на $6',
+	'revcs-alert-revision-id' => '"$1" — неправильний ID версії.',
 	'revcs-error' => 'Помилка: $1',
+	'revcs-error-unexpected' => 'Сталася неочікувана помилка.',
+	'revcs-form-preview' => 'Попередній перегляд',
+	'revcs-form-revision-id' => 'ID версії:',
 	'revcs-form-summary' => 'Резюме:',
+	'revcs-list-descending' => 'список за спаданням',
 	'revcs-list-extended-supplement-all' => 'всі',
+	'revcs-list-extended-supplement-empty' => 'пусто',
+	'revcs-list-extended-supplement-notempty' => 'не пусто',
+	'revcs-list-rcs-rev-id' => 'ID версії',
 	'revcs-list-rcs-rev-id-edit' => 'Редагувати',
+	'revcs-list-rcs-rev-id-log' => 'Журнал',
+	'revcs-list-rcs-timestamp' => 'Редагувати дату і час',
 	'revcs-list-rcs-user-text' => 'Користувач',
 	'revcs-list-reset' => 'Скинути',
+	'revcs-list-sort' => 'Сортувати:',
 	'revcs-list-submit' => 'Показати',
+	'revcs-log-nosupplement' => '(нічого)',
 	'revcs-show-revision' => 'Версія: $1',
+	'revcs-show-revision-id' => 'ID версії: $1 ($2)',
+	'revcs-show-timestamp' => 'Дата і час редагування: $1 ($2)',
+	'revcs-show-user' => 'Користувач: $1 $2 (ID користувача: $3)',
 	'revcs-warning' => 'Увага: $1',
 );
 
