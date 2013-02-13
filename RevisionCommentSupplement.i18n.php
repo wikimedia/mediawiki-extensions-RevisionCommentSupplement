@@ -344,6 +344,7 @@ $messages['eo'] = array(
 
 /** Spanish (español)
  * @author Armando-Martin
+ * @author Fitoschido
  * @author Ralgis
  */
 $messages['es'] = array(
@@ -354,9 +355,9 @@ $messages['es'] = array(
 	'grouppage-supplementcomment' => '{{ns:project}}:SupplementComment',
 	'log-name-revisioncommentsupplement' => 'Registro de comentarios adicionales',
 	'log-description-revisioncommentsupplement' => 'Registro de operaciones en {{ns:special}}:RevisionCommentSupplement.',
-	'logentry-revisioncommentsupplement-create' => '$1 ha creado un comentario adicional, $6 de la revisión $4',
-	'logentry-revisioncommentsupplement-delete' => '$1 ha eliminado un comentario adicional, $5 de la revisión $4',
-	'logentry-revisioncommentsupplement-modify' => '$1 ha modificado un comentario adicional del $5 al $6  de la revisión $4',
+	'logentry-revisioncommentsupplement-create' => '$1 ha creado un comentario adicional, $6 de la revisión $4', # Fuzzy
+	'logentry-revisioncommentsupplement-delete' => '$1 ha eliminado un comentario adicional, $5 de la revisión $4', # Fuzzy
+	'logentry-revisioncommentsupplement-modify' => '$1 ha modificado un comentario adicional del $5 al $6  de la revisión $4', # Fuzzy
 	'revisioncommentsupplement' => 'Revisión de comentario adicional',
 	'revisioncommentsupplementlist' => 'Lista de Comentarios Adicionales',
 	'revcs-desc' => 'Permite mostrar un comentario adicional en cada línea de revisión en las páginas de Historia.',
@@ -370,13 +371,13 @@ $messages['es'] = array(
 	'revcs-alert-supplement-same-as-summary' => 'el comentario adicional es el mismo texto que el resumen de la revisión.',
 	'revcs-alert-supplement-same-as-supplement' => 'el comentario adicional es el mismo texto que el comentario adicional de la tabla de la base de datos.',
 	'revcs-delete-desc' => 'Puedes eliminar el comentario adicional de la tabla de la base de datos. Extension:RevisionCommentSupplement no proporciona la operación de restauración. Si deseas eliminar el borrado, tendrás que restaurar a partir de los registros.',
-	'revcs-delete-failure' => 'No se pudo Borrar el Comentario Adicional.',
-	'revcs-delete-heading' => 'Borrar el Comentario Adicional',
-	'revcs-delete-legend' => 'Borrar el Comentario Adicional',
-	'revcs-delete-submit' => 'Borrar el Comentario Adicional',
-	'revcs-delete-success' => 'Éxito en Borrar el Comentario Adicional.',
+	'revcs-delete-failure' => 'Falló al eliminar el comentario suplementario.',
+	'revcs-delete-heading' => 'Eliminar el comentario suplementario',
+	'revcs-delete-legend' => 'Eliminar el comentario suplementario',
+	'revcs-delete-submit' => 'Eliminar el comentario suplementario',
+	'revcs-delete-success' => 'Se eliminó el comentario suplementario correctamente.',
 	'revcs-edit-desc' => 'Puedes definir comentarios adicionales, y los usuarios que tienen {{int:action-supplementcomment-restricted}}(supplementcomment-restricted) derechos pueden modificar los comentarios adicionales.',
-	'revcs-edit-heading' => 'Editar Comentarios Adicionales',
+	'revcs-edit-heading' => 'Editar comentarios suplementarios',
 	'revcs-error' => 'Error: $1',
 	'revcs-error-denied' => 'no se permite guardar el comentario adicional.',
 	'revcs-error-unexpected' => 'ha ocurrido un error inesperado.',
