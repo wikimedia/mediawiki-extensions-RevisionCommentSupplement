@@ -126,7 +126,7 @@ $messages['qqq'] = array(
 *$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.',
 	'revisioncommentsupplement' => 'This message is a link text of Special:RevisionCommentSupplement on Special:SpecialPages and first heading of Special:RevisionCommentSupplement. The meaning of "RevisionCommentSupplement" is "Supplement the comment on each revision", "the comment on each revision is supplemented" or "a supplement to the comment on each revision."',
 	'revisioncommentsupplementlist' => 'This message is a link text of Special:RevisionCommentSupplementList on Special:SpecialPages and first heading of Special:RevisionCommentSupplementList.',
-	'revcs-desc' => 'The description of this extension in Special:Version.',
+	'revcs-desc' => '{{desc|name=Revision Comment Supplement|url=http://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement}}',
 	'revcs-alert-exist-supplement' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
 	'revcs-alert-norevision' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.',
 	'revcs-alert-revision-id' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.',
@@ -153,7 +153,8 @@ $messages['qqq'] = array(
 	'revcs-form-revision-id' => 'This message is a content of a label element of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.',
 	'revcs-form-save' => 'This message is a label of a input botton in Special:RevisionCommentSupplement/edit.',
 	'revcs-form-show' => 'This message is a label of a input botton in Special:RevisionCommentSupplement/edit.',
-	'revcs-form-summary' => 'This message is a content of a label element of a text input box of a summary and/or a reason in Special:RevisionCommentSupplement/edit.',
+	'revcs-form-summary' => 'This message is a content of a label element of a text input box of a summary and/or a reason in Special:RevisionCommentSupplement/edit.
+{{Identical|Summary}}',
 	'revcs-form-supplement' => 'This message is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.',
 	'revcs-history-supplement' => 'This message is used at each revision line in History pages. $1 is a parsed supplementary comment.',
 	'revcs-list-desc' => 'This message is a description at the top in Special:RevisionCommentSupplementList.',
@@ -200,7 +201,7 @@ If a supplementary comment isn't empty, this is used at logentry-revisioncomment
 	'revcs-show-supplement-raw' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is a raw supplementary comment.',
 	'revcs-show-timestamp' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 $1 and $2 are date and time when the supplementary comment was last modified.
-*$1 is a date in format setting in Special:Preferences of each user.
+*$1 is a date in format setting in [[Special:Preferences]] of each user.
 *$2 is a date in database.',
 	'revcs-show-user' => "This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 *$1 is link of user page (or user contributions page, Special:Contributions when the user doesn't log in).
