@@ -29,22 +29,22 @@ class RevisionCommentSupplementHook {
 		$dbr = wfGetDB( DB_SLAVE );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
-			'rcs_comment',
+			'rcs_supplement',
 			array( 'rcs_rev_id' => $revId ),
 			__METHOD__
 		);
 
-		if ( isset($dbRow) && isset($dbRow->rcs_comment) ) {
-			if ( $dbRow->rcs_comment && ( $dbRow->rcs_comment != '*' ) ) {
+		if ( isset( $dbRow ) && isset( $dbRow->rcs_supplement ) ) {
+			if ( $dbRow->rcs_supplement && ( $dbRow->rcs_supplement != '*' ) ) {
 				# section link
-				$comment = Linker::formatComment(
-					$dbRow->rcs_comment/*,
+				$supplement = Linker::formatComment(
+					$dbRow->rcs_supplement/*,
 					$history->getTitle(),
 					false*/
 				);
-				$s .= '<span class="revcs-comment">' .
-					$history->msg( 'revcs-history-supplement' )
-						->rawParams( $comment )->escaped() .
+				$s .= '<span class="revcs-supplement">' .
+					$history->msg( 'revcs-action-history-supplement' )
+						->rawParams( $supplement )->escaped() .
 					'</span>';
 			}
 		}
@@ -52,87 +52,157 @@ class RevisionCommentSupplementHook {
 		return true;
 	}
 
-	# from Extension:TitleKey, author Brion Vibber
-	public static function runUpdates( DatabaseUpdater $updater ) {
-		$dir = __DIR__;
-
-		if( $updater->getDB()->tableExists( 'rev_comment_supp' ) ) {
-			$updater->output( "...rev_comment_supp table already exists.\n" );
-
-			if ( $updater->getDB()->fieldExists( 'rev_comment_supp', 'rcs_user_name', __METHOD__ ) ) {
-				$updater->output( "...update rev_comment_supp on version 0.3.0...\n" );
-
-				if ( $updater->getDB()->getType() == 'mysql' ) {
-					$updater->addExtensionUpdate(
-						array(
-							'modifyField',
-							'rev_comment_supp',
-							'rcs_user_name',
-							"$dir/patch/patch-rev_comment_supp.sql",
-							true
-						)
-					);
-				} elseif ( $updater->getDB()->getType() == 'postgres' ) {
-					$updater->addExtensionUpdate(
-						array(
-							'modifyField',
-							'rev_comment_supp',
-							'rcs_user_name',
-							"$dir/patch/patch-rev_comment_supp.pg.sql",
-							true
-						)
-					);
-				}
-
-			}
-		} else {
-			$updater->output( "...create rev_comment_supp table...\n" );
-			if ( $updater->getDB()->getType() == 'mysql' ) {
-				$updater->addExtensionUpdate(
-					array(
-						'addTable',
-						'rev_comment_supp',
-						"$dir/RevisionCommentSupplement.sql",
-						true
-					)
-				);
-			} elseif ( $updater->getDB()->getType() == 'postgres' ) {
-				$updater->addExtensionUpdate(
-					array(
-						'addTable',
-						'rev_comment_supp',
-						"$dir/RevisionCommentSupplement.pg.sql",
-						true
-					)
-				);
-			}
+	public static function onLogLine( $log_type, $log_action, $title, $paramArray, &$comment, &$revert, $time ) {
+		if (
+			( $log_type == 'revisioncommentsupplement' && $log_action == 'hidehistory' )
+			|| ( $log_type == 'suppress' && $log_action == 'revcommentsupplementhidehistory' )
+		) {
+			$params = unserialize( $paramArray[0] );
+			$revert = '(' .
+				Linker::linkKnown(
+					SpecialPage::getTitleFor(
+						'RevisionCommentSupplement',
+						'hidehistory/' . intval( $params['7::historyid'] )
+					),
+					wfMessage( 'revdel-restore' )->plain()
+				) . ')';
 		}
 
 		return true;
 	}
-}
-
-class RevisionCommentSupplementLogFormatter extends LogFormatter {
-
-	function getMessageParameters() {
-		$params = parent::getMessageParameters();
-		$params[4] = Message::rawParam( $this->getSupplementComment( $params[4] ) );
-		$params[5] = Message::rawParam( $this->getSupplementComment( $params[5] ) );
-		return $params;
-	}
 
 	/**
-	 * @params string $comment
-	 * @return string HTML
+	 * Hook on LoadExtensionSchemaUpdates
 	 */
-	function getSupplementComment( $comment ){
-		$s = '';
-		if ( $comment ) {
-			$s = $this->msg( 'revcs-log-supplement' )
-				->rawParams( htmlspecialchars( $comment ) )->escaped();
+	# from Extension:TitleKey, author Brion Vibber
+	public static function runUpdates( DatabaseUpdater $updater ) {
+		$dir = __DIR__ . '/sql';
+		$dbType = $updater->getDB()->getType();
+
+		if( $updater->getDB()->tableExists( 'rev_comment_supp' ) ) {
+			$updater->output( "...rev_comment_supp table already exists.\n" );
+			if (
+				$updater->getDB()->fieldExists( 'rev_comment_supp', 'rcs_user_name', __METHOD__ )
+			) {
+				$updater->output( "...update rev_comment_supp table on version 0.3.0...\n" );
+				if ( $dbType == 'mysql' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'modifyField',
+							'rev_comment_supp',
+							'rcs_user_name',
+							"$dir/patch-rev_comment_supp.sql",
+							true
+						)
+					);
+				} elseif ( $dbType == 'postgres' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'modifyField',
+							'rev_comment_supp',
+							'rcs_user_name',
+							"$dir/patch-rev_comment_supp.pg.sql",
+							true
+						)
+					);
+				}
+			}
+			if (
+				$updater->getDB()->fieldExists( 'rev_comment_supp', 'rcs_comment', __METHOD__ )
+			) {
+				$updater->output( "...update rev_comment_supp table on version 0.4.0...\n" );
+				if ( $dbType == 'mysql' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'modifyField',
+							'rev_comment_supp',
+							'rcs_comment',
+							"$dir/patch-supplement.sql",
+							true
+						)
+					);
+				} elseif ( $dbType == 'postgres' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'modifyField',
+							'rev_comment_supp',
+							'rcs_comment',
+							"$dir/patch-supplement.pg.sql",
+							true
+						)
+					);
+				}
+			}
+			if (
+				RevisionCommentSupplementSetting::getHistorySetting()
+				&& !$updater->getDB()->tableExists( 'rev_comment_supp_history' )
+			) {
+				$updater->output( "...create rev_comment_supp_history table...\n" );
+				if ( $dbType == 'mysql' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'addTable',
+							'rev_comment_supp_history',
+							"$dir/patch-rev_comment_supp_history.sql",
+							true
+						)
+					);
+				} elseif ( $dbType == 'postgres' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'addTable',
+							'rev_comment_supp_history',
+							"$dir/patch-rev_comment_supp_history.pg.sql",
+							true
+						)
+					);
+				}
+			}
 		} else {
-			$s = $this->msg( 'revcs-log-nosupplement' )->escaped();
+			$updater->output( "...create rev_comment_supp table...\n" );
+			if ( $dbType == 'mysql' ) {
+				$updater->addExtensionUpdate(
+					array(
+						'addTable',
+						'rev_comment_supp',
+						"$dir/rev_comment_supp.sql",
+						true
+					)
+				);
+			} elseif ( $dbType == 'postgres' ) {
+				$updater->addExtensionUpdate(
+					array(
+						'addTable',
+						'rev_comment_supp',
+						"$dir/rev_comment_supp.pg.sql",
+						true
+					)
+				);
+			}
+			if ( RevisionCommentSupplementSetting::getHistorySetting() ) {
+				$updater->output( "...create rev_comment_supp_history table...\n" );
+				if ( $dbType == 'mysql' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'addTable',
+							'rev_comment_supp_history',
+							"$dir/rev_comment_supp_history.sql",
+							true
+						)
+					);
+				} elseif ( $dbType == 'postgres' ) {
+					$updater->addExtensionUpdate(
+						array(
+							'addTable',
+							'rev_comment_supp_history',
+							"$dir/rev_comment_supp_history.pg.sql",
+							true
+						)
+					);
+				}
+			}
 		}
-		return $s;
+
+		return true;
 	}
 }

@@ -18,57 +18,60 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
-class SpecialRevisionCommentSupplementList extends SpecialPage {
+class ViewRevisionCommentSupplementList extends ContextSource {
 
+	var $mPage;
+	var $mParam;
 	protected $dbr;
 
 	protected $exOperators = array(
 		'and-over' => '>=',
 		'and-under' => '<=',
-		'equals' => '=',
-		'not-equals' => '!=',
+		'equal' => '=',
+		'not-equal' => '!=',
 		'over' => '>',
 		'under' => '<'
 	);
 
-	public function __construct() {
-		$this->dbr = wfGetDB( DB_SLAVE );
-		parent::__construct( 'RevisionCommentSupplementList' );
+	# from abstract class AbuseFilterView in AbuseFilterView.php into extension AbuseFilter
+	/**
+	 * @param SpecialPage $page
+	 * @param array $params
+	 */
+	function __construct( $page, $param ) {
+		$this->mPage = $page;
+		$this->mParam = $param;
+		$this->setContext( $this->mPage->getContext() );
 	}
 
-	function execute( $par ) {
-		$this->setHeaders();
-
-		if ( wfReadOnly() ) {
-			$this->getOutput()->readOnlyPage();
-			return;
-		}
+	function show() {
+		$this->dbr = wfGetDB( DB_SLAVE );
 
 		$request = $this->getRequest();
 		$conds = array();
-		$par = intval( $par );
+		$par = intval( $this->mParam );
 
-		$excomment = $request->getText( 'excomment' );
-		$exindex = $request->getText( 'exindex' );
+		$exsupplement = $request->getText( 'exsupplement' );
+		$exprop = $request->getText( 'exprop' );
 		$excomp = $request->getText( 'excomp' );
 		$exoffset = $request->getText( 'exoffset' );
 
-		if ( $excomment == 'notempty' ) {
-			$conds[] = "rcs_comment != ''";
-		} elseif ( $excomment == 'empty' ) {
-			$conds[] = "rcs_comment = ''";
+		if ( $exsupplement == 'notempty' ) {
+			$conds[] = "rcs_supplement != ''";
+		} elseif ( $exsupplement == 'empty' ) {
+			$conds[] = "rcs_supplement = ''";
 		}
 
-		if ( $exindex && $excomp && $exoffset ) {
-			if ( $exindex == 'rcs_user_text' ) {
+		if ( $exprop && $excomp && $exoffset ) {
+			if ( $exprop == 'rcs_user_text' ) {
 				$exoffset = ucfirst( $exoffset );
 			}
-			$cond = $this->getExtendedCond( $exindex, $excomp, $exoffset );
+			$cond = $this->getExtendedCond( $exprop, $excomp, $exoffset );
 			if ( $cond != '' ) {
 				$conds[] = $cond;
 			}
 		} elseif ( $par > 0 ) {
-			$conds[] = $this->getExtendedCond( 'rcs_rev_id', 'equals', $par );
+			$conds[] = $this->getExtendedCond( 'rcs_rev_id', 'equal', $par );
 			$request->setVal( 'limit', 1 );
 		}
 
@@ -77,34 +80,34 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 		$action = $this->getTitle()->getLocalURL();
 		$form = Xml::openElement(
 				'form',
-				array( 'method' => 'get', 'action' => $action, 'id' => 'supplementlist' )
+				array( 'method' => 'get', 'action' => $action, 'id' => 'supplementarycommentlist' )
 			) .
 			"\n";
 
 		$form .= "<div>" .
-			Xml::label( $this->msg( 'revcs-list-extended-property' )->plain(), 'exindex' ) . '&#160;' .
+			Xml::label( $this->msg( 'revcs-list-extended-property' )->plain(), 'exprop' ) . '&#160;' .
 			Xml::tags(
-				'select', array( 'id' => 'exindex', 'name' => 'exindex' ),
+				'select', array( 'id' => 'exprop', 'name' => 'exprop' ),
 				"\n" .
 				Xml::option(
 					'',
 					'',
-					$exindex == ''
+					$exprop == ''
 				) . "\n" .
 				Xml::option(
 					$this->msg( 'revcs-list-rcs-rev-id' )->plain(),
 					'rcs_rev_id',
-					$exindex == 'rcs_rev_id'
+					$exprop == 'rcs_rev_id'
 				) . "\n" .
 				Xml::option(
 					$this->msg( 'revcs-list-rcs-user-text' )->plain(),
 					'rcs_user_text',
-					$exindex == 'rcs_user_text'
+					$exprop == 'rcs_user_text'
 				) . "\n" .
 				Xml::option(
 					$this->msg( 'revcs-list-rcs-timestamp' )->plain(),
 					'rcs_timestamp',
-					$exindex == 'rcs_timestamp'
+					$exprop == 'rcs_timestamp'
 				) . "\n"
 			) .
 			"</div>\n";
@@ -130,9 +133,9 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 					$excomp == 'and-over'
 				) . "\n" .
 				Xml::option(
-					$this->msg( 'revcs-list-extended-comparison-equals' )->plain(),
-					'equals',
-					$excomp == 'equals'
+					$this->msg( 'revcs-list-extended-comparison-equal' )->plain(),
+					'equal',
+					$excomp == 'equal'
 				) . "\n" .
 				Xml::option(
 					$this->msg( 'revcs-list-extended-comparison-and-under' )->plain(),
@@ -145,9 +148,9 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 					$excomp == 'under'
 				) . "\n" .
 				Xml::option(
-					$this->msg( 'revcs-list-extended-comparison-not-equals' )->plain(),
-					'not-equals',
-					$excomp == 'not-equals'
+					$this->msg( 'revcs-list-extended-comparison-not-equal' )->plain(),
+					'not-equal',
+					$excomp == 'not-equal'
 				) . "\n"
 			) .
 			"</div>\n";
@@ -161,24 +164,24 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 			"</div>\n";
 
 		$form .= "<div>" .
-			Xml::label( $this->msg( 'revcs-list-extended-supplement' )->plain(), 'excomment' ) . '&#160;' .
+			Xml::label( $this->msg( 'revcs-list-extended-supplement' )->plain(), 'exsupplement' ) . '&#160;' .
 			Xml::tags(
-				'select', array( 'id' => 'excomment', 'name' => 'excomment' ),
+				'select', array( 'id' => 'exsupplement', 'name' => 'exsupplement' ),
 				"\n" .
 				Xml::option(
 					$this->msg( 'revcs-list-extended-supplement-all' )->plain(),
 					'',
-					$excomment == ''
+					$exsupplement == ''
 				) . "\n" .
 				Xml::option(
 					$this->msg( 'revcs-list-extended-supplement-empty' )->plain(),
 					'empty',
-					$excomment == 'empty'
+					$exsupplement == 'empty'
 				) . "\n" .
 				Xml::option(
 					$this->msg( 'revcs-list-extended-supplement-notempty' )->plain(),
 					'notempty',
-					$excomment == 'notempty'
+					$exsupplement == 'notempty'
 				) . "\n"
 			) .
 			"</div>\n";
@@ -236,20 +239,21 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 			$pager->getBody() .
 			$pager->getNavigationBar();
 
+		$this->getOutput()->setPageTitle( $this->msg( 'revcs-list-heading' )->plain() );
 		$this->getOutput()->addHTML( $this->msg( 'revcs-list-desc' )->parseAsBlock() );
 		$this->getOutput()->addHTML( $output );
 	}
 
-	function getExtendedCond( $exIndexField, $exComparison, $exOffset ) {
+	function getExtendedCond( $exProperty, $exComparison, $exOffset ) {
 		if (
-			$exIndexField == 'rcs_rev_id'
-			|| $exIndexField == 'rcs_user_text'
-			|| $exIndexField == 'rcs_timestamp'
+			$exProperty == 'rcs_rev_id'
+			|| $exProperty == 'rcs_user_text'
+			|| $exProperty == 'rcs_timestamp'
 		) {
 			if ( isset( $this->exOperators[$exComparison] ) ) {
 				# from IndexPager::reallyDoQuery in Pager.php
 				$exop = $this->exOperators[$exComparison];
-				return $exIndexField . $exop . $this->dbr->addQuotes( $exOffset );
+				return $exProperty . $exop . $this->dbr->addQuotes( $exOffset );
 			}
 		}
 		return '';
@@ -300,7 +304,7 @@ class RevisionCommentSupplementListTablePager extends TablePager {
 			'rcs_rev_id' => 'revcs-list-rcs-rev-id',
 			'rcs_user_text' => 'revcs-list-rcs-user-text',
 			'rcs_timestamp' => 'revcs-list-rcs-timestamp',
-			'rcs_comment' => 'revcs-list-rcs-comment',
+			'rcs_supplement' => 'revcs-list-rcs-supplement',
 		);
 
 		foreach ( $headers as $row => $value ) {
@@ -313,18 +317,18 @@ class RevisionCommentSupplementListTablePager extends TablePager {
 	function formatValue( $name, $value ) {
 		switch( $name ) {
 			case 'rcs_rev_id':
-				$link = Linker::link(
-					SpecialPage::getTitleFor( 'Permalink', intval( $value ) ),
+				$link = Linker::linkKnown(
+					$this->mPage->mPage->getTitleFor( 'Permalink', intval( $value ) ),
 					$this->getLanguage()->formatNum( intval( $value ) )
 				) . ' (';
 				if ( $this->getUser()->isAllowed( 'supplementcomment-restricted' ) ) {
-					$link .= Linker::link(
-						SpecialPage::getTitleFor( 'RevisionCommentSupplement', 'edit/' . intval( $value ) ),
+					$link .= Linker::linkKnown(
+						$this->mPage->mPage->getTitleFor( 'RevisionCommentSupplement', 'edit/' . intval( $value ) ),
 						$this->msg( 'revcs-list-rcs-rev-id-edit' )->plain()
 					) . ' | ';
 				}
-				$link .= Linker::link(
-					SpecialPage::getTitleFor( 'Log' ),
+				$link .= Linker::linkKnown(
+					$this->mPage->mPage->getTitleFor( 'Log' ),
 					$this->msg( 'revcs-list-rcs-rev-id-log' )->plain(),
 					array(),
 					array( 'page' => "Special:RevisionCommentSupplement/{$value}" )
@@ -340,8 +344,15 @@ class RevisionCommentSupplementListTablePager extends TablePager {
 					$value
 				);
 			case 'rcs_timestamp':
-				return $this->getLanguage()->userTimeAndDate( $value, $this->getUser() );
-			case 'rcs_comment':
+				if ( RevisionCommentSupplementSetting::getHistorySetting() ) {
+					return Linker::linkKnown(
+						$this->mPage->mPage->getTitleFor( 'RevisionCommentSupplementList', 'history/' . $this->mCurrentRow->rcs_rev_id ),
+						$this->getLanguage()->userTimeAndDate( $value, $this->getUser() )
+					);
+				} else {
+					return $this->getLanguage()->userTimeAndDate( $value, $this->getUser() );
+				}
+			case 'rcs_supplement':
 				return htmlspecialchars( $value );
 				break;
 			default:
@@ -354,7 +365,7 @@ class RevisionCommentSupplementListTablePager extends TablePager {
 	}
 
 	function getRowClass( $row ) {
-		if ( $row->rcs_comment ) {
+		if ( $row->rcs_supplement ) {
 			return 'revcs-list-supplement-set';
 		} else {
 			return 'revcs-list-supplement-empty';

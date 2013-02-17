@@ -18,12 +18,14 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
-$wgAutoloadClasses['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.class.php';
+$wgAutoloadClasses['RevisionCommentSupplement'] = __DIR__ . '/../RevisionCommentSupplement.class.php';
+$wgAutoloadClasses['RevisionCommentSupplementHistory'] = __DIR__ . '/../RevisionCommentSupplement.class.php';
 $wgAutoloadClasses['ViewRevisionCommentSupplementEdit'] = __DIR__ . '/ViewRevisionCommentSupplementEdit.php';
 $wgAutoloadClasses['ViewRevisionCommentSupplementDelete'] = __DIR__ . '/ViewRevisionCommentSupplementDelete.php';
+$wgAutoloadClasses['ViewRevisionCommentSupplementHideHistory'] = __DIR__ . '/ViewRevisionCommentSupplementHideHistory.php';
 
-class SpecialRevisionCommentSupplement extends SpecialPage
-{
+class SpecialRevisionCommentSupplement extends SpecialPage {
+
 	var $mTokenOk;
 	var $mTokenOkExceptSuffix;
 
@@ -35,7 +37,6 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 	function execute( $subpage ) {
 		$this->setHeaders();
 		$out = $this->getOutput();
-		$request = $this->getRequest();
 		$user = $this->getUser();
 		$view = 'error';
 		$par = '';
@@ -67,9 +68,14 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		if ( count( $params ) == 2 && $params[0] == 'delete' && is_numeric( $params[1] ) ) {
 			$view = 'ViewRevisionCommentSupplementDelete';
 			$par = $params[1];
+		} elseif ( count( $params ) == 2 && $params[0] == 'hidehistory' && is_numeric( $params[1] ) ) {
+			$view = 'ViewRevisionCommentSupplementHideHistory';
+			$par = $params[1];
 		} elseif ( count( $params ) == 2 && $params[0] == 'edit' && is_numeric( $params[1] ) ) {
 			$view = 'ViewRevisionCommentSupplementEdit';
 			$par = $params[1];
+		} elseif ( count( $params ) == 1 && $params[0] == 'hidehistory' ) {
+			$view = 'ViewRevisionCommentSupplementHideHistory';
 		} elseif ( count( $params ) == 1 && $params[0] == 'edit' ) {
 			$view = 'ViewRevisionCommentSupplementEdit';
 		} elseif ( count( $params ) == 1 && is_numeric( $params[0] ) ) {
@@ -92,7 +98,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		if ( $messagesLoaded ) return;
 		$messagesLoaded = true;
 
-		require( __DIR__ . '/RevisionCommentSupplement.i18n.php' );
+		require( __DIR__ . '/../RevisionCommentSupplement.i18n.php' );
 		foreach ( $allMessages as $lang => $langMessages ) {
 			$wgMessageCache->addMessages( $langMessages, $lang );
 		}
@@ -115,9 +121,9 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 					->rawParams( $this->showRevisionHistoryLine( $revId ) )->escaped() .
 				"</li>\n</ul>";
 		} else {
-			$comment = '';
-			if ( $row->rcs_comment && ( $row->rcs_comment != '*' ) ) {
-				$comment = $row->rcs_comment;
+			$supplement = '';
+			if ( $row->rcs_supplement && ( $row->rcs_supplement != '*' ) ) {
+				$supplement = Linker::formatComment( $row->rcs_supplement );
 			}
 			$s .= "\n<ul>\n";
 			$s .= "<li>" .
@@ -128,19 +134,43 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 							self::getTitleFor( 'Log' ),
 							$this->msg( 'revcs-show-loglinktext' )->plain(),
 							array(),
-							array( 'page' => "Special:RevisionCommentSupplement/{$row->rcs_rev_id}" )
+							array(
+								'page' => "Special:RevisionCommentSupplement/{$row->rcs_rev_id}"
+							)
 						) . ' | ' .
 						Linker::linkKnown(
-							self::getTitleFor( 'RevisionCommentSupplement', 'edit/' . $row->rcs_rev_id ),
+							self::getTitleFor(
+								'RevisionCommentSupplement', 'edit/' . $row->rcs_rev_id
+							),
 							$this->msg( 'revcs-show-editlinktext' )->plain()
 						) . ' | ' .
 						Linker::linkKnown(
-							self::getTitleFor( 'RevisionCommentSupplement', 'delete/' . $row->rcs_rev_id ),
+							self::getTitleFor(
+								'RevisionCommentSupplement', 'delete/' . $row->rcs_rev_id
+							),
 							$this->msg( 'revcs-show-deletelinktext' )->plain()
 						)
 					)
 					->escaped() .
 				"</li>\n";
+			if ( RevisionCommentSupplementSetting::getHistorySetting() ) {
+				if ( isset( $row->rcs_latest ) && $row->rcs_latest ) {
+					$s .= "<li>" .
+						$this->msg( 'revcs-show-history-id' )
+							->rawParams(
+								$row->rcs_latest,
+								Linker::linkKnown(
+									self::getTitleFor(
+										'RevisionCommentSupplementList',
+										'history/' . $row->rcs_rev_id
+									),
+									$this->msg( 'revcs-show-historylinktext' )->plain()
+								)
+							)
+							->escaped() .
+						"</li>\n";
+				}
+			}
 			$s .= "<li>" .
 				$this->msg( 'revcs-show-timestamp' )
 					->rawParams(
@@ -163,10 +193,10 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 				"</li>\n";
 			$s .= "<li>" .
 				$this->msg( 'revcs-show-supplement-raw' )
-					->rawParams( htmlspecialchars( $row->rcs_comment ) )->escaped() .
+					->rawParams( htmlspecialchars( $row->rcs_supplement ) )->escaped() .
 				"</li>\n";
 			$s .= "<li>" .
-				$this->msg( 'revcs-show-supplement-parsed' )->rawParams( $comment )->escaped() .
+				$this->msg( 'revcs-show-supplement-parsed' )->rawParams( $supplement )->escaped() .
 				"</li>\n";
 			$s .= "<li>" .
 				$this->msg( 'revcs-show-revision' )
@@ -191,7 +221,8 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 
 	function getErrorMessage( $message ) {
 		return Xml::element( 'p', array( 'class' => 'error' ),
-				$this->msg( 'revcs-error', $this->msg( "revcs-error-{$message}" )->plain() )->plain()
+				$this->msg( 'revcs-error', $this->msg( "revcs-error-{$message}" )->plain() )
+					->plain()
 			) .
 			"\n";
 	}
@@ -218,7 +249,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 	function showRevisionHistoryLine( $revId ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$db_row = $dbr->selectRow( 'revision', '*', array( 'rev_id' => $revId ), __METHOD__ );
-		if ( !isset($db_row) || !isset($db_row->rev_id) ) {
+		if ( !isset( $db_row ) || !isset( $db_row->rev_id ) ) {
 			return $this->msg( 'revcs-alert-norevision' )->escaped();
 		}
 		if ( $db_row->rev_id != $revId ) {

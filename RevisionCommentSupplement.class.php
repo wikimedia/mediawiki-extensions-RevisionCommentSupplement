@@ -24,125 +24,141 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 class RevisionCommentSupplement {
 
-	const DELETED_TEXT = 1;
-	const DELETED_FILE = 1;
-	const DELETED_ACTION = 1;
-	const DELETED_COMMENT = 2;
-	const DELETED_USER = 4;
-	const DELETED_RESTRICTED = 8;
-
 	/**
-	 * @param $revId string: revision id
-	 * @param $comment2 string: a new supplementary comment
-	 * @param $summary string: reason
+	 * @param int|string $revId: revision id
+	 * @param string $newsupplement: a new supplementary comment
+	 * @param string $reason: reason
+	 * @return bool
 	 */
-	public static function insert( $revId, $comment2, $summary ) {
-		$comment1 = '';
+	public static function insert( $revId, $newsupplement, $reason ) {
+		$oldsupplement = '';
 		$action = 'create';
 		$dbr = wfGetDB( DB_SLAVE );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
-			'rcs_comment',
+			'rcs_supplement',
 			array( 'rcs_rev_id' => $revId ),
 			__METHOD__
 		);
 
-		if ( isset($dbRow) && isset($dbRow->rcs_comment) ) {
-			$comment1 = $dbRow->rcs_comment;
+		if ( isset( $dbRow ) && isset( $dbRow->rcs_supplement ) ) {
+			$oldsupplement = $dbRow->rcs_supplement;
 			$action = 'modify';
 		}
 
 		global $wgUser;
+		$historyId = 0;
+		$dbw = wfGetDB( DB_MASTER );
 		$timestamp = wfTimestamp( TS_MW );
-
 		$row = array(
 			'rcs_rev_id' => intval( $revId ),
 			'rcs_user' => $wgUser->getId(),
 			'rcs_user_text' => $wgUser->getName(),
-			'rcs_timestamp' => $timestamp,
-			'rcs_comment' => $comment2,
+			'rcs_timestamp' => $dbw->timestamp( $timestamp ),
+			'rcs_supplement' => $newsupplement,
 		);
-		$dbw = wfGetDB( DB_MASTER );
+
+		if ( RevisionCommentSupplementSetting::getHistorySetting() ) {
+			$historyRow = array(
+				'rcsh_id' => $dbw->nextSequenceValue( 'rev_comment_supp_history_id_seq' ),
+				'rcsh_rev_id' => intval( $revId ),
+				'rcsh_user' => $wgUser->getId(),
+				'rcsh_user_text' => $wgUser->getName(),
+				'rcsh_timestamp' => $dbw->timestamp( $timestamp ),
+				'rcsh_supplement' => $newsupplement,
+				'rcsh_reason' => $reason,
+			);
+			$ret = $dbw->insert( 'rev_comment_supp_history', $historyRow, __METHOD__ );
+			if ( !$ret ) {
+				return false;
+			}
+			$historyId = $dbw->insertId();
+			$row = array_merge( $row, array( 'rcs_latest' => $historyId ) );
+		}
+
 		$dbw->replace( 'rev_comment_supp', array( 'rcs_rev_id' ), $row, __METHOD__ );
 
-		self::insertLog( $revId, $action, $comment1, $comment2, $summary, $timestamp );
+		self::insertLog( $revId, $action, $oldsupplement, $newsupplement, $reason, $timestamp, $historyId );
+
+		return true;
 	}
 
 	/**
 	 * @param string $revId: revision id
-	 * @param string $action: log action, log subtype
-	 * @param string $comment1: a old supplementary comment
-	 * @param string $comment2: a new supplementary comment
-	 * @param string $summary: reason
+	 * @param string $action: log action, log subtype 'create', 'modify', 'delete'
+	 * @param string $oldsupplement: a old supplementary comment
+	 * @param string $newsupplement: a new supplementary comment
+	 * @param string $reason: reason
 	 * @param string $timestamp: timestamp
-	 * @param string $suppress: flag of revision log deleted
+	 * @param string $historyId: history entry id
 	 * @return int: ID of inserted log entry
 	 */
-	public static function insertLog( $revId, $action, $comment1, $comment2, $summary, $timestamp, $suppress = false ) {
+	public static function insertLog( $revId, $action, $oldsupplement, $newsupplement, $reason, $timestamp, $historyId = 0 ) {
+		if ( !RevisionCommentSupplementSetting::getLogSetting( $action ) ) {
+			return 0;
+		}
+		$args = array( '4::revid' => $revId );
+		if ( RevisionCommentSupplementSetting::getLogSupplementSetting() ) {
+			$args = array_merge( $args, array(
+					'5::oldsupplement' => $oldsupplement,
+					'6::newsupplement' => $newsupplement,
+				)
+			);
+		} else {
+			$action .= '2';
+		}
+		if ( RevisionCommentSupplementSetting::getHistorySetting() && $historyId ) {
+			$args = array_merge( $args, array(
+					'7::historyid' => $historyId,
+				)
+			);
+		}
 		global $wgUser;
-		$logEntry = new RevisionCommentSupplementManualLogEntry( 'revisioncommentsupplement', $action );
+		$logEntry = new ManualLogEntry( 'revisioncommentsupplement', $action );
 		$logEntry->setPerformer( $wgUser );
 		$logEntry->setTarget(
 			Title::makeTitleSafe( NS_SPECIAL, "RevisionCommentSupplement/{$revId}" )
 		);
-		$logEntry->setComment( $summary );
+		$logEntry->setComment( $reason );
 		$logEntry->setTimestamp( $timestamp );
-		if ( $suppress ) {
-			$logEntry->setDeleted( $suppress );
-		}
-		$logEntry->setParameters( array(
-				'4::revid' => $revId,
-				'5::comment1' => $comment1,
-				'6::comment2' => $comment2,
-			)
-		);
+		$logEntry->setParameters( $args );
 		$logid = $logEntry->insert();
-		/* $logEntry->publish( $logid ); */
+		$to = RevisionCommentSupplementSetting::getLogPublishSetting( $action );
+		if ( $to === true ) {
+			$logEntry->publish( $logid );
+		} elseif ( $to ) {
+			$logEntry->publish( $logid, $to );
+		}
 		return $logid;
 	}
 
 	/**
 	 * @param string $revId: revision id
-	 * @param string $summary: reason
-	 * @param int $hide: flag of delete log entry or suppress (or oversight) log entry
+	 * @param string $reason: reason
 	 * @return bool
 	 */
-	public static function delete( $revId, $summary = '', $hide = false ) {
-		$comment1 = '';
-		$dbRow = self::getRow( $revId );
-		if ( $dbRow ) {
-			$comment1 = $dbRow->rcs_comment;
+	public static function delete( $revId, $reason = '' ) {
+		$oldsupplement = '';
+		$dbr = wfGetDB( DB_SLAVE );
+		$dbRow = $dbr->selectRow(
+			'rev_comment_supp',
+			'rcs_supplement',
+			array( 'rcs_rev_id' => $revId ),
+			__METHOD__
+		);
+		if ( isset( $dbRow ) && isset( $dbRow->rcs_supplement ) ) {
+			$oldsupplement = $dbRow->rcs_supplement;
 		} else {
 			return false;
 		}
 
-		$logType = '';
-		if ( $hide ) {
-			$logType = 'delete';
-			if ( ( $hide & self::DELETED_RESTRICTED ) == self::DELETED_RESTRICTED ) {
-				$logType = 'suppress';
-			}
-		}
-
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( 'rev_comment_supp', array( 'rcs_rev_id' => $revId ), __METHOD__ );
-
-		$rcslogid = self::insertLog( $revId, 'delete', $comment1, '', $summary, wfTimestamp( TS_MW ), $hide );
-
-		if ( $logType ) {
-			$log = new LogPage( $logType );
-			$logid = $log->addEntry(
-				'event', SpecialPage::getTitleFor( 'Log', 'revisioncommentsupplement' ),
-				$summary, array( null, $rcslogid, 'ofield=0', "nfield={$hide}" )
-			);
-			// Allow for easy searching of deletion log items for revision/log items
-			$log->addRelations( 'log_id', array( $rcslogid ), $logid );
-			if ( $dbRow->rcs_user ) {
-				$log->addRelations( 'target_author_id', array( $dbRow->rcs_user ), $logid );
-			} else {
-				$log->addRelations( 'target_author_ip', array( $dbRow->rcs_user_text ), $logid );
-			}
+		$ret = $dbw->delete( 'rev_comment_supp', array( 'rcs_rev_id' => $revId ), __METHOD__ );
+		if ( !$ret ) {
+			return false;
 		}
+
+		$rcslogid = self::insertLog( $revId, 'delete', $oldsupplement, '', $reason, wfTimestamp( TS_MW ) );
 
 		return true;
 	}
@@ -160,7 +176,7 @@ class RevisionCommentSupplement {
 			__METHOD__
 		);
 
-		if ( isset($dbRow) && isset($dbRow->rcs_rev_id) && ($dbRow->rcs_rev_id == $revId) ) {
+		if ( isset( $dbRow ) && isset( $dbRow->rcs_rev_id ) && ( $dbRow->rcs_rev_id == $revId ) ) {
 			return $dbRow;
 		}
 
@@ -180,7 +196,7 @@ class RevisionCommentSupplement {
 			__METHOD__
 		);
 
-		if ( isset($dbRow) && isset($dbRow->rcs_rev_id) && ($dbRow->rcs_rev_id == $revId) ) {
+		if ( isset( $dbRow ) && isset( $dbRow->rcs_rev_id ) && ( $dbRow->rcs_rev_id == $revId ) ) {
 			return true;
 		}
 
@@ -188,166 +204,191 @@ class RevisionCommentSupplement {
 	}
 }
 
-# from class ManualLogEntry in LogEntry.php
-class RevisionCommentSupplementManualLogEntry extends ManualLogEntry {
+class RevisionCommentSupplementHistory {
+
+	const HIDDEN_SUPPLEMENT = 1;
+	const HIDDEN_REASON = 2;
+	const HIDDEN_USER = 4;
+	const HIDDEN_RESTRICTED = 8;
+	const HIDDEN_ROW = 64;
+
+	# references:
+	# DeleteLogFormatter::getMessageParameters in LogFormatter.php
+	# RevisionDeleter::getChanges in RevisionDeleter.php
+	public static $flags = array(
+		self::HIDDEN_SUPPLEMENT => array(
+			'name' => 'supplement',
+			'hidden' => 'revcs-log-hidehistory-supplement-hidden',
+			'unhidden' => 'revcs-log-hidehistory-supplement-unhidden',
+		),
+		self::HIDDEN_REASON => array(
+			'name' => 'reason',
+			'hidden' => 'revcs-log-hidehistory-reason-hidden',
+			'unhidden' => 'revcs-log-hidehistory-reason-unhidden',
+		),
+		self::HIDDEN_USER => array(
+			'name' => 'user',
+			'hidden' => 'revdelete-uname-hid',
+			'unhidden' => 'revdelete-uname-unhid',
+		),
+		self::HIDDEN_RESTRICTED => array(
+			'name' => 'restricted',
+			'hidden' => 'revcs-log-hidehistory-restricted',
+			'unhidden' => 'revcs-log-hidehistory-unrestricted',
+		),
+		self::HIDDEN_ROW => array(
+			'name' => 'row',
+			'hidden' => 'revcs-log-hidehistory-row-hidden',
+			'unhidden' => 'revcs-log-hidehistory-row-unhidden',
+		),
+	);
 
 	/**
-	 * Inserts the entry into the logging table.
-	 * @return int If of the log entry
+	 * @param int $id: history entry id
+	 * @return object|bool
 	 */
-	public function insert() {
-		global $wgContLang;
+	public static function getRow( $id ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$dbRow = $dbr->selectRow(
+			'rev_comment_supp_history',
+			'*',
+			array( 'rcsh_id' => $id ),
+			__METHOD__
+		);
+
+		if ( isset( $dbRow ) && isset( $dbRow->rcsh_id ) && ( $dbRow->rcsh_id == $id ) ) {
+			return $dbRow;
+		}
+
+		return false;
+	}
+
+	/**
+	 * @param int $id: history entry id
+	 * @return bool
+	 */
+	public static function isExistRow( $id ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$dbRow = $dbr->selectRow(
+			'rev_comment_supp_history',
+			'rcsh_id',
+			array( 'rcsh_id' => $id ),
+			__METHOD__
+		);
+
+		if ( isset( $dbRow ) && isset( $dbRow->rcsh_id ) && ( $dbRow->rcsh_id == $id ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * @param int $revId: revision id
+	 * @return bool
+	 */
+	public static function isExistHistory( $revId ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$dbRow = $dbr->selectRow(
+			'rev_comment_supp_history',
+			'rcsh_rev_id',
+			array( 'rcsh_rev_id' => $revId ),
+			__METHOD__
+		);
+
+		if ( isset( $dbRow ) && isset( $dbRow->rcsh_rev_id ) && ( $dbRow->rcsh_rev_id == $revId ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * @param string $item: 'supplement', 'reason', 'user', 'restricted', 'row'
+	 * @param int $flag: deleted flag
+	 * @return bool
+	 */
+	public static function isHidden( $item, $flag ) {
+		switch( $item ) {
+			case 'supplement':
+				return ( $flag & self::HIDDEN_SUPPLEMENT ) == self::HIDDEN_SUPPLEMENT;
+			case 'reason':
+				return ( $flag & self::HIDDEN_REASON ) == self::HIDDEN_REASON;
+			case 'user':
+				return ( $flag & self::HIDDEN_USER ) == self::HIDDEN_USER;
+			case 'restricted':
+				return ( $flag & self::HIDDEN_RESTRICTED ) == self::HIDDEN_RESTRICTED;
+			case 'row':
+				return ( $flag & self::HIDDEN_ROW ) == self::HIDDEN_ROW;
+				bleak;
+			default:
+				throw new MWException( "Unknown type $item!" );
+		}
+	}
+
+	/**
+	 * @param string $id: history entry id
+	 * @param string $reason: reason
+	 * @param int $hide: flag of delete log entry or suppress (or oversight) log entry
+	 * @return bool
+	 */
+	public static function hide( $id, $reason = '', $hide = 0 ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$dbRow = $dbr->selectRow(
+			'rev_comment_supp_history',
+			'rcsh_rev_id,rcsh_hidden',
+			array( 'rcsh_id' => $id ),
+			__METHOD__
+		);
+		$hidden1 = 0;
+		$revId = 0;
+		if ( isset( $dbRow ) && isset( $dbRow->rcsh_hidden ) && isset( $dbRow->rcsh_rev_id ) ) {
+			$hidden1 = $dbRow->rcsh_hidden;
+			$revId = $dbRow->rcsh_rev_id;
+		} else {
+			return false;
+		}
 
 		$dbw = wfGetDB( DB_MASTER );
-		$id = $dbw->nextSequenceValue( 'logging_log_id_seq' );
-
-		if ( $this->timestamp === null ) {
-			$this->timestamp = wfTimestampNow();
-		}
-
-		# Truncate for whole multibyte characters.
-		$comment = $wgContLang->truncate( $this->getComment(), 255 );
-
-		$data = array(
-			'log_id' => $id,
-			'log_type' => $this->getType(),
-			'log_action' => $this->getSubtype(),
-			'log_timestamp' => $dbw->timestamp( $this->getTimestamp() ),
-			'log_user' => $this->getPerformer()->getId(),
-			'log_user_text' => $this->getPerformer()->getName(),
-			'log_namespace' => $this->getTarget()->getNamespace(),
-			'log_title' => $this->getTarget()->getDBkey(),
-			'log_page' => $this->getTarget()->getArticleId(),
-			'log_comment' => $comment,
-			'log_params' => serialize( (array) $this->getParameters() ),
-			'log_deleted' => $this->getDeleted(),
+		$ret = $dbw->update(
+			'rev_comment_supp_history',
+			array( 'rcsh_hidden' => $hide ),
+			array( 'rcsh_id' => $id ),
+			__METHOD__
 		);
-		$dbw->insert( 'logging', $data, __METHOD__ );
-		$this->id = !is_null( $id ) ? $id : $dbw->insertId();
-		return $this->id;
-	}
-
-	/**
-	 * Publishes the log entry.
-	 * @param $newId int id of the log entry.
-	 * @param $to string: rcandudp (default), rc, udp
-	 */
-	public function publish( $newId, $to ) {
-		if ( $this->getDeleted() ) {
-			return;
+		if ( !$ret ) {
+			return false;
 		}
-		parent::publish( $newId, $to );
-	}
-}
 
-# from class LogPage in LogPage.php
-class RevisionCommentSupplementLogPage extends LogPage {
+		$logType = 'revisioncommentsupplement';
+		$logAction = 'hidehistory';
+		if ( self::isHidden( 'restricted', $hidden1 ) || self::isHidden( 'restricted', $hide ) ) {
+			$logType = 'suppress';
+			$logAction = 'revcommentsupplementhidehistory';
+		}
 
-	/**
-	 * @return bool|int|null
-	 */
-	protected function saveContent() {
-		$dbw = wfGetDB( DB_MASTER );
-		$log_id = $dbw->nextSequenceValue( 'logging_log_id_seq' );
-
-		$this->timestamp = $now = wfTimestampNow();
-		$data = array(
-			'log_id' => $log_id,
-			'log_type' => $this->type,
-			'log_action' => $this->action,
-			'log_timestamp' => $dbw->timestamp( $now ),
-			'log_user' => $this->doer->getId(),
-			'log_user_text' => $this->doer->getName(),
-			'log_namespace' => $this->target->getNamespace(),
-			'log_title' => $this->target->getDBkey(),
-			'log_page' => $this->target->getArticleId(),
-			'log_comment' => $this->comment,
-			'log_params' => $this->params
+		global $wgUser;
+		$logEntry = new ManualLogEntry( $logType, $logAction );
+		$logEntry->setPerformer( $wgUser );
+		$logEntry->setTarget(
+			Title::makeTitleSafe( NS_SPECIAL, "RevisionCommentSupplement/{$revId}" )
 		);
-		$dbw->insert( 'logging', $data, __METHOD__ );
-		$newId = !is_null( $log_id ) ? $log_id : $dbw->insertId();
-
-		# And update recentchanges
-		if( $this->updateRecentChanges ) {
-			$titleObj = SpecialPage::getTitleFor( 'Log', $this->type );
-
-			RecentChange::notifyLog(
-				$now, $titleObj, $this->doer, $this->getRcComment(), '',
-				$this->type, $this->action, $this->target, $this->comment,
-				$this->params, $newId
-			);
-		} elseif( $this->sendToUDP ) {
-			global $wgLogRestrictions;
-			# Don't send private logs to UDP
-			if( isset( $wgLogRestrictions[$this->type] ) && $wgLogRestrictions[$this->type] != '*' ) {
-				return true;
-			}
-
-			# Notify external application via UDP.
-			# We send this to IRC but do not want to add it the RC table.
-			$titleObj = SpecialPage::getTitleFor( 'Log', $this->type );
-			$rc = RecentChange::newLogEntry(
-				$now, $titleObj, $this->doer, $this->getRcComment(), '',
-				$this->type, $this->action, $this->target, $this->comment,
-				$this->params, $newId
-			);
-			$rc->notifyRC2UDP();
-		}
-		return $newId;
-	}
-
-	/**
-	 * Add a log entry
-	 *
-	 * @param $action String: one of '', 'block', 'protect', 'rights', 'delete', 'upload', 'move', 'move_redir'
-	 * @param $target Title object
-	 * @param $comment String: description associated
-	 * @param $params Array: parameters passed later to wfMsg.* functions
-	 * @param $doer User object: the user doing the action
-	 * @param $timestamp
-	 *
-	 * @return bool|int|null
-	 * @TODO: make this use LogEntry::saveContent()
-	 */
-	public function addEntry( $action, $target, $comment, $params = array(), $doer = null, $timestamp = null ) {
-		global $wgContLang;
-
-		if ( !is_array( $params ) ) {
-			$params = array( $params );
+		$logEntry->setComment( $reason );
+		$logEntry->setParameters( array(
+				'4::revid' => $revId,
+				'5::oldhidden' => $hidden1,
+				'6::newhidden' => $hide,
+				'7::historyid' => $id,
+			)
+		);
+		$logid = $logEntry->insert();
+		$to = RevisionCommentSupplementSetting::getLogPublishSetting( 'hidehistory' );
+		if ( $to === true ) {
+			$logEntry->publish( $logid );
+		} elseif ( $to ) {
+			$logEntry->publish( $logid, $to );
 		}
 
-		if ( $comment === null ) {
-			$comment = '';
-		}
-
-		# Truncate for whole multibyte characters.
-		$comment = $wgContLang->truncate( $comment, 255 );
-
-		$this->action = $action;
-		$this->target = $target;
-		$this->comment = $comment;
-		$this->params = LogPage::makeParamBlob( $params );
-
-		if ( $doer === null ) {
-			global $wgUser;
-			$doer = $wgUser;
-		} elseif ( !is_object( $doer ) ) {
-			$doer = User::newFromId( $doer );
-		}
-
-		$this->doer = $doer;
-
-		$logEntry = new ManualLogEntry( $this->type, $action );
-		$logEntry->setTarget( $target );
-		$logEntry->setPerformer( $doer );
-		$logEntry->setParameters( $params );
-
-		$formatter = LogFormatter::newFromEntry( $logEntry );
-		$context = RequestContext::newExtraneousContext( $target );
-		$formatter->setContext( $context );
-
-		$this->actionText = $formatter->getPlainActionText();
-
-		return $this->saveContent();
+		return true;
 	}
 }

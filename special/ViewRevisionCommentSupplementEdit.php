@@ -22,7 +22,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 
 	var $error = '';
 	var $save = false, $preview = false, $show = false;
-	var $rId = '', $missrId = '', $comment = '', $summary = '';
+	var $rId = '', $missrId = '', $supplement = '', $reason = '';
 	var $formtype;
 	var $mPage;
 	var $mParam;
@@ -31,8 +31,8 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 
 	# from abstract class AbuseFilterView in AbuseFilterView.php into extension AbuseFilter
 	/**
-	 * @param $page SpecialPage
-	 * @param $params array
+	 * @param SpecialPage $page
+	 * @param array $params
 	 */
 	function __construct( $page, $param ) {
 		$this->mPage = $page;
@@ -74,11 +74,13 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 
 		$output = '';
 		if ( $this->formtype == 'preview' ) {
-			$output = $this->getPreview( $this->rId, $this->comment, $this->summary );
+			$output = $this->getPreview( $this->rId, $this->supplement, $this->reason );
 		} elseif ( $this->formtype == 'show' ) {
 			$output = $this->getRevisionCommentSupplement( $this->rId );
 		} elseif ( $this->formtype == 'save' ) {
-			$output = $this->setRevisionCommentSupplement( $this->rId, $this->comment, $this->summary );
+			$output = $this->setRevisionCommentSupplement(
+				$this->rId, $this->supplement, $this->reason
+			);
 		} elseif ( $this->formtype == 'error' ) {
 			if ( $this->error == 'rId' ) {
 				$output = $this->msg( 'revcs-alert-revision-id', $this->missrId )->escaped();
@@ -101,7 +103,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 	/**
 	 * This function collects the form data and uses it to populate various member variables.
 	 *
-	 * @param $par string
+	 * @param string $par
 	 */
 	function importFormData( $par ) {
 		$request = $this->getRequest();
@@ -113,8 +115,8 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		if ( $request->wasPosted() ) {
 			# Truncate for whole multibyte characters.
 			$language = $this->getLanguage();
-			$this->comment = $language->truncate( $request->getText( 'supplement' ), 255 );
-			$this->summary = $language->truncate( $request->getText( 'wpSummary' ), 255 );
+			$this->supplement = $language->truncate( $request->getText( 'supplement' ), 255 );
+			$this->reason = $language->truncate( $request->getText( 'wpReason' ), 255 );
 			$tempId = $request->getInt( 'rID' );
 			if ( $tempId > 0 ) {
 				$this->rId = $tempId;
@@ -146,7 +148,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		} else {
 			# Not a posted form? Start with nothing.
 			wfDebug( __METHOD__ . ": Not a posted form.\n" );
-			$this->comment      = '';
+			$this->supplement   = '';
 			$this->edit         = false;
 			$this->preview      = false;
 			$tempId = intval( $par );
@@ -158,7 +160,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 			}
 
 			$this->save         = false;
-			$this->summary      = '';
+			$this->reason      = '';
 		}
 
 		wfProfileOut( __METHOD__ );
@@ -169,44 +171,44 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		$action = $this->getTitle()->getLocalURL( array( 'action' => 'submit' ) );
 		$form = Xml::openElement(
 				'form',
-				array( 'method' => 'post', 'action' => $action, 'id' => 'supplementcomment' )
+				array( 'method' => 'post', 'action' => $action, 'id' => 'editsupplementarycomment' )
 			) .
 			"\n";
 
 		$form .= "<div>" .
 			Xml::inputLabel(
-				$this->msg( 'revcs-form-revision-id' )->plain(),
+				$this->msg( 'revcs-edit-revision-id' )->plain(),
 				'rID', 'rID', 15, $this->rId,
-				array( 'maxlength' => '10', 'accesskey' => 'r' )
+				array( 'maxlength' => '10', 'accesskey' => 'i' )
 			) .
 			"</div>\n";
 
 		$form .= "<div>" .
 			Xml::inputLabel(
-				$this->msg( 'revcs-form-supplement' )->plain(),
-				'supplement', 'supplement', 60, $this->comment,
+				$this->msg( 'revcs-edit-supplement' )->plain(),
+				'supplement', 'supplement', 60, $this->supplement,
 				array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 'c' )
 			) .
 			"</div>\n";
 
 		$form .= "<div>" .
 			Xml::inputLabel(
-				$this->msg( 'revcs-form-summary' )->plain(),
-				'wpSummary', 'wpSummary', 60, $this->summary,
-				array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 's' )
+				$this->msg( 'revcs-edit-reason' )->plain(),
+				'wpReason', 'wpReason', 60, $this->reason,
+				array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 'r' )
 			) . "</div>\n";
 
 		$form .= "<div>" .
 			Xml::submitButton(
-				$this->msg( 'revcs-form-save' )->plain(),
+				$this->msg( 'revcs-edit-save' )->plain(),
 				array( 'id' => 'save', 'name' => 'save', 'accesskey' => 'a' )
 			) .
 			Xml::submitButton(
-				$this->msg( 'revcs-form-preview' )->plain(),
+				$this->msg( 'revcs-edit-preview' )->plain(),
 				array( 'id' => 'preview', 'name' => 'preview', 'accesskey' => 'p' )
 			) .
 			Xml::submitButton(
-				$this->msg( 'revcs-form-show' )->plain(),
+				$this->msg( 'revcs-edit-show' )->plain(),
 				array( 'id' => 'show', 'name' => 'show', 'accesskey' => 'h' )
 			) .
 			"</div>\n";
@@ -221,20 +223,20 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 
 		$form .= Xml::closeElement( 'form' );
 
-		return Xml::fieldset( $this->msg( 'revcs-form-legend' )->plain(), $form );
+		return Xml::fieldset( $this->msg( 'revcs-edit-legend' )->plain(), $form );
 	}
 
 
 	# from EditPage.php
-	function getPreview( $revId, $comment = '', $summary = '' ) {
+	function getPreview( $revId, $supplement = '', $reason = '' ) {
 		$empty = false;
 		$s = "\n" . '<div class="revcs-rev-preview">' . "\n";
 
-		if ( $comment == '*' ) {
+		if ( $supplement == '*' ) {
 			$s .= $this->getAlertMessage( 'warning', 'supplement-asterisk' );
-		} elseif ( $comment == '0' ) {
+		} elseif ( $supplement == '0' ) {
 			$s .= $this->getAlertMessage( 'warning', 'supplement-zero' );
-		} elseif ( $comment == '' ) {
+		} elseif ( $supplement == '' ) {
 			$empty = true;
 		}
 
@@ -246,7 +248,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 			__METHOD__
 		);
 		if ( isset( $revRow ) && isset( $revRow->rev_id ) ) {
-			if ( $revRow->rev_comment == $comment ) {
+			if ( $revRow->rev_comment == $supplement ) {
 				if ( !$empty ) {
 					$s .= $this->getAlertMessage( 'warning', 'supplement-same-as-summary' );
 				}
@@ -255,16 +257,11 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 			$s .= $this->getAlertMessage( 'warning', 'norevision' );
 		}
 
-		$suppRow = $dbr->selectRow(
-			'rev_comment_supp',
-			'*',
-			array( 'rcs_rev_id' => $revId ),
-			__METHOD__
-		);
-		if ( isset( $suppRow ) && isset( $suppRow->rcs_rev_id ) ) {
+		$suppRow = RevisionCommentSupplement::getRow( $revId );
+		if ( $suppRow ) {
 			$s .= $this->getAlertMessage( 'warning', 'exist-supplement' );
 
-			if ( $suppRow->rcs_comment == $comment ) {
+			if ( $suppRow->rcs_supplement == $supplement ) {
 				$s .= $this->getAlertMessage( 'warning', 'supplement-same-as-supplement' );
 			}
 
@@ -280,18 +277,18 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		$o = '';
 
 		# from Linker::commentBlock
-		if ( $comment && $comment != '*' ) {
+		if ( $supplement && $supplement != '*' ) {
 			$o .= "<li>" .
-				$this->msg( 'revcs-preview-supplement' )
-					->rawParams( Linker::formatComment( $comment ) )->escaped() .
+				$this->msg( 'revcs-edit-preview-supplement' )
+					->rawParams( Linker::formatComment( $supplement ) )->escaped() .
 				"</li>\n";
 		}
 
 		# from Linker::commentBlock
-		if ( $summary && $summary != '*' ) {
+		if ( $reason && $reason != '*' ) {
 			$o .= "<li>" .
-				$this->msg( 'revcs-preview-summary' )
-					->rawParams( Linker::formatComment( $summary ) )->escaped() .
+				$this->msg( 'revcs-edit-preview-reason' )
+					->rawParams( Linker::formatComment( $reason ) )->escaped() .
 				"</li>\n";
 		}
 		if ( $revId ) {
@@ -318,11 +315,11 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 	 * Save a Supplementary Comment
 	 *
 	 * @param string|int $revId: revision id
-	 * @param string $comment: a new supplenentary comment
-	 * @param string $summary: reason changing the supplemenary comment of the revision, comment in Special:Log
+	 * @param string $supplement: a new supplenentary comment
+	 * @param string $reason: reason changing the supplemenary comment of the revision, comment in Special:Log
 	 * @return string HTML
 	 */
-	function setRevisionCommentSupplement( $revId, $comment = '', $summary = '' ) {
+	function setRevisionCommentSupplement( $revId, $supplement = '', $reason = '' ) {
 		$user = $this->getUser();
 		$isAllowedRestricted = $user->isAllowed( 'supplementcomment-restricted' );
 		$dbr = wfGetDB( DB_SLAVE );
@@ -330,13 +327,13 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		$empty = false;
 		$s = "\n" . '<div class="revcs-rev-save">' . "\n";
 
-		if ( $comment == '*' ) {
+		if ( $supplement == '*' ) {
 			$e = true;
 			$s .= $this->getAlertMessage( 'error', 'supplement-asterisk' );
-		} elseif ( $comment == '0' ) {
+		} elseif ( $supplement == '0' ) {
 			$e = true;
 			$s .= $this->getAlertMessage( 'error', 'supplement-zero' );
-		} elseif ( $comment == '' ) {
+		} elseif ( $supplement == '' ) {
 			$empty = true;
 		}
 
@@ -346,8 +343,8 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 			array( 'rev_id' => $revId ),
 			__METHOD__
 		);
-		if ( isset($revRow) && isset($revRow->rev_id) ) {
-			if ( $revRow->rev_comment == $comment ) {
+		if ( isset( $revRow ) && isset( $revRow->rev_id ) ) {
+			if ( $revRow->rev_comment == $supplement ) {
 				if ( !$empty ) {
 					$e = true;
 					$s .= $this->getAlertMessage( 'error', 'supplement-same-as-summary' );
@@ -362,13 +359,8 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 			}
 		}
 
-		$suppRow = $dbr->selectRow(
-			'rev_comment_supp',
-			'*',
-			array( 'rcs_rev_id' => $revId ),
-			__METHOD__
-		);
-		if ( isset($suppRow) && isset($suppRow->rcs_rev_id) ) {
+		$suppRow = RevisionCommentSupplement::getRow( $revId );
+		if ( $suppRow ) {
 			$modifiedRecently
 				= $suppRow->rcs_user == $user->getId()
 				&& $suppRow->rcs_user_text == $user->getName()
@@ -381,7 +373,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 				$s .= $this->getAlertMessage( 'error', 'exist-supplement' );
 			}
 
-			if ( $suppRow->rcs_comment == $comment ) {
+			if ( $suppRow->rcs_supplement == $supplement ) {
 				$e = true;
 				$s .= $this->getAlertMessage( 'error', 'supplement-same-as-supplement' );
 			}
@@ -406,10 +398,10 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		}
 
 		if ( $e ) {
-			$s .= $this->getErrorMessage( 'denied' );
+			$s .= $this->getErrorMessage( 'edit-denied' );
 		} else {
-			RevisionCommentSupplement::insert( $revId, $comment, $summary );
-			$s .= "<p>" . $this->msg( 'revcs-written' )->escaped() . "</p>\n";
+			RevisionCommentSupplement::insert( $revId, $supplement, $reason );
+			$s .= "<p>" . $this->msg( 'revcs-edit-written' )->escaped() . "</p>\n";
 		}
 
 		$s .= "</div>\n";

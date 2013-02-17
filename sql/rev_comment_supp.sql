@@ -1,8 +1,11 @@
 CREATE TABLE /*_*/rev_comment_supp (
-  --  rev_id
+  -- rev_id
   rcs_rev_id int unsigned NOT NULL PRIMARY KEY,
 
-  --  user_id
+  -- rcsh_id
+  rcs_latest bigint unsigned NOT NULL default 0,
+
+  -- user_id
   rcs_user int unsigned NOT NULL default 0,
 
   -- user_name
@@ -12,7 +15,7 @@ CREATE TABLE /*_*/rev_comment_supp (
   rcs_timestamp varbinary(14) NOT NULL default '',
 
   -- additional comment
-  rcs_comment tinyblob NOT NULL
+  rcs_supplement tinyblob NOT NULL
 
 ) /*$wgDBTableOptions*/;
 CREATE UNIQUE INDEX /*i*/rcs_rev_id ON /*_*/rev_comment_supp (rcs_rev_id);

@@ -4,15 +4,15 @@
  *
  */
 
-require_once( dirname( __FILE__ ) . '/../../../maintenance/Maintenance.php' );
+require_once( __DIR__ . '/../../../maintenance/Maintenance.php' );
 
 class FixUserGroupSupplement extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->addOption( "log", "Logging the change(s) of user groups of user(s)." );
+		$this->addOption( 'log', 'Logging the change(s) of user groups of user(s).' );
 		$this->mDescription
-			= "replace supplement User Group with supplementcomment User Group for update from 0.2.x";
+			= 'replace supplement User Group with supplementcomment User Group for update from 0.2.x';
 	}
 
 	public function execute() {
@@ -46,11 +46,11 @@ class FixUserGroupSupplement extends Maintenance {
 				);
 			}
 		}
-		$this->output( "changed user groups of $i users." );
+		$this->output( "changed user groups of $i users.\n" );
 		return true;
 	}
 
 }
 
-$maintClass = "FixUserGroupSupplement";
+$maintClass = 'FixUserGroupSupplement';
 require_once( RUN_MAINTENANCE_IF_MAIN );

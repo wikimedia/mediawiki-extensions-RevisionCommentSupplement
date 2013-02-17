@@ -21,7 +21,6 @@
 class ViewRevisionCommentSupplementDelete extends ContextSource {
 
 	var $rId = '', $missrId = '', $otherReason = '', $listReason = 'other';
-	var $hidePrimary = false, $hideComment = false, $hideUser = false, $hideRestricted = false;
 	var $formtype, $submit = false, $error = '', $exist = false;
 	var $mPage;
 	var $mParam;
@@ -30,8 +29,8 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 
 	# from abstract class AbuseFilterView in AbuseFilterView.php into extension AbuseFilter
 	/**
-	 * @param $page SpecialPage
-	 * @param $params array
+	 * @param SpecialPage $page
+	 * @param array $params
 	 */
 	function __construct( $page, $param ) {
 		$this->mPage = $page;
@@ -109,31 +108,7 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 				$this->error = 'rId';
 			}
 
-			$this->hidePrimary = $request->getCheck( 'wpHidePrimary' );
-			$this->hideComment = $request->getCheck( 'wpHideComment' );
-			$this->hideUser = $request->getCheck( 'wpHideUser' );
-			$this->hideRestricted = $request->getCheck( 'wpHideRestricted' );
 			$this->submit = $request->getCheck( 'submit' );
-
-			global $wgVersion;
-			$oldVersion = version_compare( $wgVersion, '1.20', '<' );
-			if ( $oldVersion ) {
-				if ( !$this->getUser()->isAllowed( 'deleterevision' ) ) {
-					$this->hidePrimary = false;
-					$this->hideComment = false;
-					$this->hideUser = false;
-				}
-			} else {
-				if ( !$this->getUser()->isAllowed( 'deletelogentry' ) ) {
-					$this->hidePrimary = false;
-					$this->hideComment = false;
-					$this->hideUser = false;
-				}
-			}
-
-			if ( !$this->getUser()->isAllowed( 'suppressrevision' ) ) {
-				$this->hideRestricted = false;
-			}
 
 			if ( $this->mPage->tokenOk( $request ) ) {
 				# Some browsers will not report any submit button
@@ -178,44 +153,18 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 			"\n";
 
 		$form .= "<div>" .
-			Xml::checkLabel(
-				$this->msg( 'revdelete-hide-name' )->plain(),
-				'wpHidePrimary', 'wpHidePrimary', $this->hidePrimary
-			) . "</div>\n";
-
-		$form .= "<div>" .
-			Xml::checkLabel(
-				$this->msg( 'revdelete-hide-comment' )->plain(),
-				'wpHideComment', 'wpHideComment', $this->hideComment
-			) . "</div>\n";
-
-		$form .= "<div>" .
-			Xml::checkLabel(
-				$this->msg( 'revdelete-hide-user' )->plain(),
-				'wpHideUser', 'wpHideUser', $this->hideUser
-			) . "</div>\n";
-
-		if ( $this->getUser()->isAllowed( 'suppressrevision' ) ) {
-			$form .= "<div>" .
-				Xml::checkLabel(
-					$this->msg( 'revdelete-suppress' )->plain(),
-					'wpHideRestricted', 'wpHideRestricted', $this->hideRestricted
-				) . "</div>\n";
-		}
-
-		$form .= "<div>" .
-			Xml::label( $this->msg( 'revdelete-log' )->plain(), 'wpRevDeleteReasonList' ) .
+			Xml::label( $this->msg( 'deletecomment' )->plain(), 'wpDeleteReasonList' ) .
 			Xml::listDropDown(
-				'wpRevDeleteReasonList',
-				$this->msg( 'revdelete-reason-dropdown' )->plain(),
-				$this->msg( 'revdelete-reasonotherlist' )->plain(),
+				'wpDeleteReasonList',
+				$this->msg( 'deletereason-dropdown' )->plain(),
+				$this->msg( 'deletereasonotherlist' )->plain(),
 				$this->listReason,
 				'wpReasonDropDown'
 			) . "</div>\n";
 
 		$form .= "<div>" .
 			Xml::inputLabel(
-				$this->msg( 'revdelete-otherreason' )->plain(),
+				$this->msg( 'deleteotherreason' )->plain(),
 				'wpReason', 'wpReason', 60, $this->otherReason,
 				array( 'maxlength' => '255', 'spellcheck' => 'true', 'accesskey' => 'r' )
 			) . "</div>\n";
@@ -246,7 +195,7 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 		$form = Xml::fieldset( $this->msg( 'revcs-delete-legend' )->plain(), $form );
 
 		if ( $this->getUser()->isAllowed( 'editinterface' ) ) {
-			$title = Title::makeTitle( NS_MEDIAWIKI, 'revdelete-reason-dropdown' );
+			$title = Title::makeTitle( NS_MEDIAWIKI, 'deletereason-dropdown' );
 			$link = Linker::link(
 				$title,
 				$this->msg( 'delete-edit-reasonlist' ),
@@ -261,32 +210,18 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 
 	function deleteRevisionCommentSupplement() {
 		if ( $this->listReason == 'other' ) {
-			$summary = $this->otherReason;
+			$reason = $this->otherReason;
 		} elseif ( $this->otherReason != '' ) {
 			// Entry from drop down menu + additional comment
-			$summary = $this->getLanguage()->truncate(
+			$reason = $this->getLanguage()->truncate(
 				$this->listReason . $this->msg( 'colon-separator' )->plain() . $this->otherReason,
 				255
 			);
 		} else {
-			$summary = $this->listReason;
+			$reason = $this->listReason;
 		}
 
-		$hide = 0;
-		if ( $this->hidePrimary ) {
-			$hide |= RevisionCommentSupplement::DELETED_ACTION;
-		}
-		if ( $this->hideComment ) {
-			$hide |= RevisionCommentSupplement::DELETED_COMMENT;
-		}
-		if ( $this->hideUser ) {
-			$hide |= RevisionCommentSupplement::DELETED_USER;
-		}
-		if ( $this->hideRestricted ) {
-			$hide |= RevisionCommentSupplement::DELETED_RESTRICTED;
-		}
-
-		RevisionCommentSupplement::delete( $this->rId, $summary, $hide );
+		RevisionCommentSupplement::delete( $this->rId, $reason );
 
 		$this->exist = RevisionCommentSupplement::isExistRow( $this->rId );
 		if ( $this->exist ) {

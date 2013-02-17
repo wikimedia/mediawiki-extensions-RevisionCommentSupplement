@@ -25,10 +25,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'RevisionCommentSupplement',
-	'author' => array( 'Burthsceh' ),
+	'author' => array( 'Burthsceh', '...' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement',
 	'descriptionmsg' => 'revcs-desc',
-	'version' => '0.3.3',
+	'version' => '0.4.0',
 );
 
 $wgAvailableRights[] = 'supplementcomment';
@@ -41,10 +41,12 @@ $wgGroupPermissions['sysop']['supplementcomment'] = true;
 $wgExtensionMessagesFiles['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.i18n.php';
 $wgExtensionMessagesFiles['RevisionCommentSupplementAlias'] = __DIR__ . '/RevisionCommentSupplement.alias.php';
 
+$wgAutoloadClasses['RevisionCommentSupplementSetting'] = __DIR__ . '/RevisionCommentSupplementSetting.php';
 $wgAutoloadClasses['RevisionCommentSupplementHook'] = __DIR__ . '/RevisionCommentSupplement.hook.php';
-$wgAutoloadClasses['RevisionCommentSupplementLogFormatter'] = __DIR__ . '/RevisionCommentSupplement.hook.php';
-$wgAutoloadClasses['SpecialRevisionCommentSupplement'] = __DIR__ . '/SpecialRevisionCommentSupplement.php';
-$wgAutoloadClasses['SpecialRevisionCommentSupplementList'] = __DIR__ . '/SpecialRevisionCommentSupplementList.php';
+$wgAutoloadClasses['RevisionCommentSupplementLogFormatter'] = __DIR__ . '/RevisionCommentSupplementLogFormatter.php';
+$wgAutoloadClasses['RevisionCommentSupplementHideHistoryLogFormatter'] = __DIR__ . '/RevisionCommentSupplementLogFormatter.php';
+$wgAutoloadClasses['SpecialRevisionCommentSupplement'] = __DIR__ . '/special/SpecialRevisionCommentSupplement.php';
+$wgAutoloadClasses['SpecialRevisionCommentSupplementList'] = __DIR__ . '/special/SpecialRevisionCommentSupplementList.php';
 
 $wgSpecialPages['RevisionCommentSupplement'] = 'SpecialRevisionCommentSupplement';
 $wgSpecialPageGroups['RevisionCommentSupplement'] = 'other';
@@ -53,12 +55,32 @@ $wgSpecialPageGroups['RevisionCommentSupplementList'] = 'other';
 
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'RevisionCommentSupplementHook::runUpdates';
 $wgHooks['PageHistoryLineEnding'][] = 'RevisionCommentSupplementHook::onPageHistoryLineEnding';
+$wgHooks['LogLine'][] = 'RevisionCommentSupplementHook::onLogLine';
 
 $wgLogTypes[] = 'revisioncommentsupplement';
-$wgLogActionsHandlers['revisioncommentsupplement/*'] = 'RevisionCommentSupplementLogFormatter';
+$wgLogActionsHandlers['revisioncommentsupplement/create'] = 'RevisionCommentSupplementLogFormatter';
+$wgLogActionsHandlers['revisioncommentsupplement/delete'] = 'RevisionCommentSupplementLogFormatter';
+$wgLogActionsHandlers['revisioncommentsupplement/modify'] = 'RevisionCommentSupplementLogFormatter';
+$wgLogActionsHandlers['revisioncommentsupplement/create2'] = 'LogFormatter';
+$wgLogActionsHandlers['revisioncommentsupplement/delete2'] = 'LogFormatter';
+$wgLogActionsHandlers['revisioncommentsupplement/modify2'] = 'LogFormatter';
+$wgLogActionsHandlers['revisioncommentsupplement/hidehistory'] = 'RevisionCommentSupplementHideHistoryLogFormatter';
+$wgLogActionsHandlers['suppress/revcommentsupplementhidehistory'] = 'RevisionCommentSupplementHideHistoryLogFormatter';
 
 $wgResourceModules['ext.RevisionCommentSupplement.special'] = array(
 	'styles' => 'ext.RevisionCommentSupplement.special.css',
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'RevisionCommentSupplement',
 );
+
+/**
+ * $egRevisionCommentSupplementSettings
+ *
+ * Settings of RevisionCommentSupplement
+ *
+ * See RevisionCommentSupplementSetting.php
+ */
+$egRevisionCommentSupplementSettings['history'] = true;
+$egRevisionCommentSupplementSettings['log'] = true;
+$egRevisionCommentSupplementSettings['logsupplement'] = false;
+$egRevisionCommentSupplementSettings['logpublish'] = false;

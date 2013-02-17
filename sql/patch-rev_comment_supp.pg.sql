@@ -1,5 +1,7 @@
 -- RevisionCommentSupplement version 0.3.0 database schema update
 
+BEGIN;
+
 DROP INDEX rcs_revid;
 DROP INDEX rcs_user_timestamp;
 
@@ -16,3 +18,5 @@ ALTER TABLE rev_comment_supp
 CREATE UNIQUE INDEX rcs_rev_id ON rev_comment_supp (rcs_rev_id);
 CREATE INDEX rcs_timestamp ON rev_comment_supp (rcs_timestamp,rcs_rev_id);
 CREATE INDEX rcs_user_text ON rev_comment_supp (rcs_user_text,rcs_timestamp,rcs_rev_id);
+
+COMMIT;
