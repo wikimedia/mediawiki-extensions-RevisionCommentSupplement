@@ -28,7 +28,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array( 'Burthsceh' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement',
 	'descriptionmsg' => 'revcs-desc',
-	'version' => '0.3.2',
+	'version' => '0.3.3',
 );
 
 $wgAvailableRights[] = 'supplementcomment';
@@ -41,8 +41,8 @@ $wgGroupPermissions['sysop']['supplementcomment'] = true;
 $wgExtensionMessagesFiles['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.i18n.php';
 $wgExtensionMessagesFiles['RevisionCommentSupplementAlias'] = __DIR__ . '/RevisionCommentSupplement.alias.php';
 
-$wgAutoloadClasses['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.body.php';
-$wgAutoloadClasses['RevisionCommentSupplementLogFormatter'] = __DIR__ . '/RevisionCommentSupplement.body.php';
+$wgAutoloadClasses['RevisionCommentSupplementHook'] = __DIR__ . '/RevisionCommentSupplement.hook.php';
+$wgAutoloadClasses['RevisionCommentSupplementLogFormatter'] = __DIR__ . '/RevisionCommentSupplement.hook.php';
 $wgAutoloadClasses['SpecialRevisionCommentSupplement'] = __DIR__ . '/SpecialRevisionCommentSupplement.php';
 $wgAutoloadClasses['SpecialRevisionCommentSupplementList'] = __DIR__ . '/SpecialRevisionCommentSupplementList.php';
 
@@ -51,8 +51,8 @@ $wgSpecialPageGroups['RevisionCommentSupplement'] = 'other';
 $wgSpecialPages['RevisionCommentSupplementList'] = 'SpecialRevisionCommentSupplementList';
 $wgSpecialPageGroups['RevisionCommentSupplementList'] = 'other';
 
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'RevisionCommentSupplement::runUpdates';
-$wgHooks['PageHistoryLineEnding'][] = 'RevisionCommentSupplement::onPageHistoryLineEnding';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'RevisionCommentSupplementHook::runUpdates';
+$wgHooks['PageHistoryLineEnding'][] = 'RevisionCommentSupplementHook::onPageHistoryLineEnding';
 
 $wgLogTypes[] = 'revisioncommentsupplement';
 $wgLogActionsHandlers['revisioncommentsupplement/*'] = 'RevisionCommentSupplementLogFormatter';

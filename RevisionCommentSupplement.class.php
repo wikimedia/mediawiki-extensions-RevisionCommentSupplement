@@ -31,34 +31,6 @@ class RevisionCommentSupplement {
 	const DELETED_USER = 4;
 	const DELETED_RESTRICTED = 8;
 
-	public static function onPageHistoryLineEnding( HistoryPager $history, $rev_row, &$s ) {
-		$revId = (int)$rev_row->rev_id;
-		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow(
-			'rev_comment_supp',
-			'rcs_comment',
-			array( 'rcs_rev_id' => $revId ),
-			__METHOD__
-		);
-
-		if ( isset($db_row) && isset($db_row->rcs_comment) ) {
-			if ( $db_row->rcs_comment && ( $db_row->rcs_comment != '*' ) ) {
-				# section link
-				$comment = Linker::formatComment(
-					$db_row->rcs_comment/*,
-					$history->getTitle(),
-					false*/
-				);
-				$s .= '<span class="revcs-comment">' .
-					$history->msg( 'revcs-history-supplement' )
-						->rawParams( $comment )->escaped() .
-					'</span>';
-			}
-		}
-
-		return true;
-	}
-
 	/**
 	 * @param $revId string: revision id
 	 * @param $comment2 string: a new supplementary comment
@@ -68,15 +40,15 @@ class RevisionCommentSupplement {
 		$comment1 = '';
 		$action = 'create';
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow(
+		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'rcs_comment',
 			array( 'rcs_rev_id' => $revId ),
 			__METHOD__
 		);
 
-		if ( isset($db_row) && isset($db_row->rcs_comment) ) {
-			$comment1 = $db_row->rcs_comment;
+		if ( isset($dbRow) && isset($dbRow->rcs_comment) ) {
+			$comment1 = $dbRow->rcs_comment;
 			$action = 'modify';
 		}
 
@@ -137,15 +109,11 @@ class RevisionCommentSupplement {
 	 */
 	public static function delete( $revId, $summary = '', $hide = false ) {
 		$comment1 = '';
-		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow(
-			'rev_comment_supp',
-			'rcs_comment',
-			array( 'rcs_rev_id' => $revId ),
-			__METHOD__
-		);
-		if ( isset($db_row) && isset($db_row->rcs_comment) ) {
-			$comment1 = $db_row->rcs_comment;
+		$dbRow = self::getRow( $revId );
+		if ( $dbRow ) {
+			$comment1 = $dbRow->rcs_comment;
+		} else {
+			return false;
 		}
 
 		$logType = '';
@@ -164,16 +132,15 @@ class RevisionCommentSupplement {
 		if ( $logType ) {
 			$log = new LogPage( $logType );
 			$logid = $log->addEntry(
-				'revision', SpecialPage::getTitleFor( 'Log', 'revisioncommentsupplement' ),
-				$summary, array( null, $revId, 'ofield=0', "nfield={$hide}" )
+				'event', SpecialPage::getTitleFor( 'Log', 'revisioncommentsupplement' ),
+				$summary, array( null, $rcslogid, 'ofield=0', "nfield={$hide}" )
 			);
 			// Allow for easy searching of deletion log items for revision/log items
 			$log->addRelations( 'log_id', array( $rcslogid ), $logid );
-			global $wgUser;
-			if ( $wgUser->getId() ) {
-				$log->addRelations( 'target_author_id', array( $wgUser->getId() ), $logid );
+			if ( $dbRow->rcs_user ) {
+				$log->addRelations( 'target_author_id', array( $dbRow->rcs_user ), $logid );
 			} else {
-				$log->addRelations( 'target_author_ip', array( $wgUser->getName() ), $logid );
+				$log->addRelations( 'target_author_ip', array( $dbRow->rcs_user_text ), $logid );
 			}
 		}
 
@@ -186,15 +153,15 @@ class RevisionCommentSupplement {
 	 */
 	public static function getRow( $revId ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow(
+		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'*',
 			array( 'rcs_rev_id' => $revId ),
 			__METHOD__
 		);
 
-		if ( isset($db_row) && isset($db_row->rcs_rev_id) && ($db_row->rcs_rev_id == $revId) ) {
-			return $db_row;
+		if ( isset($dbRow) && isset($dbRow->rcs_rev_id) && ($dbRow->rcs_rev_id == $revId) ) {
+			return $dbRow;
 		}
 
 		return false;
@@ -206,76 +173,18 @@ class RevisionCommentSupplement {
 	 */
 	public static function isExistRow( $revId ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$db_row = $dbr->selectRow(
+		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'rcs_rev_id',
 			array( 'rcs_rev_id' => $revId ),
 			__METHOD__
 		);
 
-		if ( isset($db_row) && isset($db_row->rcs_rev_id) && ($db_row->rcs_rev_id == $revId) ) {
+		if ( isset($dbRow) && isset($dbRow->rcs_rev_id) && ($dbRow->rcs_rev_id == $revId) ) {
 			return true;
 		}
 
 		return false;
-	}
-	# from Extension:TitleKey, author Brion Vibber
-	public static function runUpdates( DatabaseUpdater $updater ) {
-		$dir = __DIR__;
-
-		if( $updater->getDB()->tableExists( 'rev_comment_supp' ) ) {
-			$updater->output( "...rev_comment_supp table already exists.\n" );
-
-			if ( $updater->getDB()->fieldExists( 'rev_comment_supp', 'rcs_user_name', __METHOD__ ) ) {
-				$updater->output( "...update rev_comment_supp on version 0.3.0...\n" );
-
-				if ( $updater->getDB()->getType() == 'mysql' ) {
-					$updater->addExtensionUpdate(
-						array(
-							'modifyField',
-							'rev_comment_supp',
-							'rcs_user_name',
-							"$dir/patch/patch-rev_comment_supp.sql",
-							true
-						)
-					);
-				} elseif ( $updater->getDB()->getType() == 'postgres' ) {
-					$updater->addExtensionUpdate(
-						array(
-							'modifyField',
-							'rev_comment_supp',
-							'rcs_user_name',
-							"$dir/patch/patch-rev_comment_supp.pg.sql",
-							true
-						)
-					);
-				}
-
-			}
-		} else {
-			$updater->output( "...create rev_comment_supp table...\n" );
-			if ( $updater->getDB()->getType() == 'mysql' ) {
-				$updater->addExtensionUpdate(
-					array(
-						'addTable',
-						'rev_comment_supp',
-						"$dir/RevisionCommentSupplement.sql",
-						true
-					)
-				);
-			} elseif ( $updater->getDB()->getType() == 'postgres' ) {
-				$updater->addExtensionUpdate(
-					array(
-						'addTable',
-						'rev_comment_supp',
-						"$dir/RevisionCommentSupplement.pg.sql",
-						true
-					)
-				);
-			}
-		}
-
-		return true;
 	}
 }
 
@@ -331,27 +240,114 @@ class RevisionCommentSupplementManualLogEntry extends ManualLogEntry {
 	}
 }
 
-class RevisionCommentSupplementLogFormatter extends LogFormatter {
+# from class LogPage in LogPage.php
+class RevisionCommentSupplementLogPage extends LogPage {
 
-	function getMessageParameters() {
-		$params = parent::getMessageParameters();
-		$params[4] = Message::rawParam( $this->getSupplementComment( $params[4] ) );
-		$params[5] = Message::rawParam( $this->getSupplementComment( $params[5] ) );
-		return $params;
+	/**
+	 * @return bool|int|null
+	 */
+	protected function saveContent() {
+		$dbw = wfGetDB( DB_MASTER );
+		$log_id = $dbw->nextSequenceValue( 'logging_log_id_seq' );
+
+		$this->timestamp = $now = wfTimestampNow();
+		$data = array(
+			'log_id' => $log_id,
+			'log_type' => $this->type,
+			'log_action' => $this->action,
+			'log_timestamp' => $dbw->timestamp( $now ),
+			'log_user' => $this->doer->getId(),
+			'log_user_text' => $this->doer->getName(),
+			'log_namespace' => $this->target->getNamespace(),
+			'log_title' => $this->target->getDBkey(),
+			'log_page' => $this->target->getArticleId(),
+			'log_comment' => $this->comment,
+			'log_params' => $this->params
+		);
+		$dbw->insert( 'logging', $data, __METHOD__ );
+		$newId = !is_null( $log_id ) ? $log_id : $dbw->insertId();
+
+		# And update recentchanges
+		if( $this->updateRecentChanges ) {
+			$titleObj = SpecialPage::getTitleFor( 'Log', $this->type );
+
+			RecentChange::notifyLog(
+				$now, $titleObj, $this->doer, $this->getRcComment(), '',
+				$this->type, $this->action, $this->target, $this->comment,
+				$this->params, $newId
+			);
+		} elseif( $this->sendToUDP ) {
+			global $wgLogRestrictions;
+			# Don't send private logs to UDP
+			if( isset( $wgLogRestrictions[$this->type] ) && $wgLogRestrictions[$this->type] != '*' ) {
+				return true;
+			}
+
+			# Notify external application via UDP.
+			# We send this to IRC but do not want to add it the RC table.
+			$titleObj = SpecialPage::getTitleFor( 'Log', $this->type );
+			$rc = RecentChange::newLogEntry(
+				$now, $titleObj, $this->doer, $this->getRcComment(), '',
+				$this->type, $this->action, $this->target, $this->comment,
+				$this->params, $newId
+			);
+			$rc->notifyRC2UDP();
+		}
+		return $newId;
 	}
 
 	/**
-	 * @params string $comment
-	 * @return string HTML
+	 * Add a log entry
+	 *
+	 * @param $action String: one of '', 'block', 'protect', 'rights', 'delete', 'upload', 'move', 'move_redir'
+	 * @param $target Title object
+	 * @param $comment String: description associated
+	 * @param $params Array: parameters passed later to wfMsg.* functions
+	 * @param $doer User object: the user doing the action
+	 * @param $timestamp
+	 *
+	 * @return bool|int|null
+	 * @TODO: make this use LogEntry::saveContent()
 	 */
-	function getSupplementComment( $comment ){
-		$s = '';
-		if ( $comment ) {
-			$s = $this->msg( 'revcs-log-supplement' )
-				->rawParams( htmlspecialchars( $comment ) )->escaped();
-		} else {
-			$s = $this->msg( 'revcs-log-nosupplement' )->escaped();
+	public function addEntry( $action, $target, $comment, $params = array(), $doer = null, $timestamp = null ) {
+		global $wgContLang;
+
+		if ( !is_array( $params ) ) {
+			$params = array( $params );
 		}
-		return $s;
+
+		if ( $comment === null ) {
+			$comment = '';
+		}
+
+		# Truncate for whole multibyte characters.
+		$comment = $wgContLang->truncate( $comment, 255 );
+
+		$this->action = $action;
+		$this->target = $target;
+		$this->comment = $comment;
+		$this->params = LogPage::makeParamBlob( $params );
+
+		if ( $doer === null ) {
+			global $wgUser;
+			$doer = $wgUser;
+		} elseif ( !is_object( $doer ) ) {
+			$doer = User::newFromId( $doer );
+		}
+
+		$this->doer = $doer;
+
+		$logEntry = new ManualLogEntry( $this->type, $action );
+		$logEntry->setTarget( $target );
+		$logEntry->setPerformer( $doer );
+		$logEntry->setParameters( $params );
+
+		$formatter = LogFormatter::newFromEntry( $logEntry );
+		$context = RequestContext::newExtraneousContext( $target );
+		$formatter->setContext( $context );
+
+		$this->actionText = $formatter->getPlainActionText();
+
+		return $this->saveContent();
 	}
 }

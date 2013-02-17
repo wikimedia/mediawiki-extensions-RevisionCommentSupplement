@@ -82,7 +82,7 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 			"\n";
 
 		$form .= "<div>" .
-			Xml::label( $this->msg( 'revcs-list-extended-index' )->plain(), 'exindex' ) . '&#160;' .
+			Xml::label( $this->msg( 'revcs-list-extended-property' )->plain(), 'exindex' ) . '&#160;' .
 			Xml::tags(
 				'select', array( 'id' => 'exindex', 'name' => 'exindex' ),
 				"\n" .

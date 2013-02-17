@@ -18,6 +18,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+$wgAutoloadClasses['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.class.php';
 $wgAutoloadClasses['ViewRevisionCommentSupplementEdit'] = __DIR__ . '/ViewRevisionCommentSupplementEdit.php';
 $wgAutoloadClasses['ViewRevisionCommentSupplementDelete'] = __DIR__ . '/ViewRevisionCommentSupplementDelete.php';
 
@@ -220,7 +221,6 @@ class SpecialRevisionCommentSupplement extends SpecialPage
 		if ( !isset($db_row) || !isset($db_row->rev_id) ) {
 			return $this->msg( 'revcs-alert-norevision' )->escaped();
 		}
-
 		if ( $db_row->rev_id != $revId ) {
 			return $this->msg( 'revcs-error-unexpected' )->escaped();
 		}

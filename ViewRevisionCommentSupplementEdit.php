@@ -226,11 +226,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 
 
 	# from EditPage.php
-	function getPreview( $revId, $comment = "", $summary = "" ) {
-		if ( ( !$this->preview ) ) {
-			return '';
-		}
-
+	function getPreview( $revId, $comment = '', $summary = '' ) {
 		$empty = false;
 		$s = "\n" . '<div class="revcs-rev-preview">' . "\n";
 
@@ -326,7 +322,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 	 * @param string $summary: reason changing the supplemenary comment of the revision, comment in Special:Log
 	 * @return string HTML
 	 */
-	function setRevisionCommentSupplement( $revId, $comment = "", $summary = "" ) {
+	function setRevisionCommentSupplement( $revId, $comment = '', $summary = '' ) {
 		$user = $this->getUser();
 		$isAllowedRestricted = $user->isAllowed( 'supplementcomment-restricted' );
 		$dbr = wfGetDB( DB_SLAVE );

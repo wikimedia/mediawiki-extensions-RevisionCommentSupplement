@@ -15,9 +15,9 @@ version 2 or any later version (http://www.gnu.org/copyleft/gpl.html).
 == Install and Update ==
 
 This extension needs to run update.php on installation.
-This needs to do on update from 0.1.x or 0.2.x to 0.3.0.
+This needs to do on update from 0.1.x or 0.2.x to 0.3.x.
 
 You should remove supplement group before you update this extension from 0.2.x.
 Or you should run
-php extension/RevisionCommentSupplement/maintenance/FixUserGroupSupplement.php --log
+php extension/RevisionCommentSupplement/maintenance/fixUserGroupSupplement.php --log
 then.
