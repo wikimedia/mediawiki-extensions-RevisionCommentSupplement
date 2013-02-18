@@ -143,9 +143,12 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'action-supplementcomment' => '{{doc-action|supplementcomment}}',
 	'action-supplementcomment-restricted' => '{{doc-action|supplementcomment-restricted}}',
-	'group-supplementcomment' => '{{doc-group|supplementcomment}}',
-	'group-supplementcomment-member' => '{{doc-group|supplementcomment}}',
-	'grouppage-supplementcomment' => '{{doc-group|supplementcomment}}',
+	'group-supplementcomment' => '{{doc-group|supplementcomment}}
+{{Identical|Supplement comment}}',
+	'group-supplementcomment-member' => '{{doc-group|supplementcomment}}
+{{Identical|Supplement comment}}',
+	'grouppage-supplementcomment' => '{{doc-group|supplementcomment}}
+{{Identical|Supplement comment}}',
 	'log-name-revisioncommentsupplement' => 'All public logs of Extension:RevisonCommentSupplement in [[Special:Log]].',
 	'log-description-revisioncommentsupplement' => 'The description of all public logs of Extension:RevisonCommentSupplement in [[Special:Log]].',
 	'logentry-revisioncommentsupplement-create' => 'A line of log entry in [[Special:Log]].
@@ -154,24 +157,28 @@ $messages['qqq'] = array(
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
 *$4 is the revision id.
 *$5 is {{msg-mw|revcs-log-nosupplement}}.
-*$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.',
+*$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
+{{Related|Logentry-revcs}}',
 	'logentry-revisioncommentsupplement-create2' => 'A line of log entry in [[Special:Log]].
 *$1 are links of user page and user tool page(s).
 *$2 is username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.',
+*$4 is the revision id.
+{{Related|Logentry-revcs}}',
 	'logentry-revisioncommentsupplement-delete' => "A line of log entry in [[Special:Log]].
 *$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
 *$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
 *$4 is the revision id.
 *$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
-*$6 is {{msg-mw|revcs-log-nosupplement}}.",
+*$6 is {{msg-mw|revcs-log-nosupplement}}.
+{{Related|Logentry-revcs}}",
 	'logentry-revisioncommentsupplement-delete2' => "A line of log entry in [[Special:Log]].
 *$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
 *$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.",
+*$4 is the revision id.
+{{Related|Logentry-revcs}}",
 	'logentry-revisioncommentsupplement-hidehistory' => 'A line of log entry in [[Special:Log]].
 *$1 are links of the user page and the user tool(s) page.
 *$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
@@ -191,12 +198,22 @@ $messages['qqq'] = array(
 **{{msg-mw|revcs-log-hidehistory-restricted}}
 **{{msg-mw|revcs-log-hidehistory-unrestricted}}
 **{{msg-mw|revcs-log-hidehistory-row-hidden}}
-**{{msg-mw|revcs-log-hidehistory-row-unhidden}}',
+**{{msg-mw|revcs-log-hidehistory-row-unhidden}}
+{{Related|Logentry-revcs}}',
 	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in [[Special:Log]].
 *$1 are links of the user page and the user tool(s) page.
 *$2 is the username. <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.',
+*$4 is the revision id.
+*$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
+*$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
+{{Related|Logentry-revcs}}',
+	'logentry-revisioncommentsupplement-modify2' => 'A line of log entry in [[Special:Log]].
+*$1 are links of the user page and the user tool(s) page.
+*$2 is the username. <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
+*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
+*$4 is the revision id.
+{{Related|Logentry-revcs}}',
 	'logentry-suppress-revcommentsupplementhidehistory' => 'A line of private log entry in [[Special:Log]].
 *$1 are links of the user page and the user tool(s) page.
 *$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
@@ -216,9 +233,11 @@ $messages['qqq'] = array(
 **{{msg-mw|revcs-log-hidehistory-restricted}}
 **{{msg-mw|revcs-log-hidehistory-unrestricted}}
 **{{msg-mw|revcs-log-hidehistory-row-hidden}}
-**{{msg-mw|revcs-log-hidehistory-row-unhidden}}',
+**{{msg-mw|revcs-log-hidehistory-row-unhidden}}
+{{Related|Logentry-revcs}}',
 	'revisioncommentsupplement' => 'This message is a link text of Special:RevisionCommentSupplement on Special:SpecialPages (and first heading of Special:RevisionCommentSupplement). The meaning of "RevisionCommentSupplement" is "Supplement the comment on each revision", "the comment on each revision is supplemented" or "a supplement to the comment on each revision."',
-	'revisioncommentsupplementlist' => 'This message is a link text of Special:RevisionCommentSupplementList on [[Special:SpecialPages]].',
+	'revisioncommentsupplementlist' => 'This message is a link text of Special:RevisionCommentSupplementList on [[Special:SpecialPages]].
+{{Identical|List of Supplementary Comments}}',
 	'revcs-desc' => '{{desc|name=RevisionCommentSupplement|url=https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement}}',
 	'revcs-action-history-supplement' => 'This message is used at each revision line in History pages(history action of pages). $1 is a parsed supplementary comment.',
 	'revcs-alert-exist-supplement' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
@@ -234,20 +253,28 @@ $messages['qqq'] = array(
 	'revcs-alert-supplement-same-as-supplement' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
 	'revcs-delete-desc' => 'This message is a description at the top in Special:RevisionCommentSupplement/delete.',
 	'revcs-delete-failure' => 'This message is shown when deleting a supplementary comment and writing log entry(s) are failure in Special:RevisionCommentSupplement/delete.',
-	'revcs-delete-heading' => 'This message is the heading of Special:RevisionCommentSupplement/delete.',
-	'revcs-delete-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/delete.',
+	'revcs-delete-heading' => 'This message is the heading of Special:RevisionCommentSupplement/delete.
+{{Identical|Delete the supplementary comment}}',
+	'revcs-delete-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/delete.
+{{Identical|Delete the supplementary comment}}',
 	'revcs-delete-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/delete.',
 	'revcs-delete-success' => 'This message is shown when deleting a supplementary comment and writing log entry(s) are finished in Special:RevisionCommentSupplement/delete.',
 	'revcs-edit-desc' => 'This message is a description at the top in Special:RevisionCommentSupplement/edit.',
-	'revcs-edit-heading' => 'This message is the heading of Special:RevisionCommentSupplement/edit.',
-	'revcs-edit-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/edit.',
-	'revcs-edit-preview' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/edit.',
+	'revcs-edit-heading' => 'This message is the heading of Special:RevisionCommentSupplement/edit.
+{{Identical|Edit supplementary comment}}',
+	'revcs-edit-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/edit.
+{{Identical|Edit supplementary comment}}',
+	'revcs-edit-preview' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/edit.
+{{Identical|Show preview}}',
 	'revcs-edit-preview-supplement' => 'This message is used at preview a supplementary comment and a summary in Special:RevisionCommentSupplement/edit. $1 is a parsed supplementary comment.',
-	'revcs-edit-reason' => 'This message is a content of a label element of a text input box of a reason in Special:RevisionCommentSupplement/edit.',
-	'revcs-edit-revision-id' => 'This message is a content of a label element of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.',
+	'revcs-edit-reason' => 'This message is a content of a label element of a text input box of a reason in Special:RevisionCommentSupplement/edit.
+{{Identical|Reason}}',
+	'revcs-edit-revision-id' => 'This message is a content of a label element of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.
+{{Identical|Revision ID}}',
 	'revcs-edit-save' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/edit.',
 	'revcs-edit-show' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/edit.',
-	'revcs-edit-supplement' => 'This message is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.',
+	'revcs-edit-supplement' => 'This message is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.
+{{Identical|Supplement comment}}',
 	'revcs-edit-written' => 'This message is shown when writing a supplementary comment and a log entry are finished at save in Special:RevisionCommentSupplement/edit.',
 	'revcs-error' => '* $1 is error messages, revcs-alert-* or revcs-error-*.
 {{Identical|Error}}',
@@ -265,20 +292,26 @@ $messages['qqq'] = array(
 	'revcs-hidehistory-present-supplement' => 'This message is second heading of Special:RevisionCommentSupplement/hidehistory. $1 is revision id.',
 	'revcs-hidehistory-reason' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-hidehistory-row' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
-	'revcs-hidehistory-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/hidehistory.',
+	'revcs-hidehistory-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/hidehistory.
+{{Identical|Apply}}',
 	'revcs-hidehistory-success' => 'This message is shown when hiding whole or part of a history entry and writing log entry are finished in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-hidehistory-supplement' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-hidehistory-suppress' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory. This is like {{msg-mw|revdelete-suppress}}.',
 	'revcs-hidehistory-user' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-history-desc' => 'This message is a description at the top in Special:RevisionCommentSupplement/edit.',
-	'revcs-history-heading' => 'This message is the heading of Special:RevisionCommentSupplementList/history. $1 is a revision id of a supprementary comment. When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of this.',
+	'revcs-history-heading' => 'This message is the heading of Special:RevisionCommentSupplementList/history. Parameters:
+* $1 - a revision id of a supprementary comment.
+When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of this message.
+{{Identical|History of supplementary comment}}',
 	'revcs-history-heading-error' => 'This message is the heading of Special:RevisionCommentSupplementList/history. $1 is a revision id of a supprementary comment. When error happens, this is used instead of {{msg-mw|revcs-history-heading}}.',
 	'revcs-history-hidden-reason' => 'This message is used in Special:RevisionCommentSupplementList/history. This is like {{msg-mw|Rev-deleted-comment}}.',
 	'revcs-history-hidden-supplement' => 'This message is used in Special:RevisionCommentSupplementList/history. This is like {{msg-mw|Rev-deleted-event}}.',
 	'revcs-history-hidden-user' => 'This message is used in Special:RevisionCommentSupplementList/history. This is like {{msg-mw|Rev-deleted-user}}.',
-	'revcs-history-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplementList/history.',
+	'revcs-history-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplementList/history.
+{{Identical|History of supplementary comment}}',
 	'revcs-history-rcsh-id' => 'This message is a heading of a table in Special:RevisionCommentSupplementList/history.',
-	'revcs-history-rcsh-reason' => 'This message is a heading of a table in Special:RevisionCommentSupplementList/history.',
+	'revcs-history-rcsh-reason' => 'This message is a heading of a table in Special:RevisionCommentSupplementList/history.
+{{Identical|Reason}}',
 	'revcs-list-desc' => 'This message is a description at the top in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-descending' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-comparison' => 'This message is a content of a label element of a select element in Special:RevisionCommentSupplementList/list.',
@@ -294,13 +327,17 @@ $messages['qqq'] = array(
 	'revcs-list-extended-supplement-all' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-supplement-empty' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-supplement-notempty' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
-	'revcs-list-heading' => 'This message is the heading of Special:RevisionCommentSupplementList/list.',
-	'revcs-list-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplementList/list.',
+	'revcs-list-heading' => 'This message is the heading of Special:RevisionCommentSupplementList/list.
+{{Identical|List of Supplementary Comments}}',
+	'revcs-list-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplementList/list.
+{{Identical|List of Supplementary Comments}}',
 	'revcs-list-limit' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.',
-	'revcs-list-rcs-rev-id' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
+	'revcs-list-rcs-rev-id' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.
+{{Identical|Revision ID}}',
 	'revcs-list-rcs-rev-id-edit' => 'This message is a link text to Special:RevisionCommentSupplement at revision id into table in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-rev-id-log' => 'This message is a link text to [[Special:Log]] at revision id into table in Special:RevisionCommentSupplementList.',
-	'revcs-list-rcs-supplement' => 'This message is a heading of a table in Special:RevisionCommentSupplementList.',
+	'revcs-list-rcs-supplement' => 'This message is a heading of a table in Special:RevisionCommentSupplementList.
+{{Identical|Supplement comment}}',
 	'revcs-list-rcs-timestamp' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-user-text' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-reset' => 'This message is a label of a input reset botton in Special:RevisionCommentSupplementList/list.',
@@ -318,15 +355,18 @@ $messages['qqq'] = array(
 	'revcs-log-supplement' => "{{Optional}}
 If a supplementary comment isn't empty, this is used at logentry-revisioncommentsupplement-* in [[Special:Log]].
 * $1 - a raw supplementary comment",
-	'revcs-show-deletelinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.',
-	'revcs-show-editlinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.',
+	'revcs-show-deletelinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
+{{Identical|Delete the supplementary comment}}',
+	'revcs-show-editlinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
+{{Idential|Edit supplementary comment}}',
 	'revcs-show-history-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 *$1 is history entry id.
 *$2 is a link of Special:RevisionCommentSupplementList/history/<nowiki>{</nowiki>$1 of {{msg-mw|revcs-show-revision-id}}<nowiki>}</nowiki>. The link text is {{msg-mw|revcs-show-historylinktext}}.',
 	'revcs-show-historylinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-history-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.',
 	'revcs-show-loglinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show the supplementary comment of a revision in Special:RevisionCommentSupplement.',
 	'revcs-show-no-db-row' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is revision id.',
-	'revcs-show-reason' => 'This message is used in Special:RevisionCommentSupplement/hidehistory. $1 is reason.',
+	'revcs-show-reason' => 'This message is used in Special:RevisionCommentSupplement/hidehistory. $1 is reason.
+{{Identical|Reason}}',
 	'revcs-show-revision' => 'This message is used at show the supplementary comment of the revision and preview a supplementary comment and a reason in Special:RevisionCommentSupplement. $1 is a revision line like one in History pages.',
 	'revcs-show-revision-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 *$1 is revision id.
@@ -652,6 +692,7 @@ $messages['fi'] = array(
  * @author Nicolas NALLET
  * @author Pierre Slamich
  * @author Tititou36
+ * @author VIGNERON
  */
 $messages['fr'] = array(
 	'action-supplementcomment' => 'exploiter les commentaires supplémentaires',
@@ -662,23 +703,30 @@ $messages['fr'] = array(
 	'log-name-revisioncommentsupplement' => 'Journal des commentaires additionnels',
 	'log-description-revisioncommentsupplement' => 'Journal des opérations dans {{#special:RevisionCommentSupplement}}.',
 	'logentry-revisioncommentsupplement-create' => '$1 {{GENDER:$2|a créé}} un commentaire additionnel, $6 sur la révision $4',
+	'logentry-revisioncommentsupplement-create2' => '$1 {{GENDER:$2|a créé}} un commentaire additionnel sur la révision $4',
 	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|a supprimé}} un commentaire additionnel, $5 sur la révision $4',
+	'logentry-revisioncommentsupplement-delete2' => '$1 {{GENDER:$2|a supprimé}} un commentaire additionnel sur la révision $4',
+	'logentry-revisioncommentsupplement-hidehistory' => '$1 {{GENDER:$2|a modifié}} la visibilité d’une entrée d’historique $7 de commentaire additionnel sur la révision $4: $9',
 	'logentry-revisioncommentsupplement-modify' => '$1 {{GENDER:$2|a modifié}} un commentaire additionnel de $5 à $6 sur la révision $4',
+	'logentry-revisioncommentsupplement-modify2' => '$1 {{GENDER:$2|a modifié}} un commentaire additionnel sur la révision $4',
+	'logentry-suppress-revcommentsupplementhidehistory' => '$1 {{GENDER:$2|a modifié}} la visibilité d’une entrée d’historique $7 d’un commentaire additionnel sur la révision $4: $9',
 	'revisioncommentsupplement' => 'Commentaire additionnel de la révision',
 	'revisioncommentsupplementlist' => 'Liste de commentaires supplémentaires',
 	'revcs-desc' => "Permet d'afficher un commentaire additionnel sur chaque ligne de révision dans les pages d'historique.",
 	'revcs-action-history-supplement' => '[Supplément: $1]',
 	'revcs-alert-exist-supplement' => 'le commentaire additionnel sur la révision existe dans la table de la base de données.',
-	'revcs-alert-norevision' => "la révision n'existe pas dans la table des révisions.", # Fuzzy
+	'revcs-alert-history-id' => '"$1" est un ID d’historique incorrect.',
+	'revcs-alert-nohistory' => 'L’entrée d’historique n’existe pas dans la table de la base de données. Elle n’a pas encore été créée, ou a déjà été supprimée.',
+	'revcs-alert-norevision' => 'La révision n’existe pas dans la table des révisions. Elle n’a pas encore été créée, ou a déjà été supprimée.',
 	'revcs-alert-revision-id' => '"$1" est un mauvais ID de révision.',
 	'revcs-alert-special-parameter' => 'Il y a erreur sur le paramètre.',
 	'revcs-alert-supplement-asterisk' => "le commentaire additionnel sur la saisie est l'astérisque.",
 	'revcs-alert-supplement-empty' => 'le commentaire additionnel sur la saisie est vide.',
 	'revcs-alert-supplement-zero' => 'le commentaire supplémentaire à la saisie est un zéro.',
 	'revcs-alert-supplement-same-as-summary' => 'le commentaire additionnel sur la saisie est identique au résumé de la révision.',
-	'revcs-alert-supplement-same-as-supplement' => 'le commentaire additionnel sur la saisie est identique au commentaire additionnel dans la table de la base de données.', # Fuzzy
-	'revcs-delete-desc' => "Vous pouvez modifier le commentaire additionnel de la table de la base de données.
-Extension:RevisionCommentSupplement ne fournit pas d'opération d'annulation de suppression. Si vous voulez annuler une suppression, vous devrez la restaurer depuis les journaux.", # Fuzzy
+	'revcs-alert-supplement-same-as-supplement' => 'Le commentaire additionnel sur la saisie est identique à celui dans la table de la base de données.',
+	'revcs-delete-desc' => 'Vous pouvez supprimer le commentaire additionnel de la table de la base de données.
+L’extension RevisionCommentSupplement ne fournit pas d’opération d’annulation de suppression. Si vous voulez annuler une suppression, vous devrez la restaurer depuis les journaux ou les entrées d’historique.',
 	'revcs-delete-failure' => 'Échec à la suppression du commentaire additionnel.',
 	'revcs-delete-heading' => 'Supprimer le commentaire additionnel',
 	'revcs-delete-legend' => 'Supprimer le Commentaire additionnel',
@@ -686,23 +734,61 @@ Extension:RevisionCommentSupplement ne fournit pas d'opération d'annulation de 
 	'revcs-delete-success' => 'Suppression du Commentaire additionnel réussie.',
 	'revcs-edit-desc' => 'Vous pouvez mettre des commentaires additionnels, et les utilisateurs ayant le droit {{int:action-supplementcomment-restricted}}(supplementcomment-restricted) pourront modifier les commentaires additionnels.',
 	'revcs-edit-heading' => 'Modifier les commentaires additionnels',
+	'revcs-edit-legend' => 'Modifier les commentaires additionnels',
+	'revcs-edit-preview' => 'Afficher l’aperçu',
+	'revcs-edit-preview-reason' => 'Motif de l’aperçu : $1',
+	'revcs-edit-preview-supplement' => 'Aperçu du commentaire additionnel : $1',
+	'revcs-edit-reason' => 'Motif :',
+	'revcs-edit-revision-id' => 'ID de révision :',
+	'revcs-edit-save' => 'Enregistrer le commentaire additionnel',
+	'revcs-edit-show' => 'Afficher le commentaire additionnel',
+	'revcs-edit-supplement' => 'Commentaire additionnel :',
+	'revcs-edit-written' => 'Le commentaire additionnel est écrit.',
 	'revcs-error' => 'Erreur: $1',
 	'revcs-error-edit-denied' => "refus d'enregistrer le commentaire additionnel.",
+	'revcs-error-hidehistory-hidden-restricted-only' => 'La visibilité de l’entrée est seulement restreinte (supprimer, surveiller).',
+	'revcs-error-hidehistory-hidden-same' => 'La visibilité sur l’entrée a la même valeur que dans la table de la base de données.',
+	'revcs-error-history-nosupplement' => 'Le commentaire additionnel n’existe pas dans la table de la base de données. Il n’a pas encore été créé, ou a déjà été supprimé.',
+	'revcs-error-history-revision-id' => 'L’ID de révision est erroné.',
+	'revcs-error-history-unuse' => 'Ce wiki n’enregistre pas l’historique des commentaires additionnels.',
 	'revcs-error-unexpected' => "une erreur inattendue s'est produite.",
+	'revcs-hidehistory-desc' => 'Vous pouvez masquer tout ou partie des propriétés d’une entrée d’historique.',
+	'revcs-hidehistory-failure' => 'Échec de fixation de la visibilité de l’entrée d’historique du commentaire additionnel.',
+	'revcs-hidehistory-heading' => 'Masquer/démasquer l’historique de commentaire additionnel',
+	'revcs-hidehistory-legend' => 'Masquer/démasquer l’historique de commentaire additionnel',
+	'revcs-hidehistory-present-supplement' => 'Le commentaire additionnel actuel $1',
+	'revcs-hidehistory-reason' => 'Masquer le motif de l’entrée d’historique',
+	'revcs-hidehistory-row' => 'Masquer toute l’entrée d’historique',
+	'revcs-hidehistory-submit' => 'Appliquer',
+	'revcs-hidehistory-success' => 'Fixation de la visibilité de l’entrée d’historique du commentaire additionnel réussie.',
+	'revcs-hidehistory-supplement' => 'Masquer le commentaire additionnel de l’entrée d’historique',
+	'revcs-hidehistory-suppress' => 'Supprimer les données de tout le monde sauf les utilisateurs ayant le droit {{int:action-suppressrevision}} (suppressrevision)',
+	'revcs-hidehistory-user' => 'Masquer le nom d’utilisateur/l’adresse IP de l’entrée d’historique',
+	'revcs-history-desc' => 'Ceci liste les entrées d’historique du commentaire additionnel.',
+	'revcs-history-heading' => 'Historique du commentaire additionnel $1',
+	'revcs-history-heading-error' => 'Erreur de l’historique du commentaire additionnel',
+	'revcs-history-hidden-reason' => '(motif masqué)',
+	'revcs-history-hidden-supplement' => '(commentaire additionnel masqué)',
+	'revcs-history-hidden-user' => '(nom d’utilisateur masqué)',
+	'revcs-history-legend' => 'Historique du commentaire additionnel',
+	'revcs-history-rcsh-id' => 'ID de l’historique',
+	'revcs-history-rcsh-reason' => 'Motif',
 	'revcs-list-desc' => 'Ceci liste les commentaires additionnels actuels.',
 	'revcs-list-descending' => "liste dans l'ordre décroissant",
 	'revcs-list-extended-comparison' => 'Opération de comparaison:',
-	'revcs-list-extended-comparison-and-over' => "Les champs d'index sont supérieurs ou égaux à la condition", # Fuzzy
-	'revcs-list-extended-comparison-and-under' => "Les champs d'index sont inférieurs ou égaux à la condition", # Fuzzy
-	'revcs-list-extended-comparison-equal' => "Les champs d'index sont égaux à la condition", # Fuzzy
-	'revcs-list-extended-comparison-not-equal' => "Les champs d'index sont différents de la condition", # Fuzzy
-	'revcs-list-extended-comparison-over' => "Les champs d'index sont supérieurs à la condition", # Fuzzy
-	'revcs-list-extended-comparison-under' => "Les champs d'index sont inférieurs à la condition", # Fuzzy
-	'revcs-list-extended-offset' => 'Chaîne de comparaison:', # Fuzzy
+	'revcs-list-extended-comparison-and-over' => 'Les propriétés sont le standard et plus',
+	'revcs-list-extended-comparison-and-under' => 'Les propriétés sont le standard et moins',
+	'revcs-list-extended-comparison-equal' => 'Les propriétés sont égales au standard',
+	'revcs-list-extended-comparison-not-equal' => 'Les propriétés ne sont pas égales au standard',
+	'revcs-list-extended-comparison-over' => 'Les propriétés sont supérieures au standard',
+	'revcs-list-extended-comparison-under' => 'Les propriétés sont inférieures au standard',
+	'revcs-list-extended-offset' => 'Standard de comparaison :',
+	'revcs-list-extended-property' => 'Propriétés de comparaison :',
 	'revcs-list-extended-supplement' => 'Condition de commentaires additionnels:',
 	'revcs-list-extended-supplement-all' => 'tous',
 	'revcs-list-extended-supplement-empty' => 'vide',
 	'revcs-list-extended-supplement-notempty' => 'non vide',
+	'revcs-list-heading' => 'Liste des commentaires additionnels',
 	'revcs-list-legend' => 'Liste des commentaires additionnels',
 	'revcs-list-limit' => 'Nombre par page:',
 	'revcs-list-rcs-rev-id' => 'ID de révision',
@@ -714,11 +800,22 @@ Extension:RevisionCommentSupplement ne fournit pas d'opération d'annulation de 
 	'revcs-list-reset' => 'Remise à zéro',
 	'revcs-list-sort' => 'Tri:',
 	'revcs-list-submit' => 'Afficher',
+	'revcs-log-hidehistory-reason-hidden' => 'motif masqué',
+	'revcs-log-hidehistory-reason-unhidden' => 'motif démasqué',
+	'revcs-log-hidehistory-restricted' => 'restrictions appliquées',
+	'revcs-log-hidehistory-row-hidden' => 'toutes les entrées d’historique masquées',
+	'revcs-log-hidehistory-row-unhidden' => 'toutes les entrées d’historique démasquées',
+	'revcs-log-hidehistory-supplement-hidden' => 'commentaire additionnel masqué',
+	'revcs-log-hidehistory-supplement-unhidden' => 'commentaire additionnel démasqué',
+	'revcs-log-hidehistory-unrestricted' => 'restrictions supprimées',
 	'revcs-log-nosupplement' => '(aucun)',
 	'revcs-show-deletelinktext' => 'Supprimer le commentaire additionnel',
 	'revcs-show-editlinktext' => 'Modifier le commentaire additionnel',
+	'revcs-show-history-id' => 'ID de l’historique : $1 ($2)',
+	'revcs-show-historylinktext' => 'Lister l’historique du commentaire additionnel',
 	'revcs-show-loglinktext' => 'le journal de modification des commentaires additionnels',
 	'revcs-show-no-db-row' => 'Commentaire additionnel non trouvé sur la révision $1.',
+	'revcs-show-reason' => 'Motif : $1',
 	'revcs-show-revision' => 'Révision: $1',
 	'revcs-show-revision-id' => 'ID de la révision: $1 ($2)',
 	'revcs-show-supplement-parsed' => 'Commentaire additionnel analysé: $1',
@@ -820,37 +917,62 @@ $messages['hsb'] = array(
 	'grouppage-supplementcomment' => '{{ns:project}}:Wudospołnjowace komentary',
 	'log-name-revisioncommentsupplement' => 'Protokol wudospołnjowacych komentarow',
 	'log-description-revisioncommentsupplement' => 'Protokol akcijow w {{#special:Wudospołnjenje wersijowych komentarow}}.',
-	'logentry-revisioncommentsupplement-create' => '$1 wutwori wudospołnjowacy komentar, $6 wersije $4', # Fuzzy
-	'logentry-revisioncommentsupplement-delete' => '$1 zhaša wudospołnjowacy komentar, $5 wersije $4', # Fuzzy
-	'logentry-revisioncommentsupplement-modify' => '$1 změni wudospołnjowacy komentar wot $5 do $6 wersije $4', # Fuzzy
+	'logentry-revisioncommentsupplement-create' => '$1 je wudospołnjowacy komentar {{GENDER:$2|wutworił|wutworiła}}, $6 wersije $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 je wudospołnjowacy komentar {{GENDER:$2|zhašał|zhašała}}, $5 wersije $4',
+	'logentry-revisioncommentsupplement-modify' => '$1 je wudospołnjowacy komentar wot $5 do $6 wersije $4 {{GENDER:$2|změnił|změniła}}',
 	'revisioncommentsupplement' => 'Wudospołnjenje wersijoweho komentara',
 	'revisioncommentsupplementlist' => 'Lisćina wudospołnjowacych komentarow',
 	'revcs-desc' => 'Zmóžnja zwobraznjenje wudospołnjowacych komentarow za kóždu wersiju na stronach historije.',
 	'revcs-action-history-supplement' => '[Wudospołnjowacy komentar: $1]',
 	'revcs-alert-exist-supplement' => 'wudospołnjowacy komentar wersije eksistuje.',
-	'revcs-alert-norevision' => 'wersija we wersijowej tabeli njeeksistuje.', # Fuzzy
+	'revcs-alert-history-id' => '"$1" je wopačny ID historije.',
+	'revcs-alert-norevision' => 'Wersija we wersijowej tabeli njeeksistuje. Njeje so hišće wutworiła abo je so hižo zhašała.',
 	'revcs-alert-revision-id' => '"$1" je wopačny wersijowy ID.',
 	'revcs-alert-special-parameter' => 'Je zmylk z parametrom',
 	'revcs-alert-supplement-asterisk' => 'zapodaty wudospołnjowacy komentar ma hwěžku.',
 	'revcs-alert-supplement-empty' => 'zapodaty wudospołnjowacy komentar je pródzny.',
 	'revcs-alert-supplement-same-as-summary' => 'zapodaty wudospołnjowacy komentar je samsny znamješkowy rjećazk kaž zjeće wersije.',
-	'revcs-alert-supplement-same-as-supplement' => 'zapodaty wudospołnjowacy komentar je samsny znamješkowy rjećazk kaž wudospołnjowacy komentar w tabeli datoweje banki.', # Fuzzy
+	'revcs-alert-supplement-same-as-supplement' => 'Zapodaty wudospołnjowacy komentar je samsny znamješkowy rjećazk kaž jedyn wudospołnjowacy komentar w tabeli datoweje banki.',
 	'revcs-delete-failure' => 'Wudospołnjowacy komentar njeda so zhašeć.',
 	'revcs-delete-heading' => 'Wudospołnjowacy komentar zhašeć',
 	'revcs-delete-legend' => 'Wudospołnjowacy komentar zhašeć',
 	'revcs-delete-submit' => 'Wudospołnjowacy komentar zhašeć',
 	'revcs-delete-success' => 'Zhašenje wudospołnjowaceho komentara bě wuspěšne.',
 	'revcs-edit-heading' => 'Wudospołnjowace komentary wobdźěłać',
+	'revcs-edit-legend' => 'Wudospołnjowace komentary wobdźěłać',
+	'revcs-edit-preview' => 'Přehlad pokazać',
+	'revcs-edit-preview-reason' => 'Přehlad přičiny: $1',
+	'revcs-edit-preview-supplement' => 'Přehlad wudospołnjowaceho komentara: $1',
+	'revcs-edit-reason' => 'Přičina:',
+	'revcs-edit-revision-id' => 'Wersijowy ID:',
+	'revcs-edit-save' => 'Wudospołnjowacy komentar składować',
+	'revcs-edit-show' => 'Wudospołnjowacy komentar pokazać',
+	'revcs-edit-supplement' => 'Wudospołnjowacy komentar:',
+	'revcs-edit-written' => 'Wudospołnjowacy komentar je napisany.',
 	'revcs-error' => 'Zmylk: $1',
 	'revcs-error-edit-denied' => 'składowanje wudospołnjowaceho komentara je so wotpokazało.',
+	'revcs-error-history-revision-id' => 'Wersijowy ID je wopak.',
 	'revcs-error-unexpected' => 'njewočakowany zmylk wustupił.',
+	'revcs-hidehistory-reason' => 'Přičinu zapiska historije schować',
+	'revcs-hidehistory-row' => 'Cyły zapisk historije schować',
+	'revcs-hidehistory-submit' => 'Nałožić',
+	'revcs-history-heading' => 'Historija wudospołnjowaceho komentara $1',
+	'revcs-history-heading-error' => 'Zmylk w historiji wudospołnjowaceho komentara',
+	'revcs-history-hidden-reason' => '(přičina schowana)',
+	'revcs-history-hidden-supplement' => '(wudospołnjowacy komentar schowany)',
+	'revcs-history-hidden-user' => '(wužiwarske mjeno schowane)',
+	'revcs-history-legend' => 'Historija wudospołnjowaceho komentara',
+	'revcs-history-rcsh-id' => 'ID historije',
+	'revcs-history-rcsh-reason' => 'Přičina',
 	'revcs-list-desc' => 'To je lisćina wudospołnjowacych komentarow.',
 	'revcs-list-descending' => 'Lisćina w spadowacym porjedźe',
-	'revcs-list-extended-offset' => 'Znamješkowy rjećazk přirunanja:', # Fuzzy
+	'revcs-list-extended-offset' => 'Standard přirunanja:',
+	'revcs-list-extended-property' => 'Kajkosće přirunanja:',
 	'revcs-list-extended-supplement' => 'Wuměnjenje wudospołnjowacych komentarow:',
 	'revcs-list-extended-supplement-all' => 'wšě',
 	'revcs-list-extended-supplement-empty' => 'prózdny',
 	'revcs-list-extended-supplement-notempty' => 'njeprózdny',
+	'revcs-list-heading' => 'Lisćina wudospołnjowacych komentarow',
 	'revcs-list-legend' => 'Lisćina wudospołnjowacych komentarow',
 	'revcs-list-limit' => 'Ličba na stronu:',
 	'revcs-list-rcs-rev-id' => 'Wersijowy ID',
@@ -862,11 +984,22 @@ $messages['hsb'] = array(
 	'revcs-list-reset' => 'Wróćo stajić',
 	'revcs-list-sort' => 'Sortěrowanje',
 	'revcs-list-submit' => 'Pokazać',
+	'revcs-log-hidehistory-reason-hidden' => 'přičina schowana',
+	'revcs-log-hidehistory-reason-unhidden' => 'přičina pokazana',
+	'revcs-log-hidehistory-restricted' => 'nałožene wobmjezowanja',
+	'revcs-log-hidehistory-row-hidden' => 'cyły zapisk historije schowany',
+	'revcs-log-hidehistory-row-unhidden' => 'cyły zapisk historije pokazany',
+	'revcs-log-hidehistory-supplement-hidden' => 'wudospołnjowacy komentar schowany',
+	'revcs-log-hidehistory-supplement-unhidden' => 'wudospołnjowacy komentar pokazany',
+	'revcs-log-hidehistory-unrestricted' => 'wotstronjene wobmjezowanja',
 	'revcs-log-nosupplement' => '(žadyn)',
 	'revcs-show-deletelinktext' => 'Wudospołnjowacy komentar zhašeć',
 	'revcs-show-editlinktext' => 'Wudospołnjowacy komentar wobdźěłać',
+	'revcs-show-history-id' => 'ID historije: $1 ($2)',
+	'revcs-show-historylinktext' => 'Historiju wudospołnjowaceho komentara nalistować',
 	'revcs-show-loglinktext' => 'Protokol změnow wudospołnjowaceho komentara',
 	'revcs-show-no-db-row' => 'Wudospołnjowacy komentar wersije $1 njeje so namakał.',
+	'revcs-show-reason' => 'Přičina: $1',
 	'revcs-show-revision' => 'Wersija: $1',
 	'revcs-show-revision-id' => 'ID wersije: $1 ($2)',
 	'revcs-show-supplement-parsed' => 'Parsowany komentar: $1',
@@ -923,30 +1056,30 @@ $messages['ja'] = array(
 	'action-supplementcomment' => '補足コメントの操作',
 	'action-supplementcomment-restricted' => '補足コメントへの制限された操作の実行',
 	'group-supplementcomment' => 'コメント補足者',
-	'group-supplementcomment-member' => 'コメント補足者', # Fuzzy
+	'group-supplementcomment-member' => '{{GENDER:$1|コメント補足者}}',
 	'grouppage-supplementcomment' => '{{ns:project}}:コメント補足者',
 	'log-name-revisioncommentsupplement' => '版補足コメント記録',
 	'log-description-revisioncommentsupplement' => '{{#special:RevisionCommentSupplement}} での操作の記録です。',
-	'logentry-revisioncommentsupplement-create' => '$1 が版 $4 の補足コメント$6を作成しました', # Fuzzy
-	'logentry-revisioncommentsupplement-create2' => '$1 が版 $4 の補足コメントを作成しました', # Fuzzy
-	'logentry-revisioncommentsupplement-delete' => '$1 が版 $4 の補足コメント$5を削除しました', # Fuzzy
-	'logentry-revisioncommentsupplement-delete2' => '$1 が版 $4 の補足コメントを削除しました', # Fuzzy
-	'logentry-revisioncommentsupplement-hidehistory' => '$1 が版 $4 の補足コメントの履歴 $7 の閲覧レベルを変更しました: $9', # Fuzzy
-	'logentry-revisioncommentsupplement-modify' => '$1 が版 $4 の補足コメント$5を$6に変更しました', # Fuzzy
-	'logentry-revisioncommentsupplement-modify2' => '$1 が版 $4 の補足コメントを変更しました', # Fuzzy
-	'logentry-suppress-revcommentsupplementhidehistory' => '$1 が版 $4 の補足コメントの履歴 $7 の閲覧レベルを変更しました: $9', # Fuzzy
+	'logentry-revisioncommentsupplement-create' => '$1 が版 $4 の補足コメント$6を{{GENDER:$2|作成しました}}',
+	'logentry-revisioncommentsupplement-create2' => '$1 が版 $4 の補足コメントを{{GENDER:$2|作成しました}}',
+	'logentry-revisioncommentsupplement-delete' => '$1 が版 $4 の補足コメント$5を{{GENDER:$2|削除しました}}',
+	'logentry-revisioncommentsupplement-delete2' => '$1 が版 $4 の補足コメントを{{GENDER:$2|削除しました}}',
+	'logentry-revisioncommentsupplement-hidehistory' => '$1 が版 $4 の補足コメントの履歴 $7 の閲覧レベルを{{GENDER:$2|変更しました}}: $9',
+	'logentry-revisioncommentsupplement-modify' => '$1 が版 $4 の補足コメント$5を$6に{{GENDER:$2|変更しました}}',
+	'logentry-revisioncommentsupplement-modify2' => '$1 が版 $4 の補足コメントを{{GENDER:$2|変更しました}}',
+	'logentry-suppress-revcommentsupplementhidehistory' => '$1 が版 $4 の補足コメントの履歴 $7 の閲覧レベルを{{GENDER:$2|変更しました}}: $9',
 	'revisioncommentsupplement' => '版の補足コメントの操作',
-	'revisioncommentsupplementlist' => '版の補足コメントの一覧',
+	'revisioncommentsupplementlist' => '補足コメントの一覧',
 	'revcs-desc' => '履歴ページで、それぞれの版に補足コメントを表示できるようにする',
 	'revcs-action-history-supplement' => '[補足: $1]',
 	'revcs-alert-exist-supplement' => '指定した版への補足コメントはデータベーステーブル内に存在します。',
 	'revcs-alert-history-id' => '「$1」は正しくない履歴 ID です。',
-	'revcs-alert-nohistory' => '指定した履歴はデータベーステーブル内にありません。まだ作成されていないか、既にデータベーステーブルから削除されています。',
-	'revcs-alert-norevision' => '指定した版は revision テーブル内にありません。まだ作成されていないか、既に revision テーブルから削除されています。',
+	'revcs-alert-nohistory' => '指定した履歴はデータベーステーブル内に存在しません。まだ作成されていないか、既に削除されています。',
+	'revcs-alert-norevision' => '指定した版は revision テーブル内に存在しません。まだ作成されていないか、既に削除されています。',
 	'revcs-alert-revision-id' => '「$1」は正しくない版 ID です。',
 	'revcs-alert-special-parameter' => '引数に誤りがあります。',
 	'revcs-alert-supplement-asterisk' => '入力した補足コメントがアスタリスクです。',
-	'revcs-alert-supplement-empty' => '入力した補足コメントが空です。',
+	'revcs-alert-supplement-empty' => '補足コメントを入力していません。',
 	'revcs-alert-supplement-zero' => '入力した補足コメントがゼロです。',
 	'revcs-alert-supplement-same-as-summary' => '入力した補足コメントは、指定した版の要約と同じ内容です。',
 	'revcs-alert-supplement-same-as-supplement' => '入力した補足コメントは、データベーステーブル内のものと同じ内容です。',
@@ -956,7 +1089,7 @@ $messages['ja'] = array(
 	'revcs-delete-legend' => '補足コメントの削除',
 	'revcs-delete-submit' => '補足コメントを削除',
 	'revcs-delete-success' => '補足コメントを削除しました。',
-	'revcs-edit-desc' => '補足コメントを設定できることに加え、{{int:action-supplementcomment-restricted}} (supplementcomment-restricted)権限がある利用者は補足コメントを変更できます。',
+	'revcs-edit-desc' => '補足コメントを設定できることに加え、{{int:action-supplementcomment-restricted}} (supplementcomment-restricted) 権限がある利用者は補足コメントを変更できます。',
 	'revcs-edit-heading' => '補足コメントの編集',
 	'revcs-edit-legend' => '補足コメントの編集',
 	'revcs-edit-preview' => 'プレビューを表示',
@@ -972,11 +1105,11 @@ $messages['ja'] = array(
 	'revcs-error-edit-denied' => '補足コメントの保存を拒否しました。',
 	'revcs-error-hidehistory-hidden-restricted-only' => '指定した閲覧レベルは、制限(suppress, oversight)のみです。',
 	'revcs-error-hidehistory-hidden-same' => '指定した閲覧レベルは、データベーステーブル内のものと同じ値です。',
-	'revcs-error-history-nosupplement' => '指定した補足コメントはデータベーステーブル内にありません。まだ作成されていないか、既にデータベーステーブルから削除されています。',
+	'revcs-error-history-nosupplement' => '指定した補足コメントはデータベーステーブル内に存在しません。まだ作成されていないか、既に削除されています。',
 	'revcs-error-history-revision-id' => '版 ID が正しくありません。',
 	'revcs-error-history-unuse' => 'このウィキでは補足コメントの履歴を保存していません。',
 	'revcs-error-unexpected' => '予期しないエラーが発生しました。',
-	'revcs-hidehistory-desc' => '補足コメントの履歴事項の一部または全部を隠すことができます。',
+	'revcs-hidehistory-desc' => '補足コメントの履歴項目の一部または全部を隠すことができます。',
 	'revcs-hidehistory-failure' => '補足コメントの履歴項目の閲覧レベルの設定に失敗しました。',
 	'revcs-hidehistory-heading' => '補足コメントの履歴項目の閲覧レベルの設定',
 	'revcs-hidehistory-legend' => '補足コメントの履歴項目の閲覧レベルの設定',
@@ -986,7 +1119,7 @@ $messages['ja'] = array(
 	'revcs-hidehistory-submit' => '適用',
 	'revcs-hidehistory-success' => '補足コメントの履歴項目の閲覧レベルを設定しました。',
 	'revcs-hidehistory-supplement' => '履歴項目の補足コメントを隠す',
-	'revcs-hidehistory-suppress' => '{{int:action-suppressrevision}} (suppressrevision)権限が割り当てられている利用者グループに属さない利用者から隠す',
+	'revcs-hidehistory-suppress' => '{{int:action-suppressrevision}} (suppressrevision) の権限がない利用者からデータを隠す',
 	'revcs-hidehistory-user' => '履歴項目の利用者名を隠す',
 	'revcs-history-desc' => '補足コメントの履歴の一覧です。',
 	'revcs-history-heading' => '補足コメント $1 の履歴',
@@ -1006,7 +1139,7 @@ $messages['ja'] = array(
 	'revcs-list-extended-comparison-not-equal' => '事項が基準に等しくない',
 	'revcs-list-extended-comparison-over' => '事項が基準を超過',
 	'revcs-list-extended-comparison-under' => '事項が基準未満',
-	'revcs-list-extended-offset' => '比較の基準:', # Fuzzy
+	'revcs-list-extended-offset' => '比較の基準:',
 	'revcs-list-extended-property' => '比較する事項:',
 	'revcs-list-extended-supplement' => '補足コメントの条件:',
 	'revcs-list-extended-supplement-all' => 'すべて',
@@ -1272,22 +1405,29 @@ $messages['mk'] = array(
 	'log-name-revisioncommentsupplement' => 'Дневник на додатни коментари',
 	'log-description-revisioncommentsupplement' => 'Дневник на работи со {{#special:ДодатниКоментариНаРевизии}}.',
 	'logentry-revisioncommentsupplement-create' => '$1 {{GENDER:$2|направи}} додатен коментар, $6 на ревизијата $4',
+	'logentry-revisioncommentsupplement-create2' => '$1 {{GENDER:$2|направи}} додатен коментар на ревизијата $4',
 	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|избриша}} додатен коментар, $5 на ревизијата $4',
+	'logentry-revisioncommentsupplement-delete2' => '$1 {{GENDER:$2|избриша}} додатен коментар на ревизијата $4',
+	'logentry-revisioncommentsupplement-hidehistory' => '$1 {{GENDER:$2|ја измени}} видливоста на записот $7 од додатниот коментар во ревизијата $4: $9',
 	'logentry-revisioncommentsupplement-modify' => '$1 {{GENDER:$2|измени}} додатен коментар од $5 на $6 од ревизијата $4',
+	'logentry-revisioncommentsupplement-modify2' => '$1 {{GENDER:$2|измени}} додатен коментар на ревизијата $4',
+	'logentry-suppress-revcommentsupplementhidehistory' => '$1 {{GENDER:$2|ја измени}} видливоста на записот $7 од додатниот коментар во ревизијата $4: $9',
 	'revisioncommentsupplement' => 'Додатни коментари за ревизии',
 	'revisioncommentsupplementlist' => 'Список на додатни коментари',
 	'revcs-desc' => 'Овозможува приказ на додатни коментари во секој ред од ревизиите во историте на страниците.',
 	'revcs-action-history-supplement' => '[Додатен коментар: $1]',
 	'revcs-alert-exist-supplement' => 'додатниот коментар на ревизијата постои.',
-	'revcs-alert-norevision' => 'ревизијата не фигурира во табелата на ревизии.', # Fuzzy
+	'revcs-alert-history-id' => '„$1“ е погрешна историска назнака.',
+	'revcs-alert-nohistory' => 'Историскиот запис не фигурира во табелата на ревизии. Сè уште не е создадена, или можеби веќе е избришана.',
+	'revcs-alert-norevision' => 'Ревизијата не фигурира во табелата на ревизии. Сè уште не е создадена, или можеби веќе е избришана.',
 	'revcs-alert-revision-id' => 'Назнаката „$1“ е погрешна.',
 	'revcs-alert-special-parameter' => 'Има грешка со пераметарот.',
 	'revcs-alert-supplement-asterisk' => 'внесениот додатен коментар е означен со ѕвездичка',
 	'revcs-alert-supplement-empty' => 'внесениот додатен коментар е празен',
 	'revcs-alert-supplement-zero' => 'внесениот додатен коментар е празен.',
 	'revcs-alert-supplement-same-as-summary' => 'додатниот коментар е истата низа како описот на ревизијата.',
-	'revcs-alert-supplement-same-as-supplement' => 'додатниот коментар е истата низа како додатниот коментар во табелата од базата на податоци.', # Fuzzy
-	'revcs-delete-desc' => 'Можете да го избришете додатниот коментар од табелата на базата. Додатокот „RevisionCommentSupplement“ не допушта врќање на избришаното. Ако сакате да вратите нешто избришано, тоа ќе морате да го направите од дневниците.', # Fuzzy
+	'revcs-alert-supplement-same-as-supplement' => 'Додатниот коментар од вносот е истата низа како додатниот коментар во табелата од базата на податоци.',
+	'revcs-delete-desc' => 'Можете да го избришете додатниот коментар од табелата на базата. Додатокот „RevisionCommentSupplement“ не допушта врќање на избришаното. Ако сакате да вратите нешто избришано, тоа ќе морате да го направите од дневниците или евиденцијата во историјата.',
 	'revcs-delete-failure' => 'Не успеав да го избришам додатниот коментар.',
 	'revcs-delete-heading' => 'Бришење на додатен коментар',
 	'revcs-delete-legend' => 'Бришење на додатен коментар',
@@ -1295,23 +1435,61 @@ $messages['mk'] = array(
 	'revcs-delete-success' => 'Додатниот коментар е успешно избришан.',
 	'revcs-edit-desc' => 'Можете да задавате додатни коментари, а корисниците што имаат {{int:action-supplementcomment-restricted}}(supplementcomment-restricted) право можат да ги менуваат додатните коментари.',
 	'revcs-edit-heading' => 'Уредување на додатните коментари',
+	'revcs-edit-legend' => 'Уредување на додатните коментари',
+	'revcs-edit-preview' => 'Прик. преглед',
+	'revcs-edit-preview-reason' => 'Преглед на причината: $1',
+	'revcs-edit-preview-supplement' => 'Преглед на додатниот коментар: $1',
+	'revcs-edit-reason' => 'Причина:',
+	'revcs-edit-revision-id' => 'Назнака на ревизијата:',
+	'revcs-edit-save' => 'Зачувај додат. ком.',
+	'revcs-edit-show' => 'Прик. додат. ком.',
+	'revcs-edit-supplement' => 'Додатен коментар:',
+	'revcs-edit-written' => 'Додатниот коментар е напишан.',
 	'revcs-error' => 'Грешка: $1',
 	'revcs-error-edit-denied' => 'одбиено зачувувањето на додатниот коментар.',
+	'revcs-error-hidehistory-hidden-restricted-only' => 'Видливоста при внесување е само ограничена (притајување, заверка).',
+	'revcs-error-hidehistory-hidden-same' => 'Видливоста при внесување е со иста вредност како онаа во табелата во базата на податоци.',
+	'revcs-error-history-nosupplement' => 'Додатникот коментар не фигурира во табелата во базата. Сè уште не е создадена, или можеби веќе е избришана.',
+	'revcs-error-history-revision-id' => 'Назнаката на ревизијата е погрешна.',
+	'revcs-error-history-unuse' => 'Ова вики не зачувува историја на додатни коментари.',
 	'revcs-error-unexpected' => 'се појави неочекувана грешка.',
+	'revcs-hidehistory-desc' => 'Можете да ги скриете сите својства на историскиот запис или само дел од нив.',
+	'revcs-hidehistory-failure' => 'Не можев да ја зададам видливоста на историскиот запис на додани коментари.',
+	'revcs-hidehistory-heading' => 'Скриј/прикажи историја на додатни коментари',
+	'revcs-hidehistory-legend' => 'Скриј/прикажи историја на додатни коментари',
+	'revcs-hidehistory-present-supplement' => 'Постојниот додатен коментар $1',
+	'revcs-hidehistory-reason' => 'Скриј ја причината во историјата',
+	'revcs-hidehistory-row' => 'Скриј го целиот запис во историјата',
+	'revcs-hidehistory-submit' => 'Примени',
+	'revcs-hidehistory-success' => 'Видливоста на историскиот запис на додани коментари е успешно зададена.',
+	'revcs-hidehistory-supplement' => 'Скриј додатен коментар од историскиот запис',
+	'revcs-hidehistory-suppress' => 'Притаи од сите освен корисници со правото на {{int:action-suppressrevision}} (пријајување ревизии)',
+	'revcs-hidehistory-user' => 'Скриј корисничко име/IP-адреса од историскиот запис',
+	'revcs-history-desc' => 'Тука се наведени историските записи на додатниот коментар.',
+	'revcs-history-heading' => 'Историја на додетен коментар $1',
+	'revcs-history-heading-error' => 'Грешка на историјата на додатен коментар',
+	'revcs-history-hidden-reason' => '(причината е скриена)',
+	'revcs-history-hidden-supplement' => '(скриен додатниот коментар)',
+	'revcs-history-hidden-user' => '(сокриено корисничко име)',
+	'revcs-history-legend' => 'Историја на додатни коментари',
+	'revcs-history-rcsh-id' => 'Историска назнака',
+	'revcs-history-rcsh-reason' => 'Причина',
 	'revcs-list-desc' => 'Тука се наведени тековните додатни коментари.',
 	'revcs-list-descending' => 'наведи по надолен редослед',
 	'revcs-list-extended-comparison' => 'Операција за споредба:',
-	'revcs-list-extended-comparison-and-over' => 'Индексните полиња одговараат на условот и над тоа', # Fuzzy
-	'revcs-list-extended-comparison-and-under' => 'Индексните полиња одговараат на условот и под тоа', # Fuzzy
-	'revcs-list-extended-comparison-equal' => 'Индексните полиња се истоветни на условот', # Fuzzy
-	'revcs-list-extended-comparison-not-equal' => 'Индексните полиња не се истоветни на условот', # Fuzzy
-	'revcs-list-extended-comparison-over' => 'Индексните полиња се над условот', # Fuzzy
-	'revcs-list-extended-comparison-under' => 'Индексните полиња се под условот', # Fuzzy
-	'revcs-list-extended-offset' => 'Низа за споредба:', # Fuzzy
+	'revcs-list-extended-comparison-and-over' => 'Својствата се стандардни и над тоа',
+	'revcs-list-extended-comparison-and-under' => 'Својствата се стандардни и под тоа',
+	'revcs-list-extended-comparison-equal' => 'Својствата се истоветни на стандардот',
+	'revcs-list-extended-comparison-not-equal' => 'Својствата не се истоветни на стандардот',
+	'revcs-list-extended-comparison-over' => 'Својствата се над стандардот',
+	'revcs-list-extended-comparison-under' => 'Својствата се под стандардот',
+	'revcs-list-extended-offset' => 'Стандард за споредба:',
+	'revcs-list-extended-property' => 'Својства за споредба:',
 	'revcs-list-extended-supplement' => 'Услов за додатните коментари:',
 	'revcs-list-extended-supplement-all' => 'сите',
 	'revcs-list-extended-supplement-empty' => 'празно',
 	'revcs-list-extended-supplement-notempty' => 'непразно',
+	'revcs-list-heading' => 'Список на додатни коментари',
 	'revcs-list-legend' => 'Список на додатни коментари',
 	'revcs-list-limit' => 'Број по страница:',
 	'revcs-list-rcs-rev-id' => 'Назнака на ревизијата',
@@ -1323,11 +1501,22 @@ $messages['mk'] = array(
 	'revcs-list-reset' => 'Одново',
 	'revcs-list-sort' => 'Подредување:',
 	'revcs-list-submit' => 'Прикажи',
+	'revcs-log-hidehistory-reason-hidden' => 'причината е скриена',
+	'revcs-log-hidehistory-reason-unhidden' => 'причината е откриена',
+	'revcs-log-hidehistory-restricted' => 'применети ограничувања',
+	'revcs-log-hidehistory-row-hidden' => 'скриена цел историски запис',
+	'revcs-log-hidehistory-row-unhidden' => 'откриена цел историски запис',
+	'revcs-log-hidehistory-supplement-hidden' => 'скриен додатниот коментар',
+	'revcs-log-hidehistory-supplement-unhidden' => 'откриен додатниот коментар',
+	'revcs-log-hidehistory-unrestricted' => 'отстранети ограничувањата',
 	'revcs-log-nosupplement' => '(нема)',
 	'revcs-show-deletelinktext' => 'Бришење на додатен коментар',
 	'revcs-show-editlinktext' => 'Уреди го додатниот коментар',
+	'revcs-show-history-id' => 'Историска назнака: $1 ($2)',
+	'revcs-show-historylinktext' => 'Список на историјатата на додатни коментари',
 	'revcs-show-loglinktext' => 'дневникот на измени во додатните коментари',
 	'revcs-show-no-db-row' => 'Не го пронајдов додатниот коментар на ревизијата $1.',
+	'revcs-show-reason' => 'Причина: $1',
 	'revcs-show-revision' => 'Ревизија: $1',
 	'revcs-show-revision-id' => 'Назнака на ревизијата: $1 ($2)',
 	'revcs-show-supplement-parsed' => 'Парсиран коментар: $1',
