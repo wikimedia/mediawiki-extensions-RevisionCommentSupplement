@@ -343,14 +343,34 @@ When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of th
 	'revcs-list-reset' => 'This message is a label of a input reset botton in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-sort' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplementList.',
-	'revcs-log-hidehistory-reason-hidden' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}.',
-	'revcs-log-hidehistory-reason-unhidden' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}.',
-	'revcs-log-hidehistory-restricted' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}. This is like {{msg-mw|revdelete-restricted}}.',
-	'revcs-log-hidehistory-row-hidden' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}.',
-	'revcs-log-hidehistory-row-unhidden' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}.',
-	'revcs-log-hidehistory-supplement-hidden' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}.',
-	'revcs-log-hidehistory-supplement-unhidden' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}.',
-	'revcs-log-hidehistory-unrestricted' => 'This message is a description and is used at $9 of {{msg-mw|logentry-revisioncommentsupplement-hidehistory}} and {{msg-mw|logentry-suppress-revcommentsupplementhidehistory}}. This is like {{msg-mw|revdelete-unrestricted}}.',
+	'revcs-log-hidehistory-reason-hidden' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}',
+	'revcs-log-hidehistory-reason-unhidden' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}',
+	'revcs-log-hidehistory-restricted' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}
+
+This is like {{msg-mw|Revdelete-restricted}}.',
+	'revcs-log-hidehistory-row-hidden' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}',
+	'revcs-log-hidehistory-row-unhidden' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}',
+	'revcs-log-hidehistory-supplement-hidden' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}',
+	'revcs-log-hidehistory-supplement-unhidden' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}',
+	'revcs-log-hidehistory-unrestricted' => 'This message is a description and is used at $9 of the following messages:
+* {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
+* {{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}.
+
+This is like {{msg-mw|Revdelete-unrestricted}}.',
 	'revcs-log-nosupplement' => 'If a supplementary comment is empty, this is used at logentry-revisioncommentsupplement-* in [[Special:Log]].',
 	'revcs-log-supplement' => "{{Optional}}
 If a supplementary comment isn't empty, this is used at logentry-revisioncommentsupplement-* in [[Special:Log]].
@@ -361,7 +381,7 @@ If a supplementary comment isn't empty, this is used at logentry-revisioncomment
 {{Idential|Edit supplementary comment}}',
 	'revcs-show-history-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 *$1 is history entry id.
-*$2 is a link of Special:RevisionCommentSupplementList/history/<nowiki>{</nowiki>$1 of {{msg-mw|revcs-show-revision-id}}<nowiki>}</nowiki>. The link text is {{msg-mw|revcs-show-historylinktext}}.',
+*$2 is a link of Special:RevisionCommentSupplementList/history/<nowiki>{</nowiki>$1 of {{msg-mw|Revcs-show-revision-id}}<nowiki>}</nowiki>. The link text is {{msg-mw|Revcs-show-historylinktext}}.',
 	'revcs-show-historylinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-history-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.',
 	'revcs-show-loglinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show the supplementary comment of a revision in Special:RevisionCommentSupplement.',
 	'revcs-show-no-db-row' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is revision id.',
