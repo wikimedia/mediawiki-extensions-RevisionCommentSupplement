@@ -49,3 +49,9 @@ $specialPageAliases['scn'] = array(
 	'RevisionCommentSupplement' => array( 'SupplementoCommentoRevisione' ),
 	'RevisionCommentSupplementList' => array( 'ElencoSupplementoCommentoRevisione' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'RevisionCommentSupplement' => array( '修订注释补充' ),
+	'RevisionCommentSupplementList' => array( '修订注释补充列表' ),
+);
