@@ -180,15 +180,15 @@ $messages['qqq'] = array(
 *$4 is the revision id.
 {{Related|Logentry-revcs}}",
 	'logentry-revisioncommentsupplement-hidehistory' => 'A line of log entry in [[Special:Log]].
-*$1 are links of the user page and the user tool(s) page.
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id of the supplementary comment of a history entry.
-*$5 is the old hidden flag of a history entry.
-*$6 is the new hidden flag of a history entry.
-*$7 is the history entry id of a history entry.
-*$8 is the number of the history entry id. This must be 1. This is reserved.
-*$9 is description of change hidden flag. This uses following messages:
+* $1 - links of the user page and the user tool(s) page
+* $2 - the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>
+* $3 - a link of Special:RevisionCommentSupplement/$4 (edit page)
+* $4 - the revision id of the supplementary comment of a history entry
+* $5 - the old hidden flag of a history entry
+* $6 - the new hidden flag of a history entry
+* $7 - the history entry id of a history entry
+* $8 - the number of the history entry id. This must be 1. This is reserved.
+* $9 - description of change hidden flag. This is any one of the following messages:
 **{{msg-mw|revcs-log-hidehistory-supplement-hidden}}
 **{{msg-mw|revcs-log-hidehistory-supplement-unhidden}}
 **{{msg-mw|revdelete-uname-hid}}
@@ -215,15 +215,15 @@ $messages['qqq'] = array(
 *$4 is the revision id.
 {{Related|Logentry-revcs}}',
 	'logentry-suppress-revcommentsupplementhidehistory' => 'A line of private log entry in [[Special:Log]].
-*$1 are links of the user page and the user tool(s) page.
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id of the supplementary comment of a history entry.
-*$5 is the old hidden flag of a history entry.
-*$6 is the new hidden flag of a history entry.
-*$7 is the history entry id of a history entry.
-*$8 is the number of the history entry id. This must be 1. This is reserved.
-*$9 is description of change hidden flag. This uses following messages:
+* $1 - links of the user page and the user tool(s) page
+* $2 - the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>
+* $3 - a link of Special:RevisionCommentSupplement/$4 (edit page)
+* $4 - the revision id of the supplementary comment of a history entry
+* $5 - the old hidden flag of a history entry
+* $6 - the new hidden flag of a history entry
+* $7 - the history entry id of a history entry
+* $8 - the number of the history entry id. This must be 1. This is reserved.
+* $9 - description of change hidden flag. This is any one of the following messages:
 **{{msg-mw|revcs-log-hidehistory-supplement-hidden}}
 **{{msg-mw|revcs-log-hidehistory-supplement-unhidden}}
 **{{msg-mw|revdelete-uname-hid}}
@@ -389,8 +389,8 @@ If a supplementary comment isn't empty, this is used at logentry-revisioncomment
 {{Identical|Reason}}',
 	'revcs-show-revision' => 'This message is used at show the supplementary comment of the revision and preview a supplementary comment and a reason in Special:RevisionCommentSupplement. $1 is a revision line like one in History pages.',
 	'revcs-show-revision-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
-*$1 is revision id.
-*$2 is following links.
+* $1 - revision id
+* $2 - any one of the following links:
 **Special:Log?page=Special:RevisionCommentSupplement/$1. The link text is {{msg-mw|revcs-show-loglinktext}}.
 **Special:RevisionCommentSupplement/edit/$1. The link text is {{msg-mw|revcs-show-editlinktext}}.
 **Special:RevisionCommentSupplement/delete/$1. The link text is {{msg-mw|revcs-show-deletelinktext}}.',
