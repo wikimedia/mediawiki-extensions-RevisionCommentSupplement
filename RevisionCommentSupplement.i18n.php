@@ -424,6 +424,27 @@ $messages['bg'] = array(
 	'revcs-list-submit' => 'Показване',
 );
 
+/** Breton (brezhoneg)
+ * @author Fohanno
+ */
+$messages['br'] = array(
+	'revcs-edit-reason' => 'Abeg :',
+	'revcs-error' => 'Fazi : $1',
+	'revcs-error-unexpected' => "C'hoarvezet ez eus ur fazi dic'hortoz.",
+	'revcs-hidehistory-submit' => 'Lakaat da dalvezout',
+	'revcs-history-rcsh-reason' => 'Abeg',
+	'revcs-list-extended-supplement-all' => 'pep tra',
+	'revcs-list-extended-supplement-empty' => 'goullo',
+	'revcs-list-extended-supplement-notempty' => "n'eo ket goullo",
+	'revcs-list-limit' => 'Niver dre bajenn :',
+	'revcs-list-rcs-rev-id-edit' => 'Aozañ',
+	'revcs-list-rcs-user-text' => 'Implijer',
+	'revcs-list-submit' => 'Diskouez',
+	'revcs-log-nosupplement' => '(hini ebet)',
+	'revcs-show-reason' => 'Abeg : $1',
+	'revcs-show-revision' => 'Adweladenn : $1',
+);
+
 /** Czech (česky)
  * @author Vks
  */
