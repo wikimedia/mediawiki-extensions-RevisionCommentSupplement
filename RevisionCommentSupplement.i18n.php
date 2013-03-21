@@ -1646,6 +1646,7 @@ $messages['mr'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Konovalov
  * @author SPQRobin
  * @author Siebrand
  * @author Wiki13
@@ -1690,6 +1691,7 @@ $messages['nl'] = array(
 	'revcs-edit-heading' => 'Extra opmerking bewerken',
 	'revcs-edit-legend' => 'Extra opmerking bewerken',
 	'revcs-edit-preview' => 'Voorvertoning weergeven',
+	'revcs-edit-preview-reason' => 'Reden voorvertoning: $1',
 	'revcs-edit-reason' => 'Reden:',
 	'revcs-edit-revision-id' => 'Versienummer:',
 	'revcs-edit-save' => 'Extra opmerking opslaan',
@@ -1699,10 +1701,13 @@ $messages['nl'] = array(
 	'revcs-error' => 'Fout: $1',
 	'revcs-error-history-revision-id' => 'Het versienummer is onjuist.',
 	'revcs-error-unexpected' => 'Er is een onverwachte fout opgetreden.',
+	'revcs-hidehistory-desc' => 'U kunt geheel of gedeeltelijk de eigenschappen van een eerdere invoer verbergen.',
+	'revcs-hidehistory-failure' => 'Instellen van de zichtbaarheid van de geschiedenis invoer van aanvullende opmerking mislukt.',
 	'revcs-hidehistory-present-supplement' => 'De huidige extra opmerking $1',
 	'revcs-hidehistory-reason' => 'Reden voor het verbergen van de geschiedenisregel',
 	'revcs-hidehistory-row' => 'Volledige geschiedenisregel verbergen',
 	'revcs-hidehistory-submit' => 'Toepassen',
+	'revcs-hidehistory-supplement' => 'Verberg aanvullende opmerking van de geschiedenis invoer',
 	'revcs-history-hidden-reason' => '(reden verborgen)',
 	'revcs-history-hidden-supplement' => '(extra opmerkingen verborgen)',
 	'revcs-history-hidden-user' => '(gebruikersnaam verborgen)',
@@ -1711,9 +1716,20 @@ $messages['nl'] = array(
 	'revcs-history-rcsh-reason' => 'Reden',
 	'revcs-list-desc' => 'Op dit moment zijn de onderstaande extra opmerkingen gemaakt.',
 	'revcs-list-descending' => 'weergeven in aflopende volgorde',
+	'revcs-list-extended-comparison-and-over' => 'Eigenschappen zijn gelijk aan en meer dan de standaard',
+	'revcs-list-extended-comparison-and-under' => 'Eigenschappen zijn gelijk aan en onder de standaard',
+	'revcs-list-extended-comparison-equal' => 'Eigenschappen zijn gelijk aan de standaard',
+	'revcs-list-extended-comparison-not-equal' => 'Eigenschappen zijn niet gelijk aan de standaard',
+	'revcs-list-extended-comparison-over' => 'Eigenschappen zijn meer dan de standaard',
+	'revcs-list-extended-comparison-under' => 'Eigenschappen zijn onder de standaard',
+	'revcs-list-extended-offset' => 'Standaard van vergelijking:',
+	'revcs-list-extended-property' => 'Eigenschappen van vergelijking:',
+	'revcs-list-extended-supplement' => 'Voorwaarde van aanvullende opmerkingen:',
 	'revcs-list-extended-supplement-all' => 'alle',
 	'revcs-list-extended-supplement-empty' => 'leeg',
 	'revcs-list-extended-supplement-notempty' => 'niet leeg',
+	'revcs-list-heading' => 'Lijst met aanvullende opmerkingen',
+	'revcs-list-legend' => 'Lijst met aanvullende opmerkingen',
 	'revcs-list-limit' => 'Aantal per pagina:',
 	'revcs-list-rcs-rev-id' => 'Versienummer',
 	'revcs-list-rcs-rev-id-edit' => 'Bewerken',
