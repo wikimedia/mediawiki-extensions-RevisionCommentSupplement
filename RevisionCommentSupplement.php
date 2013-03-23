@@ -28,7 +28,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array( 'Burthsceh', '...' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement',
 	'descriptionmsg' => 'revcs-desc',
-	'version' => '0.4.0',
+	'version' => '0.4.1',
 );
 
 $wgAvailableRights[] = 'supplementcomment';
