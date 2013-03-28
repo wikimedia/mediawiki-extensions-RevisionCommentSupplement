@@ -752,6 +752,7 @@ $messages['fi'] = array(
 /** French (français)
  * @author Gomoko
  * @author Nicolas NALLET
+ * @author Peter17
  * @author Pierre Slamich
  * @author Tititou36
  * @author VIGNERON
@@ -791,14 +792,14 @@ $messages['fr'] = array(
 L’extension RevisionCommentSupplement ne fournit pas d’opération d’annulation de suppression. Si vous voulez annuler une suppression, vous devrez la restaurer depuis les journaux ou les entrées d’historique.',
 	'revcs-delete-failure' => 'Échec à la suppression du commentaire additionnel.',
 	'revcs-delete-heading' => 'Supprimer le commentaire additionnel',
-	'revcs-delete-legend' => 'Supprimer le Commentaire additionnel',
+	'revcs-delete-legend' => 'Supprimer le commentaire additionnel',
 	'revcs-delete-submit' => 'Supprimer le Commentaire additionnel',
 	'revcs-delete-success' => 'Suppression du Commentaire additionnel réussie.',
 	'revcs-edit-desc' => 'Vous pouvez mettre des commentaires additionnels, et les utilisateurs ayant le droit {{int:action-supplementcomment-restricted}}(supplementcomment-restricted) pourront modifier les commentaires additionnels.',
 	'revcs-edit-heading' => 'Modifier les commentaires additionnels',
 	'revcs-edit-legend' => 'Modifier les commentaires additionnels',
 	'revcs-edit-preview' => 'Afficher l’aperçu',
-	'revcs-edit-preview-reason' => 'Motif de l’aperçu : $1',
+	'revcs-edit-preview-reason' => 'Aperçu du motif : $1',
 	'revcs-edit-preview-supplement' => 'Aperçu du commentaire additionnel : $1',
 	'revcs-edit-reason' => 'Motif :',
 	'revcs-edit-revision-id' => 'ID de révision :',
@@ -846,7 +847,7 @@ L’extension RevisionCommentSupplement ne fournit pas d’opération d’annula
 	'revcs-list-extended-comparison-under' => 'Les propriétés sont inférieures au standard',
 	'revcs-list-extended-offset' => 'Standard de comparaison :',
 	'revcs-list-extended-property' => 'Propriétés de comparaison :',
-	'revcs-list-extended-supplement' => 'Condition de commentaires additionnels:',
+	'revcs-list-extended-supplement' => 'Condition de commentaires additionnels :',
 	'revcs-list-extended-supplement-all' => 'tous',
 	'revcs-list-extended-supplement-empty' => 'vide',
 	'revcs-list-extended-supplement-notempty' => 'non vide',
@@ -880,8 +881,8 @@ L’extension RevisionCommentSupplement ne fournit pas d’opération d’annula
 	'revcs-show-reason' => 'Motif : $1',
 	'revcs-show-revision' => 'Révision: $1',
 	'revcs-show-revision-id' => 'ID de la révision: $1 ($2)',
-	'revcs-show-supplement-parsed' => 'Commentaire additionnel analysé: $1',
-	'revcs-show-supplement-raw' => 'Commentaire additionnel brut: $1',
+	'revcs-show-supplement-parsed' => 'Commentaire additionnel analysé : $1',
+	'revcs-show-supplement-raw' => 'Commentaire additionnel brut : $1',
 	'revcs-show-timestamp' => 'Date et heure de modification: $1 ($2)',
 	'revcs-show-user' => 'Utilisateur: $1 $2 (ID utilisateur: $3)',
 	'revcs-warning' => 'Attention: $1',
@@ -1659,6 +1660,14 @@ $messages['mr'] = array(
 	'revcs-list-extended-supplement-empty' => 'रिकामा',
 	'revcs-list-extended-supplement-notempty' => 'रीकामा नाही',
 	'revcs-list-limit' => 'अंक प्रति पान',
+);
+
+/** Low German (Plattdüütsch)
+ * @author Joachim Mos
+ */
+$messages['nds'] = array(
+	'revcs-list-rcs-rev-id-edit' => 'Ännern',
+	'revcs-list-rcs-user-text' => 'Bruker',
 );
 
 /** Dutch (Nederlands)
