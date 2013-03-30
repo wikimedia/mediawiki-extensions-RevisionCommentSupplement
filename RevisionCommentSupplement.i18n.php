@@ -1462,8 +1462,9 @@ $messages['ko'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'revcs-alert-norevision' => 'di Väsjohn is nit en dä Tabäll met de Väsjohne',
+	'revcs-alert-norevision' => 'di Väsjohn is nit en dä Tabäll met de Väsjohne', # Fuzzy
 	'revcs-alert-special-parameter' => 'doh es ene Fähler met dämm Parrameeter',
+	'revcs-edit-preview-reason' => 'Donn en Vörschou fom Jrond zeije', # Fuzzy
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -2148,6 +2149,7 @@ $messages['zh-hans'] = array(
 	'revcs-edit-written' => '补充评论已保存。',
 	'revcs-error' => '错误：$1',
 	'revcs-error-history-unuse' => '本wiki不保存补充评论的历史记录。',
+	'revcs-list-extended-comparison' => '比较操作：',
 	'revcs-list-legend' => '补充评论列表',
 	'revcs-list-rcs-rev-id-edit' => '编辑',
 	'revcs-list-rcs-user-text' => '用户',
