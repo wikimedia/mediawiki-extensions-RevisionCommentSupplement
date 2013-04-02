@@ -353,7 +353,8 @@ When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of th
 	'revcs-list-rcs-timestamp' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-user-text' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-reset' => 'This message is a label of a input reset botton in Special:RevisionCommentSupplementList/list.',
-	'revcs-list-sort' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.',
+	'revcs-list-sort' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.
+{{Identical|Sort by}}',
 	'revcs-list-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplementList.',
 	'revcs-log-hidehistory-reason-hidden' => 'This message is a description and is used at $9 of the following messages:
 * {{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
@@ -1249,7 +1250,7 @@ $messages['ja'] = array(
 	'revcs-history-legend' => '補足コメントの履歴',
 	'revcs-history-rcsh-id' => '履歴 ID',
 	'revcs-history-rcsh-reason' => '理由',
-	'revcs-list-desc' => '現在の補足コメントを列挙します。',
+	'revcs-list-desc' => 'このページでは、現在の補足コメントを列挙します。',
 	'revcs-list-descending' => '降順で列挙する',
 	'revcs-list-extended-comparison' => '比較の演算:',
 	'revcs-list-extended-comparison-and-over' => '事項が基準以上',
@@ -1274,7 +1275,7 @@ $messages['ja'] = array(
 	'revcs-list-rcs-timestamp' => '編集日時',
 	'revcs-list-rcs-user-text' => '利用者',
 	'revcs-list-reset' => 'リセット',
-	'revcs-list-sort' => '並べ替え:',
+	'revcs-list-sort' => '並び順:',
 	'revcs-list-submit' => '表示',
 	'revcs-log-hidehistory-reason-hidden' => '理由の不可視化',
 	'revcs-log-hidehistory-reason-unhidden' => '理由の可視化',
