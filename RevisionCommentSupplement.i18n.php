@@ -135,10 +135,7 @@ $messages['en'] = array(
 	'right-supplementcomment-restricted' => 'Operate supplementary comments with restricted actions',
 );
 
-/** Message documentation (This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn't capitalize language names always.
-
-It might be easier to translate it as "translation guidelines" or "translation help".
-{{Identical|Message documentation}})
+/** Message documentation (Message documentation)
  * @author Krenair
  * @author Raymond
  * @author Shirayuki
@@ -1152,17 +1149,12 @@ $messages['id'] = array(
  */
 $messages['it'] = array(
 	'revcs-error' => 'Errore: $1',
-	'revcs-form-preview' => 'Visualizza anteprima',
-	'revcs-form-revision-id' => 'ID versione:',
-	'revcs-form-save' => 'Salva il commento supplementare',
-	'revcs-form-show' => 'Mostra il commento supplementare',
-	'revcs-form-summary' => 'Oggetto:',
-	'revcs-form-supplement' => 'Commento supplementare:',
 	'revcs-list-extended-supplement-all' => 'tutti',
 	'revcs-list-extended-supplement-empty' => 'vuota',
 	'revcs-list-rcs-rev-id-edit' => 'Modifica',
 	'revcs-list-rcs-user-text' => 'Utente',
 	'revcs-list-reset' => 'Reimposta',
+	'revcs-list-sort' => 'Ordina per:',
 	'revcs-list-submit' => 'Mostra',
 	'revcs-log-nosupplement' => '(nessuno)',
 	'revcs-show-revision' => 'Versione: $1',
