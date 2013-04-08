@@ -1751,8 +1751,8 @@ $messages['nl'] = array(
 	'revcs-list-extended-supplement-all' => 'alle',
 	'revcs-list-extended-supplement-empty' => 'leeg',
 	'revcs-list-extended-supplement-notempty' => 'niet leeg',
-	'revcs-list-heading' => 'Lijst met aanvullende opmerkingen',
-	'revcs-list-legend' => 'Lijst met aanvullende opmerkingen',
+	'revcs-list-heading' => 'Lijst met extra opmerkingen',
+	'revcs-list-legend' => 'Lijst met extra opmerkingen',
 	'revcs-list-limit' => 'Aantal per pagina:',
 	'revcs-list-rcs-rev-id' => 'Versienummer',
 	'revcs-list-rcs-rev-id-edit' => 'Bewerken',
@@ -2134,6 +2134,7 @@ $messages['uk'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Kuailong
  * @author Shirayuki
  * @author Yfdyh000
  */
@@ -2141,14 +2142,23 @@ $messages['zh-hans'] = array(
 	'revisioncommentsupplementlist' => '补充评论列表',
 	'revcs-desc' => '允许在历史记录页面每个修订行上线时附加的注释。',
 	'revcs-edit-heading' => '编辑补充评论',
+	'revcs-edit-preview' => '显示预览',
 	'revcs-edit-preview-reason' => '原因预览：$1',
 	'revcs-edit-written' => '补充评论已保存。',
 	'revcs-error' => '错误：$1',
 	'revcs-error-history-unuse' => '本wiki不保存补充评论的历史记录。',
+	'revcs-hidehistory-submit' => '应用',
 	'revcs-list-extended-comparison' => '比较操作：',
+	'revcs-list-extended-supplement-all' => '所有',
+	'revcs-list-extended-supplement-empty' => '空',
 	'revcs-list-legend' => '补充评论列表',
 	'revcs-list-rcs-rev-id-edit' => '编辑',
+	'revcs-list-rcs-rev-id-log' => '日志',
 	'revcs-list-rcs-user-text' => '用户',
+	'revcs-list-sort' => '排序方式：',
+	'revcs-list-submit' => '显示',
+	'revcs-log-nosupplement' => '（无）',
+	'revcs-warning' => '警告：$1',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
