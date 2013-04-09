@@ -337,7 +337,8 @@ When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of th
 	'revcs-list-extended-property' => 'This message is a content of a label element of a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-supplement' => 'This message is a content of a label element of a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-supplement-all' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
-	'revcs-list-extended-supplement-empty' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
+	'revcs-list-extended-supplement-empty' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.
+{{Identical|Empty}}',
 	'revcs-list-extended-supplement-notempty' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-heading' => 'This message is the heading of Special:RevisionCommentSupplementList/list.
 {{Identical|List of supplementary comments}}',
