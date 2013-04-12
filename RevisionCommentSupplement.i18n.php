@@ -739,15 +739,17 @@ $messages['fa'] = array(
  * @author Crt
  * @author Nedergard
  * @author Nike
+ * @author Silvonen
  */
 $messages['fi'] = array(
 	'revcs-error' => 'Virhe: $1',
-	'revcs-form-preview' => 'Näytä esikatselu',
-	'revcs-form-summary' => 'Yhteenveto',
 	'revcs-list-extended-supplement-all' => 'kaikki',
 	'revcs-list-rcs-rev-id-edit' => 'Muokkaa',
+	'revcs-list-rcs-rev-id-log' => 'Loki',
 	'revcs-list-rcs-user-text' => 'Käyttäjä',
 	'revcs-list-submit' => 'Näytä',
+	'revcs-show-reason' => 'Syy: $1',
+	'revcs-show-revision' => 'Versio: $1',
 	'revcs-warning' => 'Varoitus: $1',
 );
 
