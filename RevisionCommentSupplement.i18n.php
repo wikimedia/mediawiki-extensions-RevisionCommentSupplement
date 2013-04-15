@@ -153,7 +153,7 @@ $messages['qqq'] = array(
 	'log-description-revisioncommentsupplement' => 'The description of all public logs of Extension:RevisonCommentSupplement in [[Special:Log]].',
 	'logentry-revisioncommentsupplement-create' => 'A line of log entry in [[Special:Log]].
 *$1 are links of user page and user tool page(s).
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> to male.
+*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
 *$4 is the revision id.
 *$5 is {{msg-mw|revcs-log-nosupplement}}.
@@ -169,7 +169,7 @@ $messages['qqq'] = array(
 {{Related|Logentry-revcs}}',
 	'logentry-revisioncommentsupplement-delete' => "A line of log entry in [[Special:Log]].
 *$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> to male.
+*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
 *$4 is the revision id.
 *$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
@@ -178,15 +178,15 @@ $messages['qqq'] = array(
 {{Related|Logentry-revcs}}",
 	'logentry-revisioncommentsupplement-delete2' => "A line of log entry in [[Special:Log]].
 *$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> to male.
+*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
 *$4 is the revision id.
 *$7 is the history entry id of a history entry.
 {{Related|Logentry-revcs}}",
 	'logentry-revisioncommentsupplement-hidehistory' => 'A line of log entry in [[Special:Log]].
-This is like {{mw-msg|logentry-delete-event}} and {{mw-msg|logentry-delete-revision}}.
+This is like {{msg-mw|logentry-delete-event}} and {{msg-mw|logentry-delete-revision}}.
 *$1 - links of the user page and the user tool(s) page
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> to male.
+*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
 *$3 - a link of Special:RevisionCommentSupplement/$4 (edit page)
 *$4 - the revision id of the supplementary comment of a history entry
 *$5 - the old hidden flag of a history entry
@@ -208,7 +208,7 @@ This is like {{mw-msg|logentry-delete-event}} and {{mw-msg|logentry-delete-revis
 {{Related|Logentry-revcs}}',
 	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in [[Special:Log]].
 *$1 are links of the user page and the user tool(s) page.
-*$2 is the username. <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> to male.
+*$2 is the username. <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
 *$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
 *$4 is the revision id.
 *$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
@@ -223,9 +223,9 @@ This is like {{mw-msg|logentry-delete-event}} and {{mw-msg|logentry-delete-revis
 *$7 is the history entry id of a history entry.
 {{Related|Logentry-revcs}}',
 	'logentry-suppress-revcommentsupplementhidehistory' => 'A line of private log entry in [[Special:Log]].
-This is like {{mw-msg|logentry-suppress-event}} and {{mw-msg|logentry-suppress-revision}}.
+This is like {{msg-mw|logentry-suppress-event}} and {{msg-mw|logentry-suppress-revision}}.
 *$1 - links of the user page and the user tool(s) page
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> to male.
+*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
 *$3 - a link of Special:RevisionCommentSupplement/$4 (edit page)
 *$4 - the revision id of the supplementary comment of a history entry
 *$5 - the old hidden flag of a history entry
@@ -1723,6 +1723,7 @@ $messages['nl'] = array(
 	'revcs-edit-legend' => 'Extra opmerking bewerken',
 	'revcs-edit-preview' => 'Voorvertoning weergeven',
 	'revcs-edit-preview-reason' => 'Voorvertoning reden: $1',
+	'revcs-edit-preview-supplement' => 'Voorvertoning van de extra opmerking: $1',
 	'revcs-edit-reason' => 'Reden:',
 	'revcs-edit-revision-id' => 'Versienummer:',
 	'revcs-edit-save' => 'Extra opmerking opslaan',
@@ -1732,14 +1733,18 @@ $messages['nl'] = array(
 	'revcs-error' => 'Fout: $1',
 	'revcs-error-edit-denied' => 'De extra opmerking kon niet worden opgeslagen.',
 	'revcs-error-history-revision-id' => 'Het versienummer is onjuist.',
+	'revcs-error-history-unuse' => 'Op deze wiki wordt de geschiedenis van extra opmerkingen niet opgeslagen.',
 	'revcs-error-unexpected' => 'Er is een onverwachte fout opgetreden.',
 	'revcs-hidehistory-desc' => 'U kunt geheel of gedeeltelijk de eigenschappen van een eerdere invoer verbergen.',
 	'revcs-hidehistory-failure' => 'Instellen van de zichtbaarheid van de geschiedenis invoer van aanvullende opmerking mislukt.',
+	'revcs-hidehistory-heading' => 'Geschiedenis van extra opmerking verbergen/weergeven',
+	'revcs-hidehistory-legend' => 'Geschiedenis van extra opmerking verbergen/weergeven',
 	'revcs-hidehistory-present-supplement' => 'De huidige extra opmerking $1',
 	'revcs-hidehistory-reason' => 'Reden voor het verbergen van de geschiedenisregel',
 	'revcs-hidehistory-row' => 'Volledige geschiedenisregel verbergen',
 	'revcs-hidehistory-submit' => 'Toepassen',
 	'revcs-hidehistory-supplement' => 'Extra opmerking bij de geschiedenisregel verbergen',
+	'revcs-history-heading-error' => 'Fout in de geschiedenis van extra opmerking',
 	'revcs-history-hidden-reason' => '(reden verborgen)',
 	'revcs-history-hidden-supplement' => '(extra opmerkingen verborgen)',
 	'revcs-history-hidden-user' => '(gebruikersnaam verborgen)',
