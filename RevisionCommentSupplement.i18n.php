@@ -1993,6 +1993,8 @@ $messages['ro'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'group-supplementcomment' => 'CommendeSupplmendare',
+	'group-supplementcomment-member' => '{{GENDER:$1|CommendeSupplemendare}}',
 	'revcs-action-history-supplement' => '[Supplemende: $1]',
 	'revcs-edit-preview' => "Vide l'andeprime",
 	'revcs-edit-reason' => 'Mutive:',
