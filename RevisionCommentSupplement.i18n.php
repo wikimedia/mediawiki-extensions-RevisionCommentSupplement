@@ -342,7 +342,8 @@ When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of th
 	'revcs-list-extended-offset' => 'This message is a content of a label element of a text input box of a condition in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-property' => 'This message is a content of a label element of a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-supplement' => 'This message is a content of a label element of a select element in Special:RevisionCommentSupplementList/list.',
-	'revcs-list-extended-supplement-all' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
+	'revcs-list-extended-supplement-all' => 'This message is a content of a option element into a select element in [[Special:RevisionCommentSupplementList/list]].
+{{Identical|All}}',
 	'revcs-list-extended-supplement-empty' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.
 {{Identical|Empty}}',
 	'revcs-list-extended-supplement-notempty' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
