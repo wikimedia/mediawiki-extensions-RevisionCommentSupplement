@@ -749,6 +749,7 @@ $messages['fa'] = array(
  * @author Silvonen
  */
 $messages['fi'] = array(
+	'revcs-alert-norevision' => 'Muutos ei ole käytettävissä. Joko sitä ei ole vielä olemassa tai se on jo poistettu.',
 	'revcs-error' => 'Virhe: $1',
 	'revcs-list-extended-supplement-all' => 'kaikki',
 	'revcs-list-rcs-rev-id-edit' => 'Muokkaa',
