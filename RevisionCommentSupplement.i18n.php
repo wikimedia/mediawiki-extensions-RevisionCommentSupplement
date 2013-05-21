@@ -2157,6 +2157,7 @@ $messages['uk'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Kuailong
+ * @author Li3939108
  * @author Shirayuki
  * @author Yfdyh000
  */
@@ -2180,6 +2181,9 @@ $messages['zh-hans'] = array(
 	'revcs-list-sort' => '排序方式：',
 	'revcs-list-submit' => '显示',
 	'revcs-log-nosupplement' => '（无）',
+	'revcs-show-reason' => '原因：$1',
+	'revcs-show-revision' => '版本：$1',
+	'revcs-show-revision-id' => '版本ID: $1（$2）',
 	'revcs-warning' => '警告：$1',
 );
 
