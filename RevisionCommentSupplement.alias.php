@@ -34,8 +34,8 @@ $specialPageAliases['ja'] = array(
 
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
-	'RevisionCommentSupplement' => array( '판덧글보충', '판_덧글_보충' ),
-	'RevisionCommentSupplementList' => array( '판덧글보충목록', '판_덧글_보충_목록' ),
+	'RevisionCommentSupplement' => array( '판덧글보충' ),
+	'RevisionCommentSupplementList' => array( '판덧글보충목록' ),
 );
 
 /** Macedonian (македонски) */
