@@ -1721,6 +1721,7 @@ $messages['nl'] = array(
 	'revcs-delete-legend' => 'Extra opmerking verwijderen',
 	'revcs-delete-submit' => 'Extra opmerking verwijderen',
 	'revcs-delete-success' => 'De extra opmerking is verwijderd.',
+	'revcs-edit-desc' => 'U kunt extra opmerkingen instellen en gebruikers met de toegang {{int:action-supplementcomment-restricted}} (supplementcomment-restricted) kunnen extra opmerkingen wijzigen.',
 	'revcs-edit-heading' => 'Extra opmerking bewerken',
 	'revcs-edit-legend' => 'Extra opmerking bewerken',
 	'revcs-edit-preview' => 'Voorvertoning weergeven',
