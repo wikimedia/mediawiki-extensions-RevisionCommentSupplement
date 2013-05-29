@@ -1735,6 +1735,7 @@ $messages['nl'] = array(
 	'revcs-edit-written' => 'De extra opmerking is opgeslagen.',
 	'revcs-error' => 'Fout: $1',
 	'revcs-error-edit-denied' => 'De extra opmerking kon niet worden opgeslagen.',
+	'revcs-error-hidehistory-hidden-restricted-only' => 'De zichtbaarheid voor invoer is alleen beperkt (onderdrukken, toezicht)',
 	'revcs-error-history-revision-id' => 'Het versienummer is onjuist.',
 	'revcs-error-history-unuse' => 'Op deze wiki wordt de geschiedenis van extra opmerkingen niet opgeslagen.',
 	'revcs-error-unexpected' => 'Er is een onverwachte fout opgetreden.',
@@ -1978,10 +1979,11 @@ $messages['ps'] = array(
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Luckas
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
-	'revcs-form-save' => 'enviar', # Fuzzy
+	'revcs-list-rcs-rev-id-edit' => 'Editar',
 );
 
 /** Romanian (română)
