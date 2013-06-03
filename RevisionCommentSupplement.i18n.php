@@ -443,7 +443,6 @@ If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[
  */
 $messages['bg'] = array(
 	'revcs-error' => 'Грешка: $1',
-	'revcs-form-summary' => 'Резюме:',
 	'revcs-list-extended-supplement-all' => 'всички',
 	'revcs-list-extended-supplement-empty' => 'празно',
 	'revcs-list-rcs-rev-id-edit' => 'Редактиране',
@@ -480,7 +479,6 @@ $messages['br'] = array(
  */
 $messages['cs'] = array(
 	'log-name-revisioncommentsupplement' => 'Doplňující protokol komentářů',
-	'revcs-form-preview' => 'Ukázat náhled',
 	'revcs-list-extended-supplement-all' => 'všechno',
 	'revcs-list-rcs-rev-id-edit' => 'Upravit',
 	'revcs-list-rcs-rev-id-log' => 'Protokol',
@@ -673,7 +671,7 @@ $messages['es'] = array(
 	'revcs-edit-desc' => 'Puedes definir comentarios adicionales, y los usuarios que tienen {{int:action-supplementcomment-restricted}}(supplementcomment-restricted) derechos pueden modificar los comentarios adicionales.',
 	'revcs-edit-heading' => 'Editar comentarios suplementarios',
 	'revcs-error' => 'Error: $1',
-	'revcs-error-edit-denied' => 'no se permite guardar el comentario adicional.',
+	'revcs-error-edit-denied' => 'no se permite guardar el comentario adicional.', # Fuzzy
 	'revcs-error-unexpected' => 'ha ocurrido un error inesperado.',
 	'revcs-list-desc' => 'Esta es una lista actual de comentarios adicionales.',
 	'revcs-list-descending' => 'lista en orden descendente',
@@ -1057,7 +1055,7 @@ $messages['hsb'] = array(
 	'revcs-action-history-supplement' => '[Wudospołnjowacy komentar: $1]',
 	'revcs-alert-exist-supplement' => 'wudospołnjowacy komentar wersije eksistuje.',
 	'revcs-alert-history-id' => '"$1" je wopačny ID historije.',
-	'revcs-alert-norevision' => 'Wersija we wersijowej tabeli njeeksistuje. Njeje so hišće wutworiła abo je so hižo zhašała.',
+	'revcs-alert-norevision' => 'Wersija we wersijowej tabeli njeeksistuje. Njeje so hišće wutworiła abo je so hižo zhašała.', # Fuzzy
 	'revcs-alert-revision-id' => '"$1" je wopačny wersijowy ID.',
 	'revcs-alert-special-parameter' => 'Je zmylk z parametrom',
 	'revcs-alert-supplement-asterisk' => 'zapodaty wudospołnjowacy komentar ma hwěžku.',
@@ -1079,9 +1077,9 @@ $messages['hsb'] = array(
 	'revcs-edit-save' => 'Wudospołnjowacy komentar składować',
 	'revcs-edit-show' => 'Wudospołnjowacy komentar pokazać',
 	'revcs-edit-supplement' => 'Wudospołnjowacy komentar:',
-	'revcs-edit-written' => 'Wudospołnjowacy komentar je napisany.',
+	'revcs-edit-written' => 'Wudospołnjowacy komentar je napisany.', # Fuzzy
 	'revcs-error' => 'Zmylk: $1',
-	'revcs-error-edit-denied' => 'składowanje wudospołnjowaceho komentara je so wotpokazało.',
+	'revcs-error-edit-denied' => 'składowanje wudospołnjowaceho komentara je so wotpokazało.', # Fuzzy
 	'revcs-error-history-revision-id' => 'Wersijowy ID je wopak.',
 	'revcs-error-unexpected' => 'njewočakowany zmylk wustupił.',
 	'revcs-hidehistory-reason' => 'Přičinu zapiska historije schować',
@@ -1146,7 +1144,6 @@ $messages['hsb'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['id'] = array(
-	'revcs-form-summary' => 'Ringkasan:',
 	'revcs-list-extended-supplement-all' => 'semua',
 	'revcs-list-extended-supplement-empty' => 'kosong',
 	'revcs-list-rcs-rev-id-edit' => 'Sunting',
@@ -1844,7 +1841,7 @@ $messages['pl'] = array(
 	'revcs-delete-success' => 'Usunięto komentarz uzupełniający.',
 	'revcs-edit-heading' => 'Edytuj komentarz uzupełniający',
 	'revcs-error' => 'Błąd: $1',
-	'revcs-error-edit-denied' => 'odmowa zapisania komentarza uzupełniającego.',
+	'revcs-error-edit-denied' => 'odmowa zapisania komentarza uzupełniającego.', # Fuzzy
 	'revcs-error-unexpected' => 'wystąpił nieoczekiwany błąd.',
 	'revcs-list-desc' => 'Wyświetla istniejące komentarze uzupełniające.',
 	'revcs-list-descending' => 'sortuj malejąco',
@@ -1925,7 +1922,7 @@ Extension:RevisionCommentSupplement a dà pa d'operassion ëd riprìstin. S'a vo
 	'revcs-edit-desc' => "It peule amposté dij coment suplementar, e j'utent ch'a l'han ij drit {{int:action-supplementcomment-restricted}}(supplementcomment-restricted) a peulo modifiché ij coment suplementar",
 	'revcs-edit-heading' => 'Modifiché ij Coment Suplementar',
 	'revcs-error' => 'Eror: $1',
-	'revcs-error-edit-denied' => 'arfud ëd salvé ël coment suplementar.',
+	'revcs-error-edit-denied' => 'arfud ëd salvé ël coment suplementar.', # Fuzzy
 	'revcs-error-unexpected' => "a l'é capitaje n'eror pa spetà.",
 	'revcs-list-desc' => 'Sòn a lista ij Coment Suplementar corent.',
 	'revcs-list-descending' => 'lista an órdin calant',
@@ -1972,9 +1969,6 @@ Extension:RevisionCommentSupplement a dà pa d'operassion ëd riprìstin. S'a vo
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
-	'revcs-form-save' => 'سپارل', # Fuzzy
-	'revcs-form-show' => 'ښکاره کول', # Fuzzy
-	'revcs-form-summary' => 'لنډيز:',
 	'revcs-log-nosupplement' => '(هېڅ)',
 );
 
@@ -1991,7 +1985,6 @@ $messages['pt-br'] = array(
  * @author Stelistcristi
  */
 $messages['ro'] = array(
-	'revcs-form-summary' => 'Rezumat:',
 	'revcs-list-submit' => 'Arată',
 	'revcs-warning' => 'Avertisment: $1',
 );
@@ -2050,34 +2043,29 @@ $messages['si'] = array(
 	'grouppage-supplementcomment' => '{{ns:project}}:අතිරේකපරිකථනය',
 	'log-name-revisioncommentsupplement' => 'පරිපූරක පරිකථන ලොගය',
 	'revisioncommentsupplementlist' => 'අතිරේක පරිකථන ලැයිස්තුව',
+	'revcs-action-history-supplement' => '[අතිරේකය: $1]',
 	'revcs-alert-revision-id' => '"$1" යනු වැරදි සංශෝධන හැඳුනුමකි.',
 	'revcs-delete-heading' => 'අතිරේක පරිකථනය මකා දමන්න',
 	'revcs-delete-legend' => 'අතිරේක පරිකථනය මකා දමන්න',
 	'revcs-delete-submit' => 'අතිරේක පරිකථනය මකා දමන්න',
 	'revcs-error' => 'දෝෂය: $1',
-	'revcs-form-preview' => 'පෙරදසුන පෙන්වන්න',
-	'revcs-form-revision-id' => 'සංශෝධන හැඳුනුම:',
-	'revcs-form-summary' => 'සාරාංශය:',
-	'revcs-history-supplement' => '[අතිරේකය: $1]',
-	'revcs-list-extended-offset' => 'උපමනයේ තන්තුව:',
+	'revcs-list-extended-offset' => 'උපමනයේ තන්තුව:', # Fuzzy
 	'revcs-list-extended-supplement' => 'අතිරේක පරිකථනවල කොන්දේසිය:',
 	'revcs-list-extended-supplement-all' => 'සියල්ල',
 	'revcs-list-extended-supplement-empty' => 'හිස්',
 	'revcs-list-extended-supplement-notempty' => 'හිස් නැත',
 	'revcs-list-legend' => 'අතිරේක පරිකථන ලැයිස්තුව',
 	'revcs-list-limit' => 'පිටුවකට අංක:',
-	'revcs-list-rcs-comment' => 'අතිරේක පරිකථනය',
 	'revcs-list-rcs-rev-id' => 'සංශෝධන හැඳුනුම',
 	'revcs-list-rcs-rev-id-edit' => 'සංස්කරණය',
 	'revcs-list-rcs-rev-id-log' => 'ලඝු සටහන',
+	'revcs-list-rcs-supplement' => 'අතිරේක පරිකථනය',
 	'revcs-list-rcs-timestamp' => 'සංස්කරණය කල දිනය සහ වෙලාව',
 	'revcs-list-rcs-user-text' => 'පරිශීලක',
 	'revcs-list-reset' => 'නැවත සකසන්න',
 	'revcs-list-sort' => 'වර්ගය:',
 	'revcs-list-submit' => 'පෙන්වන්න',
 	'revcs-log-nosupplement' => '(කිසිවක් නොමැත)',
-	'revcs-preview-summary' => 'සාරාංශ පෙරදසුන: $1',
-	'revcs-preview-supplement' => 'අතිරේක පරිකථනයේ පෙරදසුන: $1',
 	'revcs-show-deletelinktext' => 'අතිරේක පරිකථනය මකා දමන්න',
 	'revcs-show-editlinktext' => 'අතිරේක පරිකථනය සංස්කරණය කරන්න',
 	'revcs-show-revision' => 'සංශෝධනය: $1',
@@ -2087,7 +2075,6 @@ $messages['si'] = array(
 	'revcs-show-timestamp' => 'සංස්කරණය කල දිනය සහ වෙලාව: $1 ($2)',
 	'revcs-show-user' => 'පරිශීලක: $1 $2 (පරිශීලක හැඳුනුම: $3)',
 	'revcs-warning' => 'අවවාදය: $1',
-	'revcs-written' => 'අතිරේක පරිකථනය ලියා ඇත.',
 );
 
 /** Tamil (தமிழ்)
@@ -2095,9 +2082,6 @@ $messages['si'] = array(
  */
 $messages['ta'] = array(
 	'revcs-error' => 'பிழை: $1',
-	'revcs-form-preview' => 'முன்தோற்றம் காட்டு',
-	'revcs-form-revision-id' => 'திருத்த அடையாள எண் :',
-	'revcs-form-summary' => 'சுருக்கம்:',
 	'revcs-list-extended-supplement-all' => 'அனைத்தும்',
 	'revcs-list-extended-supplement-empty' => 'காலி',
 	'revcs-list-extended-supplement-notempty' => 'காலியில்லை',
@@ -2109,7 +2093,6 @@ $messages['ta'] = array(
 	'revcs-list-sort' => 'வரிசைப்படுத்து:',
 	'revcs-list-submit' => 'காண்பி',
 	'revcs-log-nosupplement' => '(ஏதுமில்லை)',
-	'revcs-preview-summary' => 'சுருக்க முன்தோற்றம்: $1',
 );
 
 /** Telugu (తెలుగు)
@@ -2117,8 +2100,6 @@ $messages['ta'] = array(
  */
 $messages['te'] = array(
 	'revcs-error' => 'పొరపాటు: $1',
-	'revcs-form-show' => 'అదనపు వ్యాఖ్యను చూపించు',
-	'revcs-form-summary' => 'సారాంశం:',
 	'revcs-log-nosupplement' => '(ఏమీలేదు)',
 	'revcs-show-supplement-raw' => 'ముడి వ్యాఖ్య: $1',
 	'revcs-warning' => 'హెచ్చరిక: $1',
