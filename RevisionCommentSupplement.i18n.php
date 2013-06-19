@@ -474,6 +474,13 @@ $messages['br'] = array(
 	'revcs-show-revision' => 'Adweladenn : $1',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'revcs-list-rcs-rev-id-edit' => 'Нисйé',
+);
+
 /** Czech (česky)
  * @author Vks
  */
