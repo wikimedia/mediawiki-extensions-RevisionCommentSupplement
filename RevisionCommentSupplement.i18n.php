@@ -359,7 +359,8 @@ When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of th
 	'revcs-list-rcs-supplement' => 'This message is a heading of a table in Special:RevisionCommentSupplementList.
 {{Identical|Supplementary comment}}',
 	'revcs-list-rcs-timestamp' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
-	'revcs-list-rcs-user-text' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
+	'revcs-list-rcs-user-text' => 'This message is a heading of a table and a content of a option element into a select element in [[Special:RevisionCommentSupplementList]].
+{{Identical|User}}',
 	'revcs-list-reset' => 'This message is a label of a input reset botton in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-sort' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.
 {{Identical|Sort by}}',
