@@ -1483,6 +1483,7 @@ $messages['ksh'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|huet}} eng zousätzlech Bemierkung $5 zu der Versioun $4 geläscht',
 	'revisioncommentsupplementlist' => 'Lëscht vun den zousätzleche Bemierkungen',
 	'revcs-desc' => 'Erméiglecht et eng zousätzlech Bemierkung fir all Versioun an der Lëscht vun de Versioune vun enger Säit ze weisen.',
 	'revcs-alert-revision-id' => '"$1" ass eng falsch Versiouns ID.',
