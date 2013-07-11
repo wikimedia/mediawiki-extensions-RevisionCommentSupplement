@@ -1825,6 +1825,7 @@ $messages['nl'] = array(
 );
 
 /** Polish (polski)
+ * @author Chrumps
  * @author Matma Rex
  */
 $messages['pl'] = array(
@@ -1835,15 +1836,15 @@ $messages['pl'] = array(
 	'grouppage-supplementcomment' => '{{ns:project}}:Uzupełniający komentarze',
 	'log-name-revisioncommentsupplement' => 'Rejestr komentarzy uzupełniających',
 	'log-description-revisioncommentsupplement' => 'Rejestr operacji na {{#special:RevisionCommentSupplement}}.',
-	'logentry-revisioncommentsupplement-create' => '$1 utworzył nowy komentarz uzupełniający do wersji $4 o treści „$6”', # Fuzzy
-	'logentry-revisioncommentsupplement-delete' => '$1 usunął komentarz uzupełniający do wersji $4 o treści „$5”', # Fuzzy
-	'logentry-revisioncommentsupplement-modify' => '$1 zmodyfikował komentarz uzupełniający do wersji $4: „$5” → „$6”', # Fuzzy
+	'logentry-revisioncommentsupplement-create' => '$1  {{GENDER:$2|utworzył|utworzyła}} nowy komentarz uzupełniający do wersji $4 o treści "$6"',
+	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|usunął|usunęła}} komentarz uzupełniający do wersji $4 o treści "$5"',
+	'logentry-revisioncommentsupplement-modify' => '$1 {{GENDER:$2|zmodyfikował|zmodyfikowała}} komentarz uzupełniający do wersji $4: "$5" → "$6"',
 	'revisioncommentsupplement' => 'Komentarze uzupełniające do wersji',
 	'revisioncommentsupplementlist' => 'Lista komentarzy uzupełniających',
 	'revcs-desc' => 'Umożliwia wyświetlenie komentarza uzupełniającego przy każdej wersji na stronach historii.',
 	'revcs-action-history-supplement' => '[Uzupełnienie: $1]',
 	'revcs-alert-exist-supplement' => 'komentarz uzupełniający do tej zmiany już istnieje.',
-	'revcs-alert-norevision' => 'ta wersja nie istnieje.', # Fuzzy
+	'revcs-alert-norevision' => 'Ta wersja nie jest dostępna. Nie została utworzona lub została już usunięta.',
 	'revcs-alert-revision-id' => '„$1” nie jest prawidłowym ID wersji.',
 	'revcs-alert-special-parameter' => 'w parametrze jest błąd.',
 	'revcs-alert-supplement-asterisk' => 'komentarz uzupełniający jest znakiem gwiazdki.',
