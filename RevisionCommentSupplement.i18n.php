@@ -498,6 +498,13 @@ $messages['cs'] = array(
 	'revcs-log-nosupplement' => '(žádné)',
 );
 
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+ * @author ОйЛ
+ */
+$messages['cu'] = array(
+	'revcs-error' => 'блаꙁна : $1',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
