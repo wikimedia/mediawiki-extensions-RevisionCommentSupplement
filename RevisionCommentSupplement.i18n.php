@@ -503,6 +503,7 @@ $messages['cs'] = array(
  */
 $messages['cu'] = array(
 	'revcs-error' => 'блаꙁна : $1',
+	'revcs-list-rcs-user-text' => 'польꙃєватєл҄ь',
 );
 
 /** German (Deutsch)
