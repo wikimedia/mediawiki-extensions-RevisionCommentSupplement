@@ -2103,6 +2103,33 @@ $messages['si'] = array(
 	'revcs-warning' => 'අවවාදය: $1',
 );
 
+/** Swedish (svenska)
+ * @author Jopparn
+ */
+$messages['sv'] = array(
+	'revcs-alert-special-parameter' => 'Det är misstag gällande parametern.',
+	'revcs-hidehistory-submit' => 'Verkställ',
+	'revcs-history-rcsh-reason' => 'Orsak',
+	'revcs-list-descending' => 'lista i fallande ordning',
+	'revcs-list-extended-supplement-all' => 'alla',
+	'revcs-list-extended-supplement-empty' => 'tom',
+	'revcs-list-extended-supplement-notempty' => 'inte tom',
+	'revcs-list-limit' => 'Antal per sida:',
+	'revcs-list-rcs-rev-id-edit' => 'Redigera',
+	'revcs-list-rcs-rev-id-log' => 'Logga',
+	'revcs-list-rcs-timestamp' => 'Redigerade datum och tid',
+	'revcs-list-rcs-user-text' => 'Användare',
+	'revcs-list-reset' => 'Återställ',
+	'revcs-list-sort' => 'Sortera efter:',
+	'revcs-list-submit' => 'Visa',
+	'revcs-log-hidehistory-reason-hidden' => 'anledningen dold',
+	'revcs-log-hidehistory-reason-unhidden' => 'anledning ej längre dold',
+	'revcs-log-nosupplement' => '(inga)',
+	'revcs-show-reason' => 'Orsak: $1',
+	'revcs-show-revision' => 'Version: $1',
+	'revcs-warning' => 'Varning: $1',
+);
+
 /** Tamil (தமிழ்)
  * @author Shanmugamp7
  */
