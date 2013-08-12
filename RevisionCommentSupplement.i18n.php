@@ -249,7 +249,7 @@ This is like {{msg-mw|logentry-suppress-event}} and {{msg-mw|logentry-suppress-r
 The meaning of "Revision comment supplement" is "Supplement the comment on each revision", "the comment on each revision is supplemented" or "a supplement to the comment on each revision".',
 	'revisioncommentsupplementlist' => '{{doc-special|RevisionCommentSupplementList}}
 {{Identical|List of supplementary comments}}',
-	'revcs-desc' => '{{desc|name=RevisionCommentSupplement|url=https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement}}',
+	'revcs-desc' => '{{desc|name=Revision Comment Supplement|url=http://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement}}',
 	'revcs-action-history-supplement' => 'This message is used at each revision line in History pages(history action of pages). $1 is a parsed supplementary comment.',
 	'revcs-alert-exist-supplement' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
 	'revcs-alert-history-id' => 'This message is a error or warning message used in Special:RevisionCommentSupplement/hidehistory.',
