@@ -2159,15 +2159,24 @@ $messages['te'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Base
  * @author Steve.rusyn
+ * @author SteveR
  * @author Ата
  */
 $messages['uk'] = array(
 	'action-supplementcomment' => 'керування допоміжними коментарями',
 	'action-supplementcomment-restricted' => 'керування допоміжними коментарями з обмеженими діями',
+	'group-supplementcomment' => 'Додатковий коментар',
+	'group-supplementcomment-member' => '{{GENDER:$1|Додатковий коментар|Додаткові коментарі|Додаткових коментарів}}',
+	'grouppage-supplementcomment' => '{{ns:project}}:Додатковий коментар',
+	'log-name-revisioncommentsupplement' => 'Журнал додаткових коментарів',
+	'log-description-revisioncommentsupplement' => 'Журнал операцій у {{#special:RevisionCommentSupplement}}.',
 	'logentry-revisioncommentsupplement-create' => '$1 {{GENDER:$2|створив|створила}} допоміжний коментар, $6 до версії $4',
+	'logentry-revisioncommentsupplement-create2' => '$1 {{GENDER:$2|створив|створила}} допоміжний коментар до версії $4',
 	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|вилучив|вилучила}} допоміжний коментар, $5 до версії $4',
+	'logentry-revisioncommentsupplement-delete2' => '$1 {{GENDER:$2|вилучив|вилучила}} допоміжний коментар до версії $4',
 	'logentry-revisioncommentsupplement-modify' => '$1 {{GENDER:$2|змінив|змінила}} допоміжний коментар до версії $4 з $5 на $6',
 	'revcs-alert-revision-id' => '"$1" — неправильний ID версії.',
 	'revcs-error' => 'Помилка: $1',
