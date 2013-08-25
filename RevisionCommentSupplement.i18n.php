@@ -252,12 +252,18 @@ The meaning of "Revision comment supplement" is "Supplement the comment on each 
 	'revcs-desc' => '{{desc|name=Revision Comment Supplement|url=http://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement}}',
 	'revcs-action-history-supplement' => 'This message is used at each revision line in History pages(history action of pages). $1 is a parsed supplementary comment.',
 	'revcs-alert-exist-supplement' => 'This message is a error or warning message used at save in Special:RevisionCommentSupplement.',
-	'revcs-alert-history-id' => 'This message is a error or warning message used in Special:RevisionCommentSupplement/hidehistory.',
+	'revcs-alert-history-id' => 'This message is a error or warning message used in [[Special:RevisionCommentSupplement/hidehistory]].
+
+Parameters:
+* $1 - history ID',
 	'revcs-alert-nohistory' => 'This message is a error or warning message used in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-alert-norevision' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.
 
 About "the revision table", "revision" is the table name in the database.',
-	'revcs-alert-revision-id' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.',
+	'revcs-alert-revision-id' => 'This message is a error or warning message used in [[Special:RevisionCommentSupplement]].
+
+Parameters:
+* $1 - revision ID',
 	'revcs-alert-special-parameter' => 'This message is a error or warning message used in Special:RevisionCommentSupplement.',
 	'revcs-alert-supplement-asterisk' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
 	'revcs-alert-supplement-empty' => 'This message is a error or warning message used at save or preview in Special:RevisionCommentSupplement.',
