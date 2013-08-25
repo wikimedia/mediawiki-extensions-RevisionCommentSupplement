@@ -2003,7 +2003,16 @@ $messages['ps'] = array(
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
+	'revcs-edit-reason' => 'Motivo:',
+	'revcs-error' => 'Erro: $1',
+	'revcs-hidehistory-submit' => 'Aplicar',
+	'revcs-history-rcsh-reason' => 'Motivo',
+	'revcs-list-extended-supplement-empty' => 'vazio',
 	'revcs-list-rcs-rev-id-edit' => 'Editar',
+	'revcs-list-rcs-user-text' => 'Usuário',
+	'revcs-list-reset' => 'Reiniciar',
+	'revcs-show-reason' => 'Motivo: $1',
+	'revcs-show-revision' => 'Revisão: $1',
 );
 
 /** Romanian (română)
