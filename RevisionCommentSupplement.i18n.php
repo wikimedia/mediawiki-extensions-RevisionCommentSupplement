@@ -327,7 +327,14 @@ Parameters:
 * $1 - a revision id of a supprementary comment.
 When error happens, {{msg-mw|revcs-history-heading-error}} is used instead of this message.
 {{Identical|History of supplementary comment}}',
-	'revcs-history-heading-error' => 'This message is the heading of Special:RevisionCommentSupplementList/history. $1 is a revision id of a supprementary comment. When error happens, this is used instead of {{msg-mw|revcs-history-heading}}.',
+	'revcs-history-heading-error' => 'This message is the heading of [[Special:RevisionCommentSupplementList/history]].
+
+When error happens, this is used instead of {{msg-mw|Revcs-history-heading}}.
+
+Followed by any one of the following messages:
+* {{msg-mw|Revcs-error-history-unuse}}
+* {{msg-mw|Revcs-error-history-revision-id}}
+* {{msg-mw|Revcs-error-history-nosupplement}}',
 	'revcs-history-hidden-reason' => 'This message is used in Special:RevisionCommentSupplementList/history. This is like {{msg-mw|Rev-deleted-comment}}.',
 	'revcs-history-hidden-supplement' => 'This message is used in Special:RevisionCommentSupplementList/history. This is like {{msg-mw|Rev-deleted-event}}.',
 	'revcs-history-hidden-user' => 'This message is used in Special:RevisionCommentSupplementList/history. This is like {{msg-mw|Rev-deleted-user}}.',
