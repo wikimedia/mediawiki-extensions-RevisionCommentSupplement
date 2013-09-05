@@ -438,9 +438,12 @@ If a supplementary comment isn't empty, this is used at logentry-revisioncomment
 	'revcs-show-supplement-raw' => 'This message is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
 *$1 - a raw supplementary comment',
 	'revcs-show-timestamp' => 'This message is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
+
 $1 and $2 are date and time when the supplementary comment was last modified.
-*$1 is a date in format setting in [[Special:Preferences]] of each user.
-*$2 is a date in database.',
+
+Parameters:
+* $1 - a date in format setting in [[Special:Preferences]] of each user
+* $2 - a date in database',
 	'revcs-show-user' => "This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 *$1 is link of user page (or user contributions page, [[Special:Contributions]] when the user doesn't log in).
 *$2 is user tool link(s).
