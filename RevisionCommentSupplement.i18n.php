@@ -299,14 +299,34 @@ Parameters:
 	'revcs-edit-supplement' => 'This message is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.
 {{Identical|Supplementary comment}}',
 	'revcs-edit-written' => 'This message is shown when writing a supplementary comment and a log entry are finished at save in Special:RevisionCommentSupplement/edit.',
-	'revcs-error' => '* $1 is error messages, revcs-alert-* or revcs-error-*.
+	'revcs-error' => 'Used as error message. Parameters:
+* $1 - error or alert message. one of the following messages:
+** {{msg-mw|Revcs-error-edit-denied}}
+** {{msg-mw|Revcs-error-history-nosupplement}}
+** {{msg-mw|Revcs-error-history-revision-id}}
+** {{msg-mw|Revcs-error-history-unuse}}
+** {{msg-mw|Revcs-alert-exist-supplement}}
+** {{msg-mw|Revcs-alert-norevision}}
+** {{msg-mw|Revcs-alert-supplement-asterisk}}
+** {{msg-mw|Revcs-alert-supplement-empty}}
+** {{msg-mw|Revcs-alert-supplement-zero}}
+** {{msg-mw|Revcs-alert-supplement-same-as-summary}}
+** {{msg-mw|Revcs-alert-supplement-same-as-supplement}}
 {{Identical|Error}}',
-	'revcs-error-edit-denied' => 'This message is a error message used at save in Special:RevisionCommentSupplement/edit.',
+	'revcs-error-edit-denied' => 'This message is a error message used when saving in [[Special:RevisionCommentSupplement/edit]].
+
+Used as <code>$1</code> in {{msg-mw|Revcs-error}}.',
 	'revcs-error-hidehistory-hidden-restricted-only' => 'This message is a error message used in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-error-hidehistory-hidden-same' => 'This message is a error message used in Special:RevisionCommentSupplement/hidehistory.',
-	'revcs-error-history-nosupplement' => 'This message is a error message used in Special:RevisionCommentSupplementList/history.',
-	'revcs-error-history-revision-id' => 'This message is a error message used in Special:RevisionCommentSupplementList/history.',
-	'revcs-error-history-unuse' => 'This message is a error message used in Special:RevisionCommentSupplementList/history.',
+	'revcs-error-history-nosupplement' => 'This message is a error message used in [[Special:RevisionCommentSupplementList/history]].
+
+Used as <code>$1</code> in {{msg-mw|Revcs-error}}.',
+	'revcs-error-history-revision-id' => 'This message is a error message used in [[Special:RevisionCommentSupplementList/history]].
+
+Used as <code>$1</code> in {{msg-mw|Revcs-error}}.',
+	'revcs-error-history-unuse' => 'This message is a error message used in [[Special:RevisionCommentSupplementList/history]].
+
+Used as <code>$1</code> in {{msg-mw|Revcs-error}}.',
 	'revcs-error-unexpected' => 'This message is a error message used in Special:RevisionCommentSupplement.',
 	'revcs-hidehistory-desc' => 'This message is a description at the top in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-hidehistory-failure' => 'This message is shown when hiding whole or part of a history entry and writing log entry  are failure in Special:RevisionCommentSupplement/hidehistory.',
@@ -449,7 +469,16 @@ Parameters:
 *$2 is user tool link(s).
 *$3 is user id.
 If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[User_talk:Example|Talk]] | [[Special:Contributions/Example|Contributions]]).",
-	'revcs-warning' => 'This message is used in Special:RevisionCommentSupplement. $1 is a warning message, revcs-alert-*.
+	'revcs-warning' => 'This message is used in [[Special:RevisionCommentSupplement]]. Parameters:
+* $1 - warning. one of the following messages:
+** {{msg-mw|Revcs-alert-exist-supplement}}
+** {{msg-mw|Revcs-alert-norevision}}
+** {{msg-mw|Revcs-alert-special-parameter}}
+** {{msg-mw|Revcs-alert-supplement-asterisk}}
+** {{msg-mw|Revcs-alert-supplement-empty}}
+** {{msg-mw|Revcs-alert-supplement-zero}}
+** {{msg-mw|Revcs-alert-supplement-same-as-summary}}
+** {{msg-mw|Revcs-alert-supplement-same-as-supplement}}
 {{Identical|Warning}}',
 	'right-supplementcomment' => '{{doc-right|supplementcomment}}',
 	'right-supplementcomment-restricted' => '{{doc-right|supplementcomment-restricted}}',
