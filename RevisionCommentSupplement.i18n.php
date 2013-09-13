@@ -142,7 +142,8 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'action-supplementcomment' => '{{doc-action|supplementcomment}}',
-	'action-supplementcomment-restricted' => '{{doc-action|supplementcomment-restricted}}',
+	'action-supplementcomment-restricted' => '{{doc-action|supplementcomment-restricted}}
+Used in {{msg-mw|Revcs-edit-desc}}.',
 	'group-supplementcomment' => '{{doc-group|supplementcomment}}
 {{Identical|Supplement comment}}',
 	'group-supplementcomment-member' => '{{doc-group|supplementcomment}}
@@ -279,7 +280,9 @@ Parameters:
 	'revcs-delete-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/delete.
 {{Identical|Delete the supplementary comment}}',
 	'revcs-delete-success' => 'This message is shown when deleting a supplementary comment and writing log entry(s) are finished in Special:RevisionCommentSupplement/delete.',
-	'revcs-edit-desc' => 'This message is a description at the top in Special:RevisionCommentSupplement/edit.',
+	'revcs-edit-desc' => 'This message is a description at the top in [[Special:RevisionCommentSupplement/edit]].
+
+Refers to {{msg-mw|Action-supplementcomment-restricted}}.',
 	'revcs-edit-heading' => 'This message is the heading of Special:RevisionCommentSupplement/edit.
 {{Identical|Edit supplementary comment}}',
 	'revcs-edit-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/edit.
@@ -340,7 +343,11 @@ Used as <code>$1</code> in {{msg-mw|Revcs-error}}.',
 {{Identical|Apply}}',
 	'revcs-hidehistory-success' => 'This message is shown when hiding whole or part of a history entry and writing log entry are finished in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-hidehistory-supplement' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
-	'revcs-hidehistory-suppress' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory. This is like {{msg-mw|revdelete-suppress}}.',
+	'revcs-hidehistory-suppress' => 'This message is a content of a label element of a input checkbox in [[Special:RevisionCommentSupplement/hidehistory]].
+
+This is like {{msg-mw|Revdelete-suppress}}.
+
+Refers to {{msg-mw|Action-suppressrevision}}.',
 	'revcs-hidehistory-user' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-history-desc' => 'This message is a description at the top in Special:RevisionCommentSupplement/edit.',
 	'revcs-history-heading' => 'This message is the heading of Special:RevisionCommentSupplementList/history. Parameters:
