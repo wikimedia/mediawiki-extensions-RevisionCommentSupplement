@@ -152,99 +152,110 @@ Used in {{msg-mw|Revcs-edit-desc}}.',
 {{Identical|Supplement comment}}',
 	'log-name-revisioncommentsupplement' => 'All public logs of Extension:RevisonCommentSupplement in [[Special:Log]].',
 	'log-description-revisioncommentsupplement' => 'The description of all public logs of Extension:RevisonCommentSupplement in [[Special:Log]].',
-	'logentry-revisioncommentsupplement-create' => 'A line of log entry in [[Special:Log]].
-*$1 are links of user page and user tool page(s).
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.
-*$5 is {{msg-mw|revcs-log-nosupplement}}.
-*$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
-*$7 is the history entry id of a history entry.
+	'logentry-revisioncommentsupplement-create' => '{{gender}}
+A line of log entry in [[Special:Log]]. Parameters:
+*$1 - list of links pointing to user page and user tool page(s)
+*$2 - the username, for GENDER support
+*$3 - (Unused) a link pointing to Special:RevisionCommentSupplement/$4 (edit page)
+*$4 - the revision ID
+*$5 - (Unused) {{msg-mw|Revcs-log-nosupplement}}
+*$6 - the raw new supplementary comment, either {{msg-mw|Revcs-log-supplement}} or {{msg-mw|Revcs-log-nosupplement}}
+*$7 - (Unused) the history entry ID of a history entry
 {{Related|Logentry-revcs}}',
-	'logentry-revisioncommentsupplement-create2' => 'A line of log entry in [[Special:Log]].
-*$1 are links of user page and user tool page(s).
-*$2 is username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should remove <nowiki>{{GENDER:$2|male}}</nowiki>.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.
-*$7 is the history entry id of a history entry.
+	'logentry-revisioncommentsupplement-create2' => 'A line of log entry in [[Special:Log]]. Parameters:
+*$1 - list of links pointing to user page and user tool page(s)
+*$2 - username, for GENDER support
+*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4. (edit page)
+*$4 - the revision ID
+*$5 - (Unused)
+*$6 - (Unused)
+*$7 - (Unused) the history entry ID of a history entry
 {{Related|Logentry-revcs}}',
-	'logentry-revisioncommentsupplement-delete' => "A line of log entry in [[Special:Log]].
-*$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.
-*$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
-*$6 is {{msg-mw|revcs-log-nosupplement}}.
-*$7 is the history entry id of a history entry.
-{{Related|Logentry-revcs}}",
-	'logentry-revisioncommentsupplement-delete2' => "A line of log entry in [[Special:Log]].
-*$1 are links of the user page (or the user contributions page, Special:Contributions when the user doesn't log in), and the user tool page(s).
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.
-*$7 is the history entry id of a history entry.
-{{Related|Logentry-revcs}}",
+	'logentry-revisioncommentsupplement-delete' => 'A line of log entry in [[Special:Log]]. Parameters:
+*$1 - list of links pointing to the user page (or the user contributions page, [[Special:Contributions]] for IP user), and the user tool page(s)
+*$2 - the username, for GENDER support
+*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4. (edit page)
+*$4 - the revision ID
+*$5 - the raw old supplementary comment, either {{msg-mw|Revcs-log-supplement}} or {{msg-mw|Revcs-log-nosupplement}}
+*$6 - (Unused) {{msg-mw|Revcs-log-nosupplement}}
+*$7 - (Unused) the history entry ID of a history entry
+{{Related|Logentry-revcs}}',
+	'logentry-revisioncommentsupplement-delete2' => 'A line of log entry in [[Special:Log]]. Parameters:
+*$1 - list of links pointing to the user page (or the user contributions page, [[Special:Contributions]] for IP user), and the user tool page(s)
+*$2 - the username, for GENDER support
+*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4. (edit page)
+*$4 - the revision ID
+*$5 - (Unused)
+*$6 - (Unused)
+*$7 - (Unused) the history entry ID of a history entry
+{{Related|Logentry-revcs}}',
 	'logentry-revisioncommentsupplement-hidehistory' => 'A line of log entry in [[Special:Log]].
+
 This is like {{msg-mw|logentry-delete-event}} and {{msg-mw|logentry-delete-revision}}.
+
+Parameters:
 *$1 - links of the user page and the user tool(s) page
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
+*$2 - the username, for GENDER support
 *$3 - a link of Special:RevisionCommentSupplement/$4 (edit page)
-*$4 - the revision id of the supplementary comment of a history entry
+*$4 - the revision ID of the supplementary comment of a history entry
 *$5 - the old hidden flag of a history entry
 *$6 - the new hidden flag of a history entry
-*$7 - the history entry id of a history entry
-*$8 is the number of the history entry id. This must be 1. This is reserved.
-*$9 is description of change hidden flag.
-**$9 uses the following messages:
-***{{msg-mw|revcs-log-hidehistory-supplement-hidden}}
-***{{msg-mw|revcs-log-hidehistory-supplement-unhidden}}
-***{{msg-mw|revdelete-uname-hid}}
-***{{msg-mw|revdelete-uname-unhid}}
-***{{msg-mw|revcs-log-hidehistory-reason-hidden}}
-***{{msg-mw|revcs-log-hidehistory-reason-unhidden}}
-***{{msg-mw|revcs-log-hidehistory-restricted}}
-***{{msg-mw|revcs-log-hidehistory-unrestricted}}
-***{{msg-mw|revcs-log-hidehistory-row-hidden}}
-***{{msg-mw|revcs-log-hidehistory-row-unhidden}}
+*$7 - the history entry ID of a history entry
+*$8 - the number of the history entry ID. This must be 1. This is reserved.
+*$9 - description of change hidden flag. Uses the following messages:
+**{{msg-mw|Revcs-log-hidehistory-supplement-hidden}}
+**{{msg-mw|Revcs-log-hidehistory-supplement-unhidden}}
+**{{msg-mw|Revdelete-uname-hid}}
+**{{msg-mw|Revdelete-uname-unhid}}
+**{{msg-mw|Revcs-log-hidehistory-reason-hidden}}
+**{{msg-mw|Revcs-log-hidehistory-reason-unhidden}}
+**{{msg-mw|Revcs-log-hidehistory-restricted}}
+**{{msg-mw|Revcs-log-hidehistory-unrestricted}}
+**{{msg-mw|Revcs-log-hidehistory-row-hidden}}
+**{{msg-mw|Revcs-log-hidehistory-row-unhidden}}
 {{Related|Logentry-revcs}}',
-	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in [[Special:Log]].
-*$1 are links of the user page and the user tool(s) page.
-*$2 is the username. <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.
-*$5 is the raw old supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
-*$6 is the raw new supplementary comment, {{msg-mw|revcs-log-supplement}} or {{msg-mw|revcs-log-nosupplement}}.
-*$7 is the history entry id of a history entry.
+	'logentry-revisioncommentsupplement-modify' => 'A line of log entry in [[Special:Log]]. Parameters:
+*$1 - list of links pointing to the user page and the user tool page(s)
+*$2 - the username, for GENDER support
+*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4. (edit page)
+*$4 - the revision ID
+*$5 - the raw old supplementary comment, either {{msg-mw|Revcs-log-supplement}} or {{msg-mw|Revcs-log-nosupplement}}
+*$6 - the raw new supplementary comment, either {{msg-mw|Revcs-log-supplement}} or {{msg-mw|Revcs-log-nosupplement}}
+*$7 - (Unused) the history entry ID of a history entry
 {{Related|Logentry-revcs}}',
-	'logentry-revisioncommentsupplement-modify2' => 'A line of log entry in [[Special:Log]].
-*$1 are links of the user page and the user tool(s) page.
-*$2 is the username. <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>.
-*$3 is a link of Special:RevisionCommentSupplement/$4. (edit page)
-*$4 is the revision id.
-*$7 is the history entry id of a history entry.
+	'logentry-revisioncommentsupplement-modify2' => 'A line of log entry in [[Special:Log]]. Parameters:
+*$1 - list of links pointing to the user page and the user tool page(s)
+*$2 - the username, for GENDER support
+*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4. (edit page)
+*$4 - the revision ID
+*$5 - (Unused)
+*$6 - (Unused)
+*$7 - (Unused) the history entry ID of a history entry
 {{Related|Logentry-revcs}}',
 	'logentry-suppress-revcommentsupplementhidehistory' => 'A line of private log entry in [[Special:Log]].
-This is like {{msg-mw|logentry-suppress-event}} and {{msg-mw|logentry-suppress-revision}}.
+
+This is like {{msg-mw|Logentry-suppress-event}} and {{msg-mw|Logentry-suppress-revision}}.
+
+Parameters:
 *$1 - links of the user page and the user tool(s) page
-*$2 is the username. You can use <nowiki>{{GENDER:$2|male|female|unknown}}</nowiki>. If you want parser to parse fast, you should replace <nowiki>{{GENDER:$2|male}}</nowiki> by male.
-*$3 - a link of Special:RevisionCommentSupplement/$4 (edit page)
-*$4 - the revision id of the supplementary comment of a history entry
-*$5 - the old hidden flag of a history entry
-*$6 - the new hidden flag of a history entry
-*$7 - the history entry id of a history entry
-*$8 is the number of the history entry id. This must be 1. This is reserved.
-*$9 is description of change hidden flag. 
-**$9 uses the following messages:
-***{{msg-mw|revcs-log-hidehistory-supplement-hidden}}
-***{{msg-mw|revcs-log-hidehistory-supplement-unhidden}}
-***{{msg-mw|revdelete-uname-hid}}
-***{{msg-mw|revdelete-uname-unhid}}
-***{{msg-mw|revcs-log-hidehistory-reason-hidden}}
-***{{msg-mw|revcs-log-hidehistory-reason-unhidden}}
-***{{msg-mw|revcs-log-hidehistory-restricted}}
-***{{msg-mw|revcs-log-hidehistory-unrestricted}}
-***{{msg-mw|revcs-log-hidehistory-row-hidden}}
-***{{msg-mw|revcs-log-hidehistory-row-unhidden}}
+*$2 - the username, for GENDER support
+*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4 (edit page)
+*$4 - the revision ID of the supplementary comment of a history entry
+*$5 - (Unused) the old hidden flag of a history entry
+*$6 - (Unused) the new hidden flag of a history entry
+*$7 - the history entry ID of a history entry
+*$8 - (Unused) the number of the history entry ID. This must be 1. This is reserved.
+*$9 - description of change hidden flag. Uses the following messages:
+**{{msg-mw|revcs-log-hidehistory-supplement-hidden}}
+**{{msg-mw|revcs-log-hidehistory-supplement-unhidden}}
+**{{msg-mw|revdelete-uname-hid}}
+**{{msg-mw|revdelete-uname-unhid}}
+**{{msg-mw|revcs-log-hidehistory-reason-hidden}}
+**{{msg-mw|revcs-log-hidehistory-reason-unhidden}}
+**{{msg-mw|revcs-log-hidehistory-restricted}}
+**{{msg-mw|revcs-log-hidehistory-unrestricted}}
+**{{msg-mw|revcs-log-hidehistory-row-hidden}}
+**{{msg-mw|revcs-log-hidehistory-row-unhidden}}
 {{Related|Logentry-revcs}}',
 	'revisioncommentsupplement' => '{{doc-special|RevisionCommentSupplement}}
 The meaning of "Revision comment supplement" is "Supplement the comment on each revision", "the comment on each revision is supplemented" or "a supplement to the comment on each revision".',
@@ -437,40 +448,55 @@ This is used at $9 of the following messages:
 This is used at $9 of the following messages:
 *{{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
 *{{msg-mw|Logentry-suppress-revcommentsupplementhidehistory}}',
-	'revcs-log-nosupplement' => 'If a supplementary comment is empty, this is used at logentry-revisioncommentsupplement-* in [[Special:Log]].',
-	'revcs-log-supplement' => "{{Optional}}
-If a supplementary comment isn't empty, this is used at logentry-revisioncommentsupplement-* in [[Special:Log]].
-*$1 - a raw supplementary comment",
-	'revcs-show-deletelinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
+	'revcs-log-nosupplement' => 'Used in [[Special:Log]], as <code>$5</code> or <code>$6</code> in the following messages (if a supplementary comment is empty):
+* {{msg-mw|Logentry-revisioncommentsupplement-create}}
+* {{msg-mw|Logentry-revisioncommentsupplement-delete}}
+* {{msg-mw|Logentry-revisioncommentsupplement-modify}}',
+	'revcs-log-supplement' => '{{Optional}}
+Used in [[Special:Log]], as <code>$5</code> or <code>$6</code> in the following message (if a supplementary comment is not empty):
+* {{msg-mw|Logentry-revisioncommentsupplement-create}}
+* {{msg-mw|Logentry-revisioncommentsupplement-delete}}
+* {{msg-mw|Logentry-revisioncommentsupplement-modify}}
+Parameters:
+*$1 - a raw supplementary comment',
+	'revcs-show-deletelinktext' => 'Used as a link text of <code>$2</code> in {{msg-mw|Revcs-show-revision-id}}.
+
+Used to show a supplementary comment of a revision in [[Special:RevisionCommentSupplement]].
 {{Identical|Delete the supplementary comment}}',
-	'revcs-show-editlinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
-{{Idential|Edit supplementary comment}}',
-	'revcs-show-history-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
-*$1 is history entry id.
-*$2 is a link of Special:RevisionCommentSupplementList/history/<nowiki>{</nowiki>$1 of {{msg-mw|Revcs-show-revision-id}}<nowiki>}</nowiki>. The link text is {{msg-mw|Revcs-show-historylinktext}}.',
-	'revcs-show-historylinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-history-id}}, and is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.',
-	'revcs-show-loglinktext' => 'This message is a link text of $2 of {{msg-mw|revcs-show-revision-id}}, and is used at show the supplementary comment of a revision in Special:RevisionCommentSupplement.',
+	'revcs-show-editlinktext' => 'Used as a link text of <code>$2</code> in {{msg-mw|Revcs-show-revision-id}}.
+
+Used to show a supplementary comment of a revision in [[Special:RevisionCommentSupplement]].
+{{Identical|Edit supplementary comment}}',
+	'revcs-show-history-id' => 'This message is used at show the supplementary comment of the revision in [[Special:RevisionCommentSupplement]].
+*$1 - history entry ID
+*$2 - a link pointing to Special:RevisionCommentSupplementList/history/<nowiki>{</nowiki><code>$1</code> of {{msg-mw|Revcs-show-revision-id}}<nowiki>}</nowiki>. The link text is {{msg-mw|Revcs-show-historylinktext}}.',
+	'revcs-show-historylinktext' => 'Used as a link text of <code>$2</code> in {{msg-mw|Revcs-show-history-id}}.
+
+Used to show a supplementary comment of a revision in [[Special:RevisionCommentSupplement]].',
+	'revcs-show-loglinktext' => 'Used as a link text of <code>$2</code> in {{msg-mw|Revcs-show-revision-id}}.
+
+Used to show the supplementary comment of a revision in [[Special:RevisionCommentSupplement]].',
 	'revcs-show-no-db-row' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement. $1 is revision id.',
 	'revcs-show-reason' => 'This message is used in Special:RevisionCommentSupplement/hidehistory. $1 is reason.
 {{Identical|Reason}}',
 	'revcs-show-revision' => 'This message is used at show the supplementary comment of the revision and preview a supplementary comment and a reason in Special:RevisionCommentSupplement. $1 is a revision line like one in History pages.',
-	'revcs-show-revision-id' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
-*$1 - revision id
-*$2 - every one of the following links:
-**Special:Log?page=Special:RevisionCommentSupplement/$1. The link text is {{msg-mw|revcs-show-loglinktext}}.
-**Special:RevisionCommentSupplement/edit/$1. The link text is {{msg-mw|revcs-show-editlinktext}}.
-**Special:RevisionCommentSupplement/delete/$1. The link text is {{msg-mw|revcs-show-deletelinktext}}.',
+	'revcs-show-revision-id' => 'This message is used to show the supplementary comment of the revision in [[Special:RevisionCommentSupplement]].
+*$1 - revision ID
+*$2 - one of the following links:
+**Special:Log?page=Special:RevisionCommentSupplement/$1. The link text is {{msg-mw|Revcs-show-loglinktext}}.
+**Special:RevisionCommentSupplement/edit/$1. The link text is {{msg-mw|Revcs-show-editlinktext}}.
+**Special:RevisionCommentSupplement/delete/$1. The link text is {{msg-mw|Revcs-show-deletelinktext}}.',
 	'revcs-show-supplement-parsed' => 'This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 *$1 - a parsed supplementary comment',
 	'revcs-show-supplement-raw' => 'This message is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
 *$1 - a raw supplementary comment',
-	'revcs-show-timestamp' => 'This message is used at show a supplementary comment of a revision in Special:RevisionCommentSupplement.
+	'revcs-show-timestamp' => 'This message is used at show a supplementary comment of a revision in [[Special:RevisionCommentSupplement]].
 
-$1 and $2 are date and time when the supplementary comment was last modified.
+$1 and $2 are timestamp when the supplementary comment was last modified.
 
 Parameters:
-* $1 - a date in format setting in [[Special:Preferences]] of each user
-* $2 - a date in database',
+* $1 - a timestamp (time and date) in format setting in [[Special:Preferences]] of each user
+* $2 - a timestamp (time and date) in database',
 	'revcs-show-user' => "This message is used at show the supplementary comment of the revision in Special:RevisionCommentSupplement.
 *$1 is link of user page (or user contributions page, [[Special:Contributions]] when the user doesn't log in).
 *$2 is user tool link(s).
