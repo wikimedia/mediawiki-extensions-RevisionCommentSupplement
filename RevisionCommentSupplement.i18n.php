@@ -2190,6 +2190,21 @@ $messages['si'] = array(
 	'revcs-warning' => 'අවවාදය: $1',
 );
 
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
+ */
+$messages['sr-ec'] = array(
+	'revcs-edit-reason' => 'Разлог:',
+	'revcs-hidehistory-submit' => 'Примени',
+	'revcs-history-hidden-user' => '(корисничко име је сакривено)',
+	'revcs-list-extended-supplement-all' => 'све',
+	'revcs-list-rcs-rev-id-edit' => 'Уреди',
+	'revcs-list-rcs-user-text' => 'Корисник',
+	'revcs-list-sort' => 'Поређај по:',
+	'revcs-list-submit' => 'Прикажи',
+	'revcs-log-nosupplement' => '(ништа)',
+);
+
 /** Swedish (svenska)
  * @author Jopparn
  */
