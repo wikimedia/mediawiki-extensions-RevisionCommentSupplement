@@ -2181,11 +2181,25 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (русский)
+ * @author Okras
  * @author ShinePhantom
  */
 $messages['ru'] = array(
 	'revcs-alert-special-parameter' => 'Есть ошибка в параметре.',
+	'revcs-edit-reason' => 'Причина:',
+	'revcs-error' => 'Ошибка: $1',
+	'revcs-hidehistory-submit' => 'Применить',
+	'revcs-history-hidden-reason' => '(причина скрыта)',
+	'revcs-history-rcsh-reason' => 'Причина',
+	'revcs-list-extended-supplement-all' => 'все',
 	'revcs-list-rcs-rev-id-edit' => 'Править',
+	'revcs-list-rcs-user-text' => 'Участник',
+	'revcs-list-reset' => 'Сбросить',
+	'revcs-list-sort' => 'Сортировать по:',
+	'revcs-list-submit' => 'Показать',
+	'revcs-log-hidehistory-reason-hidden' => 'причина скрыта',
+	'revcs-show-reason' => 'Причина: $1',
+	'revcs-warning' => 'Предупреждение: $1',
 );
 
 /** Sinhala (සිංහල)
