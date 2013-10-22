@@ -558,6 +558,7 @@ $messages['br'] = array(
  */
 $messages['ce'] = array(
 	'revcs-list-rcs-rev-id-edit' => 'Нисйé',
+	'revcs-list-reset' => 'Кхоссар',
 );
 
 /** Czech (česky)
