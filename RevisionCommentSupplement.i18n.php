@@ -2266,6 +2266,7 @@ $messages['sr-ec'] = array(
  */
 $messages['sv'] = array(
 	'revcs-alert-special-parameter' => 'Det är misstag gällande parametern.',
+	'revcs-error' => 'Fel: $1',
 	'revcs-hidehistory-submit' => 'Verkställ',
 	'revcs-history-rcsh-reason' => 'Orsak',
 	'revcs-list-descending' => 'lista i fallande ordning',
