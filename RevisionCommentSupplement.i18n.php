@@ -405,7 +405,8 @@ Followed by any one of the following messages:
 	'revcs-list-limit' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-rev-id' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.
 {{Identical|Revision ID}}',
-	'revcs-list-rcs-rev-id-edit' => 'This message is a link text to Special:RevisionCommentSupplement at revision id into table in Special:RevisionCommentSupplementList.',
+	'revcs-list-rcs-rev-id-edit' => 'This message is a link text to [[Special:RevisionCommentSupplement]] at revision id into table in Special:RevisionCommentSupplementList.
+{{Identical|Edit}}',
 	'revcs-list-rcs-rev-id-log' => 'This message is a link text to [[Special:Log]] at revision id into table in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-supplement' => 'This message is a heading of a table in Special:RevisionCommentSupplementList.
 {{Identical|Supplementary comment}}',
