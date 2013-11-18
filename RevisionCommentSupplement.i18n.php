@@ -1782,13 +1782,14 @@ $messages['nds'] = array(
 
 /** Dutch (Nederlands)
  * @author Konovalov
+ * @author McDutchie
  * @author SPQRobin
  * @author Siebrand
  * @author Wiki13
  */
 $messages['nl'] = array(
-	'action-supplementcomment' => 'met aanvullende reacties te werken',
-	'action-supplementcomment-restricted' => 'met aanvullende reacties met beperkte handelingen te werken',
+	'action-supplementcomment' => 'met extra opmerkingen te werken',
+	'action-supplementcomment-restricted' => 'beperkt met extra opmerkingen te werken',
 	'group-supplementcomment' => 'Aanvullende reacties',
 	'group-supplementcomment-member' => '{{GENDER:$1|Aanvullende reacties}}',
 	'grouppage-supplementcomment' => '{{ns:project}}:Aanvullende reacties',
@@ -1908,8 +1909,8 @@ $messages['nl'] = array(
 	'revcs-show-timestamp' => 'Datum en tijd bewerkt: $1 ($2)',
 	'revcs-show-user' => 'Gebruiker: $1 $2 (gebruikersnummer: $3)',
 	'revcs-warning' => 'Waarschuwing: $1',
-	'right-supplementcomment' => 'Extra opmerkingen beheren',
-	'right-supplementcomment-restricted' => 'Extra opmerkingen gebruiken met beperkingen',
+	'right-supplementcomment' => 'Met extra opmerkingen werken',
+	'right-supplementcomment-restricted' => 'Beperkt met extra opmerkingen werken',
 );
 
 /** Polish (polski)
