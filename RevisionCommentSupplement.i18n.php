@@ -1744,6 +1744,7 @@ $messages['mk'] = array(
 	'revcs-log-hidehistory-supplement-unhidden' => 'откриен додатниот коментар',
 	'revcs-log-hidehistory-unrestricted' => 'отстранети ограничувањата',
 	'revcs-log-nosupplement' => '(нема)',
+	'revcs-log-supplement' => '„$1“',
 	'revcs-show-deletelinktext' => 'Бришење на додатен коментар',
 	'revcs-show-editlinktext' => 'Уреди го додатниот коментар',
 	'revcs-show-history-id' => 'Историска назнака: $1 ($2)',
