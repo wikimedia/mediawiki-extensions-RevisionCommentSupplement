@@ -722,6 +722,13 @@ $messages['de'] = array(
 	'right-supplementcomment-restricted' => 'Eingeschränkt mit ergänzenden Kommentaren arbeiten',
 );
 
+/** Zazaki (Zazaki)
+ * @author Marmase
+ */
+$messages['diq'] = array(
+	'revcs-list-extended-supplement-all' => 'pérın',
+);
+
 /** Esperanto (Esperanto)
  * @author Yekrats
  */
