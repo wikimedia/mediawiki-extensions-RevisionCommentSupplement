@@ -562,7 +562,7 @@ $messages['ce'] = array(
 	'revcs-list-reset' => 'Кхоссар',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Vks
  */
 $messages['cs'] = array(
@@ -578,7 +578,7 @@ $messages['cs'] = array(
 	'revcs-log-nosupplement' => '(žádné)',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
@@ -1849,6 +1849,7 @@ $messages['nl'] = array(
 	'revcs-error' => 'Fout: $1',
 	'revcs-error-edit-denied' => 'De extra opmerking kon niet worden opgeslagen.',
 	'revcs-error-hidehistory-hidden-restricted-only' => 'De zichtbaarheid voor invoer is alleen beperkt (onderdrukken, toezicht)',
+	'revcs-error-hidehistory-hidden-same' => 'De zichtbaarheid van de invoer heeft dezelfde waarde als in de databasetabel.',
 	'revcs-error-history-revision-id' => 'Het versienummer is onjuist.',
 	'revcs-error-history-unuse' => 'Op deze wiki wordt de geschiedenis van extra opmerkingen niet opgeslagen.',
 	'revcs-error-unexpected' => 'Er is een onverwachte fout opgetreden.',
@@ -2204,8 +2205,15 @@ $messages['ru'] = array(
 	'revcs-hidehistory-submit' => 'Применить',
 	'revcs-history-hidden-reason' => '(причина скрыта)',
 	'revcs-history-rcsh-reason' => 'Причина',
+	'revcs-list-extended-comparison' => 'Операция сравнения:',
+	'revcs-list-extended-property' => 'Свойства сравнения:',
+	'revcs-list-extended-supplement' => 'Состояние дополнительных комментариев:',
 	'revcs-list-extended-supplement-all' => 'все',
+	'revcs-list-extended-supplement-empty' => 'пусто',
+	'revcs-list-extended-supplement-notempty' => 'не пусто',
+	'revcs-list-limit' => 'Количество на странице:',
 	'revcs-list-rcs-rev-id-edit' => 'Править',
+	'revcs-list-rcs-rev-id-log' => 'Журнал',
 	'revcs-list-rcs-user-text' => 'Участник',
 	'revcs-list-reset' => 'Сбросить',
 	'revcs-list-sort' => 'Сортировать по:',
