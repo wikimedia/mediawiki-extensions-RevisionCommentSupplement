@@ -139,6 +139,7 @@ $messages['en'] = array(
  * @author Krenair
  * @author Raymond
  * @author Shirayuki
+ * @author Siebrand
  */
 $messages['qqq'] = array(
 	'action-supplementcomment' => '{{doc-action|supplementcomment}}',
@@ -288,7 +289,7 @@ Parameters:
 {{Identical|Delete the supplementary comment}}',
 	'revcs-delete-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/delete.
 {{Identical|Delete the supplementary comment}}',
-	'revcs-delete-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/delete.
+	'revcs-delete-submit' => 'This message is a label of a input submit button in [[Special:RevisionCommentSupplement/delete]].
 {{Identical|Delete the supplementary comment}}',
 	'revcs-delete-success' => 'This message is shown when deleting a supplementary comment and writing log entry(s) are finished in Special:RevisionCommentSupplement/delete.',
 	'revcs-edit-desc' => 'This message is a description at the top in [[Special:RevisionCommentSupplement/edit]].
@@ -298,7 +299,7 @@ Refers to {{msg-mw|Action-supplementcomment-restricted}}.',
 {{Identical|Edit supplementary comment}}',
 	'revcs-edit-legend' => 'This message is a content of a legend element in Special:RevisionCommentSupplement/edit.
 {{Identical|Edit supplementary comment}}',
-	'revcs-edit-preview' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/edit.
+	'revcs-edit-preview' => 'This message is a label of a input submit button in [[Special:RevisionCommentSupplement/edit]].
 {{Identical|Show preview}}',
 	'revcs-edit-preview-reason' => 'Used in the preview. Parameters:
 * $1 - the reason',
@@ -308,8 +309,8 @@ Refers to {{msg-mw|Action-supplementcomment-restricted}}.',
 {{Identical|Reason}}',
 	'revcs-edit-revision-id' => 'This message is a content of a label element of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.
 {{Identical|Revision ID}}',
-	'revcs-edit-save' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/edit.',
-	'revcs-edit-show' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/edit.',
+	'revcs-edit-save' => 'This message is a label of a input submit button in [[Special:RevisionCommentSupplement/edit]].',
+	'revcs-edit-show' => 'This message is a label of a input submit button in [[Special:RevisionCommentSupplement/edit]].',
 	'revcs-edit-supplement' => 'This message is a label of a text input box of a supplementary comment in Special:RevisionCommentSupplement/edit.
 {{Identical|Supplementary comment}}',
 	'revcs-edit-written' => 'This message is shown when writing a supplementary comment and a log entry are finished at save in Special:RevisionCommentSupplement/edit.',
@@ -350,7 +351,7 @@ Used as <code>$1</code> in {{msg-mw|Revcs-error}}.',
 * $1 - revision ID',
 	'revcs-hidehistory-reason' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-hidehistory-row' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
-	'revcs-hidehistory-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplement/hidehistory.
+	'revcs-hidehistory-submit' => 'This message is a label of a input submit button in [[Special:RevisionCommentSupplement/hidehistory]].
 {{Identical|Apply}}',
 	'revcs-hidehistory-success' => 'This message is shown when hiding whole or part of a history entry and writing log entry are finished in Special:RevisionCommentSupplement/hidehistory.',
 	'revcs-hidehistory-supplement' => 'This message is a content of a label element of a input checkbox in Special:RevisionCommentSupplement/hidehistory.',
@@ -388,8 +389,8 @@ Followed by any one of the following messages:
 	'revcs-list-extended-comparison-and-under' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-comparison-equal' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-comparison-not-equal' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
-	'revcs-list-extended-comparison-over' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
-	'revcs-list-extended-comparison-under' => 'This message is a content of a option element into a select element in Special:RevisionCommentSupplementList/list.',
+	'revcs-list-extended-comparison-over' => 'Option text for element selection in Special:RevisionCommentSupplementList/list.',
+	'revcs-list-extended-comparison-under' => 'Option text for element selection in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-offset' => 'This message is a content of a label element of a text input box of a condition in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-property' => 'This message is a content of a label element of a select element in Special:RevisionCommentSupplementList/list.',
 	'revcs-list-extended-supplement' => 'This message is a content of a label element of a select element in Special:RevisionCommentSupplementList/list.',
@@ -413,10 +414,11 @@ Followed by any one of the following messages:
 	'revcs-list-rcs-timestamp' => 'This message is a heading of a table and a content of a option element into a select element in Special:RevisionCommentSupplementList.',
 	'revcs-list-rcs-user-text' => 'This message is a heading of a table and a content of a option element into a select element in [[Special:RevisionCommentSupplementList]].
 {{Identical|User}}',
-	'revcs-list-reset' => 'This message is a label of a input reset botton in Special:RevisionCommentSupplementList/list.',
+	'revcs-list-reset' => 'This message is a label of a input reset button in [[Special:RevisionCommentSupplementList/list]].
+{{Identical|Reset}}',
 	'revcs-list-sort' => 'This message is a label of a select element in Special:RevisionCommentSupplementList.
 {{Identical|Sort by}}',
-	'revcs-list-submit' => 'This message is a label of a input submit botton in Special:RevisionCommentSupplementList.',
+	'revcs-list-submit' => 'This message is a label of a input submit button in [[Special:RevisionCommentSupplementList]].',
 	'revcs-log-hidehistory-reason-hidden' => 'This message is a description.
 This is used at $9 of the following messages:
 *{{msg-mw|Logentry-revisioncommentsupplement-hidehistory}}
@@ -516,6 +518,14 @@ If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[
 {{Identical|Warning}}',
 	'right-supplementcomment' => '{{doc-right|supplementcomment}}',
 	'right-supplementcomment-restricted' => '{{doc-right|supplementcomment-restricted}}',
+);
+
+/** Arabic (العربية)
+ * @author لطرش احمد الهاشمي
+ */
+$messages['ar'] = array(
+	'revcs-edit-save' => 'حفظ التعليق التكميلي',
+	'revcs-edit-show' => 'إظهار التعليق التكميلي',
 );
 
 /** Bulgarian (български)
@@ -758,7 +768,7 @@ $messages['es'] = array(
 	'revcs-action-history-supplement' => '[Comentario adicional: $1]',
 	'revcs-alert-exist-supplement' => 'existe el comentario adicional de la revisión.',
 	'revcs-alert-norevision' => 'no existe la revisión en la tabla de revisión.', # Fuzzy
-	'revcs-alert-revision-id' => '"$1" es la revisión errónea ID.',
+	'revcs-alert-revision-id' => '«$1» es un identificador de revisión incorrecto.',
 	'revcs-alert-special-parameter' => 'Hay un error sobre el parámetro.',
 	'revcs-alert-supplement-asterisk' => 'el comentario adicional en la entrada es asterisco.',
 	'revcs-alert-supplement-empty' => 'el comentario complementario en la entrada está vacío.',
@@ -1850,6 +1860,7 @@ $messages['nl'] = array(
 	'revcs-error-edit-denied' => 'De extra opmerking kon niet worden opgeslagen.',
 	'revcs-error-hidehistory-hidden-restricted-only' => 'De zichtbaarheid voor invoer is alleen beperkt (onderdrukken, toezicht)',
 	'revcs-error-hidehistory-hidden-same' => 'De zichtbaarheid van de invoer heeft dezelfde waarde als in de databasetabel.',
+	'revcs-error-history-nosupplement' => 'De aanvullende opmerking bestaat niet in de databasetabel. Deze is nog niet aangemaakt of is al verwijderd.',
 	'revcs-error-history-revision-id' => 'Het versienummer is onjuist.',
 	'revcs-error-history-unuse' => 'Op deze wiki wordt de geschiedenis van extra opmerkingen niet opgeslagen.',
 	'revcs-error-unexpected' => 'Er is een onverwachte fout opgetreden.',
@@ -1861,8 +1872,11 @@ $messages['nl'] = array(
 	'revcs-hidehistory-reason' => 'Reden voor het verbergen van de geschiedenisregel',
 	'revcs-hidehistory-row' => 'Volledige geschiedenisregel verbergen',
 	'revcs-hidehistory-submit' => 'Toepassen',
+	'revcs-hidehistory-success' => 'De zichtbaarheid van de geschiedenisregel voor de aanvullende opmerking is ingesteld.',
 	'revcs-hidehistory-supplement' => 'Extra opmerking bij de geschiedenisregel verbergen',
+	'revcs-hidehistory-suppress' => 'Gegevens onderdrukken van iedereen behalve gebruikers die het recht {{int:action-suppressrevision}} (<i lang="en">suppressrevision</i>) hebben.',
 	'revcs-hidehistory-user' => 'Gebruikersnaam/IP-adres voor deze geschiedenisregel verbergen',
+	'revcs-history-desc' => 'Hier wordt de geschiedenis weergegeven van de aanvullende opmerking.',
 	'revcs-history-heading' => 'Geschiedenis van extra opmerking $1',
 	'revcs-history-heading-error' => 'Fout in de geschiedenis van extra opmerking',
 	'revcs-history-hidden-reason' => '(reden verborgen)',
@@ -1873,6 +1887,7 @@ $messages['nl'] = array(
 	'revcs-history-rcsh-reason' => 'Reden',
 	'revcs-list-desc' => 'Op dit moment zijn de onderstaande extra opmerkingen gemaakt.',
 	'revcs-list-descending' => 'weergeven in aflopende volgorde',
+	'revcs-list-extended-comparison' => 'Eigenschap van vergelijking:',
 	'revcs-list-extended-comparison-and-over' => 'Eigenschappen zijn gelijk aan en meer dan de standaard',
 	'revcs-list-extended-comparison-and-under' => 'Eigenschappen zijn gelijk aan en onder de standaard',
 	'revcs-list-extended-comparison-equal' => 'Eigenschappen zijn gelijk aan de standaard',
