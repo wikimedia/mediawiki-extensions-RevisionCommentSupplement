@@ -1800,6 +1800,14 @@ $messages['nds'] = array(
 	'revcs-list-rcs-user-text' => 'Bruker',
 );
 
+/** Nepali (नेपाली)
+ * @author सरोज कुमार ढकाल
+ */
+$messages['ne'] = array(
+	'revcs-edit-save' => 'पुरक टिप्पणीहरू सङ्ग्रह गर्ने',
+	'revcs-edit-show' => 'पुरक टिप्पणीहरू देखाउने',
+);
+
 /** Dutch (Nederlands)
  * @author Konovalov
  * @author McDutchie
