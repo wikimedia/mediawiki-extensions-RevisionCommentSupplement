@@ -521,6 +521,7 @@ If user name is Example, $1 is like [[User:Example|Example]] and $2 are like ([[
 );
 
 /** Arabic (العربية)
+ * @author لطرش أحمد الهاشمي
  * @author لطرش احمد الهاشمي
  */
 $messages['ar'] = array(
