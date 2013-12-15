@@ -21,6 +21,12 @@ $specialPageAliases['de'] = array(
 	'RevisionCommentSupplementList' => array( 'Versionskommentarergänzungsliste' ),
 );
 
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'RevisionCommentSupplement' => array( 'RewizyonaVatışandéDekerdışan' ),
+	'RevisionCommentSupplementList' => array( 'ListeyaRewizyondaVatışandéDekerdışan' ),
+);
+
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'RevisionCommentSupplement' => array( 'SupplementoCommentoRevisione' ),
