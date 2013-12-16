@@ -15,6 +15,12 @@ $specialPageAliases['en'] = array(
 	'RevisionCommentSupplementList' => array( 'RevisionCommentSupplementList' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'RevisionCommentSupplement' => array( 'ملحق_تعليق_المراجعة' ),
+	'RevisionCommentSupplementList' => array( 'قائمة_ملحق_تعديل_المراجعة' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'RevisionCommentSupplement' => array( 'Versionskommentarergänzung' ),
