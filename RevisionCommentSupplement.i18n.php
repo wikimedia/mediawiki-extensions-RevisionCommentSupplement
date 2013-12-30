@@ -839,10 +839,16 @@ $messages['et'] = array(
 
 /** Persian (فارسی)
  * @author Mjbmr
+ * @author Reza1615
  * @author ZxxZxxZ
  */
 $messages['fa'] = array(
+	'revcs-edit-preview' => 'پیش‌نمایش',
+	'revcs-edit-reason' => 'دلیل:',
+	'revcs-hidehistory-submit' => 'اعمال',
+	'revcs-history-rcsh-reason' => 'دلیل',
 	'revcs-list-extended-supplement-all' => 'همه',
+	'revcs-list-limit' => 'تعداد در صفحه:',
 	'revcs-list-rcs-rev-id-edit' => 'ویرایش',
 	'revcs-list-rcs-rev-id-log' => 'سیاهه',
 	'revcs-list-rcs-user-text' => 'کاربر',
