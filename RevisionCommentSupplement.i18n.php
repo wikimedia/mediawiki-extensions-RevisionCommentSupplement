@@ -749,6 +749,7 @@ $messages['eo'] = array(
 
 /** Spanish (español)
  * @author Armando-Martin
+ * @author Ciencia Al Poder
  * @author Fitoschido
  * @author Ralgis
  */
@@ -760,8 +761,8 @@ $messages['es'] = array(
 	'grouppage-supplementcomment' => '{{ns:project}}:SupplementComment',
 	'log-name-revisioncommentsupplement' => 'Registro de comentarios adicionales',
 	'log-description-revisioncommentsupplement' => 'Registro de operaciones en {{#special:RevisionCommentSupplement}}.',
-	'logentry-revisioncommentsupplement-create' => '$1 ha creado un comentario adicional, $6 de la revisión $4', # Fuzzy
-	'logentry-revisioncommentsupplement-delete' => '$1 ha eliminado un comentario adicional, $5 de la revisión $4', # Fuzzy
+	'logentry-revisioncommentsupplement-create' => '$1 {{GENDER:$2|ha creado}} un comentario adicional, $6 de la revisión $4',
+	'logentry-revisioncommentsupplement-delete' => '$1 {{GENDER:$2|ha eliminado}} un comentario adicional, $5 de la revisión $4',
 	'logentry-revisioncommentsupplement-modify' => '$1 ha modificado un comentario adicional del $5 al $6  de la revisión $4', # Fuzzy
 	'revisioncommentsupplement' => 'Revisión de comentario adicional',
 	'revisioncommentsupplementlist' => 'Lista de Comentarios Adicionales',
