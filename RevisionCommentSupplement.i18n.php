@@ -2230,11 +2230,16 @@ $messages['roa-tara'] = array(
  * @author ShinePhantom
  */
 $messages['ru'] = array(
+	'log-description-revisioncommentsupplement' => 'Журнал операций в {{#special: RevisionCommentSupplement}}.',
 	'revcs-alert-special-parameter' => 'Есть ошибка в параметре.',
+	'revcs-edit-preview' => 'Показать предварительный просмотр',
 	'revcs-edit-reason' => 'Причина:',
+	'revcs-edit-revision-id' => 'Идентификатор правкиː',
 	'revcs-error' => 'Ошибка: $1',
+	'revcs-error-history-revision-id' => 'Неверный идентификатор правки.',
 	'revcs-hidehistory-submit' => 'Применить',
 	'revcs-history-hidden-reason' => '(причина скрыта)',
+	'revcs-history-hidden-user' => '(имя участника скрыто)',
 	'revcs-history-rcsh-reason' => 'Причина',
 	'revcs-list-extended-comparison' => 'Операция сравнения:',
 	'revcs-list-extended-property' => 'Свойства сравнения:',
@@ -2243,6 +2248,7 @@ $messages['ru'] = array(
 	'revcs-list-extended-supplement-empty' => 'пусто',
 	'revcs-list-extended-supplement-notempty' => 'не пусто',
 	'revcs-list-limit' => 'Количество на странице:',
+	'revcs-list-rcs-rev-id' => 'Идентификатор правки',
 	'revcs-list-rcs-rev-id-edit' => 'Править',
 	'revcs-list-rcs-rev-id-log' => 'Журнал',
 	'revcs-list-rcs-user-text' => 'Участник',
@@ -2251,6 +2257,7 @@ $messages['ru'] = array(
 	'revcs-list-submit' => 'Показать',
 	'revcs-log-hidehistory-reason-hidden' => 'причина скрыта',
 	'revcs-show-reason' => 'Причина: $1',
+	'revcs-show-revision-id' => 'Идентификатор правки: $1 ($2)',
 	'revcs-warning' => 'Предупреждение: $1',
 );
 
