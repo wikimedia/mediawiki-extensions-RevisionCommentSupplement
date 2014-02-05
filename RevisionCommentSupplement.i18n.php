@@ -970,6 +970,7 @@ $messages['fi'] = array(
  * @author Pierre Slamich
  * @author Tititou36
  * @author VIGNERON
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'action-supplementcomment' => 'exploiter les commentaires supplémentaires',
@@ -1086,6 +1087,7 @@ L’extension RevisionCommentSupplement ne fournit pas d’opération d’annula
 	'revcs-log-hidehistory-supplement-unhidden' => 'commentaire additionnel démasqué',
 	'revcs-log-hidehistory-unrestricted' => 'restrictions supprimées',
 	'revcs-log-nosupplement' => '(aucun)',
+	'revcs-log-supplement' => '«&nbsp;$1&nbsp;»',
 	'revcs-show-deletelinktext' => 'Supprimer le commentaire additionnel',
 	'revcs-show-editlinktext' => 'Modifier le commentaire additionnel',
 	'revcs-show-history-id' => 'ID de l’historique : $1 ($2)',
