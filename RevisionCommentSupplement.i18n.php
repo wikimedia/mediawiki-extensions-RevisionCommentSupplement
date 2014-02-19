@@ -2610,10 +2610,14 @@ $messages['uk'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Kuailong
  * @author Li3939108
+ * @author Liuxinyu970226
  * @author Shirayuki
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
+	'group-supplementcomment' => '评论补充',
+	'group-supplementcomment-member' => '{{GENDER:$1|评论补充}}',
+	'grouppage-supplementcomment' => '{{ns:project}}:评论补充',
 	'revisioncommentsupplementlist' => '补充评论列表',
 	'revcs-desc' => '允许在历史记录页面每个修订行上线时附加的注释。',
 	'revcs-edit-heading' => '编辑补充评论',
@@ -2624,20 +2628,25 @@ $messages['zh-hans'] = array(
 	'revcs-error' => '错误：$1',
 	'revcs-error-history-unuse' => '本wiki不保存补充评论的历史记录。',
 	'revcs-hidehistory-submit' => '应用',
+	'revcs-history-rcsh-id' => '历史ID',
 	'revcs-history-rcsh-reason' => '原因',
 	'revcs-list-extended-comparison' => '比较操作：',
 	'revcs-list-extended-supplement-all' => '所有',
 	'revcs-list-extended-supplement-empty' => '空',
 	'revcs-list-legend' => '补充评论列表',
+	'revcs-list-rcs-rev-id' => '修订ID',
 	'revcs-list-rcs-rev-id-edit' => '编辑',
 	'revcs-list-rcs-rev-id-log' => '日志',
 	'revcs-list-rcs-user-text' => '用户',
+	'revcs-list-reset' => '重置',
 	'revcs-list-sort' => '排序方式：',
 	'revcs-list-submit' => '显示',
 	'revcs-log-nosupplement' => '（无）',
+	'revcs-show-history-id' => '历史ID：$1（$2）',
 	'revcs-show-reason' => '原因：$1',
 	'revcs-show-revision' => '版本：$1',
 	'revcs-show-revision-id' => '版本ID: $1（$2）',
+	'revcs-show-user' => '用户：$1 $2（用户ID：$3）',
 	'revcs-warning' => '警告：$1',
 );
 
