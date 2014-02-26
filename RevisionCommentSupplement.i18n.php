@@ -2465,10 +2465,11 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Chaduvari
  * @author Veeven
  */
 $messages['te'] = array(
-	'revcs-error' => 'పొరపాటు: $1',
+	'revcs-error' => 'లోపం: $1',
 	'revcs-log-nosupplement' => '(ఏమీలేదు)',
 	'revcs-show-supplement-raw' => 'ముడి వ్యాఖ్య: $1',
 	'revcs-warning' => 'హెచ్చరిక: $1',
