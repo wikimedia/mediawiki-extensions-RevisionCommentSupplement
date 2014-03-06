@@ -569,7 +569,7 @@ $messages['br'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
-	'revcs-list-rcs-rev-id-edit' => 'Нисйé',
+	'revcs-list-rcs-rev-id-edit' => 'Нисъе',
 	'revcs-list-reset' => 'Кхоссар',
 );
 
