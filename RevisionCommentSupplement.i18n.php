@@ -840,6 +840,7 @@ $messages['et'] = array(
 
 /** Persian (فارسی)
  * @author Armin1392
+ * @author Ebraminio
  * @author Mjbmr
  * @author Reza1615
  * @author ZxxZxxZ
@@ -906,13 +907,13 @@ $messages['fa'] = array(
 	'revcs-hidehistory-heading' => 'پنهان/آشکار کردن تاریخچهٔ نظر تکمیلی',
 	'revcs-hidehistory-legend' => 'پنهان/آشکار کردن تاریخچهٔ نظر تکمیلی',
 	'revcs-hidehistory-present-supplement' => 'نطر تکمیلی موجود $1',
-	'revcs-hidehistory-reason' => 'پنهان کردن دلیل مدخل تاریخچه',
-	'revcs-hidehistory-row' => 'پنهان کردن همهٔ مدخل تاریخچه',
+	'revcs-hidehistory-reason' => 'پنهان‌کردن دلیل مدخل تاریخچه',
+	'revcs-hidehistory-row' => 'پنهان‌کردن همهٔ مدخل تاریخچه',
 	'revcs-hidehistory-submit' => 'اعمال',
 	'revcs-hidehistory-success' => 'قابلیت دیدن مدخل تاریخچهٔ نظر تکمیلی، تنظیم شده‌است.',
-	'revcs-hidehistory-supplement' => 'پنهان کردن نظر تکمیلی مدخل تاریخچه',
+	'revcs-hidehistory-supplement' => 'پنهان‌کردن نظر تکمیلی مدخل تاریخچه',
 	'revcs-hidehistory-suppress' => 'سرکوب اطلاعات از همه جز کاربرانی که حق {{int:action-suppressrevision}} (تجدیدنظر سرکوب) را دارند',
-	'revcs-hidehistory-user' => 'پنهان کردن نام کاربری/آدرس آی‌پی مدخل تاریخچه',
+	'revcs-hidehistory-user' => 'پنهان‌کردن نام کاربری/نشانی آی‌پی مدخل تاریخچه',
 	'revcs-history-desc' => 'این مدخل‌های تاریخچهٔ نظر تکمیلی را فهرست می کند.',
 	'revcs-history-heading' => 'تاریخچهٔ نظر تکمیلی $1',
 	'revcs-history-heading-error' => 'خطای تاریخچهٔ نطر تکمیلی',
