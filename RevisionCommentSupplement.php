@@ -28,7 +28,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array( 'Burthsceh', '...' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement',
 	'descriptionmsg' => 'revcs-desc',
-	'version' => '0.4.1',
+	'version' => '0.5.0',
 );
 
 $wgAvailableRights[] = 'supplementcomment';
@@ -38,6 +38,7 @@ $wgGroupPermissions['supplementcomment']['supplementcomment'] = true;
 $wgGroupPermissions['supplementcomment']['supplementcomment-restricted'] = true;
 $wgGroupPermissions['sysop']['supplementcomment'] = true;
 
+$wgMessagesDirs['RevisionCommentSupplement'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.i18n.php';
 $wgExtensionMessagesFiles['RevisionCommentSupplementAlias'] = __DIR__ . '/RevisionCommentSupplement.alias.php';
 
