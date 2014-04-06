@@ -41,6 +41,7 @@
     "revcs-error": "Error: $1",
     "revcs-error-edit-denied": "no se permite guardar el comentario adicional.",
     "revcs-error-unexpected": "ha ocurrido un error inesperado.",
+    "revcs-history-rcsh-reason": "Motivo",
     "revcs-list-desc": "Esta es una lista actual de comentarios adicionales.",
     "revcs-list-descending": "lista en orden descendente",
     "revcs-list-extended-comparison": "Operación de Comparación:",
