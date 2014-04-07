@@ -72,6 +72,7 @@
     "revcs-show-editlinktext": "Editar el comentario adicional",
     "revcs-show-loglinktext": "el registro de cambios de comentarios adicionales",
     "revcs-show-no-db-row": "No se ha encontrado el comentario adicional de la revisión $1.",
+    "revcs-show-reason": "Motivo: $1",
     "revcs-show-revision": "Revisión: $1",
     "revcs-show-revision-id": "ID de la revisión:  $1  ($2)",
     "revcs-show-supplement-parsed": "Comentario analizado: $1",
