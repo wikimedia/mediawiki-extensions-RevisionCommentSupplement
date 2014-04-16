@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "revcs-list-rcs-rev-id-edit": "編輯",
-    "revcs-list-rcs-user-text": "用戶"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"revcs-list-rcs-rev-id-edit": "編輯",
+	"revcs-list-rcs-user-text": "用戶"
 }

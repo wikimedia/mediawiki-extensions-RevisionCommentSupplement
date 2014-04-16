@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Minisarm",
-            "Stelistcristi"
-        ]
-    },
-    "revcs-list-submit": "Arată",
-    "revcs-warning": "Avertisment: $1"
+	"@metadata": {
+		"authors": [
+			"Minisarm",
+			"Stelistcristi"
+		]
+	},
+	"revcs-list-submit": "Arată",
+	"revcs-warning": "Avertisment: $1"
 }

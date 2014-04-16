@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Yekrats"
-        ]
-    },
-    "revcs-error": "Eraro: $1"
+	"@metadata": {
+		"authors": [
+			"Yekrats"
+		]
+	},
+	"revcs-error": "Eraro: $1"
 }
