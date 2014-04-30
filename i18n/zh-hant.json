@@ -5,6 +5,13 @@
 			"Cwlin0416"
 		]
 	},
+	"revcs-edit-preview": "顯示預覽",
+	"revcs-error": "錯誤：$1",
+	"revcs-hidehistory-submit": "套用",
+	"revcs-history-rcsh-reason": "原因",
+	"revcs-list-extended-supplement-all": "所有",
 	"revcs-list-rcs-rev-id-edit": "編輯",
-	"revcs-list-rcs-user-text": "使用者"
+	"revcs-list-rcs-user-text": "使用者",
+	"revcs-list-sort": "排序方式：",
+	"revcs-list-submit": "顯示"
 }

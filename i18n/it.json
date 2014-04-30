@@ -6,7 +6,10 @@
 			"පසිඳු කාවින්ද"
 		]
 	},
+	"revcs-edit-preview": "Visualizza anteprima",
 	"revcs-error": "Errore: $1",
+	"revcs-hidehistory-submit": "Applica",
+	"revcs-history-hidden-user": "(nome utente nascosto)",
 	"revcs-list-extended-supplement-all": "tutti",
 	"revcs-list-extended-supplement-empty": "vuota",
 	"revcs-list-rcs-rev-id-edit": "Modifica",
