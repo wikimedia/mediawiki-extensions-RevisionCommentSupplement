@@ -14,6 +14,7 @@
 	"log-name-revisioncommentsupplement": "补充评论日志",
 	"log-description-revisioncommentsupplement": "{{#special:RevisionCommentSupplement}}中的操作日志。",
 	"logentry-revisioncommentsupplement-create": "$1在修订版本$4{{GENDER:$2|创建了}}一个补充评论$6",
+	"revisioncommentsupplement": "修订意见补充",
 	"revisioncommentsupplementlist": "补充评论列表",
 	"revcs-desc": "允许在历史记录页面每个修订行上线时附加的注释。",
 	"revcs-action-history-supplement": "[增补：$1]",
