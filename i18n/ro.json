@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Minisarm",
-			"Stelistcristi"
+			"Stelistcristi",
+			"XXN"
 		]
 	},
+	"revcs-list-extended-supplement-empty": "gol",
 	"revcs-list-submit": "Arată",
 	"revcs-warning": "Avertisment: $1"
 }
