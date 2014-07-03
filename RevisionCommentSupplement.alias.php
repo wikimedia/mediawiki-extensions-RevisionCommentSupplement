@@ -59,8 +59,8 @@ $specialPageAliases['ko'] = array(
 
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
-	'RevisionCommentSupplement' => array( 'РевизискиДодатенКоментар' ),
-	'RevisionCommentSupplementList' => array( 'РевизискиДодатенКоментарСписок' ),
+	'RevisionCommentSupplement' => array( 'ПреработкиДодатенКоментар' ),
+	'RevisionCommentSupplementList' => array( 'ПреработкиДодатенКоментарСписок' ),
 );
 
 /** Sicilian (sicilianu) */
