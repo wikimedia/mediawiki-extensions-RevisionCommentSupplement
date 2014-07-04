@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Matma Rex"
+			"Matma Rex",
+			"Alan ffm"
 		]
 	},
 	"action-supplementcomment": "modyfikacji komentarzy uzupełniających",
@@ -40,6 +41,8 @@
 	"revcs-error-edit-denied": "odmowa zapisania komentarza uzupełniającego.",
 	"revcs-error-unexpected": "wystąpił nieoczekiwany błąd.",
 	"revcs-hidehistory-submit": "Zastosuj",
+	"revcs-history-hidden-reason": "(powód ukryty)",
+	"revcs-history-hidden-user": "(nazwa użytkownika ukryta)",
 	"revcs-history-rcsh-reason": "Powód",
 	"revcs-list-desc": "Wyświetla istniejące komentarze uzupełniające.",
 	"revcs-list-descending": "sortuj malejąco",
@@ -66,6 +69,7 @@
 	"revcs-list-reset": "Resetuj",
 	"revcs-list-sort": "Sortowanie:",
 	"revcs-list-submit": "Pokaż",
+	"revcs-log-hidehistory-reason-hidden": "(powód ukryty)",
 	"revcs-log-nosupplement": "(brak)",
 	"revcs-show-deletelinktext": "Usuń komentarz uzupełniający",
 	"revcs-show-editlinktext": "Edytuj komentarz uzupełniający",
