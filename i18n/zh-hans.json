@@ -6,7 +6,8 @@
 			"Liuxinyu970226",
 			"Shirayuki",
 			"Yfdyh000",
-			"Mywood"
+			"Mywood",
+			"Impersonator 1"
 		]
 	},
 	"group-supplementcomment": "评论补充",
@@ -15,6 +16,9 @@
 	"log-name-revisioncommentsupplement": "补充评论日志",
 	"log-description-revisioncommentsupplement": "{{#special:RevisionCommentSupplement}}中的操作日志。",
 	"logentry-revisioncommentsupplement-create": "$1在版本$4{{GENDER:$2|创建了}}一个补充评论$6",
+	"logentry-revisioncommentsupplement-create2": "$1在修订版本$4{{GENDER:$2|创建}}补充意见",
+	"logentry-revisioncommentsupplement-delete": "$1在修订版本$4{{GENDER:$2|删除}}补充意见$5",
+	"logentry-revisioncommentsupplement-delete2": "$1在修订版本$4{{GENDER:$2|删除}}补充意见",
 	"revisioncommentsupplement": "版本意见补充",
 	"revisioncommentsupplementlist": "补充评论列表",
 	"revcs-desc": "允许在历史记录页面每个版本行上线时附加的注释。",
@@ -45,6 +49,7 @@
 	"revcs-hidehistory-reason": "隐藏历史记录的原因",
 	"revcs-hidehistory-row": "隐藏整个历史记录",
 	"revcs-hidehistory-submit": "应用",
+	"revcs-history-heading": "补充意见$1的历史",
 	"revcs-history-hidden-reason": "（原因已隐藏）",
 	"revcs-history-hidden-supplement": "（补充评论已隐藏）",
 	"revcs-history-hidden-user": "（用户名已隐藏）",
