@@ -34,6 +34,7 @@
 	"revcs-edit-legend": "编辑补充评论",
 	"revcs-edit-preview": "显示预览",
 	"revcs-edit-preview-reason": "原因预览：$1",
+	"revcs-edit-preview-supplement": "补充评论预览：$1",
 	"revcs-edit-reason": "原因：",
 	"revcs-edit-revision-id": "版本ID：",
 	"revcs-edit-save": "保存补充评论",
@@ -41,6 +42,7 @@
 	"revcs-edit-supplement": "补充评论：",
 	"revcs-edit-written": "补充评论已保存。",
 	"revcs-error": "错误：$1",
+	"revcs-error-edit-denied": "无法保存补充评论。",
 	"revcs-error-hidehistory-hidden-restricted-only": "输入被限制（隐藏或监督）。",
 	"revcs-error-history-revision-id": "版本ID错误。",
 	"revcs-error-history-unuse": "本wiki不保存补充评论的历史记录。",
@@ -87,6 +89,7 @@
 	"revcs-show-deletelinktext": "删除补充评论",
 	"revcs-show-editlinktext": "编辑补充评论",
 	"revcs-show-history-id": "历史ID：$1（$2）",
+	"revcs-show-loglinktext": "补充评论更改日志",
 	"revcs-show-reason": "原因：$1",
 	"revcs-show-revision": "版本：$1",
 	"revcs-show-revision-id": "版本ID: $1（$2）",
@@ -94,5 +97,7 @@
 	"revcs-show-supplement-raw": "原始补充意见：$1",
 	"revcs-show-timestamp": "编辑日期时间：$1（$2）",
 	"revcs-show-user": "用户：$1 $2（用户ID：$3）",
-	"revcs-warning": "警告：$1"
+	"revcs-warning": "警告：$1",
+	"right-supplementcomment": "管理补充评论",
+	"right-supplementcomment-restricted": "管理带限制操作的补充评论"
 }
