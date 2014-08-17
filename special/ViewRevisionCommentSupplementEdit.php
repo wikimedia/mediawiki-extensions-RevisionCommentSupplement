@@ -20,14 +20,14 @@
 
 class ViewRevisionCommentSupplementEdit extends ContextSource {
 
-	var $error = '';
-	var $save = false, $preview = false, $show = false;
-	var $rId = '', $missrId = '', $supplement = '', $reason = '';
-	var $formtype;
-	var $mPage;
-	var $mParam;
-	var $mTokenOk;
-	var $mTokenOkExceptSuffix;
+	public $error = '';
+	public $save = false, $preview = false, $show = false;
+	public $rId = '', $missrId = '', $supplement = '', $reason = '';
+	public $formtype;
+	public $mPage;
+	public $mParam;
+	public $mTokenOk;
+	public $mTokenOkExceptSuffix;
 
 	# from abstract class AbuseFilterView in AbuseFilterView.php into extension AbuseFilter
 	/**

@@ -20,12 +20,12 @@
 
 class ViewRevisionCommentSupplementDelete extends ContextSource {
 
-	var $rId = '', $missrId = '', $otherReason = '', $listReason = 'other';
-	var $formtype, $submit = false, $error = '', $exist = false;
-	var $mPage;
-	var $mParam;
-	var $mTokenOk;
-	var $mTokenOkExceptSuffix;
+	public $rId = '', $missrId = '', $otherReason = '', $listReason = 'other';
+	public $formtype, $submit = false, $error = '', $exist = false;
+	public $mPage;
+	public $mParam;
+	public $mTokenOk;
+	public $mTokenOkExceptSuffix;
 
 	# from abstract class AbuseFilterView in AbuseFilterView.php into extension AbuseFilter
 	/**
