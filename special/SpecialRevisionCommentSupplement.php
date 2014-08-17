@@ -26,8 +26,8 @@ $wgAutoloadClasses['ViewRevisionCommentSupplementHideHistory'] = __DIR__ . '/Vie
 
 class SpecialRevisionCommentSupplement extends SpecialPage {
 
-	var $mTokenOk;
-	var $mTokenOkExceptSuffix;
+	public $mTokenOk;
+	public $mTokenOkExceptSuffix;
 
 	public function __construct() {
 		parent::__construct( 'RevisionCommentSupplement', 'supplementcomment', true );

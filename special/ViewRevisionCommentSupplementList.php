@@ -20,8 +20,8 @@
 
 class ViewRevisionCommentSupplementList extends ContextSource {
 
-	var $mPage;
-	var $mParam;
+	public $mPage;
+	public $mParam;
 	protected $dbr;
 
 	protected $exOperators = array(

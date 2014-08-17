@@ -23,8 +23,8 @@ $wgAutoloadClasses['RevisionCommentSupplementHistory'] = __DIR__ . '/../Revision
 
 class ViewRevisionCommentSupplementHistory extends ContextSource {
 
-	var $mPage;
-	var $mParam;
+	public $mPage;
+	public $mParam;
 
 	# from abstract class AbuseFilterView in AbuseFilterView.php into extension AbuseFilter
 	/**

@@ -20,14 +20,14 @@
 
 class ViewRevisionCommentSupplementHideHistory extends ContextSource {
 
-	var $row, $rId = '', $hId = '', $misshId = '', $otherReason = '', $listReason = 'other';
-	var $hidePrimary = false, $hideComment = false, $hideUser = false, $hideRestricted = false;
-	var $hideRow = false;
-	var $formtype, $submit = false, $error = '', $exist = false, $suppress = true, $canHide = true;
-	var $mPage;
-	var $mParam;
-	var $mTokenOk;
-	var $mTokenOkExceptSuffix;
+	public $row, $rId = '', $hId = '', $misshId = '', $otherReason = '', $listReason = 'other';
+	public $hidePrimary = false, $hideComment = false, $hideUser = false, $hideRestricted = false;
+	public $hideRow = false;
+	public $formtype, $submit = false, $error = '', $exist = false, $suppress = true, $canHide = true;
+	public $mPage;
+	public $mParam;
+	public $mTokenOk;
+	public $mTokenOkExceptSuffix;
 
 	# from abstract class AbuseFilterView in AbuseFilterView.php into extension AbuseFilter
 	/**
