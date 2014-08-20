@@ -13,5 +13,7 @@
 	"revcs-list-rcs-user-text": "Корисник",
 	"revcs-list-sort": "Поређај по:",
 	"revcs-list-submit": "Прикажи",
-	"revcs-log-nosupplement": "(ништа)"
+	"revcs-log-nosupplement": "(ништа)",
+	"revcs-show-revision": "Ревизија: $1",
+	"revcs-show-user": "Корисник: $1 $2 (ID корисника: $3)"
 }
