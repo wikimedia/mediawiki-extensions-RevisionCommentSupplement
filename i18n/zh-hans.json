@@ -75,6 +75,7 @@
 	"revcs-history-legend": "补充评论历史",
 	"revcs-history-rcsh-id": "历史ID",
 	"revcs-history-rcsh-reason": "原因",
+	"revcs-list-descending": "降序排序的列表",
 	"revcs-list-extended-comparison": "比较操作：",
 	"revcs-list-extended-offset": "比较标准：",
 	"revcs-list-extended-property": "比较的属性：",
