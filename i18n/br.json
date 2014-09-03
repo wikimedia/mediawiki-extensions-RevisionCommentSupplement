@@ -10,6 +10,7 @@
 	"revcs-error-unexpected": "C'hoarvezet ez eus ur fazi dic'hortoz.",
 	"revcs-hidehistory-submit": "Lakaat da dalvezout",
 	"revcs-history-hidden-reason": "(abeg kuzhet)",
+	"revcs-history-hidden-user": "(anv implijer kuzhet)",
 	"revcs-history-rcsh-reason": "Abeg",
 	"revcs-list-extended-supplement-all": "pep tra",
 	"revcs-list-extended-supplement-empty": "goullo",
@@ -17,9 +18,11 @@
 	"revcs-list-limit": "Niver dre bajenn :",
 	"revcs-list-rcs-rev-id-edit": "Aozañ",
 	"revcs-list-rcs-user-text": "Implijer",
+	"revcs-list-sort": "Renkañ dre :",
 	"revcs-list-submit": "Diskouez",
 	"revcs-log-hidehistory-reason-hidden": "abeg kuzhet",
 	"revcs-log-nosupplement": "(hini ebet)",
 	"revcs-show-reason": "Abeg : $1",
-	"revcs-show-revision": "Adweladenn : $1"
+	"revcs-show-revision": "Adweladenn : $1",
+	"revcs-warning": "Diwallit : $1"
 }
