@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jopparn"
+			"Jopparn",
+			"Freked",
+			"Lokal Profil"
 		]
 	},
 	"revcs-alert-special-parameter": "Det är misstag gällande parametern.",
+	"revcs-edit-reason": "Anledning:",
 	"revcs-error": "Fel: $1",
+	"revcs-error-unexpected": "Ett oväntat fel uppstod.",
 	"revcs-hidehistory-submit": "Verkställ",
 	"revcs-history-rcsh-reason": "Orsak",
 	"revcs-list-descending": "lista i fallande ordning",
@@ -22,6 +26,7 @@
 	"revcs-list-submit": "Visa",
 	"revcs-log-hidehistory-reason-hidden": "anledningen dold",
 	"revcs-log-hidehistory-reason-unhidden": "anledning ej längre dold",
+	"revcs-log-hidehistory-unrestricted": "borttagna restriktioner",
 	"revcs-log-nosupplement": "(inga)",
 	"revcs-show-reason": "Orsak: $1",
 	"revcs-show-revision": "Version: $1",
