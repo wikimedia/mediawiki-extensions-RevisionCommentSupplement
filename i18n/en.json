@@ -57,7 +57,7 @@
     "revcs-error-history-nosupplement": "The supplementary comment does not exist in the database table. This has not created yet, or has already deleted.",
     "revcs-error-history-revision-id": "Revision ID is wrong.",
     "revcs-error-history-unuse": "This wiki does not save history of supplementary comments.",
-    "revcs-error-unexpected": "Unexpected error happened.",
+    "revcs-error-unexpected": "An unexpected error occurred.",
     "revcs-hidehistory-desc": "You can hide whole or part of properties of a history entry.",
     "revcs-hidehistory-failure": "Failed to set visibility of the history entry of supplementary comment.",
     "revcs-hidehistory-heading": "Hide/unhide history of supplementary comment",
