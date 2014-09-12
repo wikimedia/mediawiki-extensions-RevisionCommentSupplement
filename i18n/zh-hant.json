@@ -9,7 +9,7 @@
 	"revcs-edit-preview": "顯示預覽",
 	"revcs-edit-reason": "原因：",
 	"revcs-error": "錯誤：$1",
-	"revcs-error-unexpected": "發生意外的錯誤。",
+	"revcs-error-unexpected": "發生一個意外的錯誤。",
 	"revcs-hidehistory-submit": "套用",
 	"revcs-history-rcsh-reason": "原因",
 	"revcs-list-extended-supplement-all": "所有",
