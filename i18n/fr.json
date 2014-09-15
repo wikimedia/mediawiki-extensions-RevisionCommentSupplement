@@ -7,7 +7,8 @@
 			"Pierre Slamich",
 			"Tititou36",
 			"VIGNERON",
-			"Verdy p"
+			"Verdy p",
+			"Ltrlg"
 		]
 	},
 	"action-supplementcomment": "exploiter les commentaires supplémentaires",
@@ -65,7 +66,7 @@
 	"revcs-error-history-nosupplement": "Le commentaire additionnel n’existe pas dans la table de la base de données. Il n’a pas encore été créé, ou a déjà été supprimé.",
 	"revcs-error-history-revision-id": "L’ID de révision est erroné.",
 	"revcs-error-history-unuse": "Ce wiki n’enregistre pas l’historique des commentaires additionnels.",
-	"revcs-error-unexpected": "une erreur inattendue s'est produite.",
+	"revcs-error-unexpected": "Une erreur inattendue s’est produite.",
 	"revcs-hidehistory-desc": "Vous pouvez masquer tout ou partie des propriétés d’une entrée d’historique.",
 	"revcs-hidehistory-failure": "Échec de fixation de la visibilité de l’entrée d’historique du commentaire additionnel.",
 	"revcs-hidehistory-heading": "Masquer/démasquer l’historique de commentaire additionnel",

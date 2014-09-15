@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Guycn2"
 		]
 	},
 	"revcs-error-hidehistory-hidden-restricted-only": "הנראוּת בקלט רק מוגבלת (העלמה, הסתרה).",
+	"revcs-error-unexpected": "אירעה שגיאה בלתי־צפויה.",
 	"revcs-hidehistory-suppress": "נתוני העלמה מכולם למעט משמשים שלש להם הרשאת {{int:action-suppressrevision}} (suppressrevision)."
 }

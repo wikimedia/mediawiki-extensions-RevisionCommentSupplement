@@ -40,6 +40,7 @@
 	"revcs-delete-legend": "删除补充评论",
 	"revcs-delete-submit": "删除补充评论",
 	"revcs-delete-success": "补充评论已删除。",
+	"revcs-edit-desc": "您可以设置补充意见，并且拥有{{int:action-supplementcomment-restricted}}（supplementcomment-restricted）权限的用户可以修改补充意见。",
 	"revcs-edit-heading": "编辑补充评论",
 	"revcs-edit-legend": "编辑补充评论",
 	"revcs-edit-preview": "显示预览",

@@ -39,7 +39,7 @@
 	"revcs-edit-reason": "Powód:",
 	"revcs-error": "Błąd: $1",
 	"revcs-error-edit-denied": "odmowa zapisania komentarza uzupełniającego.",
-	"revcs-error-unexpected": "wystąpił nieoczekiwany błąd.",
+	"revcs-error-unexpected": "Wystąpił nieoczekiwany błąd.",
 	"revcs-hidehistory-submit": "Zastosuj",
 	"revcs-history-hidden-reason": "(powód ukryty)",
 	"revcs-history-hidden-user": "(nazwa użytkownika ukryta)",
