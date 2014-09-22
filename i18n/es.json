@@ -44,7 +44,7 @@
 	"revcs-edit-revision-id": "Id. de la modificación:",
 	"revcs-error": "Error: $1",
 	"revcs-error-edit-denied": "El comentario adicional no se pudo guardar.",
-	"revcs-error-unexpected": "ha ocurrido un error inesperado.",
+	"revcs-error-unexpected": "Se produjo un error inesperado.",
 	"revcs-hidehistory-submit": "Aplicar",
 	"revcs-history-hidden-reason": "(motivo oculto)",
 	"revcs-history-hidden-supplement": "(comentario suplementario oculto)",
