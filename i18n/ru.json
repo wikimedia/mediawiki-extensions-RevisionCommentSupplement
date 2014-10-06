@@ -3,7 +3,8 @@
 		"authors": [
 			"Okras",
 			"ShinePhantom",
-			"Alexandr Efremov"
+			"Alexandr Efremov",
+			"Striking Blue"
 		]
 	},
 	"log-description-revisioncommentsupplement": "Журнал операций в {{#special: RevisionCommentSupplement}}.",
@@ -16,7 +17,7 @@
 	"revcs-edit-revision-id": "Идентификатор правкиː",
 	"revcs-error": "Ошибка: $1",
 	"revcs-error-history-revision-id": "Неверный идентификатор правки.",
-	"revcs-error-unexpected": "Непредвиденная ошибка.",
+	"revcs-error-unexpected": "Произошла непредвиденная ошибка.",
 	"revcs-hidehistory-submit": "Применить",
 	"revcs-history-hidden-reason": "(причина скрыта)",
 	"revcs-history-hidden-user": "(имя участника скрыто)",
