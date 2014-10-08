@@ -4,5 +4,6 @@
 			"Vitorvicentevalente"
 		]
 	},
+	"revcs-error": "Erro: $1",
 	"revcs-error-unexpected": "Ocorreu um erro inesperado."
 }
