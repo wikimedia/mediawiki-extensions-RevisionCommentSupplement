@@ -15,6 +15,7 @@
 	"revcs-list-extended-supplement-all": "所有",
 	"revcs-list-extended-supplement-empty": "空的",
 	"revcs-list-rcs-rev-id-edit": "編輯",
+	"revcs-list-rcs-rev-id-log": "日誌",
 	"revcs-list-rcs-user-text": "使用者",
 	"revcs-list-sort": "排序方式：",
 	"revcs-list-submit": "顯示",
