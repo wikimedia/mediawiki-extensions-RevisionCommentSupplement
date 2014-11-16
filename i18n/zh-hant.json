@@ -17,6 +17,7 @@
 	"revcs-list-rcs-rev-id-edit": "編輯",
 	"revcs-list-rcs-rev-id-log": "日誌",
 	"revcs-list-rcs-user-text": "使用者",
+	"revcs-list-reset": "重設",
 	"revcs-list-sort": "排序方式：",
 	"revcs-list-submit": "顯示",
 	"revcs-show-reason": "原因：$1"
