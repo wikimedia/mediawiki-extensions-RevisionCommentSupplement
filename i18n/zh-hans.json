@@ -69,7 +69,7 @@
 	"revcs-hidehistory-supplement": "隐藏历史记录的补充评论",
 	"revcs-hidehistory-suppress": "对任何人隐藏数据，除了有{{int:action-suppressrevision}}（suppressrevision）权限的",
 	"revcs-hidehistory-user": "隐藏历史记录中的用户名/IP地址",
-	"revcs-history-desc": "补充评论的历史记录列表。",
+	"revcs-history-desc": "补充说明的历史记录列表。",
 	"revcs-history-heading": "补充意见$1的历史",
 	"revcs-history-heading-error": "错误的补充评论历史",
 	"revcs-history-hidden-reason": "（原因已隐藏）",
