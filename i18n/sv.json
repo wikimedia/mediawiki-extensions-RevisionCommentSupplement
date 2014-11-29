@@ -3,9 +3,14 @@
 		"authors": [
 			"Jopparn",
 			"Freked",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Victorsa"
 		]
 	},
+	"group-supplementcomment": "SupplementComment",
+	"log-name-revisioncommentsupplement": "Logg för kompletterande kommentarer",
+	"logentry-revisioncommentsupplement-create": "$1 {{GENDER:$2|skapade}} en kompletterande kommentar, $6 för version $4",
+	"revcs-desc": "Gör det möjligt att visa kompletterande kommentar vid varje versionsrad på historiksidor",
 	"revcs-alert-special-parameter": "Det är misstag gällande parametern.",
 	"revcs-edit-reason": "Anledning:",
 	"revcs-error": "Fel: $1",
