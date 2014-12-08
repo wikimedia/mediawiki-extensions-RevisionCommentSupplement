@@ -20,5 +20,8 @@
 	"revcs-list-reset": "重設",
 	"revcs-list-sort": "排序方式：",
 	"revcs-list-submit": "顯示",
-	"revcs-show-reason": "原因：$1"
+	"revcs-log-nosupplement": "(無)",
+	"revcs-show-reason": "原因：$1",
+	"revcs-show-revision": "修訂：$1",
+	"revcs-warning": "警告：$1"
 }
