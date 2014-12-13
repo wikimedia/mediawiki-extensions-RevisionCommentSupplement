@@ -78,5 +78,5 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'RevisionCommentSupplement' => array( '修訂評論增補' ),
-	'RevisionCommentSupplementList' => array( '修訂評論增補列表' ),
+	'RevisionCommentSupplementList' => array( '修訂評論增補清單' ),
 );
