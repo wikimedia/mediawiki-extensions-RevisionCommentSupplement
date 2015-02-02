@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"action-supplementcomment": "administrar os comentarios suplementarios",
@@ -59,7 +60,7 @@
 	"revcs-error-history-nosupplement": "O comentario suplementario non existe na táboa da base de datos. Quere dicir que aínda non se creou ou foi borrado.",
 	"revcs-error-history-revision-id": "O ID da revisión é incorrecto.",
 	"revcs-error-history-unuse": "Este wiki non garda o historial dos comentarios suplementarios.",
-	"revcs-error-unexpected": "ocorreu un erro inesperado.",
+	"revcs-error-unexpected": "Ocorreu un erro inesperado.",
 	"revcs-hidehistory-desc": "Pode agochar todas ou parte das propiedades dunha entrada de historial.",
 	"revcs-hidehistory-failure": "Erro ao establecer a visibilidade da entrada de historial do comentario suplementario.",
 	"revcs-hidehistory-heading": "Agochar/Descubrir o historial do comentario suplementario",
