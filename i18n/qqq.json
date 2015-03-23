@@ -6,7 +6,8 @@
 			"Shirayuki",
 			"Siebrand",
 			"Liuxinyu970226",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Umherirrender"
 		]
 	},
 	"action-supplementcomment": "{{doc-action|supplementcomment}}",
@@ -26,7 +27,7 @@
 	"logentry-suppress-revcommentsupplementhidehistory": "A line of private log entry in [[Special:Log]].\n\nThis is like {{msg-mw|Logentry-suppress-event}} and {{msg-mw|Logentry-suppress-revision}}.\n\nParameters:\n*$1 - links of the user page and the user tool(s) page\n*$2 - the username, for GENDER support\n*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4 (edit page)\n*$4 - the revision ID of the supplementary comment of a history entry\n*$5 - (Unused) the old hidden flag of a history entry\n*$6 - (Unused) the new hidden flag of a history entry\n*$7 - the history entry ID of a history entry\n*$8 - (Unused) the number of the history entry ID. This must be 1. This is reserved.\n*$9 - description of change hidden flag. Uses the following messages:\n**{{msg-mw|revcs-log-hidehistory-supplement-hidden}}\n**{{msg-mw|revcs-log-hidehistory-supplement-unhidden}}\n**{{msg-mw|revdelete-uname-hid}}\n**{{msg-mw|revdelete-uname-unhid}}\n**{{msg-mw|revcs-log-hidehistory-reason-hidden}}\n**{{msg-mw|revcs-log-hidehistory-reason-unhidden}}\n**{{msg-mw|revcs-log-hidehistory-restricted}}\n**{{msg-mw|revcs-log-hidehistory-unrestricted}}\n**{{msg-mw|revcs-log-hidehistory-row-hidden}}\n**{{msg-mw|revcs-log-hidehistory-row-unhidden}}\n{{Related|Logentry-revcs}}",
 	"revisioncommentsupplement": "{{doc-special|RevisionCommentSupplement}}\nThe meaning of \"Revision comment supplement\" is \"Supplement the comment on each revision\", \"the comment on each revision is supplemented\" or \"a supplement to the comment on each revision\".",
 	"revisioncommentsupplementlist": "{{doc-special|RevisionCommentSupplementList}}\n{{Identical|List of supplementary comments}}",
-	"revcs-desc": "{{desc|name=Revision Comment Supplement|url=http://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement}}",
+	"revcs-desc": "{{desc|name=Revision Comment Supplement|url=https://www.mediawiki.org/wiki/Extension:RevisionCommentSupplement}}",
 	"revcs-action-history-supplement": "This message is used at each revision line in History pages(history action of pages). $1 is a parsed supplementary comment.",
 	"revcs-alert-exist-supplement": "This message is a error or warning message used at save in Special:RevisionCommentSupplement.",
 	"revcs-alert-history-id": "This message is a error or warning message used in [[Special:RevisionCommentSupplement/hidehistory]].\n\nParameters:\n* $1 - history ID",
