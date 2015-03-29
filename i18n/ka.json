@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"David1010"
+			"David1010",
+			"Otogi"
 		]
 	},
 	"revcs-error": "შეცდომა: $1",
+	"revcs-hidehistory-submit": "გამოყენება",
 	"revcs-list-extended-supplement-all": "ყველა",
 	"revcs-list-extended-supplement-empty": "ცარიელი",
 	"revcs-list-extended-supplement-notempty": "არ არის ცარიელი",
