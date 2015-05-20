@@ -42,7 +42,7 @@
 	"revcs-edit-desc": "Puedes definir comentarios adicionales, y los usuarios que tienen {{int:action-supplementcomment-restricted}}(supplementcomment-restricted) derechos pueden modificar los comentarios adicionales.",
 	"revcs-edit-heading": "Editar comentarios suplementarios",
 	"revcs-edit-preview": "Mostrar previsualización",
-	"revcs-edit-preview-reason": "Previsualización del motivoː ̩$1",
+	"revcs-edit-preview-reason": "Previsualización del motivo: $1",
 	"revcs-edit-reason": "Motivo:",
 	"revcs-edit-revision-id": "Id. de la modificación:",
 	"revcs-error": "Error: $1",
