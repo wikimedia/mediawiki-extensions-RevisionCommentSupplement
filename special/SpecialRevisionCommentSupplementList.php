@@ -83,4 +83,8 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 		}
 		return true;
 	}
+
+	protected function getGroupName() {
+		return 'other';
+	}
 }

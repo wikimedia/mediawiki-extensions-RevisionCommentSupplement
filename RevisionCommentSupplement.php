@@ -50,9 +50,7 @@ $wgAutoloadClasses['SpecialRevisionCommentSupplement'] = __DIR__ . '/special/Spe
 $wgAutoloadClasses['SpecialRevisionCommentSupplementList'] = __DIR__ . '/special/SpecialRevisionCommentSupplementList.php';
 
 $wgSpecialPages['RevisionCommentSupplement'] = 'SpecialRevisionCommentSupplement';
-$wgSpecialPageGroups['RevisionCommentSupplement'] = 'other';
 $wgSpecialPages['RevisionCommentSupplementList'] = 'SpecialRevisionCommentSupplementList';
-$wgSpecialPageGroups['RevisionCommentSupplementList'] = 'other';
 
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'RevisionCommentSupplementHook::runUpdates';
 $wgHooks['PageHistoryLineEnding'][] = 'RevisionCommentSupplementHook::onPageHistoryLineEnding';

@@ -309,4 +309,8 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 		}
 		return $link;
 	}
+
+	protected function getGroupName() {
+		return 'other';
+	}
 }
