@@ -121,6 +121,7 @@
 	"revcs-log-hidehistory-supplement-unhidden": "نظر تکمیلی پنهان نشده",
 	"revcs-log-hidehistory-unrestricted": "محدودیت‌های حذف شده",
 	"revcs-log-nosupplement": "(هیچ کدام)",
+	"revcs-log-supplement": "«$1»",
 	"revcs-show-deletelinktext": "حذف نظر تکمیلی",
 	"revcs-show-editlinktext": "ویرایش نظر تکمیلی",
 	"revcs-show-history-id": "شناسهٔ تاریخچه: $1 ($2)",
