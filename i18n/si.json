@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Susith Chandira Gts"
 		]
 	},
 	"group-supplementcomment": "අතිරේකපරිකථනය",
@@ -32,6 +33,7 @@
 	"revcs-list-sort": "වර්ගය:",
 	"revcs-list-submit": "පෙන්වන්න",
 	"revcs-log-nosupplement": "(කිසිවක් නොමැත)",
+	"revcs-log-supplement": "\"$1\"",
 	"revcs-show-deletelinktext": "අතිරේක පරිකථනය මකා දමන්න",
 	"revcs-show-editlinktext": "අතිරේක පරිකථනය සංස්කරණය කරන්න",
 	"revcs-show-revision": "සංශෝධනය: $1",
