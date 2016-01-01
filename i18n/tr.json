@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Violetanka"
+			"Violetanka",
+			"HakanIST"
 		]
 	},
-	"revcs-error-unexpected": "Beklenmedik bir hata meydana geldi."
+	"revcs-error-unexpected": "Beklenmedik bir hata meydana geldi.",
+	"revcs-list-submit": "Göster"
 }
