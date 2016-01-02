@@ -47,8 +47,7 @@ class ViewRevisionCommentSupplementHideHistory extends ContextSource {
 		$out->setPageTitle( $this->msg( 'revcs-hidehistory-heading' )->plain() );
 
 		if ( !$user->isAllowed( 'supplementcomment-restricted' ) ) {
-			$out->permissionRequired( 'supplementcomment-restricted' );
-			return;
+			throw new PermissionsError( 'supplementcomment-restricted' );
 		}
 /*
 		global $wgVersion;

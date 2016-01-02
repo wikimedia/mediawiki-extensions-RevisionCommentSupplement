@@ -47,8 +47,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 			return;
 		}
 		if ( !$user->isAllowed( 'supplementcomment' ) ) {
-			$out->permissionRequired( 'supplementcomment' );
-			return;
+			throw new PermissionsError( 'supplementcomment' );
 		}
 		if ( wfReadOnly() ) {
 			$out->readOnlyPage();

@@ -47,8 +47,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		$out->setPageTitle( $this->msg( 'revcs-edit-heading' )->plain() );
 
 		if ( !$user->isAllowed( 'edit' ) ) {
-			$out->permissionRequired( 'edit' );
-			return;
+			throw new PermissionsError( 'edit' );
 		}
 
 		# Get request data from, e.g.

@@ -45,8 +45,7 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 		$out->setPageTitle( $this->msg( 'revcs-delete-heading' )->plain() );
 
 		if ( !$user->isAllowed( 'supplementcomment-restricted' ) ) {
-			$out->permissionRequired( 'supplementcomment-restricted' );
-			return;
+			throw new PermissionsError( 'supplementcomment-restricted' );
 		}
 
 		$this->importFormData( $this->mParam );
