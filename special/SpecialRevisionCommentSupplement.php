@@ -43,8 +43,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 
 		// Are we allowed?
 		if( $user->isBlocked() ){
-			$out->blockedPage();
-			return;
+			throw new UserBlockedError( $user->getBlock() );
 		}
 		if ( !$user->isAllowed( 'supplementcomment' ) ) {
 			throw new PermissionsError( 'supplementcomment' );
