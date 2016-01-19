@@ -33,6 +33,10 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 		parent::__construct( 'RevisionCommentSupplement', 'supplementcomment', true );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	# from class SpecialAbuseFilter in SpecialAbuseFilter.php into extension AbuseFilter
 	function execute( $subpage ) {
 		$this->setHeaders();
