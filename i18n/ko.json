@@ -6,7 +6,7 @@
 		]
 	},
 	"action-supplementcomment": "보충 댓글 동작",
-	"action-supplementcomment-restricted": "제한된 행동으로 보충 댓글 동작",
+	"action-supplementcomment-restricted": "제한된 동작으로 보충 댓글 동작",
 	"group-supplementcomment": "덧글보충",
 	"group-supplementcomment-member": "{{GENDER:$1|덧글보충}}",
 	"grouppage-supplementcomment": "{{ns:project}}:덧글보충",
@@ -133,5 +133,5 @@
 	"revcs-show-user": "사용자: $1 $2 (사용자 ID: $3)",
 	"revcs-warning": "경고: $1",
 	"right-supplementcomment": "보충 댓글 동작",
-	"right-supplementcomment-restricted": "제한된 행동으로 보충 댓글 동작"
+	"right-supplementcomment-restricted": "제한된 동작으로 보충 댓글 동작"
 }
