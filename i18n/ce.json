@@ -6,5 +6,6 @@
 	},
 	"revcs-error-unexpected": "Дагахь доцу гӀалат хилла.",
 	"revcs-list-rcs-rev-id-edit": "Нисъе",
-	"revcs-list-reset": "Кхоссар"
+	"revcs-list-reset": "Кхоссар",
+	"revcs-list-submit": "Гайта"
 }
