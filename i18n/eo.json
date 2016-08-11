@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yekrats"
+			"Yekrats",
+			"Robin van der Vliet"
 		]
 	},
-	"revcs-error": "Eraro: $1"
+	"revcs-error": "Eraro: $1",
+	"revcs-list-rcs-user-text": "Uzanto"
 }
