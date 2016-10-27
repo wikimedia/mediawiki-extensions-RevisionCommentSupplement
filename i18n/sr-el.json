@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Сербијана"
 		]
 	},
-	"revcs-show-revision": "Revizija: $1",
+	"revcs-show-revision": "Izmena: $1",
 	"revcs-show-user": "Korisnik: $1 $2 (ID korisnika: $3)"
 }

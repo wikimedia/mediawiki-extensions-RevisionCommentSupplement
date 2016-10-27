@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Сербијана"
 		]
 	},
 	"revcs-edit-reason": "Разлог:",
@@ -14,6 +15,6 @@
 	"revcs-list-sort": "Поређај по:",
 	"revcs-list-submit": "Прикажи",
 	"revcs-log-nosupplement": "(ништа)",
-	"revcs-show-revision": "Ревизија: $1",
+	"revcs-show-revision": "Измена: $1",
 	"revcs-show-user": "Корисник: $1 $2 (ID корисника: $3)"
 }
