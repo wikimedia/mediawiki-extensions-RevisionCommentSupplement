@@ -7,6 +7,7 @@
 		]
 	},
 	"revcs-error-unexpected": "Beklenmedik bir hata meydana geldi.",
+	"revcs-list-rcs-rev-id-edit": "Düzenle",
 	"revcs-list-rcs-rev-id-log": "Günlük",
 	"revcs-list-submit": "Göster"
 }
