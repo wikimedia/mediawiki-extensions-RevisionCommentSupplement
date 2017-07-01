@@ -3,10 +3,11 @@
 		"authors": [
 			"පසිඳු කාවින්ද",
 			"DCLXVI",
-			"Spiritia"
+			"Spiritia",
+			"StanProg"
 		]
 	},
-	"logentry-revisioncommentsupplement-hidehistory": "$1 {{GENDER:$2|промени}} видимостта на записа в историята $7 с придружителен коментар на редакция $4: $9",
+	"logentry-revisioncommentsupplement-hidehistory": "$1 {{GENDER:$2|промени}} видимостта на записа в историята $7 с придружаващ коментар на редакция $4: $9",
 	"revcs-error": "Грешка: $1",
 	"revcs-history-rcsh-reason": "Причина",
 	"revcs-list-extended-supplement-all": "всички",
