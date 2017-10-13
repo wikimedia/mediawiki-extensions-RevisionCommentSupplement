@@ -20,7 +20,7 @@ class FixUserGroupSupplement extends Maintenance {
 		$this->output( "\nThis will replace 10 seconds after.\n" );
 		wfCountDown( 10 );
 		$i = 0;
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$rows = $dbr->select(
 			'user_groups',
 			'ug_user',

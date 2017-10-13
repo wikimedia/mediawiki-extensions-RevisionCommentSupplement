@@ -26,7 +26,7 @@ class RevisionCommentSupplementHook {
 
 	public static function onPageHistoryLineEnding( HistoryPager $history, $revRow, &$s ) {
 		$revId = (int)$revRow->rev_id;
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'rcs_supplement',

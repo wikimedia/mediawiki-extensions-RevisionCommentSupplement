@@ -45,7 +45,7 @@ class ViewRevisionCommentSupplementList extends ContextSource {
 	}
 
 	function show() {
-		$this->dbr = wfGetDB( DB_SLAVE );
+		$this->dbr = wfGetDB( DB_REPLICA );
 
 		$request = $this->getRequest();
 		$conds = array();

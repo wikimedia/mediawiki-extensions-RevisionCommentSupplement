@@ -33,7 +33,7 @@ class RevisionCommentSupplement {
 	public static function insert( $revId, $newsupplement, $reason ) {
 		$oldsupplement = '';
 		$action = 'create';
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'rcs_supplement',
@@ -139,7 +139,7 @@ class RevisionCommentSupplement {
 	 */
 	public static function delete( $revId, $reason = '' ) {
 		$oldsupplement = '';
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'rcs_supplement',
@@ -168,7 +168,7 @@ class RevisionCommentSupplement {
 	 * @return object|bool
 	 */
 	public static function getRow( $revId ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'*',
@@ -188,7 +188,7 @@ class RevisionCommentSupplement {
 	 * @return bool
 	 */
 	public static function isExistRow( $revId ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp',
 			'rcs_rev_id',
@@ -248,7 +248,7 @@ class RevisionCommentSupplementHistory {
 	 * @return object|bool
 	 */
 	public static function getRow( $id ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp_history',
 			'*',
@@ -268,7 +268,7 @@ class RevisionCommentSupplementHistory {
 	 * @return bool
 	 */
 	public static function isExistRow( $id ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp_history',
 			'rcsh_id',
@@ -288,7 +288,7 @@ class RevisionCommentSupplementHistory {
 	 * @return bool
 	 */
 	public static function isExistHistory( $revId ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp_history',
 			'rcsh_rev_id',
@@ -333,7 +333,7 @@ class RevisionCommentSupplementHistory {
 	 * @return bool
 	 */
 	public static function hide( $id, $reason = '', $hide = 0 ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp_history',
 			'rcsh_rev_id,rcsh_hidden',

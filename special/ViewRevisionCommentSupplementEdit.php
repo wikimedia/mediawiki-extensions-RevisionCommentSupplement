@@ -239,7 +239,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 			$empty = true;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$revRow = $dbr->selectRow(
 			'revision',
 			'rev_id,rev_comment',
@@ -321,7 +321,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 	function setRevisionCommentSupplement( $revId, $supplement = '', $reason = '' ) {
 		$user = $this->getUser();
 		$isAllowedRestricted = $user->isAllowed( 'supplementcomment-restricted' );
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$e = false;
 		$empty = false;
 		$s = "\n" . '<div class="revcs-rev-save">' . "\n";

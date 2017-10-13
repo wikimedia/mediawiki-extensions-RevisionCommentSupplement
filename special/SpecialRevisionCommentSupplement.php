@@ -249,7 +249,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 	 * @return string HTML
 	 */
 	function showRevisionHistoryLine( $revId ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$db_row = $dbr->selectRow( 'revision', '*', array( 'rev_id' => $revId ), __METHOD__ );
 		if ( !isset( $db_row ) || !isset( $db_row->rev_id ) ) {
 			return $this->msg( 'revcs-alert-norevision' )->escaped();
