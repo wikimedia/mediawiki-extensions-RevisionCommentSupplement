@@ -21,7 +21,7 @@ class buildHistory extends Maintenance {
 	public function execute() {
 		$this->output( $this->mDescription );
 		$this->output( "\nThis will build 10 seconds after.\n" );
-		wfCountDown( 10 );
+		$this->countDown( 10 );
 		if ( $this->hasOption( 'log' ) ) {
 			$this->buildFromLogging();
 		}

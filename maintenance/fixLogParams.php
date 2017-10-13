@@ -19,7 +19,7 @@ class FixLogParams extends Maintenance {
 	public function execute() {
 		$this->output( $this->mDescription );
 		$this->output( "\nThis will update 10 seconds after.\n" );
-		wfCountDown( 10 );
+		$this->countDown( 10 );
 		$i = 0;
 		$dbw = $this->getDB( DB_MASTER );
 		$conds = array(

@@ -18,7 +18,7 @@ class FixUserGroupSupplement extends Maintenance {
 	public function execute() {
 		$this->output( $this->mDescription );
 		$this->output( "\nThis will replace 10 seconds after.\n" );
-		wfCountDown( 10 );
+		$this->countDown( 10 );
 		$i = 0;
 		$dbr = wfGetDB( DB_REPLICA );
 		$rows = $dbr->select(
