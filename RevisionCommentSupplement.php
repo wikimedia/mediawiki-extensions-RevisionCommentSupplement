@@ -39,7 +39,6 @@ $wgGroupPermissions['supplementcomment']['supplementcomment-restricted'] = true;
 $wgGroupPermissions['sysop']['supplementcomment'] = true;
 
 $wgMessagesDirs['RevisionCommentSupplement'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['RevisionCommentSupplement'] = __DIR__ . '/RevisionCommentSupplement.i18n.php';
 $wgExtensionMessagesFiles['RevisionCommentSupplementAlias'] = __DIR__ . '/RevisionCommentSupplement.alias.php';
 
 $wgAutoloadClasses['RevisionCommentSupplementSetting'] = __DIR__ . '/RevisionCommentSupplementSetting.php';

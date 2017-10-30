@@ -71,19 +71,6 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 		$v->show();
 	}
 
-	function loadMessages() {
-		static $messagesLoaded = false;
-		global $wgMessageCache;
-		if ( $messagesLoaded ) return;
-		$messagesLoaded = true;
-
-		require( __DIR__ . '/../RevisionCommentSupplement.i18n.php' );
-		foreach ( $allMessages as $lang => $langMessages ) {
-			$wgMessageCache->addMessages( $langMessages, $lang );
-		}
-		return true;
-	}
-
 	protected function getGroupName() {
 		return 'other';
 	}
