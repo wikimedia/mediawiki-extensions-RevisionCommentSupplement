@@ -8,7 +8,8 @@
 			"Tititou36",
 			"VIGNERON",
 			"Verdy p",
-			"Ltrlg"
+			"Ltrlg",
+			"Urhixidur"
 		]
 	},
 	"action-supplementcomment": "exploiter les commentaires supplémentaires",
@@ -137,7 +138,7 @@
 	"revcs-show-supplement-parsed": "Commentaire additionnel analysé : $1",
 	"revcs-show-supplement-raw": "Commentaire additionnel brut : $1",
 	"revcs-show-timestamp": "Date et heure de modification: $1 ($2)",
-	"revcs-show-user": "Utilisateur: $1 $2 (ID utilisateur: $3)",
+	"revcs-show-user": "{{GENDER:$3|Utilisateur|Utilisatrice}} : $1 $2 (ID : $3)",
 	"revcs-warning": "Attention: $1",
 	"right-supplementcomment": "Exploiter les commentaires additionnels",
 	"right-supplementcomment-restricted": "Exploiter les commentaires additionnels avec des actions limitées"
