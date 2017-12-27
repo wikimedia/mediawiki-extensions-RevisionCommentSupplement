@@ -3,9 +3,11 @@
 		"authors": [
 			"Cainamarques",
 			"Luckas",
-			"Luckas Blade"
+			"Luckas Blade",
+			"Eduardo Addad de Oliveira"
 		]
 	},
+	"revcs-desc": "Permite apresentar comentários suplementares para cada linha de revisão nas páginas históricas",
 	"revcs-delete-heading": "Apagar o comentário suplementar",
 	"revcs-delete-legend": "Apagar o comentário suplementar",
 	"revcs-delete-submit": "Apagar o comentário suplementar",
