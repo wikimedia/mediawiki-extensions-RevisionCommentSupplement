@@ -7,6 +7,14 @@
 			"Eduardo Addad de Oliveira"
 		]
 	},
+	"action-supplementcomment": "operar os comentários suplementares",
+	"action-supplementcomment-restricted": "operar os comentários suplementares com restrição de operações",
+	"group-supplementcomment": "Comentários suplementares",
+	"group-supplementcomment-member": "{{GENDER:$1|Comentários suplementares}}",
+	"grouppage-supplementcomment": "{{ns:project}}:Comentários suplementares",
+	"log-name-revisioncommentsupplement": "Registo de comentários suplementares",
+	"log-description-revisioncommentsupplement": "Registo das operações relacionadas com {{#special:RevisionCommentSupplement}}.",
+	"logentry-revisioncommentsupplement-create": "$1 {{GENDER:$2|criou}} um comentário suplementar, $6 na revisão $4",
 	"revcs-desc": "Permite apresentar comentários suplementares para cada linha de revisão nas páginas históricas",
 	"revcs-delete-heading": "Apagar o comentário suplementar",
 	"revcs-delete-legend": "Apagar o comentário suplementar",
