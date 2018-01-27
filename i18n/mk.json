@@ -127,7 +127,7 @@
 	"revcs-show-reason": "Причина: $1",
 	"revcs-show-revision": "Преработка: $1",
 	"revcs-show-revision-id": "Назнака на преработката: $1 ($2)",
-	"revcs-show-supplement-parsed": "Парсиран коментар: $1",
+	"revcs-show-supplement-parsed": "Расчленет коментар: $1",
 	"revcs-show-supplement-raw": "Сиров коментар: $1",
 	"revcs-show-timestamp": "Датум и време на уредување: $1 ($2)",
 	"revcs-show-user": "Корисник: $1 $2 (корисничка назнака: $3)",
