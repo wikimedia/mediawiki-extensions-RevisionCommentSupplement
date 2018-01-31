@@ -53,8 +53,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 			throw new PermissionsError( 'supplementcomment' );
 		}
 		if ( wfReadOnly() ) {
-			$out->readOnlyPage();
-			return;
+			throw new ReadOnlyError;
 		}
 
 		$params = explode( '/', $subpage );
