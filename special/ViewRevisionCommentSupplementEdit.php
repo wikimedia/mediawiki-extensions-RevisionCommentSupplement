@@ -107,8 +107,6 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 	function importFormData( $par ) {
 		$request = $this->getRequest();
 
-		wfProfileIn( __METHOD__ );
-
 		# Section edit can come from either the form or a link
 
 		if ( $request->wasPosted() ) {
@@ -161,8 +159,6 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 			$this->save         = false;
 			$this->reason      = '';
 		}
-
-		wfProfileOut( __METHOD__ );
 	}
 
 	# from EditPage.php

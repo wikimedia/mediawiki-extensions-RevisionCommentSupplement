@@ -87,8 +87,6 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 	function importFormData( $par ) {
 		$request = $this->getRequest();
 
-		wfProfileIn( __METHOD__ );
-
 		if ( $request->wasPosted() ) {
 			# Truncate for whole multibyte characters.
 			$language = $this->getLanguage();
@@ -134,8 +132,6 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 			}
 			$this->submit = false;
 		}
-
-		wfProfileOut( __METHOD__ );
 	}
 
 	# from Article::confirmDelete in Article.php
