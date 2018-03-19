@@ -52,6 +52,7 @@
 	"revcs-history-hidden-reason": "(motivo oculto)",
 	"revcs-history-hidden-supplement": "(comentario suplementario oculto)",
 	"revcs-history-hidden-user": "(nombre de usuario oculto)",
+	"revcs-history-rcsh-id": "Identificador de historial",
 	"revcs-history-rcsh-reason": "Motivo",
 	"revcs-list-desc": "Esta es una lista actual de comentarios adicionales.",
 	"revcs-list-descending": "lista en orden descendente",
