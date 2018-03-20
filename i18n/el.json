@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"revcs-edit-reason": "Αιτία:",
+	"revcs-edit-revision-id": "Αναγνωριστικό αναθεώρησης:",
+	"revcs-error": "Σφάλμα: $1",
+	"revcs-hidehistory-submit": "Υποβάλετε αίτηση",
+	"revcs-history-rcsh-reason": "Αιτιολογία",
+	"revcs-list-extended-supplement-all": "όλα",
+	"revcs-list-extended-supplement-empty": "κενή",
+	"revcs-list-extended-supplement-notempty": "μη κενό",
+	"revcs-list-rcs-rev-id": "Αναγνωριστικό αναθεώρησης",
+	"revcs-list-rcs-rev-id-edit": "Επεξεργασία",
+	"revcs-list-rcs-rev-id-log": "Μητρώο",
+	"revcs-list-rcs-user-text": "Χρήστης",
+	"revcs-list-reset": "Επαναφορά",
+	"revcs-list-sort": "Ταξινόμηση κατά:",
+	"revcs-list-submit": "Εμφάνιση",
+	"revcs-log-nosupplement": "(κανένα)"
+}
