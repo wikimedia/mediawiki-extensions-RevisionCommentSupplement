@@ -7,6 +7,14 @@
 			"Kly"
 		]
 	},
+	"logentry-revisioncommentsupplement-create": "$1 在修訂版本 $4 上{{GENDER:$2|已建立}}補充評論 $6",
+	"logentry-revisioncommentsupplement-create2": "$1 在修訂版本 $4 上{{GENDER:$2|已建立}}補充評論",
+	"logentry-revisioncommentsupplement-delete": "$1 在修訂版本 $4 上{{GENDER:$2|已刪除}}補充評論 $5",
+	"logentry-revisioncommentsupplement-delete2": "$1 在修訂版本 $4 上{{GENDER:$2|已刪除}}補充評論",
+	"logentry-revisioncommentsupplement-hidehistory": "$1 {{GENDER:$2|已變更}}修訂版本 $4 的補充評論歷史條目 $7 的可見性：$9",
+	"logentry-revisioncommentsupplement-modify": "$1 在修訂版本 $4 上{{GENDER:$2|已修訂}}補充評論 $5 為 $6",
+	"logentry-revisioncommentsupplement-modify2": "$1 在修訂版本 $4 上{{GENDER:$2|已修訂}}補充評論",
+	"logentry-suppress-revcommentsupplementhidehistory": "$1 {{GENDER:$2|已變更}}修訂版本 $4 的補充評論歷史條目 $7 的可見性：$9",
 	"revcs-alert-history-id": "「$1」是錯誤的歷史 ID。",
 	"revcs-edit-preview": "顯示預覽",
 	"revcs-edit-preview-reason": "原因預覽：$1",
@@ -39,6 +47,7 @@
 	"revcs-log-hidehistory-restricted": "已套用限制",
 	"revcs-log-hidehistory-unrestricted": "已移除限制",
 	"revcs-log-nosupplement": "(無)",
+	"revcs-log-supplement": "「$1」",
 	"revcs-show-history-id": "歷史 ID：$1（$2）",
 	"revcs-show-reason": "原因：$1",
 	"revcs-show-revision": "修訂：$1",

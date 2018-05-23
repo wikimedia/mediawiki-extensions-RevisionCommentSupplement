@@ -123,6 +123,7 @@
 	"revcs-log-hidehistory-supplement-unhidden": "补充评论已取消隐藏",
 	"revcs-log-hidehistory-unrestricted": "已移除限制",
 	"revcs-log-nosupplement": "（无）",
+	"revcs-log-supplement": "“$1”",
 	"revcs-show-deletelinktext": "删除补充评论",
 	"revcs-show-editlinktext": "编辑补充评论",
 	"revcs-show-history-id": "历史ID：$1（$2）",
