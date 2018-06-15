@@ -112,8 +112,8 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		if ( $request->wasPosted() ) {
 			# Truncate for whole multibyte characters.
 			$language = $this->getLanguage();
-			$this->supplement = $language->truncate( $request->getText( 'supplement' ), 255 );
-			$this->reason = $language->truncate( $request->getText( 'wpReason' ), 255 );
+			$this->supplement = $language->truncateForDatabase( $request->getText( 'supplement' ), 255 );
+			$this->reason = $language->truncateForDatabase( $request->getText( 'wpReason' ), 255 );
 			$tempId = $request->getInt( 'rID' );
 			if ( $tempId > 0 ) {
 				$this->rId = $tempId;
