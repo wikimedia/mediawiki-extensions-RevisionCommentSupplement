@@ -116,10 +116,12 @@ class ViewRevisionCommentSupplementHideHistory extends ContextSource {
 		if ( $request->wasPosted() ) {
 			# Truncate for whole multibyte characters.
 			$language = $this->getLanguage();
-			$this->listReason = $language->truncate(
+			$this->listReason = $language->truncateForDatabase(
 				$request->getText( 'wpDeleteReasonList', 'other' ), 255
 			);
-			$this->otherReason = $language->truncate( $request->getText( 'wpReason' ), 255 );
+			$this->otherReason = $language->truncateForDatabase(
+				$request->getText( 'wpReason' ), 255
+			);
 
 			$tempId = $request->getInt( 'hID' );
 			if ( $tempId > 0 ) {
@@ -429,7 +431,7 @@ class ViewRevisionCommentSupplementHideHistory extends ContextSource {
 			$reason = $this->otherReason;
 		} elseif ( $this->otherReason != '' ) {
 			// Entry from drop down menu + additional comment
-			$reason = $this->getLanguage()->truncate(
+			$reason = $this->getLanguage()->truncateForDatabase(
 				$this->listReason . $this->msg( 'colon-separator' )->plain() . $this->otherReason,
 				255
 			);
