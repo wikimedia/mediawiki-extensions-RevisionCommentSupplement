@@ -16,6 +16,7 @@
 	"revcs-list-sort": "Поређај по:",
 	"revcs-list-submit": "Прикажи",
 	"revcs-log-nosupplement": "(ништа)",
+	"revcs-show-reason": "Разлог: $1",
 	"revcs-show-revision": "Измена: $1",
 	"revcs-show-user": "Корисник: $1 $2 (ID корисника: $3)"
 }
