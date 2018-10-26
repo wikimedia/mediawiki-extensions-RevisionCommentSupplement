@@ -101,15 +101,13 @@ class buildHistory extends Maintenance {
 					$update['rcsh_hidden'] = ( $history->rcsh_hidden | $row->log_deleted );
 				}
 				if ( count( $update ) ) {
-					$ret = $dbw->update(
+					$dbw->update(
 						'rev_comment_supp_history',
 						$update,
 						array( 'rcsh_id' => $history->rcsh_id ),
 						__METHOD__
 					);
-					if ( $ret ) {
-						$j++;
-					}
+					$j++;
 				}
 			}
 		}
@@ -167,15 +165,13 @@ class buildHistory extends Maintenance {
 			} elseif ( $dbw->numRows( $histories ) == 1 ) {
 				$history = $dbw->fetchObject( $histories );
 				if ( $history->rcsh_supplement == '' && $row->rcs_supplement != '' ) {
-					$ret = $dbw->update(
+					$dbw->update(
 						'rev_comment_supp_history',
 						array( 'rcsh_supplement' => $row->rcs_supplement ),
 						array( 'rcsh_id' => $history->rcsh_id ),
 						__METHOD__
 					);
-					if ( $ret ) {
-						$j++;
-					}
+					$j++;
 				}
 				$dbw->update(
 					'rev_comment_supp',
