@@ -7,7 +7,8 @@
 			"Siebrand",
 			"Liuxinyu970226",
 			"Lokal Profil",
-			"Umherirrender"
+			"Umherirrender",
+			"Zoranzoki21"
 		]
 	},
 	"action-supplementcomment": "{{doc-action|supplementcomment}}",
@@ -16,7 +17,7 @@
 	"group-supplementcomment-member": "{{doc-group|supplementcomment}}\n{{Identical|Supplement comment}}",
 	"grouppage-supplementcomment": "{{doc-group|supplementcomment}}\n{{Identical|Supplement comment}}",
 	"log-name-revisioncommentsupplement": "All public logs of Extension:RevisionCommentSupplement in [[Special:Log]].",
-	"log-description-revisioncommentsupplement": "The description of all public logs of Extension:RevisonCommentSupplement in [[Special:Log]].",
+	"log-description-revisioncommentsupplement": "The description of all public logs of Extension:RevisionCommentSupplement in [[Special:Log]].",
 	"logentry-revisioncommentsupplement-create": "{{gender}}\nA line of log entry in [[Special:Log]]. Parameters:\n*$1 - list of links pointing to user page and user tool page(s)\n*$2 - the username, for GENDER support\n*$3 - (Unused) a link pointing to Special:RevisionCommentSupplement/$4 (edit page)\n*$4 - the revision ID\n*$5 - (Unused) {{msg-mw|Revcs-log-nosupplement}}\n*$6 - the raw new supplementary comment, either {{msg-mw|Revcs-log-supplement}} or {{msg-mw|Revcs-log-nosupplement}}\n*$7 - (Unused) the history entry ID of a history entry\n{{Related|Logentry-revcs}}",
 	"logentry-revisioncommentsupplement-create2": "A line of log entry in [[Special:Log]]. Parameters:\n*$1 - list of links pointing to user page and user tool page(s)\n*$2 - username, for GENDER support\n*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4. (edit page)\n*$4 - the revision ID\n*$5 - (Unused)\n*$6 - (Unused)\n*$7 - (Unused) the history entry ID of a history entry\n{{Related|Logentry-revcs}}",
 	"logentry-revisioncommentsupplement-delete": "A line of log entry in [[Special:Log]]. Parameters:\n*$1 - list of links pointing to the user page (or the user contributions page, [[Special:Contributions]] for IP user), and the user tool page(s)\n*$2 - the username, for GENDER support\n*$3 - (Unused) a link of Special:RevisionCommentSupplement/$4. (edit page)\n*$4 - the revision ID\n*$5 - the raw old supplementary comment, either {{msg-mw|Revcs-log-supplement}} or {{msg-mw|Revcs-log-nosupplement}}\n*$6 - (Unused) {{msg-mw|Revcs-log-nosupplement}}\n*$7 - (Unused) the history entry ID of a history entry\n{{Related|Logentry-revcs}}",
