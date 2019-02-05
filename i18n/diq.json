@@ -8,6 +8,9 @@
 		]
 	},
 	"revcs-edit-preview": "Verqayti bıvêne",
+	"revcs-edit-reason": "Sebeb:",
+	"revcs-history-rcsh-reason": "Sebeb",
 	"revcs-list-extended-supplement-all": "pérın",
+	"revcs-show-reason": "Sebeb: $1",
 	"revcs-warning": "Tembe kem:$1"
 }
