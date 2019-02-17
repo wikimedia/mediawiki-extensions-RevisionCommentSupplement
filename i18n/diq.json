@@ -4,7 +4,8 @@
 			"Marmase",
 			"Kumkumuk",
 			"Mirzali",
-			"Asmen"
+			"Asmen",
+			"Orbot707"
 		]
 	},
 	"revcs-edit-preview": "Verqayti bıvêne",
@@ -12,6 +13,7 @@
 	"revcs-history-rcsh-reason": "Sebeb",
 	"revcs-list-extended-supplement-all": "pérın",
 	"revcs-list-rcs-rev-id-edit": "Bıvurne",
+	"revcs-log-nosupplement": "(çıniyo)",
 	"revcs-show-reason": "Sebeb: $1",
 	"revcs-warning": "Tembe kem:$1"
 }
