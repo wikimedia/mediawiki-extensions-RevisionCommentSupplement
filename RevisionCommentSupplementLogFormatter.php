@@ -18,10 +18,6 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die();
-}
-
 class RevisionCommentSupplementLogFormatter extends LogFormatter {
 
 	function getMessageParameters() {
