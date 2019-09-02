@@ -11,12 +11,11 @@ class FixUserGroupSupplement extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addOption( 'log', 'Logging the change(s) of user groups of user(s).' );
-		$this->mDescription
-			= 'replace supplement User Group with supplementcomment User Group for update from 0.2.x';
+		$this->addDescription( 'replace supplement User Group with supplementcomment ' .
+			'User Group for update from 0.2.x' );
 	}
 
 	public function execute() {
-		$this->output( $this->mDescription );
 		$this->output( "\nThis will replace 10 seconds after.\n" );
 		$this->countDown( 10 );
 		$i = 0;

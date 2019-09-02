@@ -15,11 +15,10 @@ class buildHistory extends Maintenance {
 		$this->addOption( 'start', 'start time for seach' );
 		$this->addOption( 'end', 'end time for seach' );
 		$this->addOption( 'limit', 'max number of search rows' );
-		$this->mDescription = 'build rev_comment_supp_history table';
+		$this->addDescription( 'build rev_comment_supp_history table' );
 	}
 
 	public function execute() {
-		$this->output( $this->mDescription );
 		$this->output( "\nThis will build 10 seconds after.\n" );
 		$this->countDown( 10 );
 		if ( $this->hasOption( 'log' ) ) {

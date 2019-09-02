@@ -13,11 +13,10 @@ class FixLogParams extends Maintenance {
 		$this->addOption( 'start', 'start time for seach' );
 		$this->addOption( 'end', 'end time for seach' );
 		$this->addOption( 'limit', 'max number of search rows' );
-		$this->mDescription = 'update log_params for update from 0.3.x backward';
+		$this->addDescription( 'update log_params for update from 0.3.x backward' );
 	}
 
 	public function execute() {
-		$this->output( $this->mDescription );
 		$this->output( "\nThis will update 10 seconds after.\n" );
 		$this->countDown( 10 );
 		$i = 0;
