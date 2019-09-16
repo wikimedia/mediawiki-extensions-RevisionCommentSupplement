@@ -10,7 +10,7 @@
 	"group-supplementcomment-member": "{{GENDER:$1|ДодатниКоментари}}",
 	"grouppage-supplementcomment": "{{ns:project}}:ДодатниКоментари",
 	"log-name-revisioncommentsupplement": "Дневник на додатни коментари",
-	"log-description-revisioncommentsupplement": "Дневник на работи со {{#special:ДодатниКоментариНаРевизии}}.",
+	"log-description-revisioncommentsupplement": "Дневник на работи со {{#special:RevisionCommentSupplement}}.",
 	"logentry-revisioncommentsupplement-create": "$1 {{GENDER:$2|направи}} додатен коментар, $6 на преработката $4",
 	"logentry-revisioncommentsupplement-create2": "$1 {{GENDER:$2|направи}} додатен коментар на преработката $4",
 	"logentry-revisioncommentsupplement-delete": "$1 {{GENDER:$2|избриша}} додатен коментар, $5 на преработката $4",
