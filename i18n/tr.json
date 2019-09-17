@@ -4,9 +4,11 @@
 			"Violetanka",
 			"HakanIST",
 			"Vito Genovese",
-			"Hedda"
+			"Hedda",
+			"Mirzali"
 		]
 	},
+	"revcs-error": "Hata: $1",
 	"revcs-error-unexpected": "Beklenmedik bir hata meydana geldi.",
 	"revcs-hidehistory-desc": "Geçmiş girdinin özelliklerinin tamamını veya bir kısmını gizleyebilirsiniz.",
 	"revcs-hidehistory-heading": "Ek yorumların tarihini gizle/göster",
