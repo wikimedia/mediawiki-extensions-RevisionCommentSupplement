@@ -181,7 +181,7 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 				"</li>\n";
 			$s .= "<li>" .
 				$this->msg( 'revcs-show-supplement-raw' )
-					->rawParams( htmlspecialchars( $row->rcs_supplement ) )->escaped() .
+					->plaintextParams( $row->rcs_supplement )->escaped() .
 				"</li>\n";
 			$s .= "<li>" .
 				$this->msg( 'revcs-show-supplement-parsed' )->rawParams( $supplement )->escaped() .
