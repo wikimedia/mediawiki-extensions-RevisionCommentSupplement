@@ -16,5 +16,7 @@
 	"revcs-list-extended-supplement-all": "hepsi",
 	"revcs-list-rcs-rev-id-edit": "Düzenle",
 	"revcs-list-rcs-rev-id-log": "Günlük",
-	"revcs-list-submit": "Göster"
+	"revcs-list-submit": "Göster",
+	"revcs-log-nosupplement": "(hiçbiri)",
+	"revcs-warning": "Uyarı: $1"
 }
