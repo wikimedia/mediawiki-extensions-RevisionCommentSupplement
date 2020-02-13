@@ -18,6 +18,7 @@ class FixUserGroupSupplement extends Maintenance {
 	public function execute() {
 		$this->output( "\nThis will replace 10 seconds after.\n" );
 		$this->countDown( 10 );
+		$systemUser = User::newSystemUser( 'Maintenance script', array( 'steal' => true ) );
 		$i = 0;
 		$dbr = wfGetDB( DB_REPLICA );
 		$rows = $dbr->select(
@@ -41,7 +42,8 @@ class FixUserGroupSupplement extends Maintenance {
 					'rights',
 					$user->getUserPage(),
 					'RevisionCommentSupplement update from 0.2.x',
-					array( implode( ', ', $oldGroups ), implode( ', ', $newGroups ) )
+					array( implode( ', ', $oldGroups ), implode( ', ', $newGroups ) ),
+					$systemUser
 				);
 			}
 		}
