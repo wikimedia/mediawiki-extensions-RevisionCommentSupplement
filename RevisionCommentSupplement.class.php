@@ -352,11 +352,12 @@ class RevisionCommentSupplementHistory {
 
 	/**
 	 * @param string $id: history entry id
+	 * @param User $user
 	 * @param string $reason: reason
 	 * @param int $hide: flag of delete log entry or suppress (or oversight) log entry
 	 * @return bool
 	 */
-	public static function hide( $id, $reason = '', $hide = 0 ) {
+	public static function hide( $id, $user, $reason = '', $hide = 0 ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
 			'rev_comment_supp_history',
@@ -391,9 +392,8 @@ class RevisionCommentSupplementHistory {
 			$logAction = 'revcommentsupplementhidehistory';
 		}
 
-		global $wgUser;
 		$logEntry = new ManualLogEntry( $logType, $logAction );
-		$logEntry->setPerformer( $wgUser );
+		$logEntry->setPerformer( $user );
 		$logEntry->setTarget(
 			Title::makeTitleSafe( NS_SPECIAL, "RevisionCommentSupplement/{$revId}" )
 		);

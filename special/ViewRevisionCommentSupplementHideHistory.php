@@ -468,7 +468,12 @@ class ViewRevisionCommentSupplementHideHistory extends ContextSource {
 				'</p>';
 		}
 
-		if ( RevisionCommentSupplementHistory::hide( $this->hId, $reason, $hide ) ) {
+		if ( RevisionCommentSupplementHistory::hide(
+			$this->hId,
+			$this->getUser(),
+			$reason,
+			$hide
+		) ) {
 			$this->getOutput()->setPageTitle( $this->msg( 'actioncomplete' )->plain() );
 			return '<p class="success">' .
 				$this->msg( 'revcs-hidehistory-success' )->escaped() .
