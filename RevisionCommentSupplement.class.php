@@ -24,9 +24,10 @@ class RevisionCommentSupplement {
 	 * @param int|string $revId: revision id
 	 * @param string $newsupplement: a new supplementary comment
 	 * @param string $reason: reason
+	 * @param User $user: user
 	 * @return bool
 	 */
-	public static function insert( $revId, $newsupplement, $reason ) {
+	public static function insert( $revId, $newsupplement, $reason, User $user ) {
 		$oldsupplement = '';
 		$action = 'create';
 		$dbr = wfGetDB( DB_REPLICA );
@@ -42,14 +43,13 @@ class RevisionCommentSupplement {
 			$action = 'modify';
 		}
 
-		global $wgUser;
 		$historyId = 0;
 		$dbw = wfGetDB( DB_MASTER );
 		$timestamp = wfTimestamp( TS_MW );
 		$row = array(
 			'rcs_rev_id' => intval( $revId ),
-			'rcs_user' => $wgUser->getId(),
-			'rcs_user_text' => $wgUser->getName(),
+			'rcs_user' => $user->getId(),
+			'rcs_user_text' => $user->getName(),
 			'rcs_timestamp' => $dbw->timestamp( $timestamp ),
 			'rcs_supplement' => $newsupplement,
 		);
@@ -58,8 +58,8 @@ class RevisionCommentSupplement {
 			$historyRow = array(
 				'rcsh_id' => $dbw->nextSequenceValue( 'rev_comment_supp_history_id_seq' ),
 				'rcsh_rev_id' => intval( $revId ),
-				'rcsh_user' => $wgUser->getId(),
-				'rcsh_user_text' => $wgUser->getName(),
+				'rcsh_user' => $user->getId(),
+				'rcsh_user_text' => $user->getName(),
 				'rcsh_timestamp' => $dbw->timestamp( $timestamp ),
 				'rcsh_supplement' => $newsupplement,
 				'rcsh_reason' => $reason,

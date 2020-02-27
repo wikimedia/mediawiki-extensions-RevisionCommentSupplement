@@ -395,7 +395,7 @@ class ViewRevisionCommentSupplementEdit extends ContextSource {
 		if ( $e ) {
 			$s .= $this->getErrorMessage( 'edit-denied' );
 		} else {
-			RevisionCommentSupplement::insert( $revId, $supplement, $reason );
+			RevisionCommentSupplement::insert( $revId, $supplement, $reason, $user );
 			$s .= "<p>" . $this->msg( 'revcs-edit-written' )->escaped() . "</p>\n";
 		}
 
