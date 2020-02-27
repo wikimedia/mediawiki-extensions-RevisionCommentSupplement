@@ -74,7 +74,16 @@ class RevisionCommentSupplement {
 
 		$dbw->replace( 'rev_comment_supp', array( 'rcs_rev_id' ), $row, __METHOD__ );
 
-		self::insertLog( $revId, $action, $oldsupplement, $newsupplement, $reason, $timestamp, $historyId );
+		self::insertLog(
+			$revId,
+			$action,
+			$oldsupplement,
+			$newsupplement,
+			$reason,
+			$timestamp,
+			$user,
+			$historyId
+		);
 
 		return true;
 	}
@@ -86,10 +95,20 @@ class RevisionCommentSupplement {
 	 * @param string $newsupplement: a new supplementary comment
 	 * @param string $reason: reason
 	 * @param string $timestamp: timestamp
+	 * @param User $user: user
 	 * @param string $historyId: history entry id
 	 * @return int: ID of inserted log entry
 	 */
-	public static function insertLog( $revId, $action, $oldsupplement, $newsupplement, $reason, $timestamp, $historyId = 0 ) {
+	public static function insertLog(
+		$revId,
+		$action,
+		$oldsupplement,
+		$newsupplement,
+		$reason,
+		$timestamp,
+		$user,
+		$historyId = 0
+	) {
 		if ( !RevisionCommentSupplementSetting::getLogSetting( $action ) ) {
 			return 0;
 		}
@@ -109,9 +128,9 @@ class RevisionCommentSupplement {
 				)
 			);
 		}
-		global $wgUser;
+
 		$logEntry = new ManualLogEntry( 'revisioncommentsupplement', $action );
-		$logEntry->setPerformer( $wgUser );
+		$logEntry->setPerformer( $user );
 		$logEntry->setTarget(
 			Title::makeTitleSafe( NS_SPECIAL, "RevisionCommentSupplement/{$revId}" )
 		);
@@ -130,10 +149,11 @@ class RevisionCommentSupplement {
 
 	/**
 	 * @param string $revId: revision id
+	 * @param User $user: user
 	 * @param string $reason: reason
 	 * @return bool
 	 */
-	public static function delete( $revId, $reason = '' ) {
+	public static function delete( $revId, $user, $reason = '' ) {
 		$oldsupplement = '';
 		$dbr = wfGetDB( DB_REPLICA );
 		$dbRow = $dbr->selectRow(
@@ -154,7 +174,15 @@ class RevisionCommentSupplement {
 			return false;
 		}
 
-		$rcslogid = self::insertLog( $revId, 'delete', $oldsupplement, '', $reason, wfTimestamp( TS_MW ) );
+		$rcslogid = self::insertLog(
+			$revId,
+			'delete',
+			$oldsupplement,
+			'',
+			$reason,
+			wfTimestamp( TS_MW ),
+			$user
+		);
 
 		return true;
 	}

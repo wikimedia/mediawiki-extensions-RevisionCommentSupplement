@@ -218,7 +218,7 @@ class ViewRevisionCommentSupplementDelete extends ContextSource {
 			$reason = $this->listReason;
 		}
 
-		RevisionCommentSupplement::delete( $this->rId, $reason );
+		RevisionCommentSupplement::delete( $this->rId, $this->getUser(), $reason );
 
 		$this->exist = RevisionCommentSupplement::isExistRow( $this->rId );
 		if ( $this->exist ) {
