@@ -24,6 +24,8 @@ $wgAutoloadClasses['ViewRevisionCommentSupplementEdit'] = __DIR__ . '/ViewRevisi
 $wgAutoloadClasses['ViewRevisionCommentSupplementDelete'] = __DIR__ . '/ViewRevisionCommentSupplementDelete.php';
 $wgAutoloadClasses['ViewRevisionCommentSupplementHideHistory'] = __DIR__ . '/ViewRevisionCommentSupplementHideHistory.php';
 
+use MediaWiki\Revision\RevisionRecord;
+
 class SpecialRevisionCommentSupplement extends SpecialPage {
 
 	public $mTokenOk;
@@ -282,7 +284,11 @@ class SpecialRevisionCommentSupplement extends SpecialPage {
 	function revLink( $rev ) {
 		$date = $this->getLanguage()->userTimeAndDate( $rev->getTimestamp(), $this->getUser() );
 		$date = htmlspecialchars( $date );
-		if ( $rev->userCan( Revision::DELETED_TEXT, $this->getUser() ) ) {
+		if ( RevisionRecord::userCanBitfield(
+			$rev->getVisibility(),
+			RevisionRecord::DELETED_TEXT,
+			$this->getUser()
+		) ) {
 			$link = Linker::linkKnown(
 				$rev->getTitle(),
 				$date,
