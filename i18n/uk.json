@@ -5,7 +5,8 @@
 			"Base",
 			"Steve.rusyn",
 			"SteveR",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"action-supplementcomment": "керування допоміжними коментарями",
@@ -135,6 +136,6 @@
 	"revcs-show-timestamp": "Дата і час редагування: $1 ($2)",
 	"revcs-show-user": "Користувач: $1 $2 (ID користувача: $3)",
 	"revcs-warning": "Увага: $1",
-	"right-supplementcomment": "Управляти додатковими коментарями",
+	"right-supplementcomment": "Керування додатковими коментарями",
 	"right-supplementcomment-restricted": "Управляти додатковими коментарями з обмеженими діями"
 }
