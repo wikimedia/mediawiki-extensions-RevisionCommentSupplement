@@ -137,5 +137,5 @@
 	"revcs-show-user": "Користувач: $1 $2 (ID користувача: $3)",
 	"revcs-warning": "Увага: $1",
 	"right-supplementcomment": "Керування додатковими коментарями",
-	"right-supplementcomment-restricted": "Управляти додатковими коментарями з обмеженими діями"
+	"right-supplementcomment-restricted": "Керування додатковими коментарями з обмеженими діями"
 }
