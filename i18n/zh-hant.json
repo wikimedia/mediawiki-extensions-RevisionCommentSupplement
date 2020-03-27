@@ -4,7 +4,8 @@
 			"Shirayuki",
 			"Cwlin0416",
 			"Liuxinyu970226",
-			"Kly"
+			"Kly",
+			"Winston Sung"
 		]
 	},
 	"action-supplementcomment": "管理補充註解",
@@ -104,7 +105,7 @@
 	"revcs-list-limit": "各頁面號碼：",
 	"revcs-list-rcs-rev-id": "修訂 ID",
 	"revcs-list-rcs-rev-id-edit": "編輯",
-	"revcs-list-rcs-rev-id-log": "日誌",
+	"revcs-list-rcs-rev-id-log": "紀錄",
 	"revcs-list-rcs-supplement": "補充註解",
 	"revcs-list-rcs-timestamp": "已編輯的日期時間",
 	"revcs-list-rcs-user-text": "使用者",
