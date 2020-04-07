@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද",
 			"DCLXVI",
 			"Spiritia",
-			"StanProg"
+			"StanProg",
+			"පසිඳු කාවින්ද"
 		]
 	},
 	"logentry-revisioncommentsupplement-hidehistory": "$1 {{GENDER:$2|промени}} видимостта на записа в историята $7 с придружаващ коментар на редакция $4: $9",
