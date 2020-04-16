@@ -34,9 +34,7 @@ class SpecialRevisionCommentSupplementList extends SpecialPage {
 		$view = 'error';
 		$par = '';
 
-		if ( wfReadOnly() ) {
-			throw new ReadOnlyError;
-		}
+		$this->checkReadOnly();
 
 		$params = explode( '/', $subpage );
 
