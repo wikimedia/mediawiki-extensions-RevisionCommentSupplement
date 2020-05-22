@@ -3,6 +3,7 @@
 		"authors": [
 			"Armin1392",
 			"Ebraminio",
+			"FarsiNevis",
 			"Mjbmr",
 			"Reza1615",
 			"ZxxZxxZ"
@@ -134,7 +135,7 @@
 	"revcs-show-supplement-parsed": "نظر تکمیلی تجزیه شده: $1",
 	"revcs-show-supplement-raw": "نظر تکمیلی خام: $1",
 	"revcs-show-timestamp": "تاریخ و زمان ویرایش شده: $1 ($2)",
-	"revcs-show-user": "کاربر: $1 $2 (شناسهٔ کاربری: $3)",
+	"revcs-show-user": "کاربر: $1 $2 (شناسه: $3)",
 	"revcs-warning": "هشدار: $1",
 	"right-supplementcomment": "کار کردن نظرات تکمیلی",
 	"right-supplementcomment-restricted": "کار کردن نظرات تکمیلی با عملیات محدود شده"
