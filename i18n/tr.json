@@ -128,7 +128,7 @@
 	"revcs-show-historylinktext": "Ek yorumun geçmişini listeleyin",
 	"revcs-show-loglinktext": "ek yorum değişiklik günlüğü",
 	"revcs-show-no-db-row": "$1 revizyonuna ilişkin ek yorum bulunamadı.",
-	"revcs-show-reason": "Sebebi: $1",
+	"revcs-show-reason": "Sebep: $1",
 	"revcs-show-revision": "Revizyon: $1",
 	"revcs-show-revision-id": "Revizyon kimliği: $1 ($2)",
 	"revcs-show-supplement-parsed": "Ayrıştırılmış ek yorum: $1",
