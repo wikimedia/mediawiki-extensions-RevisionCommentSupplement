@@ -16,6 +16,7 @@ class buildHistory extends Maintenance {
 		$this->addOption( 'end', 'end time for seach' );
 		$this->addOption( 'limit', 'max number of search rows' );
 		$this->addDescription( 'build rev_comment_supp_history table' );
+		$this->requireExtension( 'RevisionCommentSupplement' );
 	}
 
 	public function execute() {

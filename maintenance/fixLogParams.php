@@ -14,6 +14,7 @@ class FixLogParams extends Maintenance {
 		$this->addOption( 'end', 'end time for seach' );
 		$this->addOption( 'limit', 'max number of search rows' );
 		$this->addDescription( 'update log_params for update from 0.3.x backward' );
+		$this->requireExtension( 'RevisionCommentSupplement' );
 	}
 
 	public function execute() {

@@ -13,6 +13,7 @@ class FixUserGroupSupplement extends Maintenance {
 		$this->addOption( 'log', 'Logging the change(s) of user groups of user(s).' );
 		$this->addDescription( 'replace supplement User Group with supplementcomment ' .
 			'User Group for update from 0.2.x' );
+		$this->requireExtension( 'RevisionCommentSupplement' );
 	}
 
 	public function execute() {
