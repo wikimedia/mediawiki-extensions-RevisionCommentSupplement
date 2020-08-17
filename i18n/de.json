@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kghbln",
-			"Metalhead64"
+			"Metalhead64",
+			"Umherirrender"
 		]
 	},
 	"action-supplementcomment": "mit ergänzenden Kommentaren zu arbeiten",
@@ -118,6 +119,7 @@
 	"revcs-log-hidehistory-supplement-unhidden": "ergänzenden Kommentar eingeblendet",
 	"revcs-log-hidehistory-unrestricted": "entfernte Beschränkungen",
 	"revcs-log-nosupplement": "(keine)",
+	"revcs-log-supplement": "„$1“",
 	"revcs-show-deletelinktext": "Ergänzungskommentar löschen",
 	"revcs-show-editlinktext": "Ergänzungskommentar bearbeiten",
 	"revcs-show-history-id": "Versionsgeschichtenkennung: $1 ($2)",
