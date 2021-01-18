@@ -5,5 +5,9 @@
 		]
 	},
 	"revcs-edit-preview": "Prikaži predogled",
-	"revcs-list-limit": "Število na stran:"
+	"revcs-edit-reason": "Razlog:",
+	"revcs-history-rcsh-reason": "Razlog",
+	"revcs-list-limit": "Število na stran:",
+	"revcs-list-rcs-user-text": "Uporabnik",
+	"revcs-show-reason": "Razlog: $1"
 }
