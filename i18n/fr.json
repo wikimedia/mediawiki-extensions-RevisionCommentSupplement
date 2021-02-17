@@ -125,7 +125,7 @@
 	"revcs-log-hidehistory-supplement-hidden": "commentaire additionnel masqué",
 	"revcs-log-hidehistory-supplement-unhidden": "commentaire additionnel démasqué",
 	"revcs-log-hidehistory-unrestricted": "restrictions retirées",
-	"revcs-log-nosupplement": "(néant)",
+	"revcs-log-nosupplement": "(aucun)",
 	"revcs-log-supplement": "«&nbsp;$1&nbsp;»",
 	"revcs-show-deletelinktext": "Supprimer le commentaire additionnel",
 	"revcs-show-editlinktext": "Modifier le commentaire additionnel",
