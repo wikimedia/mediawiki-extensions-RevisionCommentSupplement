@@ -54,5 +54,5 @@ class FixUserGroupSupplement extends Maintenance {
 
 }
 
-$maintClass = 'FixUserGroupSupplement';
+$maintClass = FixUserGroupSupplement::class;
 require_once( RUN_MAINTENANCE_IF_MAIN );

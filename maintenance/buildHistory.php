@@ -185,5 +185,5 @@ class buildHistory extends Maintenance {
 	}
 }
 
-$maintClass = 'buildHistory';
+$maintClass = buildHistory::class;
 require_once( RUN_MAINTENANCE_IF_MAIN );

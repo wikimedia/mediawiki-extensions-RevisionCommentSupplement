@@ -71,5 +71,5 @@ class FixLogParams extends Maintenance {
 
 }
 
-$maintClass = 'FixLogParams';
+$maintClass = FixLogParams::class;
 require_once( RUN_MAINTENANCE_IF_MAIN );
