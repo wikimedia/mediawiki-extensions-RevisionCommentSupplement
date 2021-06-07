@@ -8,6 +8,7 @@
 	"revcs-edit-reason": "Razlog:",
 	"revcs-history-rcsh-reason": "Razlog",
 	"revcs-list-limit": "Število na stran:",
+	"revcs-list-rcs-rev-id-edit": "Uredi",
 	"revcs-list-rcs-user-text": "Uporabnik",
 	"revcs-show-reason": "Razlog: $1"
 }
