@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Sator",
-			"Subi"
+			"Subi",
+			"Xabier Armendaritz"
 		]
 	},
 	"revcs-edit-reason": "Arrazoia:",
+	"revcs-list-rcs-rev-id-log": "Egunkaria",
 	"revcs-show-history-id": "Historia IDa:$1($2)"
 }
